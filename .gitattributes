@@ -1,0 +1,15 @@
+cvsfx.sff filter=lfs diff=lfs merge=lfs -text
+glyphs.sff filter=lfs diff=lfs merge=lfs -text
+system.sff filter=lfs diff=lfs merge=lfs -text
+font/cvs2hdcombo.sff filter=lfs diff=lfs merge=lfs -text
+font/cvs2hdname.sff filter=lfs diff=lfs merge=lfs -text
+others/intro.sff filter=lfs diff=lfs merge=lfs -text
+fight/fight.sff filter=lfs diff=lfs merge=lfs -text
+fight/fightfx.sff filter=lfs diff=lfs merge=lfs -text
+font/cvs2hdaction.sff filter=lfs diff=lfs merge=lfs -text
+font/cvs2hdtimer.sff filter=lfs diff=lfs merge=lfs -text
+others/gameover.sff filter=lfs diff=lfs merge=lfs -text
+others/loading.sff filter=lfs diff=lfs merge=lfs -text
+fight/cvs_roundtransition.sff filter=lfs diff=lfs merge=lfs -text
+font/cvs2hdnamei.sff filter=lfs diff=lfs merge=lfs -text
+font/cvs2hdscore.sff filter=lfs diff=lfs merge=lfs -text
