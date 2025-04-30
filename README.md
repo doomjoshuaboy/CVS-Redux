@@ -9,34 +9,51 @@ This is inspired by CAPCOM VS SNK 2 game, all rights reserved.
 ## Supporters
 
 2Dee4ever
+
 ArachnoLord
+
 Hollow
+
 ViolinKen
+
 RagingRowen
+
 Bluekuma
+
 POTS
+
 Akito (Huge Helper)
+
 ShinZankuro
 
 ## Original authors
 
 Raisu
+
 PabloSSB
+
 ProtomanX
+
 -Shin_Hado-
 
-## Thanks to:
+## Thanks to
 POTS (for Capcom VS SNK 2 commentator system, Attack data and active tag modules)
+
 Kamekaze (for Round Transition Module)
 
 ## Author's note
 
-Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required:
-To Add EXTRAS:  
-Load IKEMEN_GO first then close it OR Exit, it will give you extras in your "save" Folder,
-Open up the folder you should see a "config.ini" File load it up with your favorite Text editor (Recommendation: Visual Studio Code or Notepad++)
+### Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required:
 
-```[Common]
+To Add EXTRAS:
+
+* Load IKEMEN_GO first then close it OR Exit, it will give you extras in your "save" Folder.
+
+* Open up the folder you should see a "config.ini" File. 
+
+* Load it up with your favorite Text editor (Recommendation: Visual Studio Code or Notepad++)
+
+``` [Common]
 ; Common animations using character's local sprites
 Air     = data/common.air
 ; Common commands
@@ -56,18 +73,20 @@ Lua     = loop()
 States0 = data/cvsr/fight/ZSS/cvsko.zss, data/cvsr/fight/ZSS/cvsrounds.zss, data/cvsr/fight/ZSS/roundtransition.zss, data/cvsr/fight/ZSS/intro-outro.zss, data/cvsr/fight/ZSS/intro-outro-config.zss, data/cvsr/fight/ZSS/cvsconfig.zss, data/cvsr/fight/ZSS/commentator_cvs2.zss, data/cvsr/fight/zss/attackdata.zss
 ```
 
-Then go down and change "GameWidth" and "GameHeight" to however you want, then
-change "Motif" to either
+* Then go down and change "GameWidth" and "GameHeight" to however you want, 
+
+* Then change "Motif" to either
+
 There's 2 seprated motifs
 
 HD
 Squared:
-```[Config]
+``` [Config]
 ; Motif to use. Motifs are themes that define the look and feel of Ikemen GO.
 Motif               = data/cvsr/systems.def
 ```
 Diamonds:
-```[Config]
+``` [Config]
 ; Motif to use. Motifs are themes that define the look and feel of Ikemen GO.
 Motif               = data/cvsr/system.def
 ```
