@@ -1,0 +1,33 @@
+# Read the description on each line with a "#" symbol, it'll explain the function of the item below it. The only part you may want to change is the number after "value: ".
+
+#If you want to override the global behavior for any specific character, copy the following on its .def file (minus the # symbols)
+# [Map]
+# ignore_cvs = 1
+# This will turn all the switches off. 
+
+# If you want to re-enable any of the features, copy its name = 1 on the same section of the def; e.g.:
+# [Map]
+# ignore_cvs = 1
+# _cvs_rrounds_toggle = 1
+
+[Statedef -2]
+
+if !map(ignore_cvs) && roundstate < 2 {
+
+# _cvs_rrounds_toggle controls random voices at the beginning of each round: 
+# 1 to keep it on (Go to fight.def and comment "roundX.snd" except "round.final.snd" leave it alone),
+# 0 to mute it (Go to fight.def and uncomment "roundX.snd" except "round.final.snd" leave it alone).
+
+	mapSet{map: "_cvs_rrounds_toggle"; value: 1}
+
+# _cvs_winkoeffect_toggle controls the nornal ko effects: 1  to keep it on (Go to fight.def and comment "KO"), 0 to turn it off. (Go to fight.def and uncomment "KO").
+# _cvs_winhypereffect_toggle controls the super/hyper ko effects: 2 for SNK and 1 for Capcom (Go to fight.def and comment "KO"), 0 to turn it off. (Go to fight.def and uncomment "KO").
+
+	mapSet{map: "_cvs_winkoeffect_toggle"; value: 1}
+
+# _cvs_hd_toggle controls what resolution of the system is using: 
+#  2 for Widescreen (systems without 480p)
+#  1 for Normal (systems with 480p)
+	mapSet{map: "_cvs_hd_toggle"; value: 2}
+
+}

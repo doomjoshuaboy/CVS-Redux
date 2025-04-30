@@ -1,0 +1,3422 @@
+[Info]
+name = "CVS: REDUX (Square portraits)"
+author = "DoomJoshuaBoy"
+VersionDate  = 2025
+localcoord = 1280,720
+
+[Files]
+spr = system.sff
+snd = system.snd
+logo.storyboard = "others/loading.def"
+intro.storyboard = "others/intro.def"
+select = selects.def
+fight = fights.def
+font1 = "font/cvs2hdname.def"
+font2 = "font/cvs2hdtimer.def"
+font3 = "font/cvs2hdnamei.def"
+glyphs = glyphs.sff
+
+[Languages]
+languages = en
+en = "English"
+
+[Music]
+title.bgm = "bgm/title.ogg"
+title.bgm.volume = 100
+title.bgm.loop = 1
+title.bgm.loopstart = 0
+title.bgm.loopend = 0
+select.bgm =  "bgm/select.ogg"
+select.bgm.volume = 100
+select.bgm.loop = 1
+select.bgm.loopstart = 0
+select.bgm.loopend = 0
+vs.bgm =  "bgm/vs.ogg"
+vs.bgm.volume = 100
+vs.bgm.loop = 1
+vs.bgm.loopstart = 0
+vs.bgm.loopend = 0
+victory.bgm = "bgm/winner.ogg"
+victory.bgm.volume = 100
+victory.bgm.loop = 1
+victory.bgm.loopstart = 0
+victory.bgm.loopend = 0
+option.bgm = "bgm/title.ogg"
+option.bgm.volume = 100
+option.bgm.loop = 1
+option.bgm.loopstart = 0
+option.bgm.loopend = 0
+replay.bgm = "bgm/title.ogg"
+replay.bgm.volume = 100
+replay.bgm.loop = 1
+replay.bgm.loopstart = 0
+replay.bgm.loopend = 0
+continue.bgm = "bgm/continue.ogg"
+continue.bgm.volume = 100
+continue.bgm.loop = 1
+continue.bgm.loopstart = 0
+continue.bgm.loopend = 0
+continue.end.bgm = "bgm/gameover.ogg"
+continue.end.bgm.volume = 100
+continue.end.bgm.loop = 0
+continue.end.bgm.loopstart = 0
+continue.end.bgm.loopend = 0
+results.bgm = ""
+results.bgm.volume = 100
+results.bgm.loop = 1
+results.bgm.loopstart = 0
+results.bgm.loopend = 0
+results.lose.bgm = ""
+results.lose.bgm.volume = 100
+results.lose.bgm.loop = 1
+results.lose.bgm.loopstart = 0
+results.lose.bgm.loopend = 0
+hiscore.bgm = "bgm/rank.ogg"
+hiscore.bgm.volume = 100
+hiscore.bgm.loop = 1
+hiscore.bgm.loopstart = 0
+hiscore.bgm.loopend = 0
+
+;-------------------------------------------------------------------
+;Title screen definition
+[Title Info]
+fadein.time = 0
+fadeout.time = 0
+fadein.col = 0, 0, 0
+fadeout.col = 0, 0, 0
+fadein.anim = 2
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+title.offset = 640, 50
+title.font = 1, 0, 0
+title.scale = 0.5, 0.5
+title.text = "Mode Select"
+
+loading.offset = 640, 360
+loading.font = 3,0,0
+loading.scale = 0.5, 0.5
+loading.text = "LOADING..."
+
+footer1.text = "CvS REDUX"
+footer2.text = "BY DoomJoshuaBoy"
+footer3.text = "3.01"
+footer3.scale = 2.0, 2.0
+footer2.scale = 2.0, 2.0
+footer1.scale = 2.0, 2.0
+
+footer.overlay.window = 0, 705,1280,720
+footer.overlay.col = 0, 0, 64	
+footer.overlay.alpha = 255, 200
+
+connecting.offset = 640, 360
+connecting.font = 1,0,0
+connecting.scale = 0.5, 0.5
+connecting.host.text = "Waiting for player 2... (%s)" 
+connecting.join.text = "Now connecting to %s... (%s)" 
+connecting.overlay.window = 0, 0, 1280, 720
+connecting.overlay.col = 0, 0, 0
+connecting.overlay.alpha = 128, 64
+
+textinput.offset = 640, 360
+textinput.font = 1,0,0
+textinput.scale = 0.3, 0.3
+textinput.name.text = "Enter Host display name, e.g. John.\nExisting entries can be removed with DELETE button."
+textinput.address.text = "Enter Host IP address, e.g. 127.0.0.1\nCopied text can be pasted with INSERT button."
+textinput.overlay.window = 0, 0, 1280, 720
+textinput.overlay.col = 0, 0, 0
+textinput.overlay.alpha = 128, 64
+
+menu.pos = 640,557
+menu.item.font = 1,0,0
+menu.item.active.font = 1,0,0
+menu.item.scale = 0.15,0.15
+menu.item.active.scale = 0.15,0.15
+menu.item.spacing = 0,18
+menu.item.uppercase = 1
+menu.item.offset = 0,15
+menu.item.active.offset = 0,15
+
+cursor.move.snd = 100, 0
+cursor.done.snd = 100, 1
+cancel.snd = 100, 4
+
+menu.window.margins.y = 0,0
+menu.window.visibleitems = 8
+menu.boxcursor.visible = 1
+menu.boxcursor.coords = -160, 0, 160, 15
+
+menu.bg.menuarcade.spr = 2,0
+menu.bg.menuarcade.arcade.spr = 2,1
+menu.bg.menuarcade.teamarcade.spr = 2,2
+menu.bg.menuarcade.teamcoop.spr = 2,3
+menu.bg.menuarcade.back.spr = 2,17
+
+menu.bg.menuversus.spr = 2,4
+menu.bg.menuversus.versus.spr = 2,1
+menu.bg.menuversus.teamversus.spr = 2,2
+menu.bg.menuversus.versuscoop.spr = 2,3
+menu.bg.menuversus.freebattle.spr = 2,5
+menu.bg.menuversus.back.spr = 2,17
+
+menu.bg.storymode.spr = 2,6
+
+menu.bg.menusurvival.spr = 2,7
+menu.bg.menusurvival.survival.spr = 2,2
+menu.bg.menusurvival.survivalcoop.spr = 2,3
+menu.bg.menusurvival.back.spr = 2,17
+
+menu.bg.menunetwork.spr = 2,8
+menu.bg.menunetwork.serverhost.spr = 2,9
+menu.bg.menunetwork.serverjoin.spr = 2,10
+menu.bg.menunetwork.back.spr = 2,17
+
+menu.bg.menunetwork.serverjoin.joinadd.spr = 2,11
+menu.bg.menunetwork.serverjoin.back.spr = 2,17
+
+menu.bg.server.netplayversus.spr = 2,4
+menu.bg.server.netplayteamcoop.spr = 2,3
+menu.bg.server.netplaysurvivalcoop.spr = 2,5
+menu.bg.server.back.spr = 2,17
+
+menu.bg.training.spr = 2,15
+
+menu.bg.menuwatch.spr = 2,12
+menu.bg.menuwatch.watch.spr = 2,2
+menu.bg.menuwatch.randomtest.spr = 2,13
+menu.bg.menuwatch.replay.spr = 2,14
+menu.bg.menuwatch.back.spr = 2,17
+
+menu.bg.options.spr = 2,16
+
+menu.bg.exit.spr = 2,18
+
+menu.bg.menuarcade.offset = -200,-325
+menu.bg.menuarcade.arcade.offset = -200,-325
+menu.bg.menuarcade.teamarcade.offset = 0,-325
+menu.bg.menuarcade.teamcoop.offset = 200,-325
+menu.bg.menuarcade.back.offset = 0,-125
+
+menu.bg.menuversus.offset = 0,-325
+menu.bg.menuversus.versus.offset = -200,-325
+menu.bg.menuversus.teamversus.offset = 0,-325
+menu.bg.menuversus.versuscoop.offset = 200,-325
+menu.bg.menuversus.freebattle.offset = -100,-225
+menu.bg.menuversus.back.offset = 0,-125
+
+menu.bg.menusurvival.offset = 200,-325
+menu.bg.menusurvival.survival.offset =  -200,-325
+menu.bg.menusurvival.survivalcoop.offset = 200,-325
+menu.bg.menusurvival.back.offset = 0,-125
+
+menu.bg.menunetwork.offset = -100,-225
+menu.bg.menunetwork.serverhost.offset = -200,-325
+menu.bg.menunetwork.serverjoin.offset = 200,-325
+menu.bg.menunetwork.back.offset = 0,-125
+
+menu.bg.menunetwork.serverjoin.joinadd.offset = 0,-325
+menu.bg.menunetwork.serverjoin.back.offset = 0,-125
+
+menu.bg.server.netplayversus.offset = -200,-325
+menu.bg.server.netplayteamcoop.offset = 0,-325
+menu.bg.server.netplaysurvivalcoop.offset = 200,-325
+menu.bg.server.back.offset = 0,-125
+
+menu.bg.training.offset = 100,-225
+
+menu.bg.menuwatch.offset = -200,-125
+menu.bg.menuwatch.watch.offset = -200,-325
+menu.bg.menuwatch.randomtest.offset = 0,-325
+menu.bg.menuwatch.replay.offset = 200,-325
+menu.bg.menuwatch.back.offset = 0,-125
+
+menu.bg.options.offset = 0,-125
+
+menu.bg.exit.offset = 200,-125
+
+
+menu.bg.menuarcade.scale = 0.4,0.4
+menu.bg.menuarcade.arcade.scale = 0.4,0.4
+menu.bg.menuarcade.teamarcade.scale = 0.4,0.4
+menu.bg.menuarcade.teamcoop.scale = 0.4,0.4
+menu.bg.menuarcade.back.scale = 0.4,0.4
+
+menu.bg.menuversus.scale = 0.4,0.4
+menu.bg.menuversus.versus.scale = 0.4,0.4
+menu.bg.menuversus.teamversus.scale = 0.4,0.4
+menu.bg.menuversus.versuscoop.scale = 0.4,0.4
+menu.bg.menuversus.freebattle.scale = 0.4,0.4
+menu.bg.menuversus.back.scale = 0.4,0.4
+
+menu.bg.storymode.scale = 0.4,0.4
+
+menu.bg.menusurvival.scale = 0.4,0.4
+menu.bg.menusurvival.survival.scale = 0.4,0.4
+menu.bg.menusurvival.survivalcoop.scale = 0.4,0.4
+menu.bg.menusurvival.back.scale = 0.4,0.4
+
+menu.bg.menunetwork.scale = 0.4,0.4
+menu.bg.menunetwork.serverhost.scale = 0.4,0.4  
+menu.bg.menunetwork.serverjoin.scale = 0.4,0.4
+menu.bg.menunetwork.back.scale = 0.4,0.4
+
+menu.bg.menunetwork.serverjoin.joinadd.scale = 0.4,0.4
+menu.bg.menunetwork.serverjoin.back.scale = 0.4,0.4
+
+menu.bg.server.netplayversus.scale = 0.4,0.4
+menu.bg.server.netplayteamcoop.scale = 0.4,0.4
+menu.bg.server.netplaysurvivalcoop.scale = 0.4,0.4
+menu.bg.server.back.scale = 0.4,0.4
+
+menu.bg.training.scale = 0.4,0.4
+
+menu.bg.menuwatch.scale = 0.4,0.4
+menu.bg.menuwatch.watch.scale = 0.4,0.4
+menu.bg.menuwatch.randomtest.scale = 0.4,0.4
+menu.bg.menuwatch.replay.scale = 0.4,0.4
+menu.bg.menuwatch.back.scale = 0.4,0.4
+
+menu.bg.options.scale = 0.4,0.4
+
+menu.bg.exit.scale = 0.4,0.4
+
+
+menu.bg.active.menuarcade.anim = 100
+menu.bg.active.menuarcade.arcade.anim = 101
+menu.bg.active.menuarcade.teamarcade.anim = 102
+menu.bg.active.menuarcade.teamcoop.anim = 103
+menu.bg.active.menuarcade.back.anim = 117
+
+menu.bg.active.menuversus.anim = 104
+menu.bg.active.menuversus.versus.anim = 101
+menu.bg.active.menuversus.teamversus.anim = 102
+menu.bg.active.menuversus.versuscoop.anim = 103
+menu.bg.active.menuversus.freebattle.anim = 105
+menu.bg.active.menuversus.back.anim = 117
+
+menu.bg.active.menusurvival.anim = 107
+menu.bg.active.menusurvival.survival.anim = 102
+menu.bg.active.menusurvival.survivalcoop.anim = 103
+menu.bg.active.menusurvival.back.anim = 117
+
+menu.bg.active.menunetwork.anim = 108
+menu.bg.active.menunetwork.serverhost.anim = 109
+menu.bg.active.menunetwork.serverjoin.anim = 110
+menu.bg.active.menunetwork.back.anim = 117
+
+menu.bg.active.menunetwork.serverjoin.joinadd.anim = 111
+menu.bg.active.menunetwork.serverjoin.back.anim = 117
+
+menu.bg.active.server.netplayversus.anim = 105
+menu.bg.active.server.netplayteamcoop.anim = 103
+menu.bg.active.server.netplaysurvivalcoop.anim = 107
+menu.bg.active.server.back.anim = 118
+
+menu.bg.active.training.anim = 115
+
+menu.bg.active.menuwatch.anim = 112
+menu.bg.active.menuwatch.watch.anim = 102
+menu.bg.active.menuwatch.randomtest.anim = 113
+menu.bg.active.menuwatch.replay.anim = 114
+menu.bg.active.menuwatch.back.anim = 117
+
+menu.bg.active.options.anim = 116
+
+menu.bg.active.exit.anim = 118
+
+menu.bg.active.menuarcade.offset = -200,-325
+menu.bg.active.menuarcade.arcade.offset = -200,-325
+menu.bg.active.menuarcade.teamarcade.offset = 0,-325
+menu.bg.active.menuarcade.teamcoop.offset = 200,-325
+menu.bg.active.menuarcade.back.offset = 0,-125
+
+menu.bg.active.menuversus.offset = 0,-325
+menu.bg.active.menuversus.versus.offset = -200,-325
+menu.bg.active.menuversus.teamversus.offset = 0,-325
+menu.bg.active.menuversus.versuscoop.offset = 200,-325
+menu.bg.active.menuversus.freebattle.offset = -100,-225
+menu.bg.active.menuversus.back.offset = 0,-125
+
+menu.bg.active.menusurvival.offset = 200,-325
+menu.bg.active.menusurvival.survival.offset =  -200,-325
+menu.bg.active.menusurvival.survivalcoop.offset = 200,-325
+menu.bg.active.menusurvival.back.offset = 0,-125
+
+menu.bg.active.menunetwork.offset = -100,-225
+menu.bg.active.menunetwork.serverhost.offset = -200,-325
+menu.bg.active.menunetwork.serverjoin.offset = 200,-325
+menu.bg.active.menunetwork.back.offset = 0,-125
+
+menu.bg.active.menunetwork.serverjoin.joinadd.offset = 0,-325
+menu.bg.active.menunetwork.serverjoin.back.offset = 0,-125
+
+menu.bg.active.server.netplayversus.offset = -200,-325
+menu.bg.active.server.netplayteamcoop.offset = 0,-325
+menu.bg.active.server.netplaysurvivalcoop.offset = 200,-325
+menu.bg.active.server.back.offset = 0,-125
+
+menu.bg.active.training.offset = 100,-225
+
+menu.bg.active.menuwatch.offset = -200,-125
+menu.bg.active.menuwatch.watch.offset = -200,-325
+menu.bg.active.menuwatch.randomtest.offset = 0,-325
+menu.bg.active.menuwatch.replay.offset = 200,-325
+menu.bg.active.menuwatch.back.offset = 0,-125
+
+menu.bg.active.options.offset = 0,-125
+
+menu.bg.active.exit.offset = 200,-125
+
+menu.bg.active.menuarcade.scale = 0.4,0.4
+menu.bg.active.menuarcade.arcade.scale = 0.4,0.4
+menu.bg.active.menuarcade.teamarcade.scale = 0.4,0.4
+menu.bg.active.menuarcade.teamcoop.scale = 0.4,0.4
+menu.bg.active.menuarcade.back.scale = 0.4,0.4
+
+menu.bg.active.menuversus.scale = 0.4,0.4
+menu.bg.active.menuversus.versus.scale = 0.4,0.4
+menu.bg.active.menuversus.teamversus.scale = 0.4,0.4
+menu.bg.active.menuversus.versuscoop.scale = 0.4,0.4
+menu.bg.active.menuversus.freebattle.scale = 0.4,0.4
+menu.bg.active.menuversus.back.scale = 0.4,0.4
+
+menu.bg.active.menusurvival.scale = 0.4,0.4
+menu.bg.active.menusurvival.survival.scale = 0.4,0.4
+menu.bg.active.menusurvival.survivalcoop.scale = 0.4,0.4
+menu.bg.active.menusurvival.back.scale = 0.4,0.4
+
+menu.bg.active.menunetwork.scale = 0.4,0.4
+menu.bg.active.menunetwork.serverhost.scale = 0.4,0.4  
+menu.bg.active.menunetwork.serverjoin.scale = 0.4,0.4
+menu.bg.active.menunetwork.back.scale = 0.4,0.4
+
+menu.bg.active.menunetwork.serverjoin.joinadd.scale = 0.4,0.4
+menu.bg.active.menunetwork.serverjoin.back.scale = 0.4,0.4
+
+menu.bg.active.server.netplayversus.scale = 0.4,0.4
+menu.bg.active.server.netplayteamcoop.scale = 0.4,0.4
+menu.bg.active.server.netplaysurvivalcoop.scale = 0.4,0.4
+menu.bg.active.server.back.scale = 0.4,0.4
+
+menu.bg.active.training.scale = 0.4,0.4
+
+menu.bg.active.menuwatch.scale = 0.4,0.4
+menu.bg.active.menuwatch.watch.scale = 0.4,0.4
+menu.bg.active.menuwatch.randomtest.scale = 0.4,0.4
+menu.bg.active.menuwatch.replay.scale = 0.4,0.4
+menu.bg.active.menuwatch.back.scale = 0.4,0.4
+
+menu.bg.active.options.scale = 0.4,0.4
+
+menu.bg.active.exit.scale = 0.4,0.4
+
+menu.itemname.menuarcade = "ARCADE"
+menu.itemname.menuarcade.arcade = "CLASSIC"
+menu.itemname.menuarcade.teamarcade = "TEAM"
+menu.itemname.menuarcade.teamcoop = "COOP"
+menu.itemname.menuarcade.back = "BACK"
+
+menu.itemname.menuversus = "VERSUS"
+menu.itemname.menuversus.versus = "CLASSIC"
+menu.itemname.menuversus.teamversus = "TEAM"
+menu.itemname.menuversus.versuscoop = "COOP"
+menu.itemname.menuversus.freebattle = "VS CPU"
+menu.itemname.menuversus.back = "BACK"
+
+menu.itemname.menusurvival = "SURVIVAL"
+menu.itemname.menusurvival.survival = "TEAM"
+menu.itemname.menusurvival.survivalcoop = "COOP"
+menu.itemname.menusurvival.back = "BACK"
+
+menu.itemname.menunetwork = "NETWORK"
+menu.itemname.menunetwork.serverhost = "HOST"  
+menu.itemname.menunetwork.serverjoin = "JOIN"
+menu.itemname.menunetwork.back = "BACK"
+
+menu.itemname.menunetwork.serverjoin.joinadd = "NEW ADDRESS"
+menu.itemname.menunetwork.serverjoin.back = "BACK"
+
+menu.itemname.server.netplayversus = "VERSUS"
+menu.itemname.server.netplayteamcoop = "COOP"
+menu.itemname.server.netplaysurvivalcoop = "SURVIVAL"
+menu.itemname.server.back = "EXIT"
+
+menu.itemname.training = "TRAINING"
+
+menu.itemname.menuwatch = "WATCH"
+menu.itemname.menuwatch.watch = "TEAM"
+menu.itemname.menuwatch.randomtest = "TEST"
+menu.itemname.menuwatch.replay = "REPLAY"
+menu.itemname.menuwatch.back = "BACK"
+menu.itemname.options = "OPTIONS"
+menu.itemname.exit = "EXIT"
+
+;----------------------------
+;Title background definition
+[TitleBGdef]
+bgclearcolor = 0,0,0
+
+[TitleBG 0] 
+type  = anim
+layerno = 0
+actionno = 0
+start = 0,0
+
+[TitleBG 0]
+type  = anim
+layerno = 0
+actionno = 21
+start = 0,0
+
+[TitleBG 0] 
+type  = anim
+layerno = 0
+actionno = 4
+start = 0,0
+
+[TitleBG 1] 
+type  = anim
+layerno = 0
+actionno = 3
+start = 0,0
+
+[TitleBG 1] 
+type  = anim
+layerno = 0
+actionno = 10
+start = 0,0
+
+[TitleBG 1] 
+type  = anim
+layerno = 0
+actionno = 20
+start = 0,-210
+
+
+[InfoBox]
+	title.offset = 640, 50
+	title.font = 3, 0, 0
+	title.scale = 0.5, 0.5
+	title.text = "Information"
+
+	text.offset = 640, 300
+	text.font = 1,0,0
+	text.scale = 0.3, 0.3
+
+	overlay.window = 0, 0, 1280, 720
+	overlay.col = 0, 0, 0
+	overlay.alpha = 50, 128
+
+[Infobox Text]
+Welcome to Capcom VS SNK: REDUX screenpack all
+by DoomJoshuaBoy
+This is inspired by CAPCOM VS SNK 2 game, 
+all rights reserved.
+
+
+Discord: https://discord.gg/pt7jsHurar
+
+
+;-------------------------------------------------------------------
+;Character select definition
+[Select Info]
+fadein.time = 0
+fadeout.time = 0
+fadein.col = 0, 0, 0
+fadeout.col = 0, 0, 0
+fadein.anim = 2
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+rows = 4
+columns = 25
+wrapping = 1              ;1 to let cursor wrap around
+pos = 10,500	              ;Position to draw to
+showemptyboxes = 0        ;*2000.07.31 NEW*
+moveoveremptyboxes = 0    ;*2000.07.31 NEW*
+
+cell.size = 50,50
+cell.spacing = 0,0
+cell.bg.scale = 0.105,0.105
+cell.bg.spr = 11,2
+cell.random.spr = 11,7
+cell.random.offset = 0,0
+cell.random.switchtime = 4 
+cell.random.scale = 0.07,0.07
+
+;-------- P1 Cursor ---------
+p1.cursor.startcell = 0, 0
+p1.cursor.active.offset = 0, 0
+p1.cursor.active.anim = 11
+p1.cursor.active.facing = 1
+p1.cursor.active.scale =  0.105,0.105
+p1.cursor.done.spr = 11,5
+p1.cursor.done.offset = 0, 0
+p1.cursor.done.facing = 1
+p1.cursor.done.scale = 0.105,0.105
+p1.cursor.move.snd = 100, 0
+p1.cursor.done.snd = 100, 1
+p1.random.move.snd = 100, 0
+
+;-------- P2 Cursor ---------
+
+p2.cursor.startcell = 0,24
+p2.cursor.active.offset = 0, 0
+p2.cursor.active.anim = 12
+p2.cursor.active.facing = 1
+p2.cursor.active.scale = 0.105,0.105 
+p2.cursor.done.spr = 11,6
+p2.cursor.done.offset = 0, 0 
+p2.cursor.done.facing = 1
+p2.cursor.done.scale = 0.105,0.105
+p2.cursor.move.snd = 100, 0
+p2.cursor.done.snd = 100, 1
+p2.random.move.snd = 100, 0
+
+;-------- Misc Cursor Sounds --------
+
+p1.swap.snd = 100, 0
+p2.swap.snd = 100, 0
+cancel.snd = 100,4
+random.move.snd.cancel = 1
+stage.move.snd = 100,0
+stage.done.snd = 100,1
+
+;--------- Portrait Scale and Offset -------
+portrait.spr = 9000,0
+portrait.offset = 3,3
+portrait.scale = 0.475,0.475
+
+;-------- Game Mode Title ---------  
+
+title.offset = 640,30
+title.font = 3,0,0
+title.scale = 0.3,0.3
+
+;------- Big portraits --------   
+p1.face.anim = 0
+p1.face.offset = 360, 342
+p1.face.facing = 1
+p1.face.scale = 0.5, 0.5
+
+p1.member1.face.offset             = -40,0
+p1.member1.face.slide.speed         = 8,0
+p1.member1.face.slide.dist         =  40,0
+
+p2.face.anim = 0
+p2.face.offset = 920, 342
+p2.face.facing = -1
+p2.face.scale = 0.5, 0.5
+
+p2.member1.face.offset             =  40,0
+p2.member1.face.slide.speed         = 8,0
+p2.member1.face.slide.dist         = -40,0
+
+p1.face2.spr = 9000, 1
+p1.face2.offset = 20,96
+p1.face2.scale = 0.525,0.45
+p1.face2.facing = 1
+
+
+p2.face2.offset = 1260,96
+p2.face2.facing = -1
+p2.face2.scale = 0.525,0.45
+p2.face2.spr = 9000, 1
+
+;---------- Name -----------
+p1.name.num = 4
+p1.name.offset = 30, 378
+p1.name.font = 3, 0, 1
+p1.name.spacing = 0, 33
+p1.name.scale = 0.2,0.2
+p2.name.num = 4
+p2.name.offset = 1250, 378
+p2.name.font = 3, 0, -1
+p2.name.spacing = 0, 33
+p2.name.scale = 0.2,0.2
+
+;-------- Stage select ---------
+
+stage.pos = 640,460
+stage.active.offset = 0, 40
+stage.active2.offset = 0, 40
+stage.done.offset = 0, 40
+stage.active.font = 1,0,0
+stage.active2.font = 1,0,0 ;Second font color for blinking
+stage.active.scale = 0.225,0.225
+stage.active2.scale = 0.225,0.225
+stage.done.font = 1,0,0
+stage.done.scale = 0.225,0.225
+
+stage.portrait.spr = 9000, 1
+stage.portrait.offset = -159,-135
+stage.portrait.scale = 0.34,0.34
+stage.portrait.bg.spr = 140, 0
+stage.portrait.bg.offset = -169,-140
+stage.portrait.bg.scale = 1.45,1.45
+stage.portrait.random.spr = 140,1
+stage.portrait.random.offset = -169,-140
+stage.portrait.random.scale = 1.45,1.45
+
+;~~~~~~~~~~~~~~~~~ TEAM MENU ~~~~~~~~~~~~~~~~~~~
+teammenu.move.wrapping = 1
+teammenu.itemname.single = "Single"
+teammenu.itemname.simul = "Simul"
+teammenu.itemname.tag = "Tag" 
+teammenu.itemname.turns = "Turns"
+teammenu.itemname.ratio = "Ratio"
+
+;----- P1 team menu data ------
+p1.teammenu.pos = 60,100
+
+p1.teammenu.selftitle.font = 1,0,1
+p1.teammenu.selftitle.text = Team mode
+p1.teammenu.selftitle.scale = 0.175,0.175
+p1.teammenu.selftitle.offset = 0, 15
+p1.teammenu.enemytitle.font = 1,0,1
+p1.teammenu.enemytitle.text =  CPU Team
+p1.teammenu.enemytitle.scale = 0.175, 0.175
+p1.teammenu.enemytitle.offset = 0, 15
+
+p1.teammenu.move.snd = 100,2
+p1.teammenu.value.snd = 100,0
+p1.teammenu.done.snd = 100,3
+
+p1.teammenu.item.offset = 0,53
+p1.teammenu.item.spacing = 0,33
+p1.teammenu.item.font = 1,0,1
+p1.teammenu.item.scale = 0.175, 0.175
+p1.teammenu.item.active.font = 1,0,1
+p1.teammenu.item.active.scale = 0.175, 0.175
+p1.teammenu.item.active2.font = 1,0,1
+p1.teammenu.item.active2.scale = 0.175, 0.175
+
+p1.teammenu.item.cursor.offset = -30,-20
+p1.teammenu.item.cursor.spr = 11,1
+p1.teammenu.item.cursor.facing = 1
+p1.teammenu.item.cursor.scale = 0.075,0.075
+
+p1.teammenu.value.icon.offset = 75,-20
+p1.teammenu.value.icon.spr = 12,0
+p1.teammenu.value.icon.facing = 1
+p1.teammenu.value.icon.scale = 0.3,0.3
+
+p1.teammenu.value.empty.icon.offset = 75,-20
+p1.teammenu.value.empty.icon.spr = 12,1
+p1.teammenu.value.empty.icon.facing = 1
+p1.teammenu.value.empty.icon.scale = 0.3,0.3
+p1.teammenu.value.spacing = 30, 0
+
+p1.teammenu.ratio1.icon.spr = 14,0
+p1.teammenu.ratio1.icon.offset = 75,-20
+p1.teammenu.ratio1.icon.facing = 1
+p1.teammenu.ratio1.icon.scale = 0.2,0.2
+p1.teammenu.ratio2.icon.spr = 14,1
+p1.teammenu.ratio2.icon.offset = 75,-20
+p1.teammenu.ratio2.icon.facing = 1
+p1.teammenu.ratio2.icon.scale = 0.2,0.2
+p1.teammenu.ratio3.icon.spr =  14,2
+p1.teammenu.ratio3.icon.offset = 75,-20
+p1.teammenu.ratio3.icon.facing = 1
+p1.teammenu.ratio3.icon.scale = 0.2,0.2
+p1.teammenu.ratio4.icon.spr =  14,3
+p1.teammenu.ratio4.icon.offset = 75,-20
+p1.teammenu.ratio4.icon.facing = 1
+p1.teammenu.ratio4.icon.scale = 0.2,0.2
+p1.teammenu.ratio5.icon.spr = 14,4
+p1.teammenu.ratio5.icon.offset = 75,-20
+p1.teammenu.ratio5.icon.facing = 1
+p1.teammenu.ratio5.icon.scale = 0.2,0.2
+p1.teammenu.ratio6.icon.spr =  14,5
+p1.teammenu.ratio6.icon.offset = 75,-20
+p1.teammenu.ratio6.icon.facing = 1
+p1.teammenu.ratio6.icon.scale = 0.2,0.2
+p1.teammenu.ratio7.icon.spr =  14,6
+p1.teammenu.ratio7.icon.offset = 75,-20
+p1.teammenu.ratio7.icon.facing = 1
+p1.teammenu.ratio7.icon.scale = 0.2,0.2
+
+;----- P2 team menu data ------
+p2.teammenu.pos = 1220, 100
+p2.teammenu.selftitle.font = 1,0,-1
+p2.teammenu.selftitle.text = Team mode
+p2.teammenu.selftitle.scale = 0.175,0.175
+p2.teammenu.selftitle.offset = 0,15
+p2.teammenu.enemytitle.font = 1,0,-1
+p2.teammenu.enemytitle.text =  CPU Team
+p2.teammenu.enemytitle.scale = 0.175,0.175
+p2.teammenu.enemytitle.offset = 0, 15
+
+p2.teammenu.move.snd = 100,2
+p2.teammenu.value.snd = 100,0
+p2.teammenu.done.snd = 100,3
+
+p2.teammenu.item.offset = 0,53
+p2.teammenu.item.spacing = 0,33
+p2.teammenu.item.font = 1,0,-1
+p2.teammenu.item.scale = 0.2,0.2
+p2.teammenu.item.active.font = 1,0,-1
+p2.teammenu.item.active.scale = 0.2,0.2
+p2.teammenu.item.active2.font = 1,0,-1
+p2.teammenu.item.active2.scale = 0.2,0.2
+
+p2.teammenu.item.cursor.offset = 30,-20
+p2.teammenu.item.cursor.spr = 11,0
+p2.teammenu.item.cursor.facing = -1
+p2.teammenu.item.cursor.scale = 0.075,0.075
+
+p2.teammenu.value.icon.offset = -75,-20
+p2.teammenu.value.icon.spr = 12,2
+p2.teammenu.value.icon.facing = -1
+p2.teammenu.value.icon.scale = 0.3,0.3
+
+p2.teammenu.value.empty.icon.offset = -75,-20
+p2.teammenu.value.empty.icon.spr = 12,1
+p2.teammenu.value.empty.icon.facing = -1
+p2.teammenu.value.empty.icon.scale = 0.3,0.3
+p2.teammenu.value.spacing = -30, 0
+
+p2.teammenu.ratio1.icon.spr = 14,0
+p2.teammenu.ratio1.icon.offset = -170,-20
+p2.teammenu.ratio1.icon.facing = 1
+p2.teammenu.ratio1.icon.scale = 0.2,0.2
+p2.teammenu.ratio2.icon.spr = 14,1
+p2.teammenu.ratio2.icon.offset = -170,-20
+p2.teammenu.ratio2.icon.facing = 1
+p2.teammenu.ratio2.icon.scale = 0.2,0.2
+p2.teammenu.ratio3.icon.spr =  14,2
+p2.teammenu.ratio3.icon.offset = -170,-20
+p2.teammenu.ratio3.icon.facing = 1
+p2.teammenu.ratio3.icon.scale = 0.2,0.2
+p2.teammenu.ratio4.icon.spr =  14,3 
+p2.teammenu.ratio4.icon.offset = -170,-20
+p2.teammenu.ratio4.icon.facing = 1
+p2.teammenu.ratio4.icon.scale = 0.2,0.2
+p2.teammenu.ratio5.icon.spr = 14,4
+p2.teammenu.ratio5.icon.offset = -170,-20
+p2.teammenu.ratio5.icon.facing = 1
+p2.teammenu.ratio5.icon.scale = 0.2,0.2
+p2.teammenu.ratio6.icon.spr =  14,5
+p2.teammenu.ratio6.icon.offset = -170,-20
+p2.teammenu.ratio6.icon.facing = 1
+p2.teammenu.ratio6.icon.scale = 0.2,0.2
+p2.teammenu.ratio7.icon.spr =  14,6 
+p2.teammenu.ratio7.icon.offset = -170,-20
+p2.teammenu.ratio7.icon.facing = 1
+p2.teammenu.ratio7.icon.scale = 0.2,0.2
+
+;-----------------------
+;Character select screen background
+[SelectBGdef]
+
+[SelectBGCtrlDef FG]
+looptime = -1
+ctrlID = 1
+
+[SelectBGCtrl FG1]
+type = Visible
+time = 0,130,-1
+ctrlID = 1
+value = 1
+
+[SelectBGCtrl FG2]
+type = Visible
+time = 131
+ctrlID = 1
+value = 0
+
+[SelectBG 0] 
+type  = anim
+layerno = 0
+actionno = 0
+start = 0,0
+
+[SelectBG 0]
+type  = anim
+layerno = 0
+actionno = 21
+start = 0,0
+
+[SelectBG 0] 
+type  = anim
+layerno = 0
+actionno = 4
+start = 0,0
+
+[SelectBG 0] 
+type  = anim
+layerno = 0
+actionno = 3
+start = 0,0
+
+[SelectBG 1]
+type  = anim
+layerno = 0
+actionno = 40
+start = -622,90
+
+[SelectBG 1] 
+type  = anim
+layerno = 0
+actionno = 50
+start = 366,90
+
+[SelectBG 1]
+type  = anim
+layerno = 0
+actionno = 41
+start = -356,300
+
+[SelectBG 1] 
+type  = anim
+layerno = 0
+actionno = 51
+start = 186,300
+
+[SelectBG 1] 
+type  = anim
+layerno = 0
+actionno = 60
+start = -622,351
+
+[SelectBG 1] 
+type  = anim
+layerno = 0
+actionno = 60
+start = 366,351
+
+[SelectBG 1] 
+type  = anim
+layerno = 0
+actionno = 70
+start = -622,0
+
+[SelectBG 1] 
+type  = anim
+layerno = 0
+actionno = 39
+start = 0,0
+
+[SelectBG 1] 
+type  = anim
+layerno = 0
+actionno = 80
+start = 446,0
+
+[SelectBG 2] 
+type  = anim
+layerno = 1
+actionno = 6
+start = 0,0
+
+[SelectBG 2]  
+type  = anim
+layerno = 1
+actionno = 65
+start = 0,0
+
+[SelectBG FG] 
+type  = anim
+layerno = 1
+actionno = 4
+start = 0,0
+id = 1
+
+[SelectBG FG] 
+type  = anim
+layerno = 1
+actionno = 3
+start = 0,0
+id = 1
+
+[SelectBG 3] 
+type  = anim
+layerno = 1
+actionno = 5
+start = 0,0
+
+
+;-------------------------------------------------------------------
+[VS Screen]
+fadein.time = 0
+fadeout.time = 0
+fadein.col = 0, 0, 0
+fadeout.col = 0, 0, 0
+fadein.anim = 2
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+match.text = "Match %i"
+match.offset = 640,85
+match.font = 3, 0, 0
+match.scale = 0.5,0.5
+
+
+time = 1000                ;Time to show screen
+done.time =  300
+p1.num = 4
+p2.num = 4
+
+orderselect.enabled = 1
+p1.accept.key = "a&b&x&y&s"
+p1.skip.key = "s"
+p2.accept.key = "a&b&x&y&s"
+p2.skip.key = "s"
+
+p1.value.icon.member1.anim = 31
+p1.value.icon.member2.anim = 32
+p1.value.icon.member3.anim = 33
+p1.value.icon.member4.anim = 34
+p1.value.icon.offset = 240, 550
+p1.value.icon.facing = 1
+p1.value.icon.spacing = 50, 0
+p1.value.icon.scale = 0.5, 0.5
+p1.value.snd = 100, 1
+p2.value.icon.member1.anim = 35
+p2.value.icon.member2.anim = 36
+p2.value.icon.member3.anim = 37
+p2.value.icon.member4.anim = 38
+p2.value.icon.offset = 1040, 550
+p2.value.icon.facing = 1
+p2.value.icon.spacing = 50, 0
+p2.value.icon.scale = 0.5, 0.5
+p2.value.snd = 100, 1
+
+p1.member4.key = "y"
+p1.member4.icon.spr = 30,3
+p1.member4.icon.done.spr = 30,7
+p1.member4.icon.offset = 0, -350
+p1.member4.icon.facing = 1
+p1.member4.icon.scale = 0.5,0.5
+p1.member4.anim = 0
+p1.member4.done.anim = 181
+p1.member4.offset = 452, 462
+p1.member4.scale = 0.5, 0.5
+p2.member4.key = "y"
+p2.member4.icon.spr = 30,3
+p2.member4.icon.done.spr = 30,11
+p2.member4.icon.offset = 0, -350
+p2.member4.icon.facing = 1
+p2.member4.icon.scale = 0.5,0.5
+p2.member4.anim = 0
+p2.member4.done.anim = 181
+p2.member4.offset = 838, 462
+p2.member4.scale = 0.5, 0.5
+
+p1.member2.key = "b"
+p1.member2.icon.spr = 30,1
+p1.member2.icon.done.spr = 30,5
+p1.member2.icon.offset = 0, -350
+p1.member2.icon.facing = 1
+p1.member2.icon.scale = 0.5,0.5
+p1.member2.anim = 0
+p1.member2.done.anim = 181
+p1.member2.offset = 332, 512
+p1.member2.scale = 0.5, 0.5
+p2.member2.key = "b"
+p2.member2.icon.spr = 30,1
+p2.member2.icon.done.spr = 30,9
+p2.member2.icon.offset = 0, -350
+p2.member2.icon.facing = 1
+p2.member2.icon.scale = 0.5,0.5
+p2.member2.anim = 0
+p2.member2.done.anim = 181
+p2.member2.offset = 958, 512
+p2.member2.scale = 0.5, 0.5
+
+p1.member1.key = "a"
+p1.member1.icon.spr = 30,0
+p1.member1.icon.done.spr = 30,4
+p1.member1.icon.offset = 0, -350
+p1.member1.icon.facing = 1
+p1.member1.icon.scale = 0.5,0.5
+p1.member1.anim = 0
+p1.member1.done.anim = 181
+p1.member1.offset = 202, 462
+p1.member1.scale = 0.5, 0.5
+p2.member1.key = "a"
+p2.member1.icon.spr = 30,0
+p2.member1.icon.done.spr = 30,8
+p2.member1.icon.offset = 0, -350
+p2.member1.icon.facing = 1
+p2.member1.icon.scale = 0.5,0.5
+p2.member1.anim = 0
+p2.member1.done.anim = 181
+p2.member1.offset = 1078, 462
+p2.member1.scale = 0.5, 0.5
+
+p1.member3.key = "x"
+p1.member3.icon.spr = 30,2
+p1.member3.icon.done.spr = 30,6
+p1.member3.icon.offset = 0, -350
+p1.member3.icon.facing = 1
+p1.member3.icon.scale = 0.5,0.5
+p1.member3.anim = 0
+p1.member3.done.anim = 181
+p1.member3.offset = 332, 422
+p1.member3.scale = 0.5, 0.5
+p2.member3.key = "x"
+p2.member3.icon.spr = 30,2
+p2.member3.icon.done.spr = 30,10
+p2.member3.icon.offset = 0, -350
+p2.member3.icon.facing = 1
+p2.member3.icon.scale = 0.5,0.5
+p2.member3.anim = 0
+p2.member3.done.anim = 181
+p2.member3.offset = 958, 422
+p2.member3.scale = 0.5, 0.5
+
+p1.name.pos  =  350, 620
+p1.name.font = 3, 0, 0
+p1.name.spacing = 0, 25
+p1.name.scale = 0.2,0.2
+
+p2.name.pos  = 930, 620
+p2.name.font = 3, 0, 0
+p2.name.spacing = 0, 25
+p2.name.scale = 0.2,0.2
+
+timer.offset = 640, 600
+timer.font = 2, 0, 0
+timer.scale = 0.4, 0.4
+timer.text = "%i"
+timer.count = 100
+timer.framespercount = 5
+timer.displaytime = 130
+
+
+;-----------------------
+;VS Match up screen background
+[VersusBGdef] 
+
+[VersusBGCtrlDef FG]
+looptime = -1
+ctrlID = 2
+
+[VersusBGCtrl FG1]
+type = Visible
+time = 0,130,-1
+ctrlID = 2
+value = 1
+
+[VersusBGCtrl FG2]
+type = Visible
+time = 131
+ctrlID = 2
+value = 0
+
+[VersusBG 0] 
+type  = anim
+layerno = 0
+actionno = 0
+start = 0,0
+
+[VersusBG 0]
+type  = anim
+layerno = 0
+actionno = 21
+start = 0,0
+
+[VersusBG 0]  
+type  = anim
+layerno = 0
+actionno = 3
+start = 0,0
+
+[VersusBG 1] 
+type  = anim
+layerno = 0
+actionno = 30
+start = 0,0
+
+[VersusBG 1] 
+type  = anim
+layerno = 0
+actionno = 39
+start = 0,-30
+
+[VersusBG 1]  
+type  = anim
+layerno = 1
+actionno = 81
+start = 0,0
+
+[VersusBG 1]  
+type  = anim
+layerno = 1
+actionno = 8
+start = 0,0
+
+[VersusBG 2]  
+type  = anim
+layerno = 1
+actionno = 6
+start = 0,0
+
+[VersusBG 2]  
+type  = anim
+layerno = 1
+actionno = 65
+start = 0,0
+
+[VersusBG FG] 
+type  = anim
+layerno = 1
+actionno = 4
+start = 0,0
+id = 2
+
+[VersusBG FG] 
+type  = anim
+layerno = 1
+actionno = 3
+start = 0,0
+id = 2
+
+[VersusBG 2]  
+type  = anim
+layerno = 1
+actionno = 7
+start = 0, 0
+
+
+;-------------------------------------------------------------------
+;Demo mode definition
+;Whole group is *2001.04.01 NEW*
+[Demo Mode]
+fadein.time = 0
+fadeout.time = 0
+fadein.col = 0, 0, 0
+fadeout.col = 0, 0, 0
+fadein.anim = 2
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+enabled = 1
+title.waittime = 600
+fight.endtime = 1500
+fight.playbgm = 0
+fight.stopbgm = 0
+fight.bars.display = 0
+intro.waitcycles = 1
+debuginfo = 0
+
+;-------------------------------------------------------------------
+;Continue screen definition
+[Continue Screen]
+enabled = 1
+sounds.enabled = 1
+legacymode.enabled = 0
+gameover.enabled = 1
+
+pos = 640, 0
+
+continue.text = "Contnue?"
+continue.font = 1, 0, 0
+continue.scale = 0.5, 0.5
+continue.offset = 0, 75
+
+yes.text = "Yes"
+yes.font = 1, 0, 0
+yes.scale = 0.3, 0.3
+yes.offset = -60, 360
+yes.active.text = "YES"
+yes.active.font = 1, 0, 0
+yes.active.scale = 0.3, 0.3
+yes.active.offset = -60, 360
+
+no.text = "No"
+no.font = 1, 0, 0
+no.scale = 0.3, 0.3
+no.offset = 60, 360
+no.active.text = "NO"
+no.active.font = 1, 0, 0
+no.active.scale = 0.3, 0.3
+no.active.offset = 60, 360
+
+
+
+p1.state = 5500, 5300             ;Ikemen feature
+p1.yes.state = 5510, 180          ;Ikemen feature
+p1.no.state = 5520, 170           ;Ikemen feature
+p2.state = 5500, 180             ;Ikemen feature
+p2.yes.state = 5510, 170          ;Ikemen feature
+p2.no.state = 5520, 180                      ;Ikemen feature
+
+;extended continue screen (legacymode.enabled = 0)
+counter.endtime = 1750           ;Ikemen feature
+counter.starttime = 0             ;Ikemen feature
+counter.anim = 900               ;Ikemen feature
+counter.offset = 0, 0             ;Ikemen feature
+counter.scale = 1.0, 1.0          ;Ikemen feature
+counter.skipstart = 100            ;Ikemen feature
+counter.9.snd = 900, 0       ;Ikemen feature
+counter.9.skiptime = 218 	        ;Ikemen feature
+counter.8.skiptime = 338          ;Ikemen feature
+counter.7.skiptime = 458          ;Ikemen feature
+counter.7.snd = 900, 1            ;Ikemen feature
+counter.6.skiptime = 578          ;Ikemen feature
+counter.5.skiptime = 698          ;Ikemen feature
+counter.4.skiptime = 818          ;Ikemen feature
+counter.4.snd = 900, 2           ;Ikemen feature
+counter.3.skiptime = 938          ;Ikemen feature
+counter.2.skiptime = 1058         ;Ikemen feature
+counter.1.skiptime = 1178         ;Ikemen feature
+counter.1.snd = 900, 3            ;Ikemen feature
+counter.0.skiptime = 1298         ;Ikemen feature
+counter.end.skiptime = 1398       ;Ikemen feature
+
+move.snd = 100, 0
+done.snd = 100, 1
+cancel.snd = 100, 4
+
+overlay.col = 0, 0, 0
+overlay.alpha = 25, 100
+
+credits.text = "Credits: %i"
+credits.offset = 640, 650
+credits.font = 1, 0, 0
+credits.scale = 0.3, 0.3
+
+[ContinueBgDef] ;Ikemen feature
+
+[ContinueBG 0] 
+type  = anim
+layerno = 1
+actionno = 901
+start = 0,0
+
+[Game Over Screen]
+enabled = 1
+storyboard = gameover.def 
+
+[Victory Screen]
+fadein.time = 0
+fadeout.time = 0
+fadein.col = 0, 0, 0
+fadeout.col = 0, 0, 0
+fadein.anim = 2
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+enabled = 1
+time = 500
+
+p1.name.offset = 60, 470
+p1.name.font = 3, 0, 1
+p1.name.scale = 0.5, 0.5
+
+winquote.text = "Winner!"
+winquote.offset = 60, 540
+winquote.font = 1, 0, 1
+winquote.scale = 0.4, 0.4
+winquote.textwrap = "w"
+winquote.spacing = 0, 0
+winquote.delay = 5
+winquote.displaytime = 120
+winquote.window = 0, 504 ,1189,670
+sounds.enabled = 0
+cpu.enabled = 1
+vs.enabled = 1
+winner.teamko.enabled = 1
+
+p1.num = 1
+p1.padding = 1
+p1.facing = 1
+p1.spr = 9000, 5
+p1.offset = 58, 0
+p1.scale = 0.475, 0.475
+
+p2.facing = -1
+p2.num = 1
+p2.padding = 1
+p2.spr = 9000, 5
+p2.offset = 1223, 0
+p2.scale = 0.475, 0.475
+
+overlay.col = 0, 0, 0
+overlay.alpha = 50, 100
+
+[VictoryBgDef]
+
+[VictoryBG 0]
+type  = anim
+layerno = 0
+actionno = 810
+start = -85, 0
+
+[VictoryBG 0]
+type  = anim
+layerno = 0
+actionno = 811
+start = 85, 0
+
+[VictoryBG 0]
+type  = anim
+layerno = 1
+actionno = 812
+start = 85, 0
+
+[VictoryBG 0]
+type  = anim
+layerno = 1
+actionno = 813
+start = 335, 250
+
+[VictoryBG 0]
+type  = anim
+layerno = 0
+actionno = 800
+start = 0, 0
+
+
+[Win Screen]
+fadein.time = 0
+fadeout.time = 0
+fadein.col = 0, 0, 0
+fadeout.col = 0, 0, 0
+fadein.anim = 2
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+enabled = 1 
+sounds.enabled = 1
+wintext.text = "Winner!"
+wintext.font = 1,0,0
+wintext.scale = 0.4, 0.4
+wintext.offset = 640, 360
+wintext.displaytime = 1
+wintext.layerno = 2
+pose.time = 300
+
+[Survival Results Screen]
+enabled = 1
+roundstowin = 5
+fadein.time = 0
+fadeout.time = 0
+fadein.col = 0, 0, 0
+fadeout.col = 0, 0, 0
+fadein.anim = 2
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+show.time = 300
+winstext.text = "Rounds survived: %i"
+winstext.offset = 640, 360
+winstext.font = 1, 0, 0, 255, 255, 255, -1
+winstext.scale = 0.3, 0.3
+winstext.displaytime = 0
+winstext.layerno = 2
+sounds.enabled = 1
+overlay.col = 0, 0, 0
+overlay.alpha = 20, 100
+p1.state = 175, 170
+p1.win.state = 180
+
+[Time Attack Results Screen] ;Ikemen feature
+enabled = 1
+sounds.enabled = 1
+fadein.time = 0
+fadeout.time = 0
+fadein.col = 0, 0, 0
+fadeout.col = 0, 0, 0
+fadein.anim = 2
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+show.time = 300
+
+winstext.text = "Clear Time: %m:%s.%x"
+winstext.offset = 640,360
+winstext.font = 1, 0, 0, 255, 255, 255, -1
+winstext.scale = 0.3,  0.3
+winstext.displaytime = 0
+winstext.layerno = 2
+overlay.col = 0, 0, 0
+overlay.alpha = 20, 100
+p1.state = 175, 170
+p1.win.state = 180
+
+[Replay Info]
+fadein.time = 0
+fadeout.time = 0
+fadein.col = 0, 0, 0
+fadeout.col = 0, 0, 0
+fadein.anim = 2
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+title.offset = 640,30
+title.font = 1, 0, 0
+title.scale =   0.3, 0.3
+title.text = "REPLAY"
+
+menu.pos = 0, 60
+menu.uselocalcoord = 1
+
+menu.item.offset = 0,20
+menu.item.font = 1, 0, 1
+menu.item.scale =  0.3, 0.3
+
+menu.item.active.offset = 0, 20
+menu.item.active.font = 1, 0, 1
+menu.item.active.scale =  0.3, 0.3
+
+menu.item.selected.offset = 0, 20
+menu.item.selected.font = 1, 0, 1
+menu.item.selected.scale =   0.3, 0.3
+menu.item.selected.active.offset = 0, 20
+menu.item.selected.active.font = 1, 0, 1
+menu.item.selected.active.scale =   0.3, 0.3
+
+menu.item.value.offset = 1200, 20
+menu.item.value.font = 1, 0, -1
+menu.item.value.scale =   0.3, 0.3
+
+menu.item.value.active.offset = 1200, 20
+menu.item.value.active.font = 1, 0, -1
+menu.item.value.active.scale =   0.3, 0.3
+
+menu.item.value.conflict.offset = 1200, 20
+menu.item.value.conflict.font = 1, 0, -1
+menu.item.value.conflict.scale =   0.3, 0.3
+
+menu.item.info.offset = 730, 20
+menu.item.info.font = 1, 0, -1
+menu.item.info.scale =   0.3, 0.3
+menu.item.info.active.offset = 640, 20
+menu.item.info.active.font = 1, 0, -1
+menu.item.info.active.scale =   0.3, 0.3
+
+menu.item.spacing = 0, 20
+menu.window.visibleitems = 13
+
+menu.boxcursor.visible = 1
+menu.boxcursor.coords = -20, -20, 1280, 20
+menu.boxcursor.col = 255, 255, 255
+menu.boxcursor.alpharange = 0, 40, 2, 255, 255, 0
+menu.boxbg.visible = 1
+menu.boxbg.col = 0, 0, 0
+menu.boxbg.alpha = 20, 100
+cursor.move.snd = 100, 0
+cursor.done.snd = 100, 1
+cancel.snd = 100, 4
+
+[ReplayBgDef]
+bgclearcolor = 0, 0, 0
+
+[ReplayBG 0] 
+type  = anim
+layerno = 0
+actionno = 0
+start = 0,0
+
+[ReplayBG 0]
+type  = anim
+layerno = 0
+actionno = 21
+start = 0,0
+
+[ReplayBG 0] 
+type  = anim
+layerno = 0
+actionno = 4
+start = 0,0
+
+[ReplayBG 1] 
+type  = anim
+layerno = 0
+actionno = 3
+start = 0,0
+
+[Menu Info]
+fadein.time = 0
+fadein.col = 0, 0, 0
+fadeout.time = 0
+fadeout.col = 0, 0, 0
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+title.offset = 640, 30
+title.font = 1, 0, 0
+title.scale = 0.3, 0.3
+title.text = "PAUSE"
+
+menu.pos = 0, 100
+menu.uselocalcoord = 1
+
+menu.item.offset = 0,20
+menu.item.font = 1, 0, 1
+menu.item.scale =  0.3, 0.3
+
+menu.item.active.offset = 0, 20
+menu.item.active.font = 1, 0, 1
+menu.item.active.scale =  0.3, 0.3
+
+menu.item.selected.offset = 0, 20
+menu.item.selected.font = 1, 0, 1
+menu.item.selected.scale =   0.3, 0.3
+menu.item.selected.active.offset = 0, 20
+menu.item.selected.active.font = 1, 0, 1
+menu.item.selected.active.scale =   0.3, 0.3
+
+menu.item.value.offset = 1200, 20
+menu.item.value.font = 1, 0, -1
+menu.item.value.scale =   0.3, 0.3
+
+menu.item.value.active.offset = 1200, 20
+menu.item.value.active.font = 1, 0, -1
+menu.item.value.active.scale =   0.3, 0.3
+
+menu.item.value.conflict.offset = 1200, 20
+menu.item.value.conflict.font = 1, 0, -1
+menu.item.value.conflict.scale =   0.3, 0.3
+
+menu.item.info.offset = 730, 20
+menu.item.info.font = 1, 0, -1
+menu.item.info.scale =   0.3, 0.3
+menu.item.info.active.offset = 640, 20
+menu.item.info.active.font = 1, 0, -1
+menu.item.info.active.scale =   0.3, 0.3
+
+menu.item.spacing = 0, 40
+menu.window.visibleitems = 13
+
+menu.boxcursor.visible = 1
+menu.boxcursor.coords = -10, -10, 1280, 30
+menu.boxcursor.col = 255, 255, 255
+menu.boxcursor.alpharange = 0, 40, 2, 255, 255, 0
+menu.boxbg.visible = 1
+menu.boxbg.col = 0, 0, 0
+menu.boxbg.alpha = 20, 100
+menu.title.uppercase = 1
+
+overlay.col = 0, 0, 0
+overlay.alpha = 20, 100
+cursor.move.snd = 100, 0
+cursor.done.snd = 100, 1
+cancel.snd = 100, 4
+enter.snd = 100, 1
+
+movelist.pos = 0,50
+movelist.title.offset = 640,0
+movelist.title.font = 3, 0, 0
+movelist.title.scale =  0.5, 0.5
+movelist.title.text = "%s"
+movelist.title.uppercase = 1
+movelist.text.offset = 0, 20
+movelist.text.font = 1, 0, 0
+movelist.text.scale =  0.3, 0.3
+movelist.text.spacing = 0, 20
+movelist.text.text = "Command List not found."
+movelist.glyphs.offset = 0,10
+movelist.glyphs.scale = 1.5, 1.5
+movelist.glyphs.spacing = 20, 0
+movelist.window.margins.y = 50,0
+movelist.window.visibleitems = 13
+movelist.window.width = 1280
+movelist.overlay.window = 0, 0, 1280, 720
+movelist.overlay.col = 0, 0, 0
+movelist.overlay.alpha = 0, 128
+movelist.arrow.up.anim = 510 
+movelist.arrow.up.offset = 640, 0
+movelist.arrow.up.facing = 1
+movelist.arrow.up.scale = 0.5, 0.5
+movelist.arrow.down.anim = 511 
+movelist.arrow.down.offset = 640, 650
+movelist.arrow.down.facing = 1
+movelist.arrow.down.scale = 0.5, 0.5
+
+menu.itemname.back = "Continue"
+menu.itemname.reset = "Round Reset"
+menu.itemname.reload = "Rematch"
+menu.itemname.menuinput = "Button Config"
+menu.itemname.menuinput.keyboard = "Key Config"
+menu.itemname.menuinput.gamepad = "Joystick Config"
+menu.itemname.menuinput.empty = ""
+menu.itemname.menuinput.inputdefault = "Default"
+menu.itemname.menuinput.back = "Back"
+menu.itemname.commandlist = "Command List"
+menu.itemname.characterchange = "Character Change"
+menu.itemname.exit = "Exit"
+
+
+[MenuBgDef]
+bgclearcolor = 0, 0, 0
+
+
+[Training Info] 
+menu.valuename.dummycontrol.cooperative = "Cooperative"
+menu.valuename.dummycontrol.ai = "AI"
+menu.valuename.dummycontrol.manual = "Manual"
+menu.valuename.ailevel.1 = "1"
+menu.valuename.ailevel.2 = "2"
+menu.valuename.ailevel.3 = "3"
+menu.valuename.ailevel.4 = "4"
+menu.valuename.ailevel.5 = "5"
+menu.valuename.ailevel.6 = "6"
+menu.valuename.ailevel.7 = "7"
+menu.valuename.ailevel.8 = "8"
+menu.valuename.guardmode.none = "None"
+menu.valuename.guardmode.auto = "Auto"
+menu.valuename.dummymode.stand = "Stand"
+menu.valuename.dummymode.crouch = "Crouch"
+menu.valuename.dummymode.jump = "Jump"
+menu.valuename.dummymode.wjump = "W Jump"
+menu.valuename.distance.any = "Any"
+menu.valuename.distance.close = "Close"
+menu.valuename.distance.medium = "Medium"
+menu.valuename.distance.far = "Far"
+menu.valuename.buttonjam.none = "None"
+menu.valuename.buttonjam.a = "A"
+menu.valuename.buttonjam.b = "B"
+menu.valuename.buttonjam.c = "C"
+menu.valuename.buttonjam.x = "X"
+menu.valuename.buttonjam.y = "Y"
+menu.valuename.buttonjam.z = "Z"
+menu.valuename.buttonjam.s = "Start"
+menu.valuename.buttonjam.d = "D"
+menu.valuename.buttonjam.w = "W"
+
+menu.itemname.back = "Continue"
+menu.itemname.reset = "Round Reset"
+menu.itemname.reload = "Rematch"
+menu.itemname.menutraining = "Training Menu"
+menu.itemname.menutraining.dummycontrol = "Dummy Control"
+menu.itemname.menutraining.ailevel = "AI Level"
+menu.itemname.menutraining.guardmode = "Guard Mode"
+menu.itemname.menutraining.dummymode = "Dummy Mode"
+menu.itemname.menutraining.distance = "Distance"
+menu.itemname.menutraining.buttonjam = "Button Jam"
+menu.itemname.menutraining.back = "Back"
+menu.itemname.menuinput = "Button Config"
+menu.itemname.menuinput.keyboard = "Key Config"
+menu.itemname.menuinput.gamepad = "Joystick Config"
+menu.itemname.menuinput.empty = ""
+menu.itemname.menuinput.inputdefault = "Default"
+menu.itemname.menuinput.back = "Back"
+menu.itemname.commandlist = "Command List"
+menu.itemname.characterchange = "Character Change"
+menu.itemname.exit = "Exit"
+
+
+[Dialogue Info]
+enabled = 1
+starttime = 25
+endtime = 120
+switchtime = 60
+skiptime = 20
+skip.key = "a"
+cancel.key = "s"
+p1.bg.anim = 500
+p1.bg.facing = 1
+p1.bg.scale = 1.0, 1.0
+p2.bg.anim = 501
+p2.bg.facing = 1
+p2.bg.scale = 1.0, 1.0
+p1.face.spr = 9000, 5
+p1.face.offset = 20,-5
+p1.face.facing = 1
+p1.face.scale = 0.33, 0.33
+p2.face.spr = 9000, 5
+p2.face.offset = 1255, 355
+p2.face.facing = -1
+p2.face.scale = 0.33,0.33
+p1.name.offset = 270, 20
+p1.name.font = 3, 0, 1
+p1.name.scale = 0.45, 0.45
+p2.name.offset = 1030,410
+p2.name.font = 3, 0, -1
+p2.name.scale = 0.45, 0.45
+p1.text.offset = 290,100
+p1.text.font = 1, 0, 1
+p1.text.scale = 0.3,0.3
+p1.text.delay = 2
+p1.text.textwrap = "w"
+p2.text.offset = 10, 470
+p2.text.font = 1, 0, 1
+p2.text.scale = 0.3, 0.3
+p2.text.delay = 2
+p1.text.window = 290,60,1260,350
+p2.text.window = 10,410,1000,690
+p2.text.textwrap = "w"
+
+;-------------------------------------------------------------------
+;Options screen definition
+[Option Info]
+fadein.time = 0
+fadein.anim = 2
+fadeout.time = 0
+fadeout.anim = 1
+fadein.snd = 0,0
+fadeout.snd = 20,0
+
+title.offset = 640,30
+title.font = 1, 0, 0
+title.scale = 0.3, 0.3
+title.text = "OPTIONS"
+
+menu.pos = 0, 60
+menu.uselocalcoord = 1
+
+menu.item.offset = 0, 20
+menu.item.font = 1, 0, 1
+menu.item.scale =  0.3, 0.3
+
+menu.item.active.offset = 0, 20
+menu.item.active.font = 1, 0, 1
+menu.item.active.scale =  0.3, 0.3
+
+menu.item.selected.offset = 0, 20
+menu.item.selected.font = 1, 0, 1
+menu.item.selected.scale =   0.3, 0.3
+menu.item.selected.active.offset = 0, 20
+menu.item.selected.active.font = 1, 0, 1
+menu.item.selected.active.scale =   0.3, 0.3
+
+menu.item.value.offset = 1200, 20
+menu.item.value.font = 1, 0, -1
+menu.item.value.scale =   0.3, 0.3
+
+menu.item.value.active.offset = 1200, 20
+menu.item.value.active.font = 1, 0, -1
+menu.item.value.active.scale =   0.3, 0.3
+
+menu.item.value.conflict.offset = 1200, 20
+menu.item.value.conflict.font = 1, 0, -1
+menu.item.value.conflict.scale =   0.3, 0.3
+
+menu.item.info.offset = 730, 20
+menu.item.info.font = 1, 0, -1
+menu.item.info.scale =   0.3, 0.3
+menu.item.info.active.offset = 640, 20
+menu.item.info.active.font = 1, 0, -1
+menu.item.info.active.scale =   0.3, 0.3
+
+menu.item.spacing = 0, 40
+menu.window.visibleitems = 13
+
+menu.boxcursor.visible = 1
+menu.boxcursor.coords = -10, -10, 1280, 30
+menu.boxcursor.col = 255, 255, 255
+menu.boxcursor.alpharange = 0, 40, 2, 255, 255, 0
+menu.boxbg.visible = 1
+menu.boxbg.col = 0, 0, 0
+menu.boxbg.alpha = 20, 100
+
+keymenu.p1.pos = 10,50
+keymenu.p2.pos = 650,50
+
+keymenu.item.p1.offset = 250, 20
+keymenu.item.p1.font = 1, 0, 0
+keymenu.item.p1.scale = 0.3, 0.3
+keymenu.item.p2.offset = 250, 20
+keymenu.item.p2.font = 1, 0, 0
+keymenu.item.p2.scale = 0.3, 0.3
+keymenu.item.spacing = 0, 40
+keymenu.boxcursor.coords = -10, -10, 600, 30
+keymenu.item.value.offset = 580, 20
+keymenu.item.value.active.offset = 580, 20
+keymenu.item.value.conflict.offset = 580, 20
+keymenu.item.info.offset = 580, 20
+keymenu.item.info.active.offset = 580,20
+
+textinput.offset = 640,380
+textinput.font = 1, 0, 1
+textinput.scale = 0.3, 0.3
+
+cursor.move.snd = 100,0
+cursor.done.snd = 100,1
+cancel.snd = 100,4
+
+[OptionBGdef]
+bgclearcolor = 0,0,0
+
+[OptionBG 0] 
+type  = anim
+layerno = 0
+actionno = 0
+start = 0,0
+
+[OptionBG 0]
+type  = anim
+layerno = 0
+actionno = 21
+start = 0,0
+
+[OptionBG 0] 
+type  = anim
+layerno = 0
+actionno = 4
+start = 0,0
+
+[OptionBG 1] 
+type  = anim
+layerno = 0
+actionno = 3
+start = 0,0
+
+
+[Hiscore Info] 
+enabled = 1
+fadein.time = 0
+fadein.anim = -1
+fadeout.time = 0
+fadeout.anim = -1
+fadein.snd = 0,0
+fadeout.snd = 0,0
+time = 2000
+pos = 0, 0
+title.offset = 640, 70
+title.font = 1, 0, 0
+title.scale = 0.3, 0.3
+title.text = "%s Rankings"
+title.uppercase = 1
+title.rank.offset = 100, 140
+title.rank.font = 3, 0, 0
+title.rank.scale =  0.3,0.3
+title.rank.text = "Rank"
+title.data.offset = 600, 140
+title.data.font =  3, 0, 0
+title.data.scale = 0.3, 0.3
+title.data.text = "Result"
+title.name.offset = 310, 140
+title.name.font = 3, 0, 0
+title.name.scale = 0.3, 0.3
+title.name.text = "Name"
+title.face.offset = 980, 140
+title.face.font = 3, 0, 0
+title.face.scale = 0.3, 0.3
+title.face.text = "Characters"
+item.offset = 0, 170
+item.spacing = 0, 0
+item.rank.offset = 100, 75
+item.rank.font =  1, 0, 0
+item.rank.scale = 0.5, 0.5
+item.rank.spacing = 0, 75
+item.rank.text = "%s"
+item.rank.active.font = 3, 0, 0
+item.rank.active.scale = 0.5, 0.5
+item.rank.active.switchtime = 3
+item.rank.active2.font = 3, 0, 0
+item.rank.active2.scale = 0.5, 0.5
+item.data.offset = 600,75
+item.data.font = 1, 0, 0
+item.data.scale = 0.5, 0.5
+item.data.spacing = 0, 75
+item.data.text = "%s"
+item.data.score.text = "%8s"
+item.data.time.text = "%m %s %x"
+item.data.win.text = "%s Wins"
+item.data.active.font = 3, 0, 0
+item.data.active.scale = 0.5, 0.5
+item.data.active.switchtime = 1
+item.data.active2.font = 3, 0, 0
+item.data.active2.scale = 0.5, 0.5
+item.name.offset = 310,80
+item.name.font = 3, 0, 0
+item.name.scale = 0.5, 0.5
+item.name.spacing = 0, 75
+item.name.text = "%3s"
+item.name.active.font = 3, 0, 0
+item.name.active.scale = 0.5, 0.5
+item.name.active.switchtime = 3
+item.name.active2.font = 3, 0, 0
+item.name.active2.scale = 0.5, 0.5
+item.name.uppercase = 1
+item.face.anim = -1
+item.face.spr = 9000, 0
+item.face.offset = 800, 0
+item.face.facing = 1
+item.face.scale = 0.91,0.91
+;item.face.window = 
+item.face.num = 4
+item.face.spacing = 100,125
+item.face.bg.anim = -1
+item.face.bg.spr = 11,2
+item.face.bg.offset = -4, -4
+item.face.bg.facing = 1
+item.face.bg.scale = 0.2,0.2
+item.face.unknown.anim = -1
+item.face.unknown.spr = 11,2
+item.face.unknown.offset = -4, -4
+item.face.unknown.facing = 1
+item.face.unknown.scale = 0.2,0.2
+timer.offset = 640, 50
+timer.font = 2, 0, 0
+timer.scale = 0.3, 0.3
+timer.text = "%s"
+timer.count = 999
+timer.framespercount = 10
+timer.displaytime = 0
+window.width = 300
+window.margins.y = 20, 1
+window.visibleitems = 10
+overlay.window = 0, 0, 1280, 720
+overlay.col = 0, 0, 0
+overlay.alpha = 0, 128
+move.snd = 100, 0
+done.snd = 100, 1
+cancel.snd = 100, 4
+Glyphs = "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "?", ".", "<", ">"
+
+[HiscoreBgDef] ;Ikemen feature
+bgclearcolor = 0,0,0
+
+[HiscoreBG 0] 
+type  = anim
+layerno = 0
+actionno = 0
+start = 0,0
+
+[HiscoreBG 0]
+type  = anim
+layerno = 0
+actionno = 21
+start = 0,0
+
+[HiscoreBG 0] 
+type  = anim
+layerno = 0
+actionno = 4
+start = 0,0
+
+[HiscoreBG 1] 
+type  = anim
+layerno = 0
+actionno = 3
+start = 0,0
+
+
+
+[Warning Info]
+title.offset = 640, 0
+title.font = 1, 0, 0
+title.scale = 0.3, 0.3
+title.text = "WARNING"
+text.offset = 640, 360
+text.font = 1, 0, 0
+text.scale = 0.3, 0.3
+text.reload.text = "Some selected options require Ikemen to be restarted.\nPress any key to exit the program."
+text.noreload.text = "Some selected options require Ikemen to be restarted.\nPress any key to continue."
+text.keys.text = "Conflict between button keys detected.\nAll keys should have unique assignment.\n\nPress any key to continue.\nPress ESC to reset."
+text.pad.text = "Controller not detected.\nCheck if your controller is plugged in."
+text.shaders.text = "No external OpenGL shaders detected.\nIkemen GO supports files with .vert and .frag extensions.\nShaders are loaded from \'./external/shaders' directory."
+overlay.col = 0, 0, 0
+overlay.alpha = 20, 100
+done.snd = 100, 0
+cancel.snd = 100, 4
+
+;[Glyphs]
+;^A = 1, 0
+;^B = 2, 0
+;^C = 3, 0
+;^D = 4, 0
+;^W = 23, 0
+;^X = 24, 0
+;^Y = 25, 0
+;^Z = 26, 0
+;_+ = 39, 0
+;_. = 40, 0
+;_DB = 41, 0
+;_D = 42, 0
+;_DF = 43, 0
+;_B = 44, 0
+;_F = 46, 0
+;_UB  = 47, 0
+;_U = 48, 0
+;_U = 49, 0
+;^S = 51, 0
+;^M = 52, 0
+;^P = 53, 0
+;^K = 54, 0
+;^LP = 57, 0
+;^MP = 58, 0
+;^HP = 59, 0
+;^LK = 60, 0
+;^MK = 61, 0
+;^HK = 62, 0
+;^3K = 63, 0
+;^3P = 64, 0
+;^2K = 65, 0
+;^2P = 66, 0
+;_- = 90, 0
+;_! = 91, 0
+;~DB = 92, 0
+;~D = 93, 0
+;~DF = 94, 0
+;~B = 95, 0
+;~F = 96, 0
+;~UB = 97, 0
+;~U = 98, 0
+;~UF = 99, 0
+;_HCB = 100, 0
+;_HUF = 101, 0
+;_HCF = 102, 0
+;_HUB = 103, 0
+;_QFD = 104, 0
+;_QDB = 105, 0
+;_QCB = 105, 0
+;_QBU = 106, 0
+;_QUF = 107, 0
+;_QBD = 108, 0
+;_QDF = 109, 0
+;_QCF = 109, 0
+;_QFU = 110, 0
+;_QUB = 111, 0
+;_FDF = 112, 0
+;_FUB = 113, 0
+;_FUF = 114, 0
+;_FDB = 115, 0
+;_XFF = 116, 0
+;_XBB = 117, 0
+;_DSF = 118, 0
+;_DSB = 119, 0
+;_AIR = 121, 0
+;_TAP = 122, 0
+;_MAX = 123, 0
+;_EX = 124, 0
+;_^ = 127, 0
+;_= = 128, 0
+;_) = 129, 0
+;_( = 130, 0
+;_` = 135, 0
+;_CHARGE = 136,0
+;_HOLD = 137,0
+;_RELEASE = 138,0
+;_MASH = 139,0
+;_CLOSE = 140,0
+;_FAR = 141,0
+;_AIROK = 142,0
+;_THROW = 143,0
+;_COUNTER = 144,0
+
+
+; BG
+[Begin Action 0]
+1,0, 0,0, -1, , , 2,2
+
+; Fade in
+[Begin Action 1]
+777,0, 0,0, 1
+777,1, 0,0, 2
+777,2, 0,0, 2
+777,3, 0,0, 2
+777,5, 0,0, 2
+777,7, 0,0, 2
+777,9, 0,0, 2
+777,10, 0,0, 2
+777,11, 0,0, 2
+777,13, 0,0, 2
+777,14, 0,0, 2
+777,15, 0,0, 2
+777,17, 0,0, 2
+777,18, 0,0, 2
+777,19, 0,0, 2
+777,20, 0,0, 2
+777,21, 0,0, 2
+777,22, 0,0, 2
+777,23, 0,0, 2
+777,24, 0,0, -1
+
+; Fade out
+[Begin Action 2]
+778,0, 0,0, 2
+778,1, 0,0, 2
+778,2, 0,0, 2
+778,3, 0,0, 2
+778,4, 0,0, 2
+778,5, 0,0, 2
+778,6, 0,0, 2
+778,7, 0,0, 2
+778,8, 0,0, 2
+778,9, 0,0, 2
+778,10, 0,0, 2
+778,11, 0,0, 2
+778,12, 0,0, 2
+778,13, 0,0, 2
+778,14, 0,0, 2
+778,15, 0,0, 2
+778,16, 0,0, 2
+778,17, 0,0, 2
+778,18, 0,0, 2
+778,19, 0,0, 2
+778,20, 0,0, 2
+778,21, 0,0, 2
+-1,0, 0,0, -1
+
+; Fire
+[Begin Action 3]
+3,0, 0,0, 3, , AS150D256
+3,1, 0,0, 3, , AS150D256
+3,2, 0,0, 3, , AS150D256
+3,3, 0,0, 3, , AS150D256
+3,4, 0,0, 3, , AS150D256
+3,5, 0,0, 3, , AS150D256
+3,6, 0,0, 3, , AS150D256
+3,7, 0,0, 3, , AS150D256
+3,8, 0,0, 3, , AS150D256
+3,9, 0,0, 3, , AS150D256
+3,10, 0,0, 3, , AS150D256
+3,11, 0,0, 3, , AS150D256
+3,12, 0,0, 3, , AS150D256
+3,13, 0,0, 3, , AS150D256
+3,14, 0,0, 3, , AS150D256
+3,15, 0,0, 3, , AS150D256
+3,16, 0,0, 3, , AS150D256
+3,17, 0,0, 3, , AS150D256
+3,18, 0,0, 3, , AS150D256
+3,19, 0,0, 3, , AS150D256
+3,20, 0,0, 3, , AS150D256
+3,21, 0,0, 3, , AS150D256
+3,22, 0,0, 3, , AS150D256
+3,23, 0,0, 3, , AS150D256
+3,24, 0,0, 3, , AS150D256
+3,25, 0,0, 3, , AS150D256
+3,26, 0,0, 3, , AS150D256
+3,27, 0,0, 3, , AS150D256
+3,28, 0,0, 3, , AS150D256
+3,29, 0,0, 3, , AS150D256
+3,30, 0,0, 3, , AS150D256
+3,31, 0,0, 3, , AS150D256
+3,32, 0,0, 3, , AS150D256
+3,33, 0,0, 3, , AS150D256
+3,34, 0,0, 3, , AS150D256
+3,35, 0,0, 3, , AS150D256
+3,36, 0,0, 3, , AS150D256
+3,37, 0,0, 3, , AS150D256
+3,38, 0,0, 3, , AS150D256
+3,39, 0,0, 3, , AS150D256
+3,40, 0,0, 3, , AS150D256
+3,41, 0,0, 3, , AS150D256
+3,42, 0,0, 3, , AS150D256
+3,43, 0,0, 3, , AS150D256
+3,44, 0,0, 3, , AS150D256
+3,45, 0,0, 3, , AS150D256
+3,46, 0,0, 3, , AS150D256
+3,47, 0,0, 3, , AS150D256
+3,48, 0,0, 3, , AS150D256
+3,49, 0,0, 3, , AS150D256
+3,50, 0,0, 3, , AS150D256
+3,51, 0,0, 3, , AS150D256
+3,52, 0,0, 3, , AS150D256
+3,53, 0,0, 3, , AS150D256
+3,54, 0,0, 3, , AS150D256
+3,55, 0,0, 3, , AS150D256
+3,56, 0,0, 3, , AS150D256
+3,57, 0,0, 3, , AS150D256
+3,58, 0,0, 3, , AS150D256
+3,59, 0,0, 3, , AS150D256
+3,60, 0,0, 3, , AS150D256
+3,61, 0,0, 3, , AS150D256
+3,62, 0,0, 3, , AS150D256
+3,63, 0,0, 3, , AS150D256
+3,64, 0,0, 3, , AS150D256
+3,65, 0,0, 3, , AS150D256
+3,66, 0,0, 3, , AS150D256
+3,67, 0,0, 3, , AS150D256
+3,68, 0,0, 3, , AS150D256
+3,69, 0,0, 3, , AS150D256
+3,70, 0,0, 3, , AS150D256
+
+; flame BG
+[Begin Action 4]
+6,0, 0,0, 2
+6,1, 0,0, 2
+6,2, 0,0, 2
+6,3, 0,0, 2
+6,4, 0,0, 2
+6,5, 0,0, 2
+6,6, 0,0, 2
+6,7, 0,0, 2
+6,8, 0,0, 2
+6,9, 0,0, 2
+6,10, 0,0, 2
+6,11, 0,0, 2
+6,12, 0,0, 2
+6,13, 0,0, 2
+6,14, 0,0, 2
+6,15, 0,0, 2
+6,16, 0,0, 2
+6,17, 0,0, 2
+6,18, 0,0, 2
+6,19, 0,0, 2
+6,20, 0,0, 2
+6,21, 0,0, 2
+6,22, 0,0, 2
+6,23, 0,0, 2
+6,24, 0,0, 2
+6,25, 0,0, 2
+6,26, 0,0, 2
+6,27, 0,0, 2
+6,28, 0,0, 2
+6,29, 0,0, 2
+6,28, 0,0, 2
+6,27, 0,0, 2
+6,26, 0,0, 2
+6,25, 0,0, 2
+6,24, 0,0, 2
+6,23, 0,0, 2
+6,22, 0,0, 2
+6,21, 0,0, 2
+6,20, 0,0, 2
+6,19, 0,0, 2
+6,18, 0,0, 2
+6,17, 0,0, 2
+6,16, 0,0, 2
+6,15, 0,0, 2
+6,14, 0,0, 2
+6,13, 0,0, 2
+6,12, 0,0, 2
+6,11, 0,0, 2
+6,10, 0,0, 2
+6,9, 0,0, 2
+6,8, 0,0, 2
+6,7, 0,0, 2
+6,6, 0,0, 2
+6,5, 0,0, 2
+6,4, 0,0, 2
+6,3, 0,0, 2
+6,2, 0,0, 2
+6,1, 0,0, 2
+
+; Character message
+[Begin Action 5]
+-1,0, 0,0, 60
+13,0, 0,20, 1
+13,0, 0,40, 1
+13,0, 0,60, 26
+13,0, 0,80, 1
+13,0, 0,100, 1
+-1,0, 0,0, -1
+
+; BG
+[Begin Action 6]
+1,0, 0,0, 130, , , 2,2
+1,0, 0,0, 30, , AS256D1, 2,2
+Interpolate Blend
+1,0, 0,0, 1, , AS0D255, 2,2
+-1,0, 0,0, -1, , AS0D255, 2,2
+
+; FG
+[Begin Action 65]
+5,0, 0,30, 130, , AS128D255
+5,0, 0,30, 2, , AS120D255
+5,0, 0,30, 2, , AS110D255
+5,0, 0,30, 2, , AS100D255
+5,0, 0,30, 2, , AS90D255
+5,0, 0,30, 2, , AS80D255
+5,0, 0,30, 2, , AS70D255
+5,0, 0,30, 2, , AS60D255
+5,0, 0,30, 2, , AS50D255
+5,0, 0,30, 2, , AS40D255
+5,0, 0,30, 2, , AS30D255
+5,0, 0,30, 2, , AS20D255
+5,0, 0,30, 2, , AS10D255
+-1,0, 0,0, -1, , AS0D255
+
+; V.S. Motion
+[Begin Action 7]
+-1,0, 0,0, 80
+20,0, 0,0, 2
+20,1, 0,0, 2
+20,2, 0,0, 2
+20,3, 0,0, 2
+20,4, 0,0, 2
+20,5, 0,0, 2
+20,6, 0,0, 2
+20,7, 0,50, 2
+20,8, 0,100, 2
+20,9, 0,100, 2
+20,10, 0,100, 2
+20,11, 0,100, 2
+20,12, 0,100, 2
+20,13, 0,100, 2
+20,14, 0,100, 2
+20,15, 0,100, 2
+20,16, 0,100, 2
+20,17, 0,100, 2
+20,18, 0,100, 2
+20,19, 0,100, 2
+20,20, 0,100, 2
+20,21, 0,100, 2
+20,22, 0,100, 2
+20,23, 0,100, 2
+20,24, 0,100, 2
+20,25, 0,100, 2
+20,26, 0,100, 2
+20,27, 0,100, 2
+20,28, 0,100, 2
+0,0, 0,0, -1
+
+; V.S. Letters
+[Begin Action 8]
+-1,0, 0,0, 154
+21,0, 0,400, 50, , , 10,10
+Interpolate Scale
+21,0, 0,400, -1, , , 0.5,0.5
+
+[Begin Action 9]
+5,0, 640,0, -1, , ,0.35,0.35
+
+[Begin Action 10]
+4,0, 0,0, -1
+
+; p1 select
+[Begin Action 11]
+11,3, 0,0, 10
+11,5, 0,0, 5
+
+; p2 select
+[Begin Action 12]
+11,4, 0,0, 10
+11,6, 0,0, 5
+
+[Begin Action 20]
+4,1, 0,-20, -1, , , 1,1.3
+
+[Begin Action 21]
+Interpolate Blend
+5,1, 0,0, 30, , AS256D150, 2,2
+Interpolate Blend
+5,1, 0,0, 30, , AS256D125, 2,2
+
+[Begin Action 30]
+20,29, 0,100, -1
+
+; Order number
+[Begin Action 31]
+30,4, 0,0, 60
+30,4, 0,0, 60, , AS256D0
+Interpolate Blend
+30,4, 0,0, 1, , AS0D256
+-1,0, 0,0, -1, , AS0D256
+
+; Order number
+[Begin Action 32]
+30,5, 0,0, 60
+30,5, 0,0, 60, , AS256D0
+Interpolate Blend
+30,5, 0,0, 1, , AS0D256
+-1,0, 0,0, -1, , AS0D256
+
+; Order number
+[Begin Action 33]
+30,6, 0,0, 60
+30,6, 0,0, 60, , AS256D0
+Interpolate Blend
+30,6, 0,0, 1, , AS0D256
+-1,0, 0,0, -1, , AS0D256
+
+; Order number
+[Begin Action 34]
+30,7, 0,0, 60
+30,7, 0,0, 60, , AS256D0
+Interpolate Blend
+30,7, 0,0, 1, , AS0D256
+-1,0, 0,0, -1, , AS0D256
+
+; Order number
+[Begin Action 35]
+30,8, 0,0, 60
+30,8, 0,0, 60, , AS256D0
+Interpolate Blend
+30,8, 0,0, 1, , AS0D256
+-1,0, 0,0, -1, , AS0D256
+
+; Order number
+[Begin Action 36]
+30,9, 0,0, 60
+30,9, 0,0, 60, , AS256D0
+Interpolate Blend
+30,9, 0,0, 1, , AS0D256
+-1,0, 0,0, -1, , AS0D256
+
+; Order number
+[Begin Action 37]
+30,10, 0,0, 60
+30,10, 0,0, 60, , AS256D0
+Interpolate Blend
+30,10, 0,0, 1, , AS0D256
+-1,0, 0,0, -1, , AS0D256
+
+; Order number
+[Begin Action 38]
+30,11, 0,0, 60
+30,11, 0,0, 60, , AS256D0
+Interpolate Blend
+30,11, 0,0, 1, , AS0D256
+-1,0, 0,0, -1, , AS0D256
+
+
+[Begin Action 39]
+5,0, 0,60, 1, , AS120D255, 0.48,0.48
+
+[Begin Action 40]
+11,9, 0,0, -1, , , 0.525,0.525
+
+[Begin Action 41]
+11,13, 0,0, -1, , , 0.25,0.125
+
+[Begin Action 50]
+11,8, 0,0, -1, , , 0.525,0.525
+
+[Begin Action 51]
+11,13, 0,0, -1, , , 0.25,0.125
+
+[Begin Action 60]
+11,10, 0,0, -1, , , 0.525,0.525
+
+[Begin Action 70]
+11,11, 0,0, -1, , , 0.36,0.36
+
+[Begin Action 80]
+11,12, 0,0, -1, , , 0.36,0.36
+
+[Begin Action 81]
+25,0, 0,0, -1, , , 0.75,0.75
+
+; menu.active
+[Begin Action 100]
+2,0, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,0, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,0, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 101]
+2,1, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,1, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,1, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 102]
+2,2, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,2, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,2, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 103]
+2,3, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,3, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,3, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 104]
+2,4, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,4, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,4, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 105]
+2,5, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,5, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,5, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 106]
+2,6, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,6, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,6, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 107]
+2,7, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,7, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,7, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 108]
+2,8, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,8, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,8, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 109]
+2,9, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,9, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,9, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 110]
+2,10, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,10, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,10, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 111]
+2,11, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,11, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,11, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 112]
+2,12, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,12, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,12, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 113]
+2,13, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,13, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,13, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 114]
+2,14, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,14, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,14, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 115]
+2,15, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,15, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,15, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 116]
+2,16, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,16, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,16, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 117]
+2,17, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,17, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,17, 0,0, 1, , , 1.1,1.1
+
+; menu.active
+[Begin Action 118]
+2,18, 0,0, 50, , , 1.1,1.1
+Interpolate Scale
+2,18, 0,0, 40, , , 1.2,1.2
+Interpolate Scale
+2,18, 0,0, 1, , , 1.1,1.1
+
+; P! Dialog
+[Begin Action 500]
+500,0, 1280,0, 25
+Interpolate Offset
+500,0, 0,0, -1
+
+; P2 Dialog
+[Begin Action 501]
+500,0, 0,360, 25, H
+Interpolate Offset
+500,0, 1280,360, -1, H
+
+; Movelist Up Arrow
+[Begin Action 510]
+interpolate offset
+510,0, 0,10, 10, , ,0.3,0.3
+interpolate offset
+510,0, 0,-10, 10, , ,0.3,0.3
+
+; Movelist Down Arrow
+[Begin Action 511]
+interpolate offset
+510,0, 0,10, 10, , , 0.3,0.3, 180
+interpolate offset
+510,0, 0,-10, 10, , , 0.3,0.3, 180
+
+; Winner
+[Begin Action 800]
+-1,0, 0,0, 90
+800,0, 0,0, 1
+800,1, 0,0, 1
+800,2, 0,0, 1
+800,3, 0,0, 1
+800,4, 0,0, 1
+800,5, 0,0, 1
+800,6, 0,0, 1
+800,7, 0,0, 1
+800,8, 0,0, 1
+800,9, 0,0, 1
+800,10, 0,0, 1
+800,11, 0,0, 1
+800,12, 0,0, 1
+800,13, 0,0, 1
+800,14, 0,0, 1
+800,15, 0,0, 1
+800,16, 0,0, 1
+800,17, 0,0, 1
+800,18, 0,0, 1
+800,19, 0,0, 1
+800,20, 0,0, 1
+800,21, 0,0, 1
+800,22, 0,0, 1
+800,23, 0,0, 1
+800,24, 0,0, 1
+800,25, 0,0, 1
+800,26, 0,0, 1
+800,27, 0,0, 1
+800,28, 0,0, 1
+800,29, 0,0, -1
+
+;Diamond Red BG
+[Begin Action 810]
+801,0, 0,0, -1, H, ,0.7,0.7
+
+;Diamond Blue BG
+[Begin Action 811]
+801,1, 0,0, -1, , ,0.7,0.7
+
+;Diamond Black BG
+[Begin Action 812]
+801,2, 0,0, -1, , SS128D255, 0.7,0.7
+
+[Begin Action 813]
+-1,0, 0,0, 60
+802,0, 0,0, 10, , , 20,20, 90
+Interpolate Scale
+Interpolate Angle
+802,0, 0,0, -1, , , 1.5,1.5
+
+; Countdown (Continue)
+[Begin Action 900]
+900,0, 640,0, 100, , , 10,10
+Interpolate Scale
+900,1, 640,0, 2, , , 2,2
+900,2, 640,0, 2, , , 2,2
+900,3, 640,0, 2, , , 2,2
+900,4, 640,0, 2, , , 2,2
+900,5, 640,0, 2, , , 2,2
+900,6, 640,0, 2, , , 2,2
+900,7, 640,0, 2, , , 2,2
+900,8, 640,0, 2, , , 2,2
+900,9, 640,0, 2, , , 2,2
+900,10, 640,0, 2, , , 2,2
+900,11, 640,0, 2, , , 2,2
+900,12, 640,0, 2, , , 2,2
+900,13, 640,0, 2, , , 2,2
+900,14, 640,0, 2, , , 2,2
+900,15, 640,0, 2, , , 2,2
+900,16, 640,0, 2, , , 2,2
+900,17, 640,0, 2, , , 2,2
+900,18, 640,0, 2, , , 2,2
+900,19, 640,0, 2, , , 2,2
+900,20, 640,0, 2, , , 2,2
+900,21, 640,0, 2, , , 2,2
+900,22, 640,0, 2, , , 2,2
+900,23, 640,0, 2, , , 2,2
+900,24, 640,0, 2, , , 2,2
+900,25, 640,0, 2, , , 2,2
+900,26, 640,0, 2, , , 2,2
+900,27, 640,0, 2, , , 2,2
+900,28, 640,0, 2, , , 2,2
+900,29, 640,0, 2, , , 2,2
+900,30, 640,0, 2, , , 2,2
+900,31, 640,0, 2, , , 2,2
+900,32, 640,0, 2, , , 2,2
+900,33, 640,0, 2, , , 2,2
+900,34, 640,0, 2, , , 2,2
+900,35, 640,0, 2, , , 2,2
+900,36, 640,0, 2, , , 2,2
+900,37, 640,0, 2, , , 2,2
+900,38, 640,0, 2, , , 2,2
+900,39, 640,0, 2, , , 2,2
+900,40, 640,0, 2, , , 2,2
+900,41, 640,0, 2, , , 2,2
+900,42, 640,0, 2, , , 2,2
+900,43, 640,0, 2, , , 2,2
+900,44, 640,0, 2, , , 2,2
+900,45, 640,0, 2, , , 2,2
+900,46, 640,0, 2, , , 2,2
+900,47, 640,0, 2, , , 2,2
+900,48, 640,0, 2, , , 2,2
+900,49, 640,0, 2, , , 2,2
+900,50, 640,0, 2, , , 2,2
+900,51, 640,0, 2, , , 2,2
+900,52, 640,0, 2, , , 2,2
+900,53, 640,0, 2, , , 2,2
+900,54, 640,0, 2, , , 2,2
+900,55, 640,0, 2, , , 2,2
+900,56, 640,0, 2, , , 2,2
+900,57, 640,0, 2, , , 2,2
+900,58, 640,0, 2, , , 2,2
+900,59, 640,0, 2, , , 2,2
+900,60, 640,0, 2, , , 2,2
+900,61, 640,0, 2, , , 2,2
+900,62, 640,0, 2, , , 2,2
+900,63, 640,0, 2, , , 2,2
+900,64, 640,0, 2, , , 2,2
+900,65, 640,0, 2, , , 2,2
+900,66, 640,0, 2, , , 2,2
+900,67, 640,0, 2, , , 2,2
+900,68, 640,0, 2, , , 2,2
+900,69, 640,0, 2, , , 2,2
+900,70, 640,0, 2, , , 2,2
+900,71, 640,0, 2, , , 2,2
+900,72, 640,0, 2, , , 2,2
+900,73, 640,0, 2, , , 2,2
+900,74, 640,0, 2, , , 2,2
+900,75, 640,0, 2, , , 2,2
+900,76, 640,0, 2, , , 2,2
+900,77, 640,0, 2, , , 2,2
+900,78, 640,0, 2, , , 2,2
+900,79, 640,0, 2, , , 2,2
+900,80, 640,0, 2, , , 2,2
+900,81, 640,0, 2, , , 2,2
+900,82, 640,0, 2, , , 2,2
+900,83, 640,0, 2, , , 2,2
+900,84, 640,0, 2, , , 2,2
+900,85, 640,0, 2, , , 2,2
+900,86, 640,0, 2, , , 2,2
+900,87, 640,0, 2, , , 2,2
+900,88, 640,0, 2, , , 2,2
+900,89, 640,0, 2, , , 2,2
+900,90, 640,0, 2, , , 2,2
+900,91, 640,0, 2, , , 2,2
+900,92, 640,0, 2, , , 2,2
+900,93, 640,0, 2, , , 2,2
+900,94, 640,0, 2, , , 2,2
+900,95, 640,0, 2, , , 2,2
+900,96, 640,0, 2, , , 2,2
+900,97, 640,0, 2, , , 2,2
+900,98, 640,0, 2, , , 2,2
+900,99, 640,0, 2, , , 2,2
+900,100, 640,0, 2, , , 2,2
+900,101, 640,0, 2, , , 2,2
+900,102, 640,0, 2, , , 2,2
+900,103, 640,0, 2, , , 2,2
+900,104, 640,0, 2, , , 2,2
+900,105, 640,0, 2, , , 2,2
+900,106, 640,0, 2, , , 2,2
+900,107, 640,0, 2, , , 2,2
+900,108, 640,0, 2, , , 2,2
+900,109, 640,0, 2, , , 2,2
+900,110, 640,0, 2, , , 2,2
+900,111, 640,0, 2, , , 2,2
+900,112, 640,0, 2, , , 2,2
+900,113, 640,0, 2, , , 2,2
+900,114, 640,0, 2, , , 2,2
+900,115, 640,0, 2, , , 2,2
+900,116, 640,0, 2, , , 2,2
+900,117, 640,0, 2, , , 2,2
+900,118, 640,0, 2, , , 2,2
+900,119, 640,0, 2, , , 2,2
+900,120, 640,0, 2, , , 2,2
+900,121, 640,0, 2, , , 2,2
+900,122, 640,0, 2, , , 2,2
+900,123, 640,0, 2, , , 2,2
+900,124, 640,0, 2, , , 2,2
+900,125, 640,0, 2, , , 2,2
+900,126, 640,0, 2, , , 2,2
+900,127, 640,0, 2, , , 2,2
+900,128, 640,0, 2, , , 2,2
+900,129, 640,0, 2, , , 2,2
+900,130, 640,0, 2, , , 2,2
+900,131, 640,0, 2, , , 2,2
+900,132, 640,0, 2, , , 2,2
+900,133, 640,0, 2, , , 2,2
+900,134, 640,0, 2, , , 2,2
+900,135, 640,0, 2, , , 2,2
+900,136, 640,0, 2, , , 2,2
+900,137, 640,0, 2, , , 2,2
+900,138, 640,0, 2, , , 2,2
+900,139, 640,0, 2, , , 2,2
+900,140, 640,0, 2, , , 2,2
+900,141, 640,0, 2, , , 2,2
+900,142, 640,0, 2, , , 2,2
+900,143, 640,0, 2, , , 2,2
+900,144, 640,0, 2, , , 2,2
+900,145, 640,0, 2, , , 2,2
+900,146, 640,0, 2, , , 2,2
+900,147, 640,0, 2, , , 2,2
+900,148, 640,0, 2, , , 2,2
+900,149, 640,0, 2, , , 2,2
+900,150, 640,0, 2, , , 2,2
+900,151, 640,0, 2, , , 2,2
+900,152, 640,0, 2, , , 2,2
+900,153, 640,0, 2, , , 2,2
+900,154, 640,0, 2, , , 2,2
+900,155, 640,0, 2, , , 2,2
+900,156, 640,0, 2, , , 2,2
+900,157, 640,0, 2, , , 2,2
+900,158, 640,0, 2, , , 2,2
+900,159, 640,0, 2, , , 2,2
+900,160, 640,0, 2, , , 2,2
+900,161, 640,0, 2, , , 2,2
+900,162, 640,0, 2, , , 2,2
+900,163, 640,0, 2, , , 2,2
+900,164, 640,0, 2, , , 2,2
+900,165, 640,0, 2, , , 2,2
+900,166, 640,0, 2, , , 2,2
+900,167, 640,0, 2, , , 2,2
+900,168, 640,0, 2, , , 2,2
+900,169, 640,0, 2, , , 2,2
+900,170, 640,0, 2, , , 2,2
+900,171, 640,0, 2, , , 2,2
+900,172, 640,0, 2, , , 2,2
+900,173, 640,0, 2, , , 2,2
+900,174, 640,0, 2, , , 2,2
+900,175, 640,0, 2, , , 2,2
+900,176, 640,0, 2, , , 2,2
+900,177, 640,0, 2, , , 2,2
+900,178, 640,0, 2, , , 2,2
+900,179, 640,0, 2, , , 2,2
+900,180, 640,0, 2, , , 2,2
+900,181, 640,0, 2, , , 2,2
+900,182, 640,0, 2, , , 2,2
+900,183, 640,0, 2, , , 2,2
+900,184, 640,0, 2, , , 2,2
+900,185, 640,0, 2, , , 2,2
+900,186, 640,0, 2, , , 2,2
+900,187, 640,0, 2, , , 2,2
+900,188, 640,0, 2, , , 2,2
+900,189, 640,0, 2, , , 2,2
+900,190, 640,0, 2, , , 2,2
+900,191, 640,0, 2, , , 2,2
+900,192, 640,0, 2, , , 2,2
+900,193, 640,0, 2, , , 2,2
+900,194, 640,0, 2, , , 2,2
+900,195, 640,0, 2, , , 2,2
+900,196, 640,0, 2, , , 2,2
+900,197, 640,0, 2, , , 2,2
+900,198, 640,0, 2, , , 2,2
+900,199, 640,0, 2, , , 2,2
+900,200, 640,0, 2, , , 2,2
+900,201, 640,0, 2, , , 2,2
+900,202, 640,0, 2, , , 2,2
+900,203, 640,0, 2, , , 2,2
+900,204, 640,0, 2, , , 2,2
+900,205, 640,0, 2, , , 2,2
+900,206, 640,0, 2, , , 2,2
+900,207, 640,0, 2, , , 2,2
+900,208, 640,0, 2, , , 2,2
+900,209, 640,0, 2, , , 2,2
+900,210, 640,0, 2, , , 2,2
+900,211, 640,0, 2, , , 2,2
+900,212, 640,0, 2, , , 2,2
+900,213, 640,0, 2, , , 2,2
+900,214, 640,0, 2, , , 2,2
+900,215, 640,0, 2, , , 2,2
+900,216, 640,0, 2, , , 2,2
+900,217, 640,0, 2, , , 2,2
+900,218, 640,0, 2, , , 2,2
+900,219, 640,0, 2, , , 2,2
+900,220, 640,0, 2, , , 2,2
+900,221, 640,0, 2, , , 2,2
+900,222, 640,0, 2, , , 2,2
+900,223, 640,0, 2, , , 2,2
+900,224, 640,0, 2, , , 2,2
+900,225, 640,0, 2, , , 2,2
+900,226, 640,0, 2, , , 2,2
+900,227, 640,0, 2, , , 2,2
+900,228, 640,0, 2, , , 2,2
+900,229, 640,0, 2, , , 2,2
+900,230, 640,0, 2, , , 2,2
+900,231, 640,0, 2, , , 2,2
+900,232, 640,0, 2, , , 2,2
+900,233, 640,0, 2, , , 2,2
+900,234, 640,0, 2, , , 2,2
+900,235, 640,0, 2, , , 2,2
+900,236, 640,0, 2, , , 2,2
+900,237, 640,0, 2, , , 2,2
+900,238, 640,0, 2, , , 2,2
+900,239, 640,0, 2, , , 2,2
+900,240, 640,0, 2, , , 2,2
+900,241, 640,0, 2, , , 2,2
+900,242, 640,0, 2, , , 2,2
+900,243, 640,0, 2, , , 2,2
+900,244, 640,0, 2, , , 2,2
+900,245, 640,0, 2, , , 2,2
+900,246, 640,0, 2, , , 2,2
+900,247, 640,0, 2, , , 2,2
+900,248, 640,0, 2, , , 2,2
+900,249, 640,0, 2, , , 2,2
+900,250, 640,0, 2, , , 2,2
+900,251, 640,0, 2, , , 2,2
+900,252, 640,0, 2, , , 2,2
+900,253, 640,0, 2, , , 2,2
+900,254, 640,0, 2, , , 2,2
+900,255, 640,0, 2, , , 2,2
+900,256, 640,0, 2, , , 2,2
+900,257, 640,0, 2, , , 2,2
+900,258, 640,0, 2, , , 2,2
+900,259, 640,0, 2, , , 2,2
+900,260, 640,0, 2, , , 2,2
+900,261, 640,0, 2, , , 2,2
+900,262, 640,0, 2, , , 2,2
+900,263, 640,0, 2, , , 2,2
+900,264, 640,0, 2, , , 2,2
+900,265, 640,0, 2, , , 2,2
+900,266, 640,0, 2, , , 2,2
+900,267, 640,0, 2, , , 2,2
+900,268, 640,0, 2, , , 2,2
+900,269, 640,0, 2, , , 2,2
+900,270, 640,0, 2, , , 2,2
+900,271, 640,0, 2, , , 2,2
+900,272, 640,0, 2, , , 2,2
+900,273, 640,0, 2, , , 2,2
+900,274, 640,0, 2, , , 2,2
+900,275, 640,0, 2, , , 2,2
+900,276, 640,0, 2, , , 2,2
+900,277, 640,0, 2, , , 2,2
+900,278, 640,0, 2, , , 2,2
+900,279, 640,0, 2, , , 2,2
+900,280, 640,0, 2, , , 2,2
+900,281, 640,0, 2, , , 2,2
+900,282, 640,0, 2, , , 2,2
+900,283, 640,0, 2, , , 2,2
+900,284, 640,0, 2, , , 2,2
+900,285, 640,0, 2, , , 2,2
+900,286, 640,0, 2, , , 2,2
+900,287, 640,0, 2, , , 2,2
+900,288, 640,0, 2, , , 2,2
+900,289, 640,0, 2, , , 2,2
+900,290, 640,0, 2, , , 2,2
+900,291, 640,0, 2, , , 2,2
+900,292, 640,0, 2, , , 2,2
+900,293, 640,0, 2, , , 2,2
+900,294, 640,0, 2, , , 2,2
+900,295, 640,0, 2, , , 2,2
+900,296, 640,0, 2, , , 2,2
+900,297, 640,0, 2, , , 2,2
+900,298, 640,0, 2, , , 2,2
+900,299, 640,0, 2, , , 2,2
+900,300, 640,0, 2, , , 2,2
+900,301, 640,0, 2, , , 2,2
+900,302, 640,0, 2, , , 2,2
+900,303, 640,0, 2, , , 2,2
+900,304, 640,0, 2, , , 2,2
+900,305, 640,0, 2, , , 2,2
+900,306, 640,0, 2, , , 2,2
+900,307, 640,0, 2, , , 2,2
+900,308, 640,0, 2, , , 2,2
+900,309, 640,0, 2, , , 2,2
+900,310, 640,0, 2, , , 2,2
+900,311, 640,0, 2, , , 2,2
+900,312, 640,0, 2, , , 2,2
+900,313, 640,0, 2, , , 2,2
+900,314, 640,0, 2, , , 2,2
+900,315, 640,0, 2, , , 2,2
+900,316, 640,0, 2, , , 2,2
+900,317, 640,0, 2, , , 2,2
+900,318, 640,0, 2, , , 2,2
+900,319, 640,0, 2, , , 2,2
+900,320, 640,0, 2, , , 2,2
+900,321, 640,0, 2, , , 2,2
+900,322, 640,0, 2, , , 2,2
+900,323, 640,0, 2, , , 2,2
+900,324, 640,0, 2, , , 2,2
+900,325, 640,0, 2, , , 2,2
+900,326, 640,0, 2, , , 2,2
+900,327, 640,0, 2, , , 2,2
+900,328, 640,0, 2, , , 2,2
+900,329, 640,0, 2, , , 2,2
+900,330, 640,0, 2, , , 2,2
+900,331, 640,0, 2, , , 2,2
+900,332, 640,0, 2, , , 2,2
+900,333, 640,0, 2, , , 2,2
+900,334, 640,0, 2, , , 2,2
+900,335, 640,0, 2, , , 2,2
+900,336, 640,0, 2, , , 2,2
+900,337, 640,0, 2, , , 2,2
+900,338, 640,0, 2, , , 2,2
+900,339, 640,0, 2, , , 2,2
+900,340, 640,0, 2, , , 2,2
+900,341, 640,0, 2, , , 2,2
+900,342, 640,0, 2, , , 2,2
+900,343, 640,0, 2, , , 2,2
+900,344, 640,0, 2, , , 2,2
+900,345, 640,0, 2, , , 2,2
+900,346, 640,0, 2, , , 2,2
+900,347, 640,0, 2, , , 2,2
+900,348, 640,0, 2, , , 2,2
+900,349, 640,0, 2, , , 2,2
+900,350, 640,0, 2, , , 2,2
+900,351, 640,0, 2, , , 2,2
+900,352, 640,0, 2, , , 2,2
+900,353, 640,0, 2, , , 2,2
+900,354, 640,0, 2, , , 2,2
+900,355, 640,0, 2, , , 2,2
+900,356, 640,0, 2, , , 2,2
+900,357, 640,0, 2, , , 2,2
+900,358, 640,0, 2, , , 2,2
+900,359, 640,0, 2, , , 2,2
+900,360, 640,0, 2, , , 2,2
+900,361, 640,0, 2, , , 2,2
+900,362, 640,0, 2, , , 2,2
+900,363, 640,0, 2, , , 2,2
+900,364, 640,0, 2, , , 2,2
+900,365, 640,0, 2, , , 2,2
+900,366, 640,0, 2, , , 2,2
+900,367, 640,0, 2, , , 2,2
+900,368, 640,0, 2, , , 2,2
+900,369, 640,0, 2, , , 2,2
+900,370, 640,0, 2, , , 2,2
+900,371, 640,0, 2, , , 2,2
+900,372, 640,0, 2, , , 2,2
+900,373, 640,0, 2, , , 2,2
+900,374, 640,0, 2, , , 2,2
+900,375, 640,0, 2, , , 2,2
+900,376, 640,0, 2, , , 2,2
+900,377, 640,0, 2, , , 2,2
+900,378, 640,0, 2, , , 2,2
+900,379, 640,0, 2, , , 2,2
+900,380, 640,0, 2, , , 2,2
+900,381, 640,0, 2, , , 2,2
+900,382, 640,0, 2, , , 2,2
+900,383, 640,0, 2, , , 2,2
+900,384, 640,0, 2, , , 2,2
+900,385, 640,0, 2, , , 2,2
+900,386, 640,0, 2, , , 2,2
+900,387, 640,0, 2, , , 2,2
+900,388, 640,0, 2, , , 2,2
+900,389, 640,0, 2, , , 2,2
+900,390, 640,0, 2, , , 2,2
+900,391, 640,0, 2, , , 2,2
+900,392, 640,0, 2, , , 2,2
+900,393, 640,0, 2, , , 2,2
+900,394, 640,0, 2, , , 2,2
+900,395, 640,0, 2, , , 2,2
+900,396, 640,0, 2, , , 2,2
+900,397, 640,0, 2, , , 2,2
+900,398, 640,0, 2, , , 2,2
+900,399, 640,0, 2, , , 2,2
+900,400, 640,0, 2, , , 2,2
+900,401, 640,0, 2, , , 2,2
+900,402, 640,0, 2, , , 2,2
+900,403, 640,0, 2, , , 2,2
+900,404, 640,0, 2, , , 2,2
+900,405, 640,0, 2, , , 2,2
+900,406, 640,0, 2, , , 2,2
+900,407, 640,0, 2, , , 2,2
+900,408, 640,0, 2, , , 2,2
+900,409, 640,0, 2, , , 2,2
+900,410, 640,0, 2, , , 2,2
+900,411, 640,0, 2, , , 2,2
+900,412, 640,0, 2, , , 2,2
+900,413, 640,0, 2, , , 2,2
+900,414, 640,0, 2, , , 2,2
+900,415, 640,0, 2, , , 2,2
+900,416, 640,0, 2, , , 2,2
+900,417, 640,0, 2, , , 2,2
+900,418, 640,0, 2, , , 2,2
+900,419, 640,0, 2, , , 2,2
+900,420, 640,0, 2, , , 2,2
+900,421, 640,0, 2, , , 2,2
+900,422, 640,0, 2, , , 2,2
+900,423, 640,0, 2, , , 2,2
+900,424, 640,0, 2, , , 2,2
+900,425, 640,0, 2, , , 2,2
+900,426, 640,0, 2, , , 2,2
+900,427, 640,0, 2, , , 2,2
+900,428, 640,0, 2, , , 2,2
+900,429, 640,0, 2, , , 2,2
+900,430, 640,0, 2, , , 2,2
+900,431, 640,0, 2, , , 2,2
+900,432, 640,0, 2, , , 2,2
+900,433, 640,0, 2, , , 2,2
+900,434, 640,0, 2, , , 2,2
+900,435, 640,0, 2, , , 2,2
+900,436, 640,0, 2, , , 2,2
+900,437, 640,0, 2, , , 2,2
+900,438, 640,0, 2, , , 2,2
+900,439, 640,0, 2, , , 2,2
+900,440, 640,0, 2, , , 2,2
+900,441, 640,0, 2, , , 2,2
+900,442, 640,0, 2, , , 2,2
+900,443, 640,0, 2, , , 2,2
+900,444, 640,0, 2, , , 2,2
+900,445, 640,0, 2, , , 2,2
+900,446, 640,0, 2, , , 2,2
+900,447, 640,0, 2, , , 2,2
+900,448, 640,0, 2, , , 2,2
+900,449, 640,0, 2, , , 2,2
+900,450, 640,0, 2, , , 2,2
+900,451, 640,0, 2, , , 2,2
+900,452, 640,0, 2, , , 2,2
+900,453, 640,0, 2, , , 2,2
+900,454, 640,0, 2, , , 2,2
+900,455, 640,0, 2, , , 2,2
+900,456, 640,0, 2, , , 2,2
+900,457, 640,0, 2, , , 2,2
+900,458, 640,0, 2, , , 2,2
+900,459, 640,0, 2, , , 2,2
+900,460, 640,0, 2, , , 2,2
+900,461, 640,0, 2, , , 2,2
+900,462, 640,0, 2, , , 2,2
+900,463, 640,0, 2, , , 2,2
+900,464, 640,0, 2, , , 2,2
+900,465, 640,0, 2, , , 2,2
+900,466, 640,0, 2, , , 2,2
+900,467, 640,0, 2, , , 2,2
+900,468, 640,0, 2, , , 2,2
+900,469, 640,0, 2, , , 2,2
+900,470, 640,0, 2, , , 2,2
+900,471, 640,0, 2, , , 2,2
+900,472, 640,0, 2, , , 2,2
+900,473, 640,0, 2, , , 2,2
+900,474, 640,0, 2, , , 2,2
+900,475, 640,0, 2, , , 2,2
+900,476, 640,0, 2, , , 2,2
+900,477, 640,0, 2, , , 2,2
+900,478, 640,0, 2, , , 2,2
+900,479, 640,0, 2, , , 2,2
+900,480, 640,0, 2, , , 2,2
+900,481, 640,0, 2, , , 2,2
+900,482, 640,0, 2, , , 2,2
+900,483, 640,0, 2, , , 2,2
+900,484, 640,0, 2, , , 2,2
+900,485, 640,0, 2, , , 2,2
+900,486, 640,0, 2, , , 2,2
+900,487, 640,0, 2, , , 2,2
+900,488, 640,0, 2, , , 2,2
+900,489, 640,0, 2, , , 2,2
+900,490, 640,0, 2, , , 2,2
+900,491, 640,0, 2, , , 2,2
+900,492, 640,0, 2, , , 2,2
+900,493, 640,0, 2, , , 2,2
+900,494, 640,0, 2, , , 2,2
+900,495, 640,0, 2, , , 2,2
+900,496, 640,0, 2, , , 2,2
+900,497, 640,0, 2, , , 2,2
+900,498, 640,0, 2, , , 2,2
+900,499, 640,0, 2, , , 2,2
+900,500, 640,0, 2, , , 2,2
+900,501, 640,0, 2, , , 2,2
+900,502, 640,0, 2, , , 2,2
+900,503, 640,0, 2, , , 2,2
+900,504, 640,0, 2, , , 2,2
+900,505, 640,0, 2, , , 2,2
+900,506, 640,0, 2, , , 2,2
+900,507, 640,0, 2, , , 2,2
+900,508, 640,0, 2, , , 2,2
+900,509, 640,0, 2, , , 2,2
+900,510, 640,0, 2, , , 2,2
+900,511, 640,0, 2, , , 2,2
+900,512, 640,0, 2, , , 2,2
+900,513, 640,0, 2, , , 2,2
+900,514, 640,0, 2, , , 2,2
+900,515, 640,0, 2, , , 2,2
+900,516, 640,0, 2, , , 2,2
+900,517, 640,0, 2, , , 2,2
+900,518, 640,0, 2, , , 2,2
+900,519, 640,0, 2, , , 2,2
+900,520, 640,0, 2, , , 2,2
+900,521, 640,0, 2, , , 2,2
+900,522, 640,0, 2, , , 2,2
+900,523, 640,0, 2, , , 2,2
+900,524, 640,0, 2, , , 2,2
+900,525, 640,0, 2, , , 2,2
+900,526, 640,0, 2, , , 2,2
+900,527, 640,0, 2, , , 2,2
+900,528, 640,0, 2, , , 2,2
+900,529, 640,0, 2, , , 2,2
+900,530, 640,0, 2, , , 2,2
+900,531, 640,0, 2, , , 2,2
+900,532, 640,0, 2, , , 2,2
+900,533, 640,0, 2, , , 2,2
+900,534, 640,0, 2, , , 2,2
+900,535, 640,0, 2, , , 2,2
+900,536, 640,0, 2, , , 2,2
+900,537, 640,0, 2, , , 2,2
+900,538, 640,0, 2, , , 2,2
+900,539, 640,0, 2, , , 2,2
+900,540, 640,0, 2, , , 2,2
+900,541, 640,0, 2, , , 2,2
+900,542, 640,0, 2, , , 2,2
+900,543, 640,0, 2, , , 2,2
+900,544, 640,0, 2, , , 2,2
+900,545, 640,0, 2, , , 2,2
+900,546, 640,0, 2, , , 2,2
+900,547, 640,0, 2, , , 2,2
+900,548, 640,0, 2, , , 2,2
+900,549, 640,0, 2, , , 2,2
+900,550, 640,0, 2, , , 2,2
+900,551, 640,0, 2, , , 2,2
+900,552, 640,0, 2, , , 2,2
+900,553, 640,0, 2, , , 2,2
+900,554, 640,0, 2, , , 2,2
+900,555, 640,0, 2, , , 2,2
+900,556, 640,0, 2, , , 2,2
+900,557, 640,0, 2, , , 2,2
+900,558, 640,0, 2, , , 2,2
+900,559, 640,0, 2, , , 2,2
+900,560, 640,0, 2, , , 2,2
+900,561, 640,0, 2, , , 2,2
+900,562, 640,0, 2, , , 2,2
+900,563, 640,0, 2, , , 2,2
+900,564, 640,0, 2, , , 2,2
+900,565, 640,0, 2, , , 2,2
+900,566, 640,0, 2, , , 2,2
+900,567, 640,0, 2, , , 2,2
+900,568, 640,0, 2, , , 2,2
+900,569, 640,0, 2, , , 2,2
+900,570, 640,0, 2, , , 2,2
+900,571, 640,0, 2, , , 2,2
+900,572, 640,0, 2, , , 2,2
+900,573, 640,0, 2, , , 2,2
+900,574, 640,0, 2, , , 2,2
+900,575, 640,0, 2, , , 2,2
+900,576, 640,0, 2, , , 2,2
+900,577, 640,0, 2, , , 2,2
+900,578, 640,0, 2, , , 2,2
+900,579, 640,0, 2, , , 2,2
+900,580, 640,0, 2, , , 2,2
+900,581, 640,0, 2, , , 2,2
+900,582, 640,0, 2, , , 2,2
+900,583, 640,0, 2, , , 2,2
+900,584, 640,0, 2, , , 2,2
+900,585, 640,0, 2, , , 2,2
+900,586, 640,0, 2, , , 2,2
+900,587, 640,0, 2, , , 2,2
+900,588, 640,0, 2, , , 2,2
+900,589, 640,0, 2, , , 2,2
+900,590, 640,0, 2, , , 2,2
+900,591, 640,0, 2, , , 2,2
+900,592, 640,0, 2, , , 2,2
+900,593, 640,0, 2, , , 2,2
+900,594, 640,0, 2, , , 2,2
+900,595, 640,0, 2, , , 2,2
+900,596, 640,0, 2, , , 2,2
+900,597, 640,0, 2, , , 2,2
+900,598, 640,0, 2, , , 2,2
+900,599, 640,0, 100, , A1, 2,2
+Interpolate Blend
+-1,0, 640,-50, 50, , AS0D256
+910,0, 640,380, 1, , , 3,3
+910,1, 640,380, 1, , , 3,3
+910,2, 640,380, 1, , , 3,3
+910,3, 640,380, 1, , , 3,3
+910,4, 640,380, 1, , , 3,3
+910,5, 640,380, 1, , , 3,3
+910,6, 640,380, 1, , , 3,3
+910,7, 640,380, 1, , , 3,3
+910,8, 640,380, 1, , , 3,3
+910,9, 640,380, 1, , , 3,3
+910,10, 640,380, 1, , , 3,3
+910,11, 640,380, 1, , , 3,3
+910,12, 640,380, 1, , , 3,3
+910,13, 640,380, 1, , , 3,3
+910,14, 640,380, 1, , , 3,3
+910,15, 640,380, 1, , , 3,3
+910,16, 640,380, 1, , , 3,3
+910,17, 640,380, 1, , , 3,3
+910,18, 640,380, 1, , , 3,3
+910,19, 640,380, 1, , , 3,3
+910,20, 640,380, 1, , , 3,3
+910,21, 640,380, 1, , , 3,3
+910,22, 640,380, 1, , , 3,3
+910,23, 640,380, 1, , , 3,3
+910,24, 640,380, 1, , , 3,3
+910,25, 640,380, 1, , , 3,3
+910,26, 640,380, 1, , , 3,3
+910,27, 640,380, 1, , , 3,3
+910,28, 640,380, 1, , , 3,3
+910,29, 640,380, 1, , , 3,3
+910,30, 640,380, 1, , , 3,3
+910,31, 640,380, 1, , , 3,3
+910,32, 640,380, 1, , , 3,3
+910,33, 640,380, 1, , , 3,3
+910,34, 640,380, 1, , , 3,3
+910,35, 640,380, 1, , , 3,3
+910,36, 640,380, 1, , , 3,3
+910,37, 640,380, 1, , , 3,3
+910,38, 640,380, 1, , , 3,3
+910,39, 640,380, 1, , , 3,3
+910,40, 640,380, 1, , , 3,3
+910,41, 640,380, 1, , , 3,3
+910,42, 640,380, 1, , , 3,3
+910,43, 640,380, 1, , , 3,3
+910,44, 640,380, 1, , , 3,3
+910,45, 640,380, 1, , , 3,3
+910,46, 640,380, 1, , , 3,3
+910,47, 640,380, 1, , , 3,3
+910,48, 640,380, 1, , , 3,3
+910,49, 640,380, 1, , , 3,3
+910,50, 640,380, 1, , , 3,3
+910,51, 640,380, 1, , , 3,3
+910,52, 640,380, 1, , , 3,3
+910,53, 640,380, 1, , , 3,3
+910,54, 640,380, 1, , , 3,3
+910,55, 640,380, 1, , , 3,3
+910,56, 640,380, 1, , , 3,3
+910,57, 640,380, 1, , , 3,3
+910,58, 640,380, 1, , , 3,3
+910,59, 640,380, 1, , , 3,3
+910,60, 640,380, 1, , , 3,3
+910,61, 640,380, 1, , , 3,3
+910,62, 640,380, 1, , , 3,3
+910,63, 640,380, 1, , , 3,3
+910,64, 640,380, 1, , , 3,3
+910,65, 640,380, 1, , , 3,3
+910,66, 640,380, 1, , , 3,3
+910,67, 640,380, 1, , , 3,3
+910,68, 640,380, 1, , , 3,3
+910,69, 640,380, 1, , , 3,3
+910,70, 640,380, 1, , , 3,3
+910,71, 640,380, 1, , , 3,3
+910,72, 640,380, 1, , , 3,3
+910,73, 640,380, 1, , , 3,3
+910,74, 640,380, 1, , , 3,3
+910,75, 640,380, 1, , , 3,3
+910,76, 640,380, 1, , , 3,3
+910,77, 640,380, 1, , , 3,3
+910,78, 640,380, 1, , , 3,3
+910,79, 640,380, 1, , , 3,3
+910,80, 640,380, 1, , , 3,3
+910,81, 640,380, 1, , , 3,3
+910,82, 640,380, 1, , , 3,3
+910,83, 640,380, 1, , , 3,3
+910,84, 640,380, 1, , , 3,3
+910,85, 640,380, 1, , , 3,3
+910,86, 640,380, 1, , , 3,3
+910,87, 640,380, 1, , , 3,3
+910,88, 640,380, 1, , , 3,3
+910,89, 640,380, 1, , , 3,3
+910,90, 640,380, 10, , , 3,3
+910,91, 640,380, 100, , , 3,3
+Interpolate Scale
+910,91, 640,380, 1, , , 21,0
+-1,0, 640,380, -1, , , 21,0
+
+; Continue Sign
+[Begin Action 901]
+901,0, 0,0, -1, , , 0.5,0.5

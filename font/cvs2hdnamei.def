@@ -1,0 +1,15 @@
+; Capcom Versus SNK 2 HD Name font
+; Bank 0 - White
+
+[FNT v2]
+fntversion = 2,00
+name = "CVS2_HD_Name (Italic)"
+author = "DoomJoshuaBoy"
+
+[Def]
+Type = bitmap
+BankType = sprite
+Size = 118,112
+Spacing = 1,1
+Offset = 0,0
+File = cvs2hdnamei.sff

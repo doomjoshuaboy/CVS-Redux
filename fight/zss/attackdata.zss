@@ -1,0 +1,582 @@
+# Training Mode Attack Data Display System by Phantom.of.the.Server
+# For Ikemen GO January 2025 build and above
+
+# See the readme for installation instructions
+
+
+#===============================================================================
+# Configuration
+#===============================================================================
+
+[Function fPotSAttackDataConfig()]
+
+# Text
+mapset{map: "_pots_attackdata_cfg_starthidden"; value: 0}				# Hide text by default
+mapset{map: "_pots_attackdata_cfg_font"; value: 2}						# Lifebar font number. Default -1 (debug font)
+mapset{map: "_pots_attackdata_cfg_layer"; value: 1}						# Layer number for text. 0 behind chars. 1 in front
+mapset{map: "_pots_attackdata_cfg_text_x"; value: 200}					# X offset. Default 125
+mapset{map: "_pots_attackdata_cfg_text_y"; value: 50}					# Y offset. Default 35
+mapset{map: "_pots_attackdata_cfg_text_scale"; value: 0.075}				# Font scale. Default 0.50
+mapset{map: "_pots_attackdata_cfg_text_linespacing"; value: 7}			# Text line spacing. Default 7
+mapset{map: "_pots_attackdata_cfg_text_columnspacing"; value: 150}		# Text column spacing. Default 70
+mapset{map: "_pots_attackdata_cfg_advantage_color"; value: 1}			# Color coded frame advantage value
+
+# Guard level indication
+mapset{map: "_pots_attackdata_cfg_guardlevel"; value: 1}				# Display which way attacks should be guarded
+mapset{map: "_pots_attackdata_cfg_guardlevel_combo"; value: 1}			# Disable to display it only for the first hit in a combo
+mapset{map: "_pots_attackdata_cfg_guardlevel_font"; value: 2}			# Lifebar font number. Default -1 (debug font)
+mapset{map: "_pots_attackdata_cfg_guardlevel_scale"; value: 0.05}		# Font scale. Default 0.50
+
+
+#===============================================================================
+# Helper State
+#===============================================================================
+
+[StateDef 1615201920; # If this state number causes a conflict with any character let me know
+	type: A;
+	movetype: I;
+	ctrl: 0;
+	anim: -2;
+]
+
+# Run Config
+if !time {
+	call fPotSAttackDataConfig();
+	mapSet{map: "_pots_attackdata_hidetext"; value: map(_pots_attackdata_cfg_starthidden)}
+}
+
+# Ensure this helper is processed after the players
+assertSpecial{flag: runlast}
+
+# This check prevents debug flood if players are disabled for some reason
+if numenemy {
+
+	# Check who's playing
+	if enemy, teammode = tag {
+		let player = enemy, teamleader;
+	} else if enemy, teammode = simul {
+		let player = root, p2, playerno;
+	} else {
+		let player = enemy, playerno;
+	}
+		
+
+	# Check Combo
+	if root, movetype = H {
+		mapSet{map: "_pots_attackdata_combo"; value: player($player), combocount}
+	}
+
+	# Check Maximum Combo
+	if player($player), combocount {
+		if player($player), combocount > map(_pots_attackdata_maxcombo) {
+			mapSet{map: "_pots_attackdata_maxcombo"; value: player($player), combocount}
+		}
+	}
+
+	# Check Hit Damage
+	# Increment Combo Damage
+	if root, life < map(_pots_attackdata_prevlife) {
+		mapSet{map: "_pots_attackdata_hitdamage"; value: map(_pots_attackdata_prevlife) - root, life}
+		mapAdd{map: "_pots_attackdata_combodamage_internal"; value: map(_pots_attackdata_prevlife) - root, life}
+		mapSet{map: "_pots_attackdata_combodamage_display"; value: map(_pots_attackdata_combodamage_internal)}
+	}
+
+	# Check Maximum Damage
+	if map(_pots_attackdata_combodamage_internal) > map(_pots_attackdata_maxdamage) {
+		mapSet{map: "_pots_attackdata_maxdamage"; value: map(_pots_attackdata_combodamage_internal)}
+	}
+
+	# Reset Combo Damage
+	if root, movetype != H {
+		mapSet{map: "_pots_attackdata_combodamage_internal"; value: 0}
+	}
+
+	# Save dummy life
+	# Used for single hit damage calculation, mostly because of throws
+	# Also used for combo damage as Ikemen as of now does not keep track of total chip damage
+	mapSet{map: "_pots_attackdata_prevlife"; value: root, life}
+
+	# Check player control flags
+	# Control is removed instantly
+	# Control is given back instantly if coming out of a hurt state. This accounts for the player being able to block immediately
+	if player($player), ctrl = 0
+	|| (player($player), time <= 1 && player($player), prevstateno = [120, 155])
+	|| (player($player), time <= 1 && player($player), movetype != H && player($player), prevmovetype = H) {
+		mapSet{map: "_pots_attackdata_playerctrl"; value: player($player), ctrl}
+	}
+	if root, ctrl = 0
+	|| (root, time <= 1 && root, prevstateno = [120, 155])
+	|| (root, time <= 1 && root, movetype != H && root, prevmovetype = H) {
+		mapSet{map: "_pots_attackdata_dummyctrl"; value: root, ctrl}
+	}
+
+	# Check Frame Advantage
+	if map(_pots_attackdata_playerctrl) != map(_pots_attackdata_dummyctrl) {
+		if map(_pots_attackdata_playerctrl) && player($player), pausetime = 0 {
+			mapAdd{map: "_pots_attackdata_advantage_timer"; value: 1}
+		}
+		if map(_pots_attackdata_dummyctrl) && root, pausetime = 0 {
+			mapAdd{map: "_pots_attackdata_advantage_timer"; value: -1}
+		}
+		# Update display in real time
+		mapSet{map: "_pots_attackdata_advantage_display"; value: map(_pots_attackdata_advantage_timer)}
+	} else {
+		# No advantage to either side
+		mapSet{map: "_pots_attackdata_advantage_timer"; value: 0}
+	}
+	if !map(_pots_attackdata_playerctrl) && !map(_pots_attackdata_dummyctrl) {
+		# Reset display when neither player has control
+		mapSet{map: "_pots_attackdata_advantage_display"; value: 0}
+	}
+
+	# Check Attack Startup
+	# Does not literally check the animation startup but how many frames pass between the move coming out and the dummy getting hit
+	if root, movetype = H {
+		# This flag prevents the timer from going up after the startup has already been determined
+		mapSet{map: "_pots_attackdata_startup_wait"; value: 1}
+	} else {
+		if map(_pots_attackdata_playerctrl) {
+			mapSet{map: "_pots_attackdata_startup_timer"; value: 0}
+			mapSet{map: "_pots_attackdata_startup_wait"; value: 0}
+		}
+	}
+	if player($player), movetype = A && root, movetype != H {
+		if !map(_pots_attackdata_startup_wait) && root, pausetime = 0 {
+			mapAdd{map: "_pots_attackdata_startup_timer"; value: 1}
+			mapSet{map: "_pots_attackdata_startup_display"; value: 0}
+		}
+	} else {
+		if map(_pots_attackdata_startup_timer) && map(_pots_attackdata_startup_wait) {
+			mapSet{map: "_pots_attackdata_startup_display"; value: map(_pots_attackdata_startup_timer)}
+			mapSet{map: "_pots_attackdata_startup_timer"; value: 0}
+		}
+	}
+
+	# Check player control flags
+	# Outside of the previous situations, control is only restored after one frame of lag
+	mapSet{map: "_pots_attackdata_playerctrl"; value: player($player), ctrl}
+	mapSet{map: "_pots_attackdata_dummyctrl"; value: root, ctrl}
+
+	# Toggle text ON/OFF
+	if root, inputTime(s) = 1
+	&& !(root, map(_iksys_trainingDummyControl) = 0 && root, map(_iksys_trainingButtonJam) > 0 && root, map(_iksys_trainingButtonJam) = 7) { # Not during button jam
+		mapSet{map: "_pots_attackdata_hidetext"; value: !map(_pots_attackdata_hidetext)}
+	}
+
+	# Display text
+	if !map(_pots_attackdata_hidetext) {
+
+		# Guard level indication
+		if map(_pots_attackdata_cfg_guardlevel) {
+			if root, movetype = H
+			&& root, gethitvar(frame)
+			&& cond(map(_pots_attackdata_cfg_guardlevel_combo) = 0, root, prevmovetype != H, 1) {
+
+				let textvelx = 0;
+				let textvely = -1;
+
+				let unguardable = 0;
+				if map(_pots_attackdata_unguardable)
+				|| cond(playerIDexist(root, gethitvar(ID)), playerID(root, gethitvar(ID)), isasserted(unguardable), 0) { # Not perfect
+					let unguardable = 1;
+				}
+
+				# Unblockable
+				if $unguardable
+				|| root, gethitvar(guardflag) != LHA {
+					if root, gethitvar(attr) = SCA, AT {
+						text{
+							font: F map(_pots_attackdata_cfg_guardlevel_font);
+							text: "THROW";
+							removetime: 30;
+							layerno: 1;
+							align: 0;
+							localcoord: 320, 240;
+							pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
+							velocity: $textvelx, $textvely;
+							friction: 0.95, 0.95;
+							scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
+							color: 256, 0, 0;
+						}
+					} else {
+						text{
+							font: F map(_pots_attackdata_cfg_guardlevel_font);
+							text: "NONE";
+							removetime: 30;
+							layerno: 1;
+							align: 0;
+							localcoord: 320, 240;
+							pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
+							velocity: $textvelx, $textvely;
+							friction: 0.95, 0.95;
+							scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
+							color: 256, 0, 0;
+						}
+					}
+				# Air only... can happen I guess
+				} else if root, gethitvar(guardflag) = A && root, gethitvar(guardflag) != L && root, gethitvar(guardflag) != H {
+					text{
+						font: F map(_pots_attackdata_cfg_guardlevel_font);
+						text: "AIR ONLY";
+						removetime: 30;
+						layerno: 1;
+						align: 0;
+						localcoord: 320, 240;
+						pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
+						velocity: $textvelx, $textvely;
+						friction: 0.95, 0.95;
+						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
+						color: 256, 256, 0;
+					}
+				# Air guard flags
+				} else if root, statetype = A && root, prevstatetype = A && root, prevmovetype != H { # Prev because of knockdown attacks
+					if root, gethitvar(guardflag) = A {
+						text{
+							font: F map(_pots_attackdata_cfg_guardlevel_font);
+							text: "AIR OK";
+							removetime: 30;
+							layerno: 1;
+							align: 0;
+							localcoord: 320, 240;
+							pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
+							velocity: $textvelx, $textvely;
+							friction: 0.95, 0.95;
+							scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
+							color: 0, 256, 0;
+						}
+					} else {
+						text{
+							font: F map(_pots_attackdata_cfg_guardlevel_font);
+							text: "GROUND";
+							removetime: 30;
+							layerno: 1;
+							align: 0;
+							localcoord: 320, 240;
+							pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
+							velocity: $textvelx, $textvely;
+							friction: 0.95, 0.95;
+							scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
+							color: 256, 256, 0;
+						}
+					}
+				# Ground guard flags
+				} else if root, gethitvar(guardflag) != L && root, gethitvar(guardflag) = H {
+					text{
+						font: F map(_pots_attackdata_cfg_guardlevel_font);
+						text: "HIGH";
+						removetime: 30;
+						layerno: 1;
+						align: 0;
+						localcoord: 320, 240;
+						pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
+						velocity: $textvelx, $textvely;
+						friction: 0.95, 0.95;
+						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
+						color: 256, 256, 0;
+					}
+				} else if root, gethitvar(guardflag) = L && root, gethitvar(guardflag) != H {
+					text{
+						font: F map(_pots_attackdata_cfg_guardlevel_font);
+						text: "LOW";
+						removetime: 30;
+						layerno: 1;
+						align: 0;
+						localcoord: 320, 240;
+						pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
+						velocity: $textvelx, $textvely;
+						friction: 0.95, 0.95;
+						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
+						color: 256, 256, 0;
+					}
+				} else {
+					text{
+						font: F map(_pots_attackdata_cfg_guardlevel_font);
+						text: "MID";
+						removetime: 30;
+						layerno: 1;
+						align: 0;
+						localcoord: 320, 240;
+						pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
+						velocity: $textvelx, $textvely;
+						friction: 0.95, 0.95;
+						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
+						color: 0, 256, 0;
+					}
+				}
+
+				# Crossup
+				if root, prevmovetype != H
+				&& player($player), p2, ID = root, ID
+				&& player($player), vel x >= 0 && player($player), p2dist x < 0 {
+					text{
+						font: F map(_pots_attackdata_cfg_guardlevel_font);
+						text: "CROSSUP";
+						removetime: 30;
+						layerno: 1;
+						align: 0;
+						localcoord: 320, 240;
+						pos: (player($player), screenpos x) * camerazoom, (player($player), screenpos y + player($player), const(size.head.pos.y) - 8) * camerazoom;
+						velocity: $textvelx, $textvely;
+						friction: 0.95, 0.95;
+						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
+						color: 0, 256, 0;
+					}
+				}
+
+			}
+		}
+
+		# Hit Damage text
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "Hit Damage";
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: 1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x), map(_pots_attackdata_cfg_text_y) + 0 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Hit Damage value
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "%d";
+			params: ceil(map(_pots_attackdata_hitdamage));
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: -1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x) + map(_pots_attackdata_cfg_text_columnspacing), map(_pots_attackdata_cfg_text_y) + 0 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Combo Damage text
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "Combo Damage";
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: 1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x), map(_pots_attackdata_cfg_text_y) + 1 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Combo Damage value
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "%d";
+			params: ceil(map(_pots_attackdata_combodamage_display));
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: -1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x) + map(_pots_attackdata_cfg_text_columnspacing), map(_pots_attackdata_cfg_text_y) + 1 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Max Damage text
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "Max Damage";
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: 1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x), map(_pots_attackdata_cfg_text_y) + 2 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Max Damage value
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "%d";
+			params: ceil(map(_pots_attackdata_maxdamage));
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: -1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x) + map(_pots_attackdata_cfg_text_columnspacing), map(_pots_attackdata_cfg_text_y) + 2 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Max Combo text
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "Max Combo";
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: 1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x), map(_pots_attackdata_cfg_text_y) + 3 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Max Combo value
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "%d";
+			params: ceil(map(_pots_attackdata_maxcombo));
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: -1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x) + map(_pots_attackdata_cfg_text_columnspacing), map(_pots_attackdata_cfg_text_y) + 3 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Advantage text
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "Advantage";
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: 1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x), map(_pots_attackdata_cfg_text_y) + 4 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Advantage value
+		let advantage_r = 256;
+		let advantage_g = 256;
+		let advantage_b = 256;
+		if map(_pots_attackdata_cfg_advantage_color) {
+			# Use color coding
+			if map(_pots_attackdata_cfg_advantage_color) {
+				if map(_pots_attackdata_advantage_display) >= 1 {
+					let advantage_r = 64;
+					let advantage_g = 256;
+					let advantage_b = 64;
+				}
+				if map(_pots_attackdata_advantage_display) <= -1 {
+					let advantage_r = 256;
+					let advantage_g = 64;
+					let advantage_b = 64;
+				}
+			}
+		}
+		if map(_pots_attackdata_advantage_display) >= 1 {
+			text{
+				font: F map(_pots_attackdata_cfg_font);
+				text: "+%d";
+				params: ceil(map(_pots_attackdata_advantage_display));
+				removetime: 1;
+				layerno: map(_pots_attackdata_cfg_layer);
+				align: -1;
+				localcoord: 320, 240;
+				pos: map(_pots_attackdata_cfg_text_x) + map(_pots_attackdata_cfg_text_columnspacing), map(_pots_attackdata_cfg_text_y) + 4 * map(_pots_attackdata_cfg_text_linespacing);
+				scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+				color: $advantage_r, $advantage_g, $advantage_b;
+			}
+		} else {
+			text{
+				font: F map(_pots_attackdata_cfg_font);
+				text: "%d";
+				params: ceil(map(_pots_attackdata_advantage_display));
+				removetime: 1;
+				layerno: map(_pots_attackdata_cfg_layer);
+				align: -1;
+				localcoord: 320, 240;
+				pos: map(_pots_attackdata_cfg_text_x) + map(_pots_attackdata_cfg_text_columnspacing), map(_pots_attackdata_cfg_text_y) + 4 * map(_pots_attackdata_cfg_text_linespacing);
+				scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+				color: $advantage_r, $advantage_g, $advantage_b;
+			}
+		}
+		# Startup text
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "Startup";
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: 1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x), map(_pots_attackdata_cfg_text_y) + 5 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+		# Startup value
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "%d";
+			params: ceil(map(_pots_attackdata_startup_display));
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: -1;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x) + map(_pots_attackdata_cfg_text_columnspacing), map(_pots_attackdata_cfg_text_y) + 5 * map(_pots_attackdata_cfg_text_linespacing);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+	} else {
+		# Press Start indicator
+		text{
+			font: F map(_pots_attackdata_cfg_font);
+			text: "Press P2 Start";
+			removetime: 1;
+			layerno: map(_pots_attackdata_cfg_layer);
+			align: 0;
+			localcoord: 320, 240;
+			pos: map(_pots_attackdata_cfg_text_x) + map(_pots_attackdata_cfg_text_columnspacing) / 2.0, map(_pots_attackdata_cfg_text_y);
+			scale: map(_pots_attackdata_cfg_text_scale), map(_pots_attackdata_cfg_text_scale);
+		}
+	}
+}
+
+# Update lagging variables for guard level checks
+if map(_pots_attackdata_cfg_guardlevel) {
+	# Update indicator position
+	# We deliberately lag it because of moves that snap the players, such as throws
+	if root, statetype = L {
+		let textposymul = 0.333;
+	} else if root, statetype = C {
+		let textposymul = 0.667;
+	} else {
+		let textposymul = 1.0;
+	}
+	mapSet{map: "_pots_attackdata_levelposx"; value: root, screenpos x * camerazoom}
+	mapSet{map: "_pots_attackdata_levelposy"; value: (root, screenpos y + root, const(size.head.pos.y) * $textposymul - 8) * camerazoom}
+
+	# Check unguardable AssertSpecial flags in previous frame
+	if root, statetype = S && root, isasserted(nostandguard)
+	|| root, statetype = C && root, isasserted(nocrouchguard)
+	|| root, statetype = A && root, isasserted(noairguard) {
+		let noscaguard = 1;
+	}
+	if $noscaguard && root, stateno != [120, 155] && root, ctrl
+	|| cond(playerIDexist(root, gethitvar(ID)), playerID(root, gethitvar(ID)), isasserted(unguardable), 0) { # Not perfect
+		mapSet{map: "_pots_attackdata_unguardable"; value: 1}
+	} else {
+		mapSet{map: "_pots_attackdata_unguardable"; value: 0}
+	}
+}
+
+# Safeguards
+posset{x: root, pos x; y: const240p(240)}
+assertspecial{flag: invisible; flag2: noshadow}
+if numhelper(1615201920) > 1 {
+	if helper(1615201920), ID != ID {
+		destroyself{recursive: 1}
+	}
+}
+
+# Debug text
+displaytoclipboard{
+	text: "Player = %d, Advantage Timer = %d, Startup Timer = %d";
+	params: $player, ceil(map(_pots_attackdata_advantage_timer)), ceil(map(_pots_attackdata_startup_timer));
+}
+appendtoclipboard {
+	text: "\nBy PotS - https://network.mugenguild.com/pots/";
+}
+
+
+#===============================================================================
+# Negative states
+#===============================================================================
+
+[StateDef -4]
+
+# Create attack data helper from player 2
+# An outside helper is used to ensure players are checked in a consistent order
+if !ishelper && gameMode = "training" && playerNo = 2 {
+	if !numhelper(1615201920) {
+		helper{
+			stateno: 1615201920;
+			ID: 1615201920;
+			name: "Attack Data Display";
+			pausemovetime: 5184000;
+			supermovetime: 5184000;
+			preserve: 1;
+		}
+	}
+}

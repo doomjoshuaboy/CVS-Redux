@@ -1,0 +1,10 @@
+
+[Info]
+prefix = cvs
+fx.scale = 4
+localcoord = 1280, 720
+
+[Files]
+sff = cvsfx.sff
+air = cvsfx.air
+snd = cvsfx.snd

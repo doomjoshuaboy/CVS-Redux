@@ -1,0 +1,8154 @@
+[Info]
+name = "CVS: REDUX (Diamond portraits)"
+author = "DoomJoshuaBoy"
+VersionDate  = 2025
+localcoord = 1280,720
+
+[Files]
+sff = fight/fight.sff
+fightfx.sff = fight/fightfx.sff
+fightfx.air = fight/fightfx.air
+snd = fight/fight.snd
+common.snd = fight/common.snd
+font1 = font/cvs2hdcombo.def
+font2 = font/cvs2hdname.def
+font3 = font/cvs2hdtimer.def
+font4 = font/cvs2hdscore.def
+font5 = font/cvs2hdaction.def
+font6 = font/cvs2hdnamei.def
+fx1 = cvsfx.def
+
+[Lifebar]
+;Player 1
+p1.pos = 640,-20
+
+p1.bg0.spr = 11,0
+p1.bg0.scale = 1,1
+
+p1.front.spr = 12,0
+p1.front.scale =  1,1
+p1.front.facing = 1
+p1.front33.spr = 12,0
+p1.front33.scale =  1,1
+p1.front33.facing = 1
+p1.front66.spr = 12,0
+p1.front66.scale =  1,1
+p1.front66.facing = 1
+p1.mid.spr = 12,0
+p1.mid.scale = 1,1
+p1.mid.facing = 1
+p1.shift.spr = 12,0
+p1.shift.facing = 1
+p1.shift.scale = 1,1
+p1.warn.range = 33,1
+p1.warn.anim = 1
+p1.warn.facing = 1
+p1.warn.scale = 1,1
+p1.warn.layerno = -1
+
+p1.warn.palfx.add = 256,-256,-256
+p1.warn.palfx.mul = 128,0,0
+p1.front.palfx.add = -32,-256,-256
+p1.front.palfx.mul =  128,0,0
+p1.front33.palfx.add = 32,0,-256
+p1.front33.palfx.mul = 256,256,256
+p1.front66.palfx.add = -256,0,-256
+p1.front66.palfx.mul = 256,256,256
+p1.mid.palfx.add = -64,-256,-256
+p1.mid.palfx.mul = 256,0,0
+p1.mid.palfx.sinadd = -150,-256,-256, 40
+p1.shift.palfx.add = -256,-256,-256
+p1.shift.palfx.mul = 0,0,0
+
+p1.range.x   = -82,-485
+
+p1.shift = 1
+p1.mult = 5
+p1.steps = 1
+
+;Player 2
+p2.pos       = 638,-20
+
+p2.bg0.spr   = 11,0
+p2.bg0.scale   = 1,1
+p2.bg0.facing   = -1
+
+p2.front.spr = 12,0
+p2.front.scale   =  1,1
+p2.front.facing   = -1
+p2.front33.spr = 12,0
+p2.front33.scale   =  1,1
+p2.front33.facing   = -1
+p2.front66.spr = 12,0
+p2.front66.scale   =  1,1
+p2.front66.facing   = -1
+p2.mid.spr   = 12,0
+p2.mid.scale   = 1,1
+p2.mid.facing   = -1
+p2.shift.spr = 12,0
+p2.shift.facing = -1
+p2.shift.scale   = 1,1
+p2.warn.range = 33,1
+p2.warn.anim = 1
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+
+p2.warn.palfx.add = 256,-256,-256
+p2.warn.palfx.mul = 128,0,0
+p2.front.palfx.add = 0,-256,-256
+p2.front.palfx.mul = 256,0,0
+p2.front33.palfx.add = 32,0,-256
+p2.front33.palfx.mul = 256,256,256
+p2.front66.palfx.add = -256,0,-256
+p2.front66.palfx.mul = 256,256,256
+p2.mid.palfx.add = 0,-256,-256
+p2.mid.palfx.mul = 256,0,0
+p2.mid.palfx.sinadd = -150,-256,-256,40
+p2.shift.palfx.add = -256,-256,-256
+p2.shift.palfx.mul = 0,0,0
+
+p2.range.x   = 82,485
+
+p2.shift = 1
+p2.mult = 5
+p2.steps = 1
+
+mid.shift = 1
+mid.freeze = 0
+mid.delay = 1
+mid.mult = 0.5
+mid.steps = 1
+
+
+[Simul Lifebar]
+;Player 1
+p1.pos       = 640,-20
+p1.bg0.spr   = 11,1
+p1.bg0.scale   = 1,1
+
+p1.front.spr = 12,1
+p1.front.scale   =  1,1
+p1.front.facing   = 1
+p1.front66.spr = 12,1
+p1.front66.scale   =  1,1
+p1.front66.facing   = 1
+p1.front33.spr = 12,1
+p1.front33.scale   =  1,1
+p1.front33.facing   = 1
+p1.mid.spr   = 12,1
+p1.mid.scale   = 1,1
+p1.mid.facing   = 1
+p1.shift.spr = 12,1
+p1.shift.facing = 1
+p1.shift.scale   = 1,1
+p1.warn.range = 33,1
+p1.warn.anim = 2
+p1.warn.facing = 1
+p1.warn.scale = 1,1
+p1.warn.layerno = -1
+
+p1.warn.palfx.add = 256,-256,-256
+p1.warn.palfx.mul = 128,0,0
+p1.front.palfx.add   = -32,-256,-256
+p1.front.palfx.mul   =  128,0,0
+p1.front.palfx.sinadd = -64,-256,-256,30
+p1.front33.palfx.add   =  32,0,-256
+p1.front33.palfx.mul   =  256,256,256
+p1.front66.palfx.add   =  -256,0,-256
+p1.front66.palfx.mul   =  256,256,256
+p1.mid.palfx.add   = 0,-256,-256
+p1.mid.palfx.mul   = 256,0,0
+p1.mid.palfx.sinadd =  -64,-256,-256,40
+p1.shift.palfx.add   = -256,-256,-256
+p1.shift.palfx.mul   = 0,0,0
+
+p1.range.x   = -95,-485
+
+p1.shift = 1
+p1.mult = 5
+p1.steps = 1
+
+;Player 2
+p2.pos       = 638,-20
+p2.bg0.spr   = 11,1
+p2.bg0.facing   = -1
+p2.bg0.scale   = 1,1
+
+p2.front.spr = 12,1
+p2.front.scale   =  1,1
+p2.front.facing   = -1
+p2.front66.spr = 12,1
+p2.front66.scale   =  1,1
+p2.front66.facing   = -1
+p2.front33.spr = 12,1
+p2.front33.scale   =  1,1
+p2.front33.facing   = -1
+p2.mid.spr   = 12,1
+p2.mid.scale   = 1,1
+p2.mid.facing   = -1
+p2.shift.spr = 12,1
+p2.shift.facing = -1
+p2.shift.scale   = 1,1
+p2.warn.range = 33,1
+p2.warn.anim = 2
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+
+p2.warn.palfx.add = 256,-256,-256
+p2.warn.palfx.mul = 128,0,0
+p2.front.palfx.add   = -32,-256,-256
+p2.front.palfx.mul   =  128,0,0
+p2.front.palfx.sinadd = -64,-256,-256,30
+p2.front33.palfx.add   =  32,0,-256
+p2.front33.palfx.mul   =  256,256,256
+p2.front66.palfx.add   =  -256,0,-256
+p2.front66.palfx.mul   =  256,256,256
+p2.mid.palfx.add   = 0,-256,-256
+p2.mid.palfx.mul   = 256,0,0
+p2.mid.palfx.sinadd =  -64,-256,-256,40
+p2.shift.palfx.add   = -256,-256,-256
+p2.shift.palfx.mul   = 0,0,0
+
+p2.range.x   = 95,485
+
+p2.shift = 1
+p2.mult = 5
+p2.steps = 1
+
+;Player 3
+p3.pos       = 640,-20
+
+p3.front.spr = 12,2
+p3.front.scale   =  1,1
+p3.front.facing   = 1
+p3.front66.spr = 12,2
+p3.front66.scale   =  1,1
+p3.front66.facing   = 1
+p3.front33.spr = 12,2
+p3.front33.scale   =  1,1
+p3.front33.facing   = 1
+p3.mid.spr   = 12,2
+p3.mid.scale   = 1,1
+p3.mid.facing   = 1
+p3.shift.spr = 12,2
+p3.shift.facing = 1
+p3.shift.scale   = 1,1
+p3.warn.range = 33,1
+p3.warn.anim = 3
+p3.warn.facing = 1
+p3.warn.scale = 1,1
+p3.warn.layerno = -1
+
+p3.warn.palfx.add = 256,-256,-256
+p3.warn.palfx.mul = 128,0,0
+p3.front.palfx.add   = -32,-256,-256
+p3.front.palfx.mul   =  128,0,0
+p3.front.palfx.sinadd = -64,-256,-256,30
+p3.front33.palfx.add   =  32,0,-256
+p3.front33.palfx.mul   =  256,256,256
+p3.front66.palfx.add   =  -256,0,-256
+p3.front66.palfx.mul   =  256,256,256
+p3.mid.palfx.add   = 0,-256,-256
+p3.mid.palfx.mul   = 256,0,0
+p3.mid.palfx.sinadd =  -64,-256,-256,40
+p3.shift.palfx.add   = -256,-256,-256
+p3.shift.palfx.mul   = 0,0,0
+
+p3.range.x   = -82,-473
+
+p3.shift = 1
+p3.mult = 5
+p3.steps = 1
+
+;Player 4
+p4.pos       = 638,-20
+
+p4.front.spr = 12,2
+p4.front.scale   =  1,1
+p4.front.facing   = -1
+p4.front66.spr = 12,2
+p4.front66.scale   =  1,1
+p4.front66.facing   = -1
+p4.front33.spr = 12,2
+p4.front33.scale   =  1,1
+p4.front33.facing   = -1
+p4.mid.spr   = 12,2
+p4.mid.scale   = 1,1
+p4.mid.facing   = -1
+p4.shift.spr = 12,2
+p4.shift.facing = -1
+p4.shift.scale   = 1,1
+p4.warn.range = 33,1
+p4.warn.anim = 3
+p4.warn.facing = -1
+p4.warn.scale = 1,1
+p4.warn.layerno = -1
+
+p4.warn.palfx.add = 256,-256,-256
+p4.warn.palfx.mul = 128,0,0
+p4.front.palfx.add   = -32,-256,-256
+p4.front.palfx.mul   =  128,0,0
+p4.front.palfx.sinadd = -64,-256,-256,30
+p4.front33.palfx.add   =  32,0,-256
+p4.front33.palfx.mul   =  256,256,256
+p4.front66.palfx.add   =  -256,0,-256
+p4.front66.palfx.mul   =  256,256,256
+p4.mid.palfx.add   = 0,-256,-256
+p4.mid.palfx.mul   = 256,0,0
+p4.mid.palfx.sinadd =  -64,-256,-256,40
+p4.shift.palfx.add   = -256,-256,-256
+p4.shift.palfx.mul   = 0,0,0
+
+p4.range.x   = 82,473
+
+p4.shift = 1
+p4.mult = 5
+p4.steps = 1
+
+mid.shift = 1
+mid.freeze = 0
+mid.delay = 1
+mid.mult = 0.5
+mid.steps = 1
+
+[Simul_3P Lifebar]
+;Player 1
+p1.pos       = 640,-20
+p1.bg0.spr   = 11,2
+p1.bg0.scale   = 1,1
+
+p1.front.spr = 12,3
+p1.front.scale   =  1,1
+p1.front.facing   = 1
+p1.front66.spr = 12,3
+p1.front66.scale   =  1,1
+p1.front66.facing   = 1
+p1.front33.spr = 12,3
+p1.front33.scale   =  1,1
+p1.front33.facing   = 1
+p1.mid.spr   = 12,3
+p1.mid.scale   = 1,1
+p1.mid.facing   = 1
+p1.shift.spr = 12,3
+p1.shift.facing = 1
+p1.shift.scale   = 1,1
+p1.warn.range = 33,1
+p1.warn.anim = 4
+p1.warn.facing = 1
+p1.warn.scale = 1,1
+p1.warn.layerno = -1
+
+p1.warn.palfx.add = 256,-256,-256
+p1.warn.palfx.mul = 128,0,0
+p1.front.palfx.add   = -32,-256,-256
+p1.front.palfx.mul   =  128,0,0
+p1.front.palfx.sinadd = -64,-256,-256,30
+p1.front33.palfx.add   =  32,0,-256
+p1.front33.palfx.mul   =  256,256,256
+p1.front66.palfx.add   =  -256,0,-256
+p1.front66.palfx.mul   =  256,256,256
+p1.mid.palfx.add   = 0,-256,-256
+p1.mid.palfx.mul   = 256,0,0
+p1.mid.palfx.sinadd =  -64,-256,-256,40
+p1.shift.palfx.add   = -256,-256,-256
+p1.shift.palfx.mul   = 0,0,0
+
+p1.range.x   = -98,-485
+
+p1.shift = 1
+p1.mult = 5
+p1.steps = 1
+
+;Player 2
+p2.pos       = 638,-20
+p2.bg0.spr   = 11,2
+p2.bg0.facing   = -1
+p2.bg0.scale   = 1,1
+
+p2.front.spr = 12,3
+p2.front.scale   =  1,1
+p2.front.facing   = -1
+p2.front66.spr = 12,3
+p2.front66.scale   =  1,1
+p2.front66.facing   = -1
+p2.front33.spr = 12,3
+p2.front33.scale   =  1,1
+p2.front33.facing   = -1
+p2.mid.spr   = 12,3
+p2.mid.scale   = 1,1
+p2.mid.facing   = -1
+p2.shift.spr = 12,3
+p2.shift.facing = -1
+p2.shift.scale   = 1,1
+p2.warn.range = 33,1
+p2.warn.anim = 2
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+p2.warn.range = 33,1
+p2.warn.anim = 4
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+
+p2.warn.palfx.add = 256,-256,-256
+p2.warn.palfx.mul = 128,0,0
+p2.warn.palfx.add = 256,-256,-256
+p2.warn.palfx.mul = 128,0,0
+p2.front.palfx.add   = -32,-256,-256
+p2.front.palfx.mul   =  128,0,0
+p2.front.palfx.sinadd = -64,-256,-256,30
+p2.front33.palfx.add   =  32,0,-256
+p2.front33.palfx.mul   =  256,256,256
+p2.front66.palfx.add   =  -256,0,-256
+p2.front66.palfx.mul   =  256,256,256
+p2.mid.palfx.add   = 0,-256,-256
+p2.mid.palfx.mul   = 256,0,0
+p2.mid.palfx.sinadd =  -64,-256,-256,40
+p2.shift.palfx.add   = -256,-256,-256
+p2.shift.palfx.mul   = 0,0,0
+
+p2.range.x   = 98,485
+
+p2.shift = 1
+p2.mult = 5
+p2.steps = 1
+
+;Player 3
+p3.pos       = 640,-20
+
+p3.front.spr = 12,4
+p3.front.scale   =  1,1
+p3.front.facing   = 1
+p3.front66.spr = 12,4
+p3.front66.scale   =  1,1
+p3.front66.facing   = 1
+p3.front33.spr = 12,4
+p3.front33.scale   =  1,1
+p3.front33.facing   = 1
+p3.mid.spr   = 12,4
+p3.mid.scale   = 1,1
+p3.mid.facing   = 1
+p3.shift.spr = 12,4
+p3.shift.facing = 1
+p3.shift.scale   = 1,1
+p3.warn.range = 33,1
+p3.warn.anim = 5
+p3.warn.facing = 1
+p3.warn.scale = 1,1
+p3.warn.layerno = -1
+
+p3.warn.palfx.add = 256,-256,-256
+p3.warn.palfx.mul = 128,0,0
+p3.front.palfx.add   = -32,-256,-256
+p3.front.palfx.mul   =  128,0,0
+p3.front.palfx.sinadd = -64,-256,-256,30
+p3.front33.palfx.add   =  32,0,-256
+p3.front33.palfx.mul   =  256,256,256
+p3.front66.palfx.add   =  -256,0,-256
+p3.front66.palfx.mul   =  256,256,256
+p3.mid.palfx.add   = 0,-256,-256
+p3.mid.palfx.mul   = 256,0,0
+p3.mid.palfx.sinadd =  -64,-256,-256,40
+p3.shift.palfx.add   = -256,-256,-256
+p3.shift.palfx.mul   = 0,0,0
+
+p3.range.x   = -90,-476
+
+p3.shift = 1
+p3.mult = 5
+p3.steps = 1
+
+;Player 4
+p4.pos       = 638,-20
+
+p4.front.spr = 12,4
+p4.front.scale   =  1,1
+p4.front.facing   = -1
+p4.front66.spr = 12,4
+p4.front66.scale   =  1,1
+p4.front66.facing   = -1
+p4.front33.spr = 12,4
+p4.front33.scale   =  1,1
+p4.front33.facing   = -1
+p4.mid.spr   = 12,4
+p4.mid.scale   = 1,1
+p4.mid.facing   = -1
+p4.shift.spr = 12,4
+p4.shift.facing = -1
+p4.shift.scale   = 1,1
+p4.warn.range = 33,1
+p4.warn.anim = 5
+p4.warn.facing = -1
+p4.warn.scale = 1,1
+p4.warn.layerno = -1
+
+p4.warn.palfx.add = 256,-256,-256
+p4.warn.palfx.mul = 128,0,0
+p4.front.palfx.add   = -32,-256,-256
+p4.front.palfx.mul   =  128,0,0
+p4.front.palfx.sinadd = -64,-256,-256,30
+p4.front33.palfx.add   =  32,0,-256
+p4.front33.palfx.mul   =  256,256,256
+p4.front66.palfx.add   =  -256,0,-256
+p4.front66.palfx.mul   =  256,256,256
+p4.mid.palfx.add   = 0,-256,-256
+p4.mid.palfx.mul   = 256,0,0
+p4.mid.palfx.sinadd =  -64,-256,-256,40
+p4.shift.palfx.add   = -256,-256,-256
+p4.shift.palfx.mul   = 0,0,0
+
+p4.range.x   = 90,476
+
+p4.shift = 1
+p4.mult = 5
+p4.steps = 1
+
+;Player 5
+p5.pos       = 640,-20
+
+p5.front.spr = 12,5
+p5.front.scale   =  1,1
+p5.front.facing   = 1
+p5.front66.spr = 12,5
+p5.front66.scale   =  1,1
+p5.front66.facing   = 1
+p5.front33.spr = 12,5
+p5.front33.scale   =  1,1
+p5.front33.facing   = 1
+p5.mid.spr   = 12,5
+p5.mid.scale   = 1,1
+p5.mid.facing   = 1
+p5.shift.spr = 12,5
+p5.shift.facing = 1
+p5.shift.scale   = 1,1
+p5.warn.range = 33,1
+p5.warn.anim = 6
+p5.warn.facing = 1
+p5.warn.scale = 1,1
+p5.warn.layerno = -1
+
+p5.warn.palfx.add = 256,-256,-256
+p5.warn.palfx.mul = 128,0,0
+p5.front.palfx.add   = -32,-256,-256
+p5.front.palfx.mul   =  128,0,0
+p5.front.palfx.sinadd = -64,-256,-256,30
+p5.front33.palfx.add   =  32,0,-256
+p5.front33.palfx.mul   =  256,256,256
+p5.front66.palfx.add   =  -256,0,-256
+p5.front66.palfx.mul   =  256,256,256
+p5.mid.palfx.add   = 0,-256,-256
+p5.mid.palfx.mul   = 256,0,0
+p5.mid.palfx.sinadd =  -64,-256,-256,40
+p5.shift.palfx.add   = -256,-256,-256
+p5.shift.palfx.mul   = 0,0,0
+
+p5.range.x   = -81,-467
+
+p5.shift = 1
+p5.mult = 5
+p5.steps = 1
+
+;Player 6
+p6.pos       = 638,-20
+
+p6.front.spr = 12,5
+p6.front.scale   =  1,1
+p6.front.facing   = -1
+p6.front66.spr = 12,5
+p6.front66.scale   =  1,1
+p6.front66.facing   = -1
+p6.front33.spr = 12,5
+p6.front33.scale   =  1,1
+p6.front33.facing   = -1
+p6.mid.spr   = 12,5
+p6.mid.scale   = 1,1
+p6.mid.facing   = -1
+p6.shift.spr = 12,5
+p6.shift.facing = -1
+p6.shift.scale   = 1,1
+p6.warn.range = 33,1
+p6.warn.anim = 6
+p6.warn.facing = -1
+p6.warn.scale = 1,1
+p6.warn.layerno = -1
+
+p6.warn.palfx.add = 256,-256,-256
+p6.warn.palfx.mul = 128,0,0
+p6.front.palfx.add   = -32,-256,-256
+p6.front.palfx.mul   =  128,0,0
+p6.front.palfx.sinadd = -64,-256,-256,30
+p6.front33.palfx.add   =  32,0,-256
+p6.front33.palfx.mul   =  256,256,256
+p6.front66.palfx.add   =  -256,0,-256
+p6.front66.palfx.mul   =  256,256,256
+p6.mid.palfx.add   = 0,-256,-256
+p6.mid.palfx.mul   = 256,0,0
+p6.mid.palfx.sinadd =  -64,-256,-256,40
+p6.shift.palfx.add   = -256,-256,-256
+p6.shift.palfx.mul   = 0,0,0
+
+p6.range.x   = 81,467
+
+p6.shift = 1
+p6.mult = 5
+p6.steps = 1
+
+mid.shift = 1
+mid.freeze = 0
+mid.delay = 1
+mid.mult = 0.5
+mid.steps = 1  
+
+
+[Simul_4P Lifebar]
+;Player 1
+p1.pos       = 640,-20
+p1.bg0.spr   = 11,3
+p1.bg0.scale   = 1,1
+
+
+p1.front.spr = 12,6
+p1.front.scale   =  1,1
+p1.front.facing   = 1
+p1.front66.spr = 12,6
+p1.front66.scale   =  1,1
+p1.front66.facing   = 1
+p1.front33.spr = 12,6
+p1.front33.scale   =  1,1
+p1.front33.facing   = 1
+p1.mid.spr   = 12,6
+p1.mid.scale   = 1,1
+p1.mid.facing   = 1
+p1.shift.spr = 12,6
+p1.shift.facing = 1
+p1.shift.scale   = 1,1
+p1.warn.range = 33,1
+p1.warn.anim = 7
+p1.warn.facing = 1
+p1.warn.scale = 1,1
+p1.warn.layerno = -1
+
+p1.warn.palfx.add = 256,-256,-256
+p1.warn.palfx.mul = 128,0,0
+p1.front.palfx.add   = -32,-256,-256
+p1.front.palfx.mul   =  128,0,0
+p1.front.palfx.sinadd = -64,-256,-256,30
+p1.front33.palfx.add   =  32,0,-256
+p1.front33.palfx.mul   =  256,256,256
+p1.front66.palfx.add   =  -256,0,-256
+p1.front66.palfx.mul   =  256,256,256
+p1.mid.palfx.add   = 0,-256,-256
+p1.mid.palfx.mul   = 256,0,0
+p1.mid.palfx.sinadd =  -64,-256,-256,40
+p1.shift.palfx.add   = -256,-256,-256
+p1.shift.palfx.mul   = 0,0,0
+
+p1.range.x   = -100,-485
+
+p1.shift = 1
+p1.mult = 5
+p1.steps = 1
+
+;Player 2
+p2.pos       = 638,-20
+p2.bg0.spr   = 11,3
+p2.bg0.facing   = -1
+p2.bg0.scale   = 1,1
+
+
+p2.front.spr = 12,6
+p2.front.scale   =  1,1
+p2.front.facing   = -1
+p2.front66.spr = 12,6
+p2.front66.scale   =  1,1
+p2.front66.facing   = -1
+p2.front33.spr = 12,6
+p2.front33.scale   =  1,1
+p2.front33.facing   = -1
+p2.mid.spr   = 12,6
+p2.mid.scale   = 1,1
+p2.mid.facing   = -1
+p2.shift.spr = 12,6
+p2.shift.facing = -1
+p2.shift.scale   = 1,1
+p2.warn.range = 33,1
+p2.warn.anim = 7
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+
+p2.warn.palfx.add = 256,-256,-256
+p2.warn.palfx.mul = 128,0,0
+p2.front.palfx.add   = -32,-256,-256
+p2.front.palfx.mul   =  128,0,0
+p2.front.palfx.sinadd = -64,-256,-256,30
+p2.front33.palfx.add   =  32,0,-256
+p2.front33.palfx.mul   =  256,256,256
+p2.front66.palfx.add   =  -256,0,-256
+p2.front66.palfx.mul   =  256,256,256
+p2.mid.palfx.add   = 0,-256,-256
+p2.mid.palfx.mul   = 256,0,0
+p2.mid.palfx.sinadd =  -64,-256,-256,40
+p2.shift.palfx.add   = -256,-256,-256
+p2.shift.palfx.mul   = 0,0,0
+
+p2.range.x   = 100,485
+
+p2.shift = 1
+p2.mult = 5
+p2.steps = 1
+
+;Player 3
+p3.pos       = 640,-20
+
+p3.front.spr = 12,7
+p3.front.scale   =  1,1
+p3.front.facing   = 1
+p3.front66.spr = 12,7
+p3.front66.scale   =  1,1
+p3.front66.facing   = 1
+p3.front33.spr = 12,7
+p3.front33.scale   =  1,1
+p3.front33.facing   = 1
+p3.mid.spr   = 12,7
+p3.mid.scale   = 1,1
+p3.mid.facing   = 1
+p3.shift.spr = 12,7
+p3.shift.facing = 1
+p3.shift.scale   = 1,1
+p3.warn.range = 33,1
+p3.warn.anim = 8
+p3.warn.facing = 1
+p3.warn.scale = 1,1
+p3.warn.layerno = -1
+
+p3.warn.palfx.add = 256,-256,-256
+p3.warn.palfx.mul = 128,0,0
+p3.front.palfx.add   = -32,-256,-256
+p3.front.palfx.mul   =  128,0,0
+p3.front.palfx.sinadd = -64,-256,-256,30
+p3.front33.palfx.add   =  32,0,-256
+p3.front33.palfx.mul   =  256,256,256
+p3.front66.palfx.add   =  -256,0,-256
+p3.front66.palfx.mul   =  256,256,256
+p3.mid.palfx.add   = 0,-256,-256
+p3.mid.palfx.mul   = 256,0,0
+p3.mid.palfx.sinadd =  -64,-256,-256,40
+p3.shift.palfx.add   = -256,-256,-256
+p3.shift.palfx.mul   = 0,0,0
+
+p3.range.x   = -94,-477
+
+p3.shift = 1
+p3.mult = 5
+p3.steps = 1
+
+;Player 4
+p4.pos       = 638,-20
+
+p4.front.spr = 12,7
+p4.front.scale   =  1,1
+p4.front.facing   = -1
+p4.front66.spr = 12,7
+p4.front66.scale   =  1,1
+p4.front66.facing   = -1
+p4.front33.spr = 12,7
+p4.front33.scale   =  1,1
+p4.front33.facing   = -1
+p4.mid.spr   = 12,7
+p4.mid.scale   = 1,1
+p4.mid.facing   = -1
+p4.shift.spr = 12,7
+p4.shift.facing = -1
+p4.shift.scale   = 1,1
+p4.warn.range = 33,1
+p4.warn.anim = 8
+p4.warn.facing = -1
+p4.warn.scale = 1,1
+p4.warn.layerno = -1
+
+p4.warn.palfx.add = 256,-256,-256
+p4.warn.palfx.mul = 128,0,0
+p4.front.palfx.add   = -32,-256,-256
+p4.front.palfx.mul   =  128,0,0
+p4.front.palfx.sinadd = -64,-256,-256,30
+p4.front33.palfx.add   =  32,0,-256
+p4.front33.palfx.mul   =  256,256,256
+p4.front66.palfx.add   =  -256,0,-256
+p4.front66.palfx.mul   =  256,256,256
+p4.mid.palfx.add   = 0,-256,-256
+p4.mid.palfx.mul   = 256,0,0
+p4.mid.palfx.sinadd =  -64,-256,-256,40
+p4.shift.palfx.add   = -256,-256,-256
+p4.shift.palfx.mul   = 0,0,0
+
+p4.range.x   = 94,477
+
+p4.shift = 1
+p4.mult = 5
+p4.steps = 1
+
+;Player 5
+p5.pos       = 640,-20
+
+
+p5.front.spr = 12,8
+p5.front.scale   =  1,1
+p5.front.facing   = 1
+p5.front66.spr = 12,8
+p5.front66.scale   =  1,1
+p5.front66.facing   = 1
+p5.front33.spr = 12,8
+p5.front33.scale   =  1,1
+p5.front33.facing   = 1
+p5.mid.spr   = 12,8
+p5.mid.scale   = 1,1
+p5.mid.facing   = 1
+p5.shift.spr = 12,8
+p5.shift.facing = 1
+p5.shift.scale   = 1,1
+p5.warn.range = 33,1
+p5.warn.anim = 9
+p5.warn.facing = 1
+p5.warn.scale = 1,1
+p5.warn.layerno = -1
+
+p5.warn.palfx.add = 256,-256,-256
+p5.warn.palfx.mul = 128,0,0
+p5.front.palfx.add   = -32,-256,-256
+p5.front.palfx.mul   =  128,0,0
+p5.front.palfx.sinadd = -64,-256,-256,30
+p5.front33.palfx.add   =  32,0,-256
+p5.front33.palfx.mul   =  256,256,256
+p5.front66.palfx.add   =  -256,0,-256
+p5.front66.palfx.mul   =  256,256,256
+p5.mid.palfx.add   = 0,-256,-256
+p5.mid.palfx.mul   = 256,0,0
+p5.mid.palfx.sinadd =  -64,-256,-256,40
+p5.shift.palfx.add   = -256,-256,-256
+p5.shift.palfx.mul   = 0,0,0
+
+
+p5.range.x   = -87,-472
+
+p5.shift = 1
+p5.mult = 5
+p5.steps = 1
+
+;Player 6
+p6.pos       = 638,-20
+
+p6.front.spr = 12,8
+p6.front.scale   =  1,1
+p6.front.facing   = -1
+p6.front66.spr = 12,8
+p6.front66.scale   =  1,1
+p6.front66.facing   = -1
+p6.front33.spr = 12,8
+p6.front33.scale   =  1,1
+p6.front33.facing   = -1
+p6.mid.spr   = 12,8
+p6.mid.scale   = 1,1
+p6.mid.facing   = -1
+p6.shift.spr = 12,8
+p6.shift.facing = -1
+p6.shift.scale   = 1,1
+p6.warn.range = 33,1
+p6.warn.anim = 9
+p6.warn.facing = -1
+p6.warn.scale = 1,1
+p6.warn.layerno = -1
+
+p6.warn.palfx.add = 256,-256,-256
+p6.warn.palfx.mul = 128,0,0
+p6.front.palfx.add   = -32,-256,-256
+p6.front.palfx.mul   =  128,0,0
+p6.front.palfx.sinadd = -64,-256,-256,30
+p6.front33.palfx.add   =  32,0,-256
+p6.front33.palfx.mul   =  256,256,256
+p6.front66.palfx.add   =  -256,0,-256
+p6.front66.palfx.mul   =  256,256,256
+p6.mid.palfx.add   = 0,-256,-256
+p6.mid.palfx.mul   = 256,0,0
+p6.mid.palfx.sinadd =  -64,-256,-256,40
+p6.shift.palfx.add   = -256,-256,-256
+p6.shift.palfx.mul   = 0,0,0
+
+
+p6.range.x   = 87,472
+
+p6.shift = 1
+p6.mult = 5
+p6.steps = 1
+
+;Player 7
+p7.pos       = 640,-20
+
+p7.front.spr = 12,9
+p7.front.scale   =  1,1
+p7.front.facing   = 1
+p7.front66.spr = 12,9
+p7.front66.scale   =  1,1
+p7.front66.facing   = 1
+p7.front33.spr = 12,9
+p7.front33.scale   =  1,1
+p7.front33.facing   = 1
+p7.mid.spr   = 12,9
+p7.mid.scale   = 1,1
+p7.mid.facing   = 1
+p7.shift.spr = 12,9
+p7.shift.facing = 1
+p7.shift.scale   = 1,1
+p7.warn.range = 33,1
+p7.warn.anim = 10
+p7.warn.facing = 1
+p7.warn.scale = 1,1
+p7.warn.layerno = -1
+
+p7.warn.palfx.add = 256,-256,-256
+p7.warn.palfx.mul = 128,0,0
+p7.front.palfx.add   = -32,-256,-256
+p7.front.palfx.mul   =  128,0,0
+p7.front.palfx.sinadd = -64,-256,-256,30
+p7.front33.palfx.add   =  32,0,-256
+p7.front33.palfx.mul   =  256,256,256
+p7.front66.palfx.add   =  -256,0,-256
+p7.front66.palfx.mul   =  256,256,256
+p7.mid.palfx.add   = 0,-256,-256
+p7.mid.palfx.mul   = 256,0,0
+p7.mid.palfx.sinadd =  -64,-256,-256,40
+p7.shift.palfx.add   = -256,-256,-256
+p7.shift.palfx.mul   = 0,0,0
+
+
+p7.range.x   = -82,-466
+
+p7.shift = 1
+p7.mult = 5
+p7.steps = 1
+
+;Player 8
+p8.pos       = 638,-20
+
+p8.front.spr = 12,9
+p8.front.scale   =  1,1
+p8.front.facing   = -1
+p8.front66.spr = 12,9
+p8.front66.scale   =  1,1
+p8.front66.facing   = -1
+p8.front33.spr = 12,9
+p8.front33.scale   =  1,1
+p8.front33.facing   = -1
+p8.mid.spr   = 12,9
+p8.mid.scale   = 1,1
+p8.mid.facing   = -1
+p8.shift.spr = 12,9
+p8.shift.facing = -1
+p8.shift.scale   = 1,1
+p8.warn.range = 33,1
+p8.warn.anim = 10
+p8.warn.facing = -1
+p8.warn.scale = 1,1
+p8.warn.layerno = -1
+
+p8.warn.palfx.add = 256,-256,-256
+p8.warn.palfx.mul = 128,0,0
+p8.front.palfx.add   = -32,-256,-256
+p8.front.palfx.mul   =  128,0,0
+p8.front.palfx.sinadd = -64,-256,-256,30
+p8.front33.palfx.add   =  32,0,-256
+p8.front33.palfx.mul   =  256,256,256
+p8.front66.palfx.add   =  -256,0,-256
+p8.front66.palfx.mul   =  256,256,256
+p8.mid.palfx.add   = 0,-256,-256
+p8.mid.palfx.mul   = 256,0,0
+p8.mid.palfx.sinadd =  -64,-256,-256,40
+p8.shift.palfx.add   = -256,-256,-256
+p8.shift.palfx.mul   = 0,0,0
+
+
+p8.range.x   = 82,466
+
+p8.shift = 1
+p8.mult = 5
+p8.steps = 1
+
+mid.shift = 1
+mid.freeze = 0
+mid.delay = 1
+mid.mult = 0.5
+mid.steps = 1
+
+;--------------------------
+[Tag Lifebar]
+;Player 1
+p1.pos       = 640,-20
+p1.bg0.spr   = 11,1
+p1.bg0.scale   = 1,1
+
+p1.front.spr = 12,1
+p1.front.scale   =  1,1
+p1.front.facing   = 1
+p1.front66.spr = 12,1
+p1.front66.scale   =  1,1
+p1.front66.facing   = 1
+p1.front33.spr = 12,1
+p1.front33.scale   =  1,1
+p1.front33.facing   = 1
+p1.mid.spr   = 12,1
+p1.mid.scale   = 1,1
+p1.mid.facing   = 1
+p1.shift.spr = 12,1
+p1.shift.facing = 1
+p1.shift.scale   = 1,1
+p1.warn.range = 33,1
+p1.warn.anim = 2
+p1.warn.facing = 1
+p1.warn.scale = 1,1
+p1.warn.layerno = -1
+p1.red.spr = 12,1
+p1.red.scale   = 1,1
+p1.red.facing   = 1
+
+p1.red.palfx.add   = 0,0,-256
+p1.red.palfx.mul   = 256,128,0
+p1.red.palfx.sinadd =  -64,-64,-256,40
+p1.warn.palfx.add = 256,-256,-256
+p1.warn.palfx.mul = 128,0,0
+p1.front.palfx.add   = -32,-256,-256
+p1.front.palfx.mul   =  128,0,0
+p1.front.palfx.sinadd = -64,-256,-256,30
+p1.front33.palfx.add   =  32,0,-256
+p1.front33.palfx.mul   =  256,256,256
+p1.front66.palfx.add   =  -256,0,-256
+p1.front66.palfx.mul   =  256,256,256
+p1.mid.palfx.add   = 0,-256,-256
+p1.mid.palfx.mul   = 256,0,0
+p1.mid.palfx.sinadd =  -64,-256,-256,40
+p1.shift.palfx.add   = -256,-256,-256
+p1.shift.palfx.mul   = 0,0,0
+
+p1.range.x   = -95,-485
+
+p1.shift = 1
+p1.mult = 5
+p1.steps = 1
+
+;Player 2
+p2.pos       = 638,-20
+p2.bg0.spr   = 11,1
+p2.bg0.facing   = -1
+p2.bg0.scale   = 1,1
+
+p2.front.spr = 12,1
+p2.front.scale   =  1,1
+p2.front.facing   = -1
+p2.front66.spr = 12,1
+p2.front66.scale   =  1,1
+p2.front66.facing   = -1
+p2.front33.spr = 12,1
+p2.front33.scale   =  1,1
+p2.front33.facing   = -1
+p2.mid.spr   = 12,1
+p2.mid.scale   = 1,1
+p2.mid.facing   = -1
+p2.shift.spr = 12,1
+p2.shift.facing = -1
+p2.shift.scale   = 1,1
+p2.warn.range = 33,1
+p2.warn.anim = 2
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+p2.red.spr = 12,1
+p2.red.scale   = 1,1
+p2.red.facing   = -1
+
+p2.red.palfx.add   = 0,0,-256
+p2.red.palfx.mul   = 256,128,0
+p2.red.palfx.sinadd =  -64,-64,-256,40
+p2.warn.palfx.add = 256,-256,-256
+p2.warn.palfx.mul = 128,0,0
+p2.front.palfx.add   = -32,-256,-256
+p2.front.palfx.mul   =  128,0,0
+p2.front.palfx.sinadd = -64,-256,-256,30
+p2.front33.palfx.add   =  32,0,-256
+p2.front33.palfx.mul   =  256,256,256
+p2.front66.palfx.add   =  -256,0,-256
+p2.front66.palfx.mul   =  256,256,256
+p2.mid.palfx.add   = 0,-256,-256
+p2.mid.palfx.mul   = 256,0,0
+p2.mid.palfx.sinadd =  -64,-256,-256,40
+p2.shift.palfx.add   = -256,-256,-256
+p2.shift.palfx.mul   = 0,0,0
+
+
+p2.range.x   = 95,485
+
+p2.shift = 1
+p2.mult = 5
+p2.steps = 1
+
+;Player 3
+p3.pos       = 640,-20
+
+p3.front.spr = 12,2
+p3.front.scale   =  1,1
+p3.front.facing   = 1
+p3.front66.spr = 12,2
+p3.front66.scale   =  1,1
+p3.front66.facing   = 1
+p3.front33.spr = 12,2
+p3.front33.scale   =  1,1
+p3.front33.facing   = 1
+p3.mid.spr   = 12,2
+p3.mid.scale   = 1,1
+p3.mid.facing   = 1
+p3.shift.spr = 12,2
+p3.shift.facing = 1
+p3.shift.scale   = 1,1
+p3.warn.range = 33,1
+p3.warn.anim = 3
+p3.warn.facing = 1
+p3.warn.scale = 1,1
+p3.warn.layerno = -1
+p3.red.spr = 12,2
+p3.red.scale   = 1,1
+p3.red.facing   = 1
+
+p3.red.palfx.add   = 0,0,-256
+p3.red.palfx.mul   = 256,128,0
+p3.red.palfx.sinadd =  -64,-64,-256,40
+p3.warn.palfx.add = 256,-256,-256
+p3.warn.palfx.mul = 128,0,0
+p3.front.palfx.add   = -32,-256,-256
+p3.front.palfx.mul   =  128,0,0
+p3.front.palfx.sinadd = -64,-256,-256,30
+p3.front33.palfx.add   =  32,0,-256
+p3.front33.palfx.mul   =  256,256,256
+p3.front66.palfx.add   =  -256,0,-256
+p3.front66.palfx.mul   =  256,256,256
+p3.mid.palfx.add   = 0,-256,-256
+p3.mid.palfx.mul   = 256,0,0
+p3.mid.palfx.sinadd =  -64,-256,-256,40
+p3.shift.palfx.add   = -256,-256,-256
+p3.shift.palfx.mul   = 0,0,0
+
+
+p3.range.x   = -82,-473
+
+p3.shift = 1
+p3.mult = 5
+p3.steps = 1
+
+;Player 4
+p4.pos       = 638,-20
+
+p4.front.spr = 12,2
+p4.front.scale   =  1,1
+p4.front.facing   = -1
+p4.front66.spr = 12,2
+p4.front66.scale   =  1,1
+p4.front66.facing   = -1
+p4.front33.spr = 12,2
+p4.front33.scale   =  1,1
+p4.front33.facing   = -1
+p4.mid.spr   = 12,2
+p4.mid.scale   = 1,1
+p4.mid.facing   = -1
+p4.shift.spr = 12,2
+p4.shift.facing = -1
+p4.shift.scale   = 1,1
+p4.warn.range = 33,1
+p4.warn.anim = 3
+p4.warn.facing = -1
+p4.warn.scale = 1,1
+p4.warn.layerno = -1
+p4.red.spr = 12,2
+p4.red.scale   = 1,1
+p4.red.facing   = -1
+
+p4.red.palfx.add   = 0,0,-256
+p4.red.palfx.mul   = 256,128,0
+p4.red.palfx.sinadd =  -64,-64,-256,40
+p4.warn.palfx.add = 256,-256,-256
+p4.warn.palfx.mul = 128,0,0
+p4.front.palfx.add   = -32,-256,-256
+p4.front.palfx.mul   =  128,0,0
+p4.front.palfx.sinadd = -64,-256,-256,30
+p4.front33.palfx.add   =  32,0,-256
+p4.front33.palfx.mul   =  256,256,256
+p4.front66.palfx.add   =  -256,0,-256
+p4.front66.palfx.mul   =  256,256,256
+p4.mid.palfx.add   = 0,-256,-256
+p4.mid.palfx.mul   = 256,0,0
+p4.mid.palfx.sinadd =  -64,-256,-256,40
+p4.shift.palfx.add   = -256,-256,-256
+p4.shift.palfx.mul   = 0,0,0
+
+
+p4.range.x   = 82,473
+
+p4.shift = 1
+p4.mult = 5
+p4.steps = 1
+
+mid.shift = 1
+mid.freeze = 0
+mid.delay = 1
+mid.mult = 0.5
+mid.steps = 1
+
+[Tag_3P Lifebar]
+;Player 1
+p1.pos       = 640,-20
+p1.bg0.spr   = 11,2
+p1.bg0.scale   = 1,1
+
+
+p1.front.spr = 12,3
+p1.front.scale   =  1,1
+p1.front.facing   = 1
+p1.front66.spr = 12,3
+p1.front66.scale   =  1,1
+p1.front66.facing   = 1
+p1.front33.spr = 12,3
+p1.front33.scale   =  1,1
+p1.front33.facing   = 1
+p1.mid.spr   = 12,3
+p1.mid.scale   = 1,1
+p1.mid.facing   = 1
+p1.shift.spr = 12,3
+p1.shift.facing = 1
+p1.shift.scale   = 1,1
+p1.warn.range = 33,1
+p1.warn.anim = 4
+p1.warn.facing = 1
+p1.warn.scale = 1,1
+p1.warn.layerno = -1
+p1.red.spr = 12,3
+p1.red.scale   = 1,1
+p1.red.facing   = 1
+
+p1.red.palfx.add   = 0,0,-256
+p1.red.palfx.mul   = 256,128,0
+p1.red.palfx.sinadd =  -64,-64,-256,40
+p1.warn.palfx.add = 256,-256,-256
+p1.warn.palfx.mul = 128,0,0
+p1.front.palfx.add   = -32,-256,-256
+p1.front.palfx.mul   =  128,0,0
+p1.front.palfx.sinadd = -64,-256,-256,30
+p1.front33.palfx.add   =  32,0,-256
+p1.front33.palfx.mul   =  256,256,256
+p1.front66.palfx.add   =  -256,0,-256
+p1.front66.palfx.mul   =  256,256,256
+p1.mid.palfx.add   = 0,-256,-256
+p1.mid.palfx.mul   = 256,0,0
+p1.mid.palfx.sinadd =  -64,-256,-256,40
+p1.shift.palfx.add   = -256,-256,-256
+p1.shift.palfx.mul   = 0,0,0
+
+
+p1.range.x   = -98,-485
+
+p1.shift = 1
+p1.mult = 5
+p1.steps = 1
+
+;Player 2
+p2.pos       = 638,-20
+p2.bg0.spr   = 11,2
+p2.bg0.facing   = -1
+p2.bg0.scale   = 1,1
+
+p2.front.spr = 12,3
+p2.front.scale   =  1,1
+p2.front.facing   = -1
+p2.front66.spr = 12,3
+p2.front66.scale   =  1,1
+p2.front66.facing   = -1
+p2.front33.spr = 12,3
+p2.front33.scale   =  1,1
+p2.front33.facing   = -1
+p2.mid.spr   = 12,3
+p2.mid.scale   = 1,1
+p2.mid.facing   = -1
+p2.shift.spr = 12,3
+p2.shift.facing = -1
+p2.shift.scale   = 1,1
+p2.warn.range = 33,1
+p2.warn.anim = 2
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+p2.warn.range = 33,1
+p2.warn.anim = 4
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+p2.red.spr = 12,3
+p2.red.scale   = 1,1
+p2.red.facing   = -1
+
+p2.red.palfx.add   = 0,0,-256
+p2.red.palfx.mul   = 256,128,0
+p2.red.palfx.sinadd =  -64,-64,-256,40
+p2.warn.palfx.add = 256,-256,-256
+p2.warn.palfx.mul = 128,0,0
+p2.front.palfx.add   = -32,-256,-256
+p2.front.palfx.mul   =  128,0,0
+p2.front.palfx.sinadd = -64,-256,-256,30
+p2.front33.palfx.add   =  32,0,-256
+p2.front33.palfx.mul   =  256,256,256
+p2.front66.palfx.add   =  -256,0,-256
+p2.front66.palfx.mul   =  256,256,256
+p2.mid.palfx.add   = 0,-256,-256
+p2.mid.palfx.mul   = 256,0,0
+p2.mid.palfx.sinadd =  -64,-256,-256,40
+p2.shift.palfx.add   = -256,-256,-256
+p2.shift.palfx.mul   = 0,0,0
+
+
+p2.range.x   = 98,485
+
+p2.shift = 1
+p2.mult = 5
+p2.steps = 1
+
+;Player 3
+p3.pos       = 640,-20
+
+p3.front.spr = 12,4
+p3.front.scale   =  1,1
+p3.front.facing   = 1
+p3.front66.spr = 12,4
+p3.front66.scale   =  1,1
+p3.front66.facing   = 1
+p3.front33.spr = 12,4
+p3.front33.scale   =  1,1
+p3.front33.facing   = 1
+p3.mid.spr   = 12,4
+p3.mid.scale   = 1,1
+p3.mid.facing   = 1
+p3.shift.spr = 12,4
+p3.shift.facing = 1
+p3.shift.scale   = 1,1
+p3.warn.range = 33,1
+p3.warn.anim = 5
+p3.warn.facing = 1
+p3.warn.scale = 1,1
+p3.warn.layerno = -1
+p3.red.spr = 12,4
+p3.red.scale   = 1,1
+p3.red.facing   = 1
+
+p3.red.palfx.add   = 0,0,-256
+p3.red.palfx.mul   = 256,128,0
+p3.red.palfx.sinadd =  -64,-64,-256,40
+p3.warn.palfx.add = 256,-256,-256
+p3.warn.palfx.mul = 128,0,0
+p3.front.palfx.add   = -32,-256,-256
+p3.front.palfx.mul   =  128,0,0
+p3.front.palfx.sinadd = -64,-256,-256,30
+p3.front33.palfx.add   =  32,0,-256
+p3.front33.palfx.mul   =  256,256,256
+p3.front66.palfx.add   =  -256,0,-256
+p3.front66.palfx.mul   =  256,256,256
+p3.mid.palfx.add   = 0,-256,-256
+p3.mid.palfx.mul   = 256,0,0
+p3.mid.palfx.sinadd =  -64,-256,-256,40
+p3.shift.palfx.add   = -256,-256,-256
+p3.shift.palfx.mul   = 0,0,0
+
+p3.range.x   = -90,-476
+
+p3.shift = 1
+p3.mult = 5
+p3.steps = 1
+
+;Player 4
+p4.pos       = 638,-20
+
+p4.front.spr = 12,4
+p4.front.scale   =  1,1
+p4.front.facing   = -1
+p4.front66.spr = 12,4
+p4.front66.scale   =  1,1
+p4.front66.facing   = -1
+p4.front33.spr = 12,4
+p4.front33.scale   =  1,1
+p4.front33.facing   = -1
+p4.mid.spr   = 12,4
+p4.mid.scale   = 1,1
+p4.mid.facing   = -1
+p4.shift.spr = 12,4
+p4.shift.facing = -1
+p4.shift.scale   = 1,1
+p4.warn.range = 33,1
+p4.warn.anim = 5
+p4.warn.facing = -1
+p4.warn.scale = 1,1
+p4.warn.layerno = -1
+p4.red.spr = 12,4
+p4.red.scale   = 1,1
+p4.red.facing   = -1
+
+p4.red.palfx.add   = 0,0,-256
+p4.red.palfx.mul   = 256,128,0
+p4.red.palfx.sinadd =  -64,-64,-256,40
+p4.warn.palfx.add = 256,-256,-256
+p4.warn.palfx.mul = 128,0,0
+p4.front.palfx.add   = -32,-256,-256
+p4.front.palfx.mul   =  128,0,0
+p4.front.palfx.sinadd = -64,-256,-256,30
+p4.front33.palfx.add   =  32,0,-256
+p4.front33.palfx.mul   =  256,256,256
+p4.front66.palfx.add   =  -256,0,-256
+p4.front66.palfx.mul   =  256,256,256
+p4.mid.palfx.add   = 0,-256,-256
+p4.mid.palfx.mul   = 256,0,0
+p4.mid.palfx.sinadd =  -64,-256,-256,40
+p4.shift.palfx.add   = -256,-256,-256
+p4.shift.palfx.mul   = 0,0,0
+
+p4.range.x   = 90,476
+
+p4.shift = 1
+p4.mult = 5
+p4.steps = 1
+
+;Player 5
+p5.pos       = 640,-20
+
+p5.front.spr = 12,5
+p5.front.scale   =  1,1
+p5.front.facing   = 1
+p5.front66.spr = 12,5
+p5.front66.scale   =  1,1
+p5.front66.facing   = 1
+p5.front33.spr = 12,5
+p5.front33.scale   =  1,1
+p5.front33.facing   = 1
+p5.mid.spr   = 12,5
+p5.mid.scale   = 1,1
+p5.mid.facing   = 1
+p5.shift.spr = 12,5
+p5.shift.facing = 1
+p5.shift.scale   = 1,1
+p5.warn.range = 33,1
+p5.warn.anim = 6
+p5.warn.facing = 1
+p5.warn.scale = 1,1
+p5.warn.layerno = -1
+p5.red.spr = 12,5
+p5.red.scale   = 1,1
+p5.red.facing   = 1
+
+p5.red.palfx.add   = 0,0,-256
+p5.red.palfx.mul   = 256,128,0
+p5.red.palfx.sinadd =  -64,-64,-256,40
+p5.warn.palfx.add = 256,-256,-256
+p5.warn.palfx.mul = 128,0,0
+p5.front.palfx.add   = -32,-256,-256
+p5.front.palfx.mul   =  128,0,0
+p5.front.palfx.sinadd = -64,-256,-256,30
+p5.front33.palfx.add   =  32,0,-256
+p5.front33.palfx.mul   =  256,256,256
+p5.front66.palfx.add   =  -256,0,-256
+p5.front66.palfx.mul   =  256,256,256
+p5.mid.palfx.add   = 0,-256,-256
+p5.mid.palfx.mul   = 256,0,0
+p5.mid.palfx.sinadd =  -64,-256,-256,40
+p5.shift.palfx.add   = -256,-256,-256
+p5.shift.palfx.mul   = 0,0,0
+
+
+p5.range.x   = -81,-467
+
+p5.shift = 1
+p5.mult = 5
+p5.steps = 1
+
+;Player 6
+p6.pos       = 638,-20
+
+p6.front.spr = 12,5
+p6.front.scale   =  1,1
+p6.front.facing   = -1
+p6.front66.spr = 12,5
+p6.front66.scale   =  1,1
+p6.front66.facing   = -1
+p6.front33.spr = 12,5
+p6.front33.scale   =  1,1
+p6.front33.facing   = -1
+p6.mid.spr   = 12,5
+p6.mid.scale   = 1,1
+p6.mid.facing   = -1
+p6.shift.spr = 12,5
+p6.shift.facing = -1
+p6.shift.scale   = 1,1
+p6.warn.range = 33,1
+p6.warn.anim = 6
+p6.warn.facing = -1
+p6.warn.scale = 1,1
+p6.warn.layerno = -1
+p6.red.spr = 12,5
+p6.red.scale   = 1,1
+p6.red.facing   = -1
+
+p6.red.palfx.add   = 0,0,-256
+p6.red.palfx.mul   = 256,128,0
+p6.red.palfx.sinadd =  -64,-64,-256,40
+p6.warn.palfx.add = 256,-256,-256
+p6.warn.palfx.mul = 128,0,0
+p6.front.palfx.add   = -32,-256,-256
+p6.front.palfx.mul   =  128,0,0
+p6.front.palfx.sinadd = -64,-256,-256,30
+p6.front33.palfx.add   =  32,0,-256
+p6.front33.palfx.mul   =  256,256,256
+p6.front66.palfx.add   =  -256,0,-256
+p6.front66.palfx.mul   =  256,256,256
+p6.mid.palfx.add   = 0,-256,-256
+p6.mid.palfx.mul   = 256,0,0
+p6.mid.palfx.sinadd =  -64,-256,-256,40
+p6.shift.palfx.add   = -256,-256,-256
+p6.shift.palfx.mul   = 0,0,0
+
+p6.range.x   = 81,467
+
+p6.shift = 1
+p6.mult = 5
+p6.steps = 1
+
+mid.shift = 1
+mid.freeze = 0
+mid.delay = 1
+mid.mult = 0.5
+mid.steps = 1  
+
+[Tag_4P Lifebar]
+;Player 1
+p1.pos       = 640,-20
+p1.bg0.spr   = 11,3
+p1.bg0.scale   = 1,1
+
+p1.front.spr = 12,6
+p1.front.scale   =  1,1
+p1.front.facing   = 1
+p1.front66.spr = 12,6
+p1.front66.scale   =  1,1
+p1.front66.facing   = 1
+p1.front33.spr = 12,6
+p1.front33.scale   =  1,1
+p1.front33.facing   = 1
+p1.mid.spr   = 12,6
+p1.mid.scale   = 1,1
+p1.mid.facing   = 1
+p1.shift.spr = 12,6
+p1.shift.facing = 1
+p1.shift.scale   = 1,1
+p1.warn.range = 33,1
+p1.warn.anim = 7
+p1.warn.facing = 1
+p1.warn.scale = 1,1
+p1.warn.layerno = -1
+p1.red.spr = 12,6
+p1.red.scale   = 1,1
+p1.red.facing   = 1
+
+p1.red.palfx.add   = 0,0,-256
+p1.red.palfx.mul   = 256,128,0
+p1.red.palfx.sinadd =  -64,-64,-256,40
+p1.warn.palfx.add = 256,-256,-256
+p1.warn.palfx.mul = 128,0,0
+p1.front.palfx.add   = -32,-256,-256
+p1.front.palfx.mul   =  128,0,0
+p1.front.palfx.sinadd = -64,-256,-256,30
+p1.front33.palfx.add   =  32,0,-256
+p1.front33.palfx.mul   =  256,256,256
+p1.front66.palfx.add   =  -256,0,-256
+p1.front66.palfx.mul   =  256,256,256
+p1.mid.palfx.add   = 0,-256,-256
+p1.mid.palfx.mul   = 256,0,0
+p1.mid.palfx.sinadd =  -64,-256,-256,40
+p1.shift.palfx.add   = -256,-256,-256
+p1.shift.palfx.mul   = 0,0,0
+
+
+p1.range.x   = -100,-485
+
+p1.shift = 1
+p1.mult = 5
+p1.steps = 1
+
+;Player 2
+p2.pos       = 638,-20
+p2.bg0.spr   = 11,3
+p2.bg0.facing   = -1
+p2.bg0.scale   = 1,1
+
+p2.front.spr = 12,6
+p2.front.scale   =  1,1
+p2.front.facing   = -1
+p2.front66.spr = 12,6
+p2.front66.scale   =  1,1
+p2.front66.facing   = -1
+p2.front33.spr = 12,6
+p2.front33.scale   =  1,1
+p2.front33.facing   = -1
+p2.mid.spr   = 12,6
+p2.mid.scale   = 1,1
+p2.mid.facing   = -1
+p2.shift.spr = 12,6
+p2.shift.facing = -1
+p2.shift.scale   = 1,1
+p2.warn.range = 33,1
+p2.warn.anim = 7
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+p2.red.spr = 12,6
+p2.red.scale   = 1,1
+p2.red.facing   = -1
+
+p2.red.palfx.add   = 0,0,-256
+p2.red.palfx.mul   = 256,128,0
+p2.red.palfx.sinadd =  -64,-64,-256,40
+p2.warn.palfx.add = 256,-256,-256
+p2.warn.palfx.mul = 128,0,0
+p2.front.palfx.add   = -32,-256,-256
+p2.front.palfx.mul   =  128,0,0
+p2.front.palfx.sinadd = -64,-256,-256,30
+p2.front33.palfx.add   =  32,0,-256
+p2.front33.palfx.mul   =  256,256,256
+p2.front66.palfx.add   =  -256,0,-256
+p2.front66.palfx.mul   =  256,256,256
+p2.mid.palfx.add   = 0,-256,-256
+p2.mid.palfx.mul   = 256,0,0
+p2.mid.palfx.sinadd =  -64,-256,-256,40
+p2.shift.palfx.add   = -256,-256,-256
+p2.shift.palfx.mul   = 0,0,0
+
+p2.range.x   = 100,485
+
+p2.shift = 1
+p2.mult = 5
+p2.steps = 1
+
+;Player 3
+p3.pos       = 640,-20
+
+p3.front.spr = 12,7
+p3.front.scale   =  1,1
+p3.front.facing   = 1
+p3.front66.spr = 12,7
+p3.front66.scale   =  1,1
+p3.front66.facing   = 1
+p3.front33.spr = 12,7
+p3.front33.scale   =  1,1
+p3.front33.facing   = 1
+p3.mid.spr   = 12,7
+p3.mid.scale   = 1,1
+p3.mid.facing   = 1
+p3.shift.spr = 12,7
+p3.shift.facing = 1
+p3.shift.scale   = 1,1
+p3.warn.range = 33,1
+p3.warn.anim = 8
+p3.warn.facing = 1
+p3.warn.scale = 1,1
+p3.warn.layerno = -1
+p3.red.spr = 12,7
+p3.red.scale   = 1,1
+p3.red.facing   = 1
+
+p3.red.palfx.add   = 0,0,-256
+p3.red.palfx.mul   = 256,128,0
+p3.red.palfx.sinadd =  -64,-64,-256,40
+p3.warn.palfx.add = 256,-256,-256
+p3.warn.palfx.mul = 128,0,0
+p3.front.palfx.add   = -32,-256,-256
+p3.front.palfx.mul   =  128,0,0
+p3.front.palfx.sinadd = -64,-256,-256,30
+p3.front33.palfx.add   =  32,0,-256
+p3.front33.palfx.mul   =  256,256,256
+p3.front66.palfx.add   =  -256,0,-256
+p3.front66.palfx.mul   =  256,256,256
+p3.mid.palfx.add   = 0,-256,-256
+p3.mid.palfx.mul   = 256,0,0
+p3.mid.palfx.sinadd =  -64,-256,-256,40
+p3.shift.palfx.add   = -256,-256,-256
+p3.shift.palfx.mul   = 0,0,0
+
+
+p3.range.x   = -94,-477
+
+p3.shift = 1
+p3.mult = 5
+p3.steps = 1
+
+;Player 4
+p4.pos       = 638,-20
+
+p4.front.spr = 12,7
+p4.front.scale   =  1,1
+p4.front.facing   = -1
+p4.front66.spr = 12,7
+p4.front66.scale   =  1,1
+p4.front66.facing   = -1
+p4.front33.spr = 12,7
+p4.front33.scale   =  1,1
+p4.front33.facing   = -1
+p4.mid.spr   = 12,7
+p4.mid.scale   = 1,1
+p4.mid.facing   = -1
+p4.shift.spr = 12,7
+p4.shift.facing = -1
+p4.shift.scale   = 1,1
+p4.warn.range = 33,1
+p4.warn.anim = 8
+p4.warn.facing = -1
+p4.warn.scale = 1,1
+p4.warn.layerno = -1
+p4.red.spr = 12,7
+p4.red.scale   = 1,1
+p4.red.facing   = -1
+
+p4.red.palfx.add   = 0,0,-256
+p4.red.palfx.mul   = 256,128,0
+p4.red.palfx.sinadd =  -64,-64,-256,40
+p4.warn.palfx.add = 256,-256,-256
+p4.warn.palfx.mul = 128,0,0
+p4.front.palfx.add   = -32,-256,-256
+p4.front.palfx.mul   =  128,0,0
+p4.front.palfx.sinadd = -64,-256,-256,30
+p4.front33.palfx.add   =  32,0,-256
+p4.front33.palfx.mul   =  256,256,256
+p4.front66.palfx.add   =  -256,0,-256
+p4.front66.palfx.mul   =  256,256,256
+p4.mid.palfx.add   = 0,-256,-256
+p4.mid.palfx.mul   = 256,0,0
+p4.mid.palfx.sinadd =  -64,-256,-256,40
+p4.shift.palfx.add   = -256,-256,-256
+p4.shift.palfx.mul   = 0,0,0
+
+p4.range.x   = 94,477
+
+p4.shift = 1
+p4.mult = 5
+p4.steps = 1
+
+;Player 5
+p5.pos       = 640,-20
+
+p5.front.spr = 12,8
+p5.front.scale   =  1,1
+p5.front.facing   = 1
+p5.front66.spr = 12,8
+p5.front66.scale   =  1,1
+p5.front66.facing   = 1
+p5.front33.spr = 12,8
+p5.front33.scale   =  1,1
+p5.front33.facing   = 1
+p5.mid.spr   = 12,8
+p5.mid.scale   = 1,1
+p5.mid.facing   = 1
+p5.shift.spr = 12,8
+p5.shift.facing = 1
+p5.shift.scale   = 1,1
+p5.warn.range = 33,1
+p5.warn.anim = 9
+p5.warn.facing = 1
+p5.warn.scale = 1,1
+p5.warn.layerno = -1
+p5.red.spr = 12,8
+p5.red.scale   = 1,1
+p5.red.facing   = 1
+
+p5.red.palfx.add   = 0,0,-256
+p5.red.palfx.mul   = 256,128,0
+p5.red.palfx.sinadd =  -64,-64,-256,40
+p5.warn.palfx.add = 256,-256,-256
+p5.warn.palfx.mul = 128,0,0
+p5.front.palfx.add   = -32,-256,-256
+p5.front.palfx.mul   =  128,0,0
+p5.front.palfx.sinadd = -64,-256,-256,30
+p5.front33.palfx.add   =  32,0,-256
+p5.front33.palfx.mul   =  256,256,256
+p5.front66.palfx.add   =  -256,0,-256
+p5.front66.palfx.mul   =  256,256,256
+p5.mid.palfx.add   = 0,-256,-256
+p5.mid.palfx.mul   = 256,0,0
+p5.mid.palfx.sinadd =  -64,-256,-256,40
+p5.shift.palfx.add   = -256,-256,-256
+p5.shift.palfx.mul   = 0,0,0
+
+
+p5.range.x   = -87,-472
+
+p5.shift = 1
+p5.mult = 5
+p5.steps = 1
+
+;Player 6
+p6.pos       = 638,-20
+
+p6.front.spr = 12,8
+p6.front.scale   =  1,1
+p6.front.facing   = -1
+p6.front66.spr = 12,8
+p6.front66.scale   =  1,1
+p6.front66.facing   = -1
+p6.front33.spr = 12,8
+p6.front33.scale   =  1,1
+p6.front33.facing   = -1
+p6.mid.spr   = 12,8
+p6.mid.scale   = 1,1
+p6.mid.facing   = -1
+p6.shift.spr = 12,8
+p6.shift.facing = -1
+p6.shift.scale   = 1,1
+p6.warn.range = 33,1
+p6.warn.anim = 9
+p6.warn.facing = -1
+p6.warn.scale = 1,1
+p6.warn.layerno = -1
+p6.red.spr = 12,8
+p6.red.scale   = 1,1
+p6.red.facing   = -1
+
+p6.red.palfx.add   = 0,0,-256
+p6.red.palfx.mul   = 256,128,0
+p6.red.palfx.sinadd =  -64,-64,-256,40
+p6.warn.palfx.add = 256,-256,-256
+p6.warn.palfx.mul = 128,0,0
+p6.front.palfx.add   = -32,-256,-256
+p6.front.palfx.mul   =  128,0,0
+p6.front.palfx.sinadd = -64,-256,-256,30
+p6.front33.palfx.add   =  32,0,-256
+p6.front33.palfx.mul   =  256,256,256
+p6.front66.palfx.add   =  -256,0,-256
+p6.front66.palfx.mul   =  256,256,256
+p6.mid.palfx.add   = 0,-256,-256
+p6.mid.palfx.mul   = 256,0,0
+p6.mid.palfx.sinadd =  -64,-256,-256,40
+p6.shift.palfx.add   = -256,-256,-256
+p6.shift.palfx.mul   = 0,0,0
+
+p6.range.x   = 87,472
+
+p6.shift = 1
+p6.mult = 5
+p6.steps = 1
+
+;Player 7
+p7.pos       = 640,-20
+
+p7.front.spr = 12,9
+p7.front.scale   =  1,1
+p7.front.facing   = 1
+p7.front66.spr = 12,9
+p7.front66.scale   =  1,1
+p7.front66.facing   = 1
+p7.front33.spr = 12,9
+p7.front33.scale   =  1,1
+p7.front33.facing   = 1
+p7.mid.spr   = 12,9
+p7.mid.scale   = 1,1
+p7.mid.facing   = 1
+p7.shift.spr = 12,9
+p7.shift.facing = 1
+p7.shift.scale   = 1,1
+p7.warn.range = 33,1
+p7.warn.anim = 10
+p7.warn.facing = 1
+p7.warn.scale = 1,1
+p7.warn.layerno = -1
+p7.red.spr = 12,9
+p7.red.scale   = 1,1
+p7.red.facing   = 1
+
+p7.red.palfx.add   = 0,0,-256
+p7.red.palfx.mul   = 256,128,0
+p7.red.palfx.sinadd =  -64,-64,-256,40
+p7.warn.palfx.add = 256,-256,-256
+p7.warn.palfx.mul = 128,0,0
+p7.front.palfx.add   = -32,-256,-256
+p7.front.palfx.mul   =  128,0,0
+p7.front.palfx.sinadd = -64,-256,-256,30
+p7.front33.palfx.add   =  32,0,-256
+p7.front33.palfx.mul   =  256,256,256
+p7.front66.palfx.add   =  -256,0,-256
+p7.front66.palfx.mul   =  256,256,256
+p7.mid.palfx.add   = 0,-256,-256
+p7.mid.palfx.mul   = 256,0,0
+p7.mid.palfx.sinadd =  -64,-256,-256,40
+p7.shift.palfx.add   = -256,-256,-256
+p7.shift.palfx.mul   = 0,0,0
+
+
+p7.range.x   = -82,-466
+
+p7.shift = 1
+p7.mult = 5
+p7.steps = 1
+
+;Player 8
+p8.pos       = 638,-20
+
+p8.front.spr = 12,9
+p8.front.scale   =  1,1
+p8.front.facing   = -1
+p8.front66.spr = 12,9
+p8.front66.scale   =  1,1
+p8.front66.facing   = -1
+p8.front33.spr = 12,9
+p8.front33.scale   =  1,1
+p8.front33.facing   = -1
+p8.mid.spr   = 12,9
+p8.mid.scale   = 1,1
+p8.mid.facing   = -1
+p8.shift.spr = 12,9
+p8.shift.facing = -1
+p8.shift.scale   = 1,1
+p8.warn.range = 33,1
+p8.warn.anim = 10
+p8.warn.facing = -1
+p8.warn.scale = 1,1
+p8.warn.layerno = -1
+p8.red.spr = 12,9
+p8.red.scale   = 1,1
+p8.red.facing   = -1
+
+p8.red.palfx.add   = 0,0,-256
+p8.red.palfx.mul   = 256,128,0
+p8.red.palfx.sinadd =  -64,-64,-256,40
+p8.warn.palfx.add = 256,-256,-256
+p8.warn.palfx.mul = 128,0,0
+p8.front.palfx.add   = -32,-256,-256
+p8.front.palfx.mul   =  128,0,0
+p8.front.palfx.sinadd = -64,-256,-256,30
+p8.front33.palfx.add   =  32,0,-256
+p8.front33.palfx.mul   =  256,256,256
+p8.front66.palfx.add   =  -256,0,-256
+p8.front66.palfx.mul   =  256,256,256
+p8.mid.palfx.add   = 0,-256,-256
+p8.mid.palfx.mul   = 256,0,0
+p8.mid.palfx.sinadd =  -64,-256,-256,40
+p8.shift.palfx.add   = -256,-256,-256
+p8.shift.palfx.mul   = 0,0,0
+
+p8.range.x   = 82,466
+
+p8.shift = 1
+p8.mult = 5
+p8.steps = 1
+
+mid.shift = 1
+mid.freeze = 0
+mid.delay = 1
+mid.mult = 0.5
+mid.steps = 1
+
+[Turns Lifebar]
+;Player 1
+p1.pos = 640,-20
+
+
+p1.bg0.spr = 11,0
+p1.bg0.scale = 1,1
+
+p1.front.spr = 12,0
+p1.front.scale =  1,1
+p1.front.facing = 1
+p1.front33.spr = 12,0
+p1.front33.scale =  1,1
+p1.front33.facing = 1
+p1.front66.spr = 12,0
+p1.front66.scale =  1,1
+p1.front66.facing = 1
+p1.mid.spr = 12,0
+p1.mid.scale = 1,1
+p1.mid.facing = 1
+p1.shift.spr = 12,0
+p1.shift.facing = 1
+p1.shift.scale = 1,1
+p1.warn.range = 33,1
+p1.warn.anim = 1
+p1.warn.facing = 1
+p1.warn.scale = 1,1
+p1.warn.layerno = -1
+
+p1.warn.palfx.add = 256,-256,-256
+p1.warn.palfx.mul = 128,0,0
+p1.front.palfx.add = -32,-256,-256
+p1.front.palfx.mul =  128,0,0
+p1.front33.palfx.add = 32,0,-256
+p1.front33.palfx.mul = 256,256,256
+p1.front66.palfx.add = -256,0,-256
+p1.front66.palfx.mul = 256,256,256
+p1.mid.palfx.add = -64,-256,-256
+p1.mid.palfx.mul = 256,0,0
+p1.mid.palfx.sinadd = -150,-256,-256, 40
+p1.shift.palfx.add = -256,-256,-256
+p1.shift.palfx.mul = 0,0,0
+
+p1.range.x   = -82,-485
+
+p1.shift = 1
+p1.mult = 5
+p1.steps = 1
+
+;Player 2
+p2.pos       = 638,-20
+
+p2.bg0.spr   = 11,0
+p2.bg0.scale   = 1,1
+p2.bg0.facing   = -1
+
+p2.front.spr = 12,0
+p2.front.scale   =  1,1
+p2.front.facing   = -1
+p2.front33.spr = 12,0
+p2.front33.scale   =  1,1
+p2.front33.facing   = -1
+p2.front66.spr = 12,0
+p2.front66.scale   =  1,1
+p2.front66.facing   = -1
+p2.mid.spr   = 12,0
+p2.mid.scale   = 1,1
+p2.mid.facing   = -1
+p2.shift.spr = 12,0
+p2.shift.facing = -1
+p2.shift.scale   = 1,1
+p2.warn.range = 33,1
+p2.warn.anim = 1
+p2.warn.facing = -1
+p2.warn.scale = 1,1
+p2.warn.layerno = -1
+
+p2.warn.palfx.add = 256,-256,-256
+p2.warn.palfx.mul = 128,0,0
+p2.front.palfx.add = 0,-256,-256
+p2.front.palfx.mul = 256,0,0
+p2.front33.palfx.add = 32,0,-256
+p2.front33.palfx.mul = 256,256,256
+p2.front66.palfx.add = -256,0,-256
+p2.front66.palfx.mul = 256,256,256
+p2.mid.palfx.add = 0,-256,-256
+p2.mid.palfx.mul = 256,0,0
+p2.mid.palfx.sinadd = -150,-256,-256,40
+p2.shift.palfx.add = -256,-256,-256
+p2.shift.palfx.mul = 0,0,0
+
+p2.range.x   = 82,485
+
+p2.shift = 1
+p2.mult = 5
+p2.steps = 1
+
+mid.shift = 1
+mid.freeze = 0
+mid.delay = 1
+mid.mult = 0.5
+mid.steps = 1
+
+;-----------------------------------------------------------
+;Power Bar
+;-----------------------------------------------------------
+[Powerbar]
+;Player 1
+p1.pos       = 640,285
+p1.range.x   = -220,-535
+p1.levelbars = 1
+
+p1.bg0.spr   = 13,2
+p1.bg0.scale = 0.6,0.6
+p1.bg0.facing   = 1
+p1.bg0.layerno  = 1
+p1.bg0.offset = -220,0
+
+p1.front.spr = 13,3
+p1.front.scale   = 0.6,0.6
+p1.front.facing   = 1
+p1.front.layerno  = 1
+p1.front.offset = -220,0
+
+p1.counter.font = 3,0,1
+p1.counter.offset = -570,375
+p1.counter.scale   =  .125,.125
+p1.counter.text = "%i"
+p1.counter.layerno  = 1
+
+p1.front1000.spr = 13,3
+p1.front1000.scale   =  0.6,0.6
+p1.front1000.facing   = 1
+p1.front1000.layerno  = 1
+p1.front1000.offset = -220,0
+
+p1.front2000.spr = 13,3
+p1.front2000.scale   =  0.6,0.6
+p1.front2000.facing   = 1
+p1.front2000.layerno = 1
+p1.front2000.offset = -220,0
+
+p1.front3000.spr = 13,3
+p1.front3000.scale   =  0.6,0.6
+p1.front3000.facing   = 1
+p1.front3000.layerno  = 1
+p1.front3000.offset = -220,0
+
+p1.front.palfx.add   =  0,0,0
+p1.front.palfx.mul   =  256,256,256
+p1.front1000.palfx.add  =  0,-256,0
+p1.front1000.palfx.mul   =  256,0,256
+p1.front1000.palfx.sinadd =  -64,-256,-64,50
+p1.front2000.palfx.add   =  -256,0,0
+p1.front2000.palfx.mul   =  0,256,256
+p1.front2000.palfx.sinadd = -256,-64,-64,40
+p1.front3000.palfx.add   = 0,0,-256
+p1.front3000.palfx.mul   = 256,256,0
+p1.front3000.palfx.sinadd =  -128,-64,-256,30
+
+
+
+;Player 2
+p2.pos       = 640,285
+p2.range.x   = 220,535
+p2.levelbars = 1
+
+p2.bg0.spr   = 13,1
+p2.bg0.scale = 0.6,0.6
+p2.bg0.facing   = 1
+p2.bg0.layerno  = 1
+p2.bg0.offset = 220,0
+
+p2.front.spr = 13,0
+p2.front.scale   = 0.6,0.6
+p2.front.facing   = 1
+p2.front.layerno  = 1
+p2.front.offset = 220,0
+
+p2.counter.font = 3,0,-1
+p2.counter.offset = 570,375
+p2.counter.scale   = .125,.125
+p2.counter.text = "%i"
+p2.counter.layerno  = 1
+
+p2.front1000.spr = 13,0
+p2.front1000.scale   =  0.6,0.6
+p2.front1000.facing   = 1
+p2.front1000.layerno  = 1
+p2.front1000.offset = 220,0
+
+p2.front2000.spr = 13,0
+p2.front2000.scale   =  0.6,0.6
+p2.front2000.facing   = 1
+p2.front2000.layerno  = 1
+p2.front2000.offset = 220,0
+
+p2.front3000.spr = 13,0
+p2.front3000.scale   =  0.6,0.6
+p2.front3000.facing   = 1
+p2.front3000.layerno  = 1
+p2.front3000.offset = 220,0
+
+p2.front.palfx.add   =  0,0,0
+p2.front.palfx.mul   =  256,256,256
+p2.front1000.palfx.add   =  0,-256,0
+p2.front1000.palfx.mul   =  256,0,256
+p2.front1000.palfx.sinadd =  -64,-256,-64,50
+p2.front2000.palfx.add   =  -256,0,0
+p2.front2000.palfx.mul   =  0,256,256
+p2.front2000.palfx.sinadd = -256,-64,-64,40
+p2.front3000.palfx.add   = 0,0,-256
+p2.front3000.palfx.mul   = 256,256,0
+p2.front3000.palfx.sinadd =  -128,-64,-256,30
+
+level1.snd = 21,0
+level2.snd = 21,0
+level3.snd = 21,0
+
+[Stunbar]
+;Player 1
+p1.pos       = 588,88
+p1.bg0.spr   = 14,0
+p1.bg0.scale   = 1.5,1.5
+p1.bg0.facing   = 1
+
+p1.front.spr = 14,2
+p1.front.scale   =  1.5,1.5
+p1.front.facing   = 1
+p1.front.palfx.add   =  -64,-64,-64
+p1.front.palfx.mul   = 128,128,128
+p1.front.palfx.sinadd =  -128,-128,-128,30
+
+p1.front25.spr = 14,2
+p1.front25.scale   =  1.5,1.5
+p1.front25.facing   = 1
+p1.front25.palfx.add   =  -64,-64,-64
+p1.front25.palfx.mul   =  256,256,256
+
+p1.range.x   = -132,-16
+
+;Player 2
+p2.pos       = 690,88
+p2.bg0.spr   = 14,1
+p2.bg0.scale   = 1.5,1.5
+p2.bg0.facing   = -1
+
+p2.front.spr = 14,2
+p2.front.scale   =  1.5,1.5
+p2.front.facing   = -1
+p2.front.palfx.add   =  -64,-64,-64
+p2.front.palfx.mul   =  128,128,128
+p2.front.palfx.sinadd =   -128,-128,-128,30
+
+p2.front25.spr = 14,2
+p2.front25.scale   =  1.5,1.5
+p2.front25.facing   = -1
+p2.front25.palfx.add   = -64,-64,-64
+p2.front25.palfx.mul   =  256,256,256
+
+p2.range.x = 132,16
+
+[Simul Stunbar]
+;Player 1
+p1.pos       = 588,88
+p1.bg0.spr   = 14,0
+p1.bg0.scale   = 1.5,1.5
+p1.bg0.facing   = 1
+
+p1.front.spr = 14,2
+p1.front.scale   =  1.5,1.5
+p1.front.facing   = 1
+p1.front.palfx.add   =  -64,-64,-64
+p1.front.palfx.mul   = 128,128,128
+p1.front.palfx.sinadd =  -128,-128,-128,30
+
+p1.front25.spr = 14,2
+p1.front25.scale   =  1.5,1.5
+p1.front25.facing   = 1
+p1.front25.palfx.add   =  -64,-64,-64
+p1.front25.palfx.mul   =  256,256,256
+
+p1.range.x   = -132,-16
+
+;Player 2
+p2.pos       = 690,88
+p2.bg0.spr   = 14,1
+p2.bg0.scale   = 1.5,1.5
+p2.bg0.facing   = -1
+
+p2.front.spr = 14,2
+p2.front.scale   =  1.5,1.5
+p2.front.facing   = -1
+p2.front.palfx.add   =  -64,-64,-64
+p2.front.palfx.mul   =  128,128,128
+p2.front.palfx.sinadd =   -128,-128,-128,30
+
+p2.front25.spr = 14,2
+p2.front25.scale   =  1.5,1.5
+p2.front25.facing   = -1
+p2.front25.palfx.add   = -64,-64,-64
+p2.front25.palfx.mul   =  256,256,256
+
+p2.range.x = 132,16
+
+;Player 3
+p3.pos       = 425,88
+p3.bg0.spr   = 14,0
+p3.bg0.scale   = 1.5,1.5
+p3.bg0.facing   = 1
+
+
+p3.front.spr = 14,2
+p3.front.scale   =  1.5,1.5
+p3.front.facing   = 1
+p3.front.palfx.add   =  -64,-64,-64
+p3.front.palfx.mul   = 128,128,128
+p3.front.palfx.sinadd =  -128,-128,-128,30
+
+p3.front25.spr = 14,2
+p3.front25.scale   =  1.5,1.5
+p3.front25.facing   = 1
+p3.front25.palfx.add   =  -64,-64,-64
+p3.front25.palfx.mul   =  256,256,256
+
+p3.range.x   = -132,-16
+
+;Player 4
+p4.pos       = 853,88
+p4.bg0.spr   = 14,1
+p4.bg0.scale   = 1.5,1.5
+p4.bg0.facing   = -1
+
+p4.front.spr = 14,2
+p4.front.scale   =  1.5,1.5
+p4.front.facing   = -1
+p4.front.palfx.add   =  -64,-64,-64
+p4.front.palfx.mul   =  128,128,128
+p4.front.palfx.sinadd =   -128,-128,-128,30
+
+p4.front25.spr = 14,2
+p4.front25.scale   =  1.5,1.5
+p4.front25.facing   = -1
+p4.front25.palfx.add   = -64,-64,-64
+p4.front25.palfx.mul   =  256,256,256
+
+p4.range.x = 132,16
+
+[Simul_3P Stunbar]
+;Player 1
+p1.pos       = 588,88
+p1.bg0.spr   = 14,0
+p1.bg0.scale   = 1.5,1.5
+p1.bg0.facing   = 1
+
+p1.front.spr = 14,2
+p1.front.scale   =  1.5,1.5
+p1.front.facing   = 1
+p1.front.palfx.add   =  -64,-64,-64
+p1.front.palfx.mul   = 128,128,128
+p1.front.palfx.sinadd =  -128,-128,-128,30
+
+p1.front25.spr = 14,2
+p1.front25.scale   =  1.5,1.5
+p1.front25.facing   = 1
+p1.front25.palfx.add   =  -64,-64,-64
+p1.front25.palfx.mul   =  256,256,256
+
+p1.range.x   = -132,-16
+
+;Player 2
+p2.pos       = 690,88
+p2.bg0.spr   = 14,1
+p2.bg0.scale   = 1.5,1.5
+p2.bg0.facing   = -1
+
+p2.front.spr = 14,2
+p2.front.scale   =  1.5,1.5
+p2.front.facing   = -1
+p2.front.palfx.add   =  -64,-64,-64
+p2.front.palfx.mul   =  128,128,128
+p2.front.palfx.sinadd =   -128,-128,-128,30
+
+p2.front25.spr = 14,2
+p2.front25.scale   =  1.5,1.5
+p2.front25.facing   = -1
+p2.front25.palfx.add   = -64,-64,-64
+p2.front25.palfx.mul   =  256,256,256
+
+p2.range.x = 132,16
+
+;Player 3
+p3.pos       = 425,88
+p3.bg0.spr   = 14,0
+p3.bg0.scale   = 1.5,1.5
+p3.bg0.facing   = 1
+
+p3.front.spr = 14,2
+p3.front.scale   =  1.5,1.5
+p3.front.facing   = 1
+p3.front.palfx.add   =  -64,-64,-64
+p3.front.palfx.mul   = 128,128,128
+p3.front.palfx.sinadd =  -128,-128,-128,30
+
+p3.front25.spr = 14,2
+p3.front25.scale   =  1.5,1.5
+p3.front25.facing   = 1
+p3.front25.palfx.add   =  -64,-64,-64
+p3.front25.palfx.mul   =  256,256,256
+
+p3.range.x   = -132,-16
+
+;Player 4
+p4.pos       = 853,88
+p4.bg0.spr   = 14,1
+p4.bg0.scale   = 1.5,1.5
+p4.bg0.facing   = -1
+
+p4.front.spr = 14,2
+p4.front.scale   =  1.5,1.5
+p4.front.facing   = -1
+p4.front.palfx.add   =  -64,-64,-64
+p4.front.palfx.mul   =  128,128,128
+p4.front.palfx.sinadd =   -128,-128,-128,30
+
+
+p4.front25.spr = 14,2
+p4.front25.scale   =  1.5,1.5
+p4.front25.facing   = -1
+p4.front25.palfx.add   = -64,-64,-64
+p4.front25.palfx.mul   =  256,256,256
+
+p4.range.x = 132,16
+
+;Player 5
+p5.pos       = 608,112
+p5.bg0.spr   = 14,1
+p5.bg0.scale   = 1.5,1.5
+p5.bg0.facing   = 1
+
+p5.front.spr = 14,2
+p5.front.scale   =  1.5,1.5
+p5.front.facing   = 1
+p5.front.palfx.add   =  -64,-64,-64
+p5.front.palfx.mul   =  128,128,128
+p5.front.palfx.sinadd =   -128,-128,-128,30
+
+
+p5.front25.spr = 14,2
+p5.front25.scale   =  1.5,1.5
+p5.front25.facing   = 1
+p5.front25.palfx.add   = -64,-64,-64
+p5.front25.palfx.mul   =  256,256,256
+
+p5.range.x = -132,-16
+
+;Player 6
+p6.pos       = 670,112
+p6.bg0.spr   = 14,1
+p6.bg0.scale   = 1.5,1.5
+p6.bg0.facing   = -1
+
+p6.front.spr = 14,2
+p6.front.scale   =  1.5,1.5
+p6.front.facing   = -1
+p6.front.palfx.add   =  -64,-64,-64
+p6.front.palfx.mul   =  128,128,128
+p6.front.palfx.sinadd =   -128,-128,-128,30
+
+
+p6.front25.spr = 14,2
+p6.front25.scale   =  1.5,1.5
+p6.front25.facing   = -1
+p6.front25.palfx.add   = -64,-64,-64
+p6.front25.palfx.mul   =  256,256,256
+
+p6.range.x = 132,16
+
+[Simul_4P Stunbar]
+;Player 1
+p1.pos       = 588,88
+p1.bg0.spr   = 14,0
+p1.bg0.scale   = 1.5,1.5
+p1.bg0.facing   = 1
+
+p1.front.spr = 14,2
+p1.front.scale   =  1.5,1.5
+p1.front.facing   = 1
+p1.front.palfx.add   =  -64,-64,-64
+p1.front.palfx.mul   = 128,128,128
+p1.front.palfx.sinadd =  -128,-128,-128,30
+
+p1.front25.spr = 14,2
+p1.front25.scale   =  1.5,1.5
+p1.front25.facing   = 1
+p1.front25.palfx.add   =  -64,-64,-64
+p1.front25.palfx.mul   =  256,256,256
+
+p1.range.x   = -132,-16
+
+;Player 2
+p2.pos       = 690,88
+p2.bg0.spr   = 14,1
+p2.bg0.scale   = 1.5,1.5
+p2.bg0.facing   = -1
+
+p2.front.spr = 14,2
+p2.front.scale   =  1.5,1.5
+p2.front.facing   = -1
+p2.front.palfx.add   =  -64,-64,-64
+p2.front.palfx.mul   =  128,128,128
+p2.front.palfx.sinadd =   -128,-128,-128,30
+
+p2.front25.spr = 14,2
+p2.front25.scale   =  1.5,1.5
+p2.front25.facing   = -1
+p2.front25.palfx.add   = -64,-64,-64
+p2.front25.palfx.mul   =  256,256,256
+
+p2.range.x = 132,16
+
+;Player 3
+p3.pos       = 425,88
+p3.bg0.spr   = 14,0
+p3.bg0.scale   = 1.5,1.5
+p3.bg0.facing   = 1
+
+p3.front.spr = 14,2
+p3.front.scale   =  1.5,1.5
+p3.front.facing   = 1
+p3.front.palfx.add   =  -64,-64,-64
+p3.front.palfx.mul   = 128,128,128
+p3.front.palfx.sinadd =  -128,-128,-128,30
+
+p3.front25.spr = 14,2
+p3.front25.scale   =  1.5,1.5
+p3.front25.facing   = 1
+p3.front25.palfx.add   =  -64,-64,-64
+p3.front25.palfx.mul   =  256,256,256
+
+p3.range.x   = -132,-16
+
+;Player 4
+p4.pos       = 853,88
+p4.bg0.spr   = 14,1
+p4.bg0.scale   = 1.5,1.5
+p4.bg0.facing   = -1
+
+p4.front.spr = 14,2
+p4.front.scale   =  1.5,1.5
+p4.front.facing   = -1
+p4.front.palfx.add   =  -64,-64,-64
+p4.front.palfx.mul   =  128,128,128
+p4.front.palfx.sinadd =   -128,-128,-128,30
+
+
+p4.front25.spr = 14,2
+p4.front25.scale   =  1.5,1.5
+p4.front25.facing   = -1
+p4.front25.palfx.add   = -64,-64,-64
+p4.front25.palfx.mul   =  256,256,256
+
+p4.range.x = 132,16
+
+;Player 5
+p5.pos       = 608,112
+p5.bg0.spr   = 14,0
+p5.bg0.scale   = 1.5,1.5
+p5.bg0.facing   = 1
+
+p5.front.spr = 14,2
+p5.front.scale   =  1.5,1.5
+p5.front.facing   = 1
+p5.front.palfx.add   =  -64,-64,-64
+p5.front.palfx.mul   =  128,128,128
+p5.front.palfx.sinadd =   -128,-128,-128,30
+
+p5.front25.spr = 14,2
+p5.front25.scale   =  1.5,1.5
+p5.front25.facing   = 1
+p5.front25.palfx.add   = -64,-64,-64
+p5.front25.palfx.mul   =  256,256,256
+
+p5.range.x = -132,-16
+
+;Player 6
+p6.pos       = 670,112
+p6.bg0.spr   = 14,1
+p6.bg0.scale   = 1.5,1.5
+p6.bg0.facing   = -1
+
+p6.front.spr = 14,2
+p6.front.scale   =  1.5,1.5
+p6.front.facing   = -1
+p6.front.palfx.add   =  -64,-64,-64
+p6.front.palfx.mul   =  128,128,128
+p6.front.palfx.sinadd =   -128,-128,-128,30
+
+p6.front25.spr = 14,2
+p6.front25.scale   =  1.5,1.5
+p6.front25.facing   = -1
+p6.front25.palfx.add   = -64,-64,-64
+p6.front25.palfx.mul   =  256,256,256
+
+p6.range.x = 132,16
+
+;Player 7
+p7.pos       = 445,112
+p7.bg0.spr   = 14,0
+p7.bg0.scale   = 1.5,1.5
+p7.bg0.facing   = 1
+
+p7.front.spr = 14,2
+p7.front.scale   =  1.5,1.5
+p7.front.facing   = 1
+p7.front.palfx.add   =  -64,-64,-64
+p7.front.palfx.mul   = 128,128,128
+p7.front.palfx.sinadd =  -128,-128,-128,30
+
+p7.front25.spr = 14,2
+p7.front25.scale   =  1.5,1.5
+p7.front25.facing   = 1
+p7.front25.palfx.add   =  -64,-64,-64
+p7.front25.palfx.mul   =  256,256,256
+
+p7.range.x   = -132,-16
+
+;Player 8
+p8.pos       = 833,112
+p8.bg0.spr   = 14,1
+p8.bg0.scale   = 1.5,1.5
+p8.bg0.facing   = -1
+
+p8.front.spr = 14,2
+p8.front.scale   =  1.5,1.5
+p8.front.facing   = -1
+p8.front.palfx.add   =  -64,-64,-64
+p8.front.palfx.mul   =  128,128,128
+p8.front.palfx.sinadd =   -128,-128,-128,30
+
+p8.front25.spr = 14,2
+p8.front25.scale   =  1.5,1.5
+p8.front25.facing   = -1
+p8.front25.palfx.add   = -64,-64,-64
+p8.front25.palfx.mul   =  256,256,256
+
+p8.range.x = 132,16
+
+[Guardbar]
+;Player 1
+p1.pos       = 598,100
+p1.bg0.spr   = 15,0
+p1.bg0.scale   = 1.5,1.5
+p1.bg0.facing   = 1
+
+p1.front.spr = 15,2
+p1.front.scale   =  1.5,1.5
+p1.front.facing   = 1
+p1.front.palfx.add   =  0,0,-256
+p1.front.palfx.mul   =  256,256,0
+p1.front.palfx.sinadd =  -64,-64,-256,30
+
+p1.front25.spr = 15,2
+p1.front25.scale   =  1.5,1.5
+p1.front25.facing   = 1
+p1.front25.palfx.add   =  0,0,-256
+p1.front25.palfx.mul   =  256,256,256
+
+p1.range.x = -132,-16
+
+;Player 2
+p2.pos       = 680,100
+p2.bg0.spr   = 15,1
+p2.bg0.scale   = 1.5,1.5
+p2.bg0.facing   = -1
+
+p2.front.spr = 15,2
+p2.front.scale =  1.5,1.5
+p2.front.facing   = -1
+p2.front.palfx.add   =  0,0,-256
+p2.front.palfx.mul   =  256,256,0
+p2.front.palfx.sinadd =  -64,-64,-256,30
+
+p2.front25.spr = 15,2
+p2.front25.scale =  1.5,1.5
+p2.front25.facing = -1
+p2.front25.palfx.add   =  0,0,-256
+p2.front25.palfx.mul   =  256,256,256
+
+p2.range.x = 132,16
+
+[Simul Guardbar]
+;Player 1
+p1.pos       = 598,100
+p1.bg0.spr   = 15,0
+p1.bg0.scale   = 1.5,1.5
+p1.bg0.facing   = 1
+
+p1.front.spr = 15,2
+p1.front.scale   =  1.5,1.5
+p1.front.facing   = 1
+p1.front.palfx.add   =  0,0,-256
+p1.front.palfx.mul   =  256,256,0
+p1.front.palfx.sinadd =  -64,-64,-256,30
+
+
+p1.front25.spr = 15,2
+p1.front25.scale   =  1.5,1.5
+p1.front25.facing   = 1
+p1.front25.palfx.add   =  0,0,-256
+p1.front25.palfx.mul   =  256,256,256
+
+
+p1.range.x = -132,-16
+
+
+;Player 2
+p2.pos       = 680,100
+p2.bg0.spr   = 15,1
+p2.bg0.scale   = 1.5,1.5
+p2.bg0.facing   = -1
+
+p2.front.spr = 15,2
+p2.front.scale   =  1.5,1.5
+p2.front.facing   = -1
+p2.front.palfx.add   =  0,0,-256
+p2.front.palfx.mul   =  256,256,0
+p2.front.palfx.sinadd =  -64,-64,-256,30
+
+p2.front25.spr = 15,2
+p2.front25.scale   =  1.5,1.5
+p2.front25.facing   = -1
+p2.front25.palfx.add   =  0,0,-256
+p2.front25.palfx.mul   =  256,256,256
+
+p2.range.x = 132,16
+
+;Player 3
+p3.pos       = 435,100
+p3.bg0.spr   = 15,0
+p3.bg0.scale   = 1.5,1.5
+p3.bg0.facing   = 1
+
+p3.front.spr = 15,2
+p3.front.scale   =  1.5,1.5
+p3.front.facing   = 1
+p3.front.palfx.add   =  0,0,-256
+p3.front.palfx.mul   =  256,256,0
+p3.front.palfx.sinadd =  -64,-64,-256,30
+
+p3.front25.spr = 15,2
+p3.front25.scale   =  1.5,1.5
+p3.front25.facing   = 1
+p3.front25.palfx.add   =  0,0,-256
+p3.front25.palfx.mul   =  256,256,256
+
+p3.range.x = -132,-16
+
+;Player 4
+p4.pos       = 843,100
+p4.bg0.spr   = 15,1
+p4.bg0.scale   = 1.5,1.5
+p4.bg0.facing   = -1
+
+p4.front.spr = 15,2
+p4.front.scale   =  1.5,1.5
+p4.front.facing   = -1
+p4.front.palfx.add   =  0,0,-256
+p4.front.palfx.mul   =  256,256,0
+p4.front.palfx.sinadd =  -64,-64,-256,30
+
+p4.front25.spr = 15,2
+p4.front25.scale   =  1.5,1.5
+p4.front25.facing   = -1
+p4.front25.palfx.add   =  0,0,-256
+p4.front25.palfx.mul   =  256,256,256
+
+p4.range.x = 132,16
+
+[Simul_3P Guardbar]
+;Player 1
+p1.pos       = 598,100
+p1.bg0.spr   = 15,0
+p1.bg0.scale   = 1.5,1.5
+p1.bg0.facing   = 1
+
+p1.front.spr = 15,2
+p1.front.scale   =  1.5,1.5
+p1.front.facing   = 1
+p1.front.palfx.add   =  0,0,-256
+p1.front.palfx.mul   =  256,256,0
+p1.front.palfx.sinadd =  -64,-64,-256,30
+
+
+p1.front25.spr = 15,2
+p1.front25.scale   =  1.5,1.5
+p1.front25.facing   = 1
+p1.front25.palfx.add   =  0,0,-256
+p1.front25.palfx.mul   =  256,256,256
+
+
+p1.range.x = -132,-16
+
+;Player 2
+p2.pos       = 680,100
+p2.bg0.spr   = 15,1
+p2.bg0.scale   = 1.5,1.5
+p2.bg0.facing   = -1
+
+p2.front.spr = 15,2
+p2.front.scale   =  1.5,1.5
+p2.front.facing   = -1
+p2.front.palfx.add   =  0,0,-256
+p2.front.palfx.mul   =  256,256,0
+p2.front.palfx.sinadd =  -64,-64,-256,30
+
+p2.front25.spr = 15,2
+p2.front25.scale   =  1.5,1.5
+p2.front25.facing   = -1
+p2.front25.palfx.add   =  0,0,-256
+p2.front25.palfx.mul   =  256,256,256
+
+p2.range.x = 132,16
+
+;Player 3
+p3.pos       = 435,100
+p3.bg0.spr   = 15,0
+p3.bg0.scale   = 1.5,1.5
+p3.bg0.facing   = 1
+
+p3.front.spr = 15,2
+p3.front.scale   =  1.5,1.5
+p3.front.facing   = 1
+p3.front.palfx.add   =  0,0,-256
+p3.front.palfx.mul   =  256,256,0
+p3.front.palfx.sinadd =  -64,-64,-256,30
+
+p3.front25.spr = 15,2
+p3.front25.scale   =  1.5,1.5
+p3.front25.facing   = 1
+p3.front25.palfx.add   =  0,0,-256
+p3.front25.palfx.mul   =  256,256,256
+
+p3.range.x = -132,-16
+
+;Player 4
+p4.pos       = 843,100
+p4.bg0.spr   = 15,1
+p4.bg0.scale   = 1.5,1.5
+p4.bg0.facing   = -1
+
+p4.front.spr = 15,2
+p4.front.scale   =  1.5,1.5
+p4.front.facing   = -1
+p4.front.palfx.add   =  0,0,-256
+p4.front.palfx.mul   =  256,256,0
+p4.front.palfx.sinadd =  -64,-64,-256,30
+
+p4.front25.spr = 15,2
+p4.front25.scale   =  1.5,1.5
+p4.front25.facing   = -1
+p4.front25.palfx.add   =  0,0,-256
+p4.front25.palfx.mul   =  256,256,256
+
+p4.range.x = 132,16
+
+;Player 5
+p5.pos       = 618,124
+p5.bg0.spr   = 15,1
+p5.bg0.scale   = 1.5,1.5
+p5.bg0.facing   = 1
+
+p5.front.spr = 15,2
+p5.front.scale   =  1.5,1.5
+p5.front.facing   = 1
+p5.front.palfx.add   =  0,0,-256
+p5.front.palfx.mul   =  256,256,0
+p5.front.palfx.sinadd =  -64,-64,-256,30
+
+
+p5.front25.spr = 15,2
+p5.front25.scale   =  1.5,1.5
+p5.front25.facing   = 1
+p5.front25.palfx.add   =  0,0,-256
+p5.front25.palfx.mul   =  256,256,256
+
+p5.range.x = -132,-16
+
+;Player 6
+p6.pos       = 660,124
+p6.bg0.spr   = 15,1
+p6.bg0.scale   = 1.5,1.5
+p6.bg0.facing   = -1
+
+p6.front.spr = 15,2
+p6.front.scale   =  1.5,1.5
+p6.front.facing   = -1
+p6.front.palfx.add   =  0,0,-256
+p6.front.palfx.mul   =  256,256,0
+p6.front.palfx.sinadd =  -64,-64,-256,30
+
+p6.front25.spr = 15,2
+p6.front25.scale   =  1.5,1.5
+p6.front25.facing   = -1
+p6.front25.palfx.add   =  0,0,-256
+p6.front25.palfx.mul   =  256,256,256
+
+p6.range.x = 132,16
+
+[Simul_4P Guardbar]
+;Player 1
+p1.pos       = 598,100
+p1.bg0.spr   = 15,0
+p1.bg0.scale   = 1.5,1.5
+p1.bg0.facing   = 1
+
+p1.front.spr = 15,2
+p1.front.scale   =  1.5,1.5
+p1.front.facing   = 1
+p1.front.palfx.add   =  0,0,-256
+p1.front.palfx.mul   =  256,256,0
+p1.front.palfx.sinadd =  -64,-64,-256,30
+
+p1.front25.spr = 15,2
+p1.front25.scale   =  1.5,1.5
+p1.front25.facing   = 1
+p1.front25.palfx.add   =  0,0,-256
+p1.front25.palfx.mul   =  256,256,256
+
+
+p1.range.x = -132,-16
+
+
+;Player 2
+p2.pos       = 680,100
+p2.bg0.spr   = 15,1
+p2.bg0.scale   = 1.5,1.5
+p2.bg0.facing   = -1
+
+p2.front.spr = 15,2
+p2.front.scale   =  1.5,1.5
+p2.front.facing   = -1
+p2.front.palfx.add   =  0,0,-256
+p2.front.palfx.mul   =  256,256,0
+p2.front.palfx.sinadd =  -64,-64,-256,30
+
+p2.front25.spr = 15,2
+p2.front25.scale   =  1.5,1.5
+p2.front25.facing   = -1
+p2.front25.palfx.add   =  0,0,-256
+p2.front25.palfx.mul   =  256,256,256
+
+p2.range.x = 132,16
+
+;Player 3
+p3.pos       = 435,100
+p3.bg0.spr   = 15,0
+p3.bg0.scale   = 1.5,1.5
+p3.bg0.facing   = 1
+
+p3.front.spr = 15,2
+p3.front.scale   =  1.5,1.5
+p3.front.facing   = 1
+p3.front.palfx.add   =  0,0,-256
+p3.front.palfx.mul   =  256,256,0
+p3.front.palfx.sinadd =  -64,-64,-256,30
+
+p3.front25.spr = 15,2
+p3.front25.scale   =  1.5,1.5
+p3.front25.facing   = 1
+p3.front25.palfx.add   =  0,0,-256
+p3.front25.palfx.mul   =  256,256,256
+
+p3.range.x = -132,-16
+
+;Player 4
+p4.pos       = 843,100
+p4.bg0.spr   = 15,1
+p4.bg0.scale   = 1.5,1.5
+p4.bg0.facing   = -1
+
+p4.front.spr = 15,2
+p4.front.scale   =  1.5,1.5
+p4.front.facing   = -1
+p4.front.palfx.add   =  0,0,-256
+p4.front.palfx.mul   =  256,256,0
+p4.front.palfx.sinadd =  -64,-64,-256,30
+
+p4.front25.spr = 15,2
+p4.front25.scale   =  1.5,1.5
+p4.front25.facing   = -1
+p4.front25.palfx.add   =  0,0,-256
+p4.front25.palfx.mul   =  256,256,256
+
+p4.range.x = 132,16
+
+;Player 5
+p5.pos       = 618,124
+p5.bg0.spr   = 15,0
+p5.bg0.scale   = 1.5,1.5
+p5.bg0.facing   = 1
+
+p5.front.spr = 15,2
+p5.front.scale   =  1.5,1.5
+p5.front.facing   = 1
+p5.front.palfx.add   =  0,0,-256
+p5.front.palfx.mul   =  256,256,0
+p5.front.palfx.sinadd =  -64,-64,-256,30
+
+p5.front25.spr = 15,2
+p5.front25.scale   =  1.5,1.5
+p5.front25.facing   = 1
+p5.front25.palfx.add   =  0,0,-256
+p5.front25.palfx.mul   =  256,256,256
+
+p5.range.x = -132,-16
+
+;Player 6
+p6.pos       = 660,124
+p6.bg0.spr   = 15,1
+p6.bg0.scale   = 1.5,1.5
+p6.bg0.facing   = -1
+
+p6.front.spr = 15,2
+p6.front.scale   =  1.5,1.5
+p6.front.facing   = -1
+p6.front.palfx.add   =  0,0,-256
+p6.front.palfx.mul   =  256,256,0
+p6.front.palfx.sinadd =  -64,-64,-256,30
+
+p6.front25.spr = 15,2
+p6.front25.scale   =  1.5,1.5
+p6.front25.facing   = -1
+p6.front25.palfx.add   =  0,0,-256
+p6.front25.palfx.mul   =  256,256,256
+
+p6.range.x = 132,16
+
+;Player 7
+p7.pos       = 455,124
+p7.bg0.spr   = 15,0
+p7.bg0.scale   = 1.5,1.5
+p7.bg0.facing   = 1
+
+p7.front.spr = 15,2
+p7.front.scale   =  1.5,1.5
+p7.front.facing   = 1
+p7.front.palfx.add   =  0,0,-256
+p7.front.palfx.mul   =  256,256,0
+p7.front.palfx.sinadd =  -64,-64,-256,30
+
+p7.front25.spr = 15,2
+p7.front25.scale   =  1.5,1.5
+p7.front25.facing   = 1
+p7.front25.palfx.add   =  0,0,-256
+p7.front25.palfx.mul   =  256,256,256
+
+p7.range.x = -132,-16
+
+;Player 4
+p8.pos       = 823,124
+p8.bg0.spr   = 15,1
+p8.bg0.scale   = 1.5,1.5
+p8.bg0.facing   = -1
+
+p8.front.spr = 15,2
+p8.front.scale   =  1.5,1.5
+p8.front.facing   = -1
+p8.front.palfx.add   =  0,0,-256
+p8.front.palfx.mul   =  256,256,0
+p8.front.palfx.sinadd =  -64,-64,-256,30
+
+p8.front25.spr = 15,2
+p8.front25.scale   =  1.5,1.5
+p8.front25.facing   = -1
+p8.front25.palfx.add   =  0,0,-256
+p8.front25.palfx.mul   =  256,256,256
+
+p8.range.x = 132,16
+
+
+;-----------------------------------------------------------
+;Portraits
+;-----------------------------------------------------------
+[Face]  
+;Player 1
+p1.pos = 0,0
+p1.face.spr = 9000,5
+p1.face.offset = 0,1
+p1.face.scale = 0.122,0.122
+
+p1.bg.spr = 11,5
+p1.bg.offset = 0,0
+p1.bg.scale = 0.18,0.18
+
+;Player 2
+p2.pos = 0,0
+p2.face.spr = 9000,5
+p2.face.facing = -1
+p2.face.offset = 1280,0
+p2.face.scale = 0.122,0.122
+
+p2.bg.spr = 11,5
+p2.bg.facing = -1
+p2.bg.offset = 1280,0
+p2.bg.scale = 0.18,0.18
+
+[Simul Face]
+;Player 1
+p1.pos = 0,0
+p1.face.spr = 9000,5
+p1.face.offset = 40,20
+p1.face.scale = 0.081,0.081
+
+p1.ko.anim = 11
+p1.ko.offset = 40,20
+p1.ko.scale = 0.12,0.12
+
+
+p1.bg.spr = 11,5
+p1.bg.offset = 40,20
+p1.bg.scale = 0.12,0.12
+
+;Player 2
+p2.pos = 0,0
+p2.face.spr = 9000,5
+p2.face.facing = -1
+p2.face.offset = 1240,20
+p2.face.scale = 0.081,0.081
+
+p2.ko.anim = 12
+p2.ko.offset = 1240,20
+p2.ko.scale = 0.12,0.12
+
+p2.bg.spr = 11,5
+p2.bg.facing = -1
+p2.bg.offset = 1240,20
+p2.bg.scale = 0.12,0.12
+
+;Player 3
+p3.pos = 0,0
+p3.face.spr = 9000,5
+p3.face.offset = 40,100
+p3.face.scale = 0.081,0.081
+
+p3.ko.anim = 11
+p3.ko.offset = 40,100
+p3.ko.scale = 0.12,0.12
+
+p3.bg.spr = 11,5
+p3.bg.offset = 40,100
+p3.bg.scale = 0.12,0.12
+
+;Player 4
+p4.pos = 0,0
+p4.face.spr = 9000,5
+p4.face.facing = -1
+p4.face.offset = 1240,100
+p4.face.scale = 0.081,0.081
+
+p4.ko.anim = 12
+p4.ko.offset = 1240,100
+p4.ko.scale = 0.12,0.12
+
+p4.bg.spr = 11,5
+p4.bg.facing = -1
+p4.bg.offset = 1240,100
+p4.bg.scale = 0.12,0.12
+
+
+;--------------------------
+[Simul_3P Face]
+;Player 1
+p1.pos = 0,0
+p1.face.spr = 9000,5
+p1.face.offset = 0,60
+p1.face.scale = 0.081,0.081
+
+p1.ko.anim = 11
+p1.ko.offset = 0,60
+p1.ko.scale = 0.12,0.12
+
+p1.bg.spr = 11,5
+p1.bg.offset = 0,60
+p1.bg.scale = 0.12,0.12
+
+;Player 2
+p2.pos = 0,0
+p2.face.spr = 9000,5
+p2.face.facing = -1
+p2.face.offset = 1280,60
+p2.face.scale = 0.081,0.081
+
+p2.ko.anim = 12
+p2.ko.offset = 1280,60
+p2.ko.scale = 0.12,0.12
+
+p2.bg.spr = 11,5
+p2.bg.facing = -1
+p2.bg.offset = 1280,60
+p2.bg.scale = 0.12,0.12
+
+;Player 3
+p3.pos = 0,0
+p3.face.spr = 9000,5
+p3.face.offset = 40,20
+p3.face.scale = 0.081,0.081
+
+p3.ko.anim = 11
+p3.ko.offset = 40,20
+p3.ko.scale = 0.12,0.12
+
+p3.bg.spr = 11,5
+p3.bg.offset = 40,20
+p3.bg.scale = 0.12,0.12
+
+;Player 4
+p4.pos = 0,0
+p4.face.spr = 9000,5
+p4.face.facing = -1
+p4.face.offset = 1240,20
+p4.face.scale = 0.081,0.081
+
+p4.ko.anim = 12
+p4.ko.offset = 1240,20
+p4.ko.scale = 0.12,0.12
+
+p4.bg.spr = 11,5
+p4.bg.facing = -1
+p4.bg.offset = 1240,20
+p4.bg.scale = 0.12,0.12
+
+;Player 5
+p5.pos    = 0,0
+p5.face.spr = 9000,5
+p5.face.offset = 40,100
+p5.face.scale = 0.081,0.081
+
+p5.ko.anim = 11
+p5.ko.offset = 40,100
+p5.ko.scale = 0.12,0.12
+
+p5.bg.spr = 11,5
+p5.bg.offset = 40,100
+p5.bg.scale = 0.12,0.12
+
+;Player 6
+p6.pos    = 0,0
+p6.face.spr = 9000,5
+p6.face.facing = -1
+p6.face.offset = 1240,100
+p6.face.scale = 0.081,0.081
+
+p6.ko.anim = 12
+p6.ko.offset = 1240,100
+p6.ko.scale = 0.12,0.12
+
+p6.bg.spr = 11,5
+p6.bg.facing = -1
+p6.bg.offset = 1240,100
+p6.bg.scale = 0.12,0.12
+
+
+;--------------------------
+[Simul_4P Face]
+;Player 1
+p1.pos = 0,0
+p1.face.spr = 9000,5
+p1.face.offset = 80,60
+p1.face.scale = 0.081,0.081
+
+p1.ko.anim = 11
+p1.ko.offset = 80,60
+p1.ko.scale = 0.12,0.12
+
+p1.bg.spr = 11,5
+p1.bg.offset = 80,60
+p1.bg.scale = 0.12,0.12
+
+;Player 2
+p2.pos = 0,0
+p2.face.spr = 9000,5
+p2.face.facing = -1
+p2.face.offset = 1200,60
+p2.face.scale = 0.081,0.081
+
+p2.ko.anim = 12
+p2.ko.offset = 1200,60
+p2.ko.scale = 0.12,0.12
+
+p2.bg.spr = 11,5
+p2.bg.facing = -1
+p2.bg.offset = 1200,60
+p2.bg.scale = 0.12,0.12
+
+;Player 3
+p3.pos = 0,0
+p3.face.spr = 9000,5
+p3.face.offset = 40,20
+p3.face.scale = 0.081,0.081
+
+p3.ko.anim = 11
+p3.ko.offset = 40,20
+p3.ko.scale = 0.12,0.12
+
+p3.bg.spr = 11,5
+p3.bg.offset = 40,20
+p3.bg.scale = 0.12,0.12
+
+;Player 4
+p4.pos = 0,0
+p4.face.spr = 9000,5
+p4.face.facing = -1
+p4.face.offset = 1240,20
+p4.face.scale = 0.081,0.081
+
+p4.ko.anim = 12
+p4.ko.offset = 1240,20
+p4.ko.scale = 0.12,0.12
+
+p4.bg.spr = 11,5
+p4.bg.facing = -1
+p4.bg.offset = 1240,20
+p4.bg.scale = 0.12,0.12
+
+;Player 5
+p5.pos    = 0,0
+p5.face.spr = 9000,5
+p5.face.offset = 0,60
+p5.face.scale = 0.081,0.081
+
+p5.ko.anim = 11
+p5.ko.offset = 0,60
+p5.ko.scale = 0.12,0.12
+
+p5.bg.spr = 11,5
+p5.bg.offset = 0,60
+p5.bg.scale = 0.12,0.12
+
+;Player 6
+p6.pos    = 0,0
+p6.face.spr = 9000,5
+p6.face.facing = -1
+p6.face.offset = 1280,60
+p6.face.scale = 0.081,0.081
+
+p6.ko.anim = 12
+p6.ko.offset = 1280,60
+p6.ko.scale = 0.12,0.12
+
+p6.bg.spr = 11,5
+p6.bg.facing = -1
+p6.bg.offset = 1280,60
+p6.bg.scale = 0.12,0.12
+
+;Player 7
+p7.pos    = 0,0
+p7.face.spr = 9000,5
+p7.face.offset = 40,100
+p7.face.scale = 0.081,0.081
+
+p7.ko.anim = 11
+p7.ko.offset = 40,100
+p7.ko.scale = 0.12,0.12
+
+p7.bg.spr = 11,5
+p7.bg.offset = 40,100
+p7.bg.scale = 0.12,0.12
+
+;Player 8
+p8.pos    = 0,0
+p8.face.spr = 9000,5
+p8.face.facing = -1
+p8.face.offset = 1240,100
+p8.face.scale = 0.081,0.081
+
+p8.ko.anim = 12
+p8.ko.offset = 1240,100
+p8.ko.scale = 0.12,0.12
+
+p8.bg.spr = 11,5
+p8.bg.facing = -1
+p8.bg.offset = 1240,100
+p8.bg.scale = 0.12,0.12
+
+;--------------------------
+[Tag Face]
+;Player 1
+p1.pos = 0,0
+p1.face.spr = 9000,5
+p1.face.offset = 40,20
+p1.face.scale = 0.081,0.081
+
+p1.ko.anim = 11
+p1.ko.offset = 40,20
+p1.ko.scale = 0.12,0.12
+
+
+p1.bg.spr = 11,5
+p1.bg.offset = 40,20
+p1.bg.scale = 0.12,0.12
+
+;Player 2
+p2.pos = 0,0
+p2.face.spr = 9000,5
+p2.face.facing = -1
+p2.face.offset = 1240,20
+p2.face.scale = 0.081,0.081
+
+p2.ko.anim = 12
+p2.ko.offset = 1240,20
+p2.ko.scale = 0.12,0.12
+
+
+p2.bg.spr = 11,5
+p2.bg.facing = -1
+p2.bg.offset = 1240,20
+p2.bg.scale = 0.12,0.12
+
+;Player 3
+p3.pos = 0,0
+p3.face.spr = 9000,5
+p3.face.offset = 40,100
+p3.face.scale = 0.081,0.081
+
+p3.ko.anim = 11
+p3.ko.offset = 40,100
+p3.ko.scale = 0.12,0.12
+
+p3.bg.spr = 11,5
+p3.bg.offset = 40,100
+p3.bg.scale = 0.12,0.12
+
+;Player 4
+p4.pos = 0,0
+p4.face.spr = 9000,5
+p4.face.facing = -1
+p4.face.offset = 1240,100
+p4.face.scale = 0.081,0.081
+
+p4.ko.anim = 12
+p4.ko.offset = 1240,100
+p4.ko.scale = 0.12,0.12
+
+p4.bg.spr = 11,5
+p4.bg.facing = -1
+p4.bg.offset = 1240,100
+p4.bg.scale = 0.12,0.12
+
+
+;--------------------------
+[Tag_3P Face]
+;Player 1
+p1.pos = 0,0
+p1.face.spr = 9000,5
+p1.face.offset = 0,60
+p1.face.scale = 0.081,0.081
+
+p1.ko.anim = 11
+p1.ko.offset = 0,60
+p1.ko.scale = 0.12,0.12
+
+p1.bg.spr = 11,5
+p1.bg.offset = 0,60
+p1.bg.scale = 0.12,0.12
+
+;Player 2
+p2.pos = 0,0
+p2.face.spr = 9000,5
+p2.face.facing = -1
+p2.face.offset = 1280,60
+p2.face.scale = 0.081,0.081
+
+p2.ko.anim = 12
+p2.ko.offset = 1280,60
+p2.ko.scale = 0.12,0.12
+
+p2.bg.spr = 11,5
+p2.bg.facing = -1
+p2.bg.offset = 1280,60
+p2.bg.scale = 0.12,0.12
+
+;Player 3
+p3.pos = 0,0
+p3.face.spr = 9000,5
+p3.face.offset = 40,20
+p3.face.scale = 0.081,0.081
+
+p3.ko.anim = 11
+p3.ko.offset = 40,20
+p3.ko.scale = 0.12,0.12
+
+p3.bg.spr = 11,5
+p3.bg.offset = 40,20
+p3.bg.scale = 0.12,0.12
+
+;Player 4
+p4.pos = 0,0
+p4.face.spr = 9000,5
+p4.face.facing = -1
+p4.face.offset = 1240,20
+p4.face.scale = 0.081,0.081
+
+p4.ko.anim = 12
+p4.ko.offset = 1240,20
+p4.ko.scale = 0.12,0.12
+
+p4.bg.spr = 11,5
+p4.bg.facing = -1
+p4.bg.offset = 1240,20
+p4.bg.scale = 0.12,0.12
+
+;Player 57
+p5.pos    = 0,0
+p5.face.spr = 9000,5
+p5.face.offset = 40,100
+p5.face.scale = 0.081,0.081
+
+p5.ko.anim = 11
+p5.ko.offset = 40,100
+p5.ko.scale = 0.12,0.12
+
+p5.bg.spr = 11,5
+p5.bg.offset = 40,100
+p5.bg.scale = 0.12,0.12
+
+;Player 6
+p6.pos    = 0,0
+p6.face.spr = 9000,5
+p6.face.facing = -1
+p6.face.offset = 1240,100
+p6.face.scale = 0.081,0.081
+
+p6.ko.anim = 12
+p6.ko.offset = 1240,100
+p6.ko.scale = 0.12,0.12
+
+p6.bg.spr = 11,5
+p6.bg.facing = -1
+p6.bg.offset = 1240,100
+p6.bg.scale = 0.12,0.12
+
+
+;--------------------------
+[Tag_4P Face]
+;Player 1
+p1.pos = 0,0
+p1.face.spr = 9000,5
+p1.face.offset = 80,60
+p1.face.scale = 0.081,0.081
+
+p1.ko.anim = 11
+p1.ko.offset = 80,60
+p1.ko.scale = 0.12,0.12
+
+p1.bg.spr = 11,5
+p1.bg.offset = 80,60
+p1.bg.scale = 0.12,0.12
+
+;Player 2
+p2.pos = 0,0
+p2.face.spr = 9000,5
+p2.face.facing = -1
+p2.face.offset = 1200,60
+p2.face.scale = 0.081,0.081
+
+p2.ko.anim = 12
+p2.ko.offset = 1200,60
+p2.ko.scale = 0.12,0.12
+
+p2.bg.spr = 11,5
+p2.bg.facing = -1
+p2.bg.offset = 1200,60
+p2.bg.scale = 0.12,0.12
+
+;Player 3
+p3.pos = 0,0
+p3.face.spr = 9000,5
+p3.face.offset = 40,20
+p3.face.scale = 0.081,0.081
+
+p3.ko.anim = 11
+p3.ko.offset = 40,20
+p3.ko.scale = 0.12,0.12
+
+p3.bg.spr = 11,5
+p3.bg.offset = 40,20
+p3.bg.scale = 0.12,0.12
+
+;Player 4
+p4.pos = 0,0
+p4.face.spr = 9000,5
+p4.face.facing = -1
+p4.face.offset = 1240,20
+p4.face.scale = 0.081,0.081
+
+p4.ko.anim = 12
+p4.ko.offset = 1240,20
+p4.ko.scale = 0.12,0.12
+
+p4.bg.spr = 11,5
+p4.bg.facing = -1
+p4.bg.offset = 1240,20
+p4.bg.scale = 0.12,0.12
+
+;Player 5
+p5.pos    = 0,0
+p5.face.spr = 9000,5
+p5.face.offset = 0,60
+p5.face.scale = 0.081,0.081
+
+p5.ko.anim = 11
+p5.ko.offset = 0,60
+p5.ko.scale = 0.12,0.12
+
+p5.bg.spr = 11,5
+p5.bg.offset = 0,60
+p5.bg.scale = 0.12,0.12
+
+;Player 6
+p6.pos    = 0,0
+p6.face.spr = 9000,5
+p6.face.facing = -1
+p6.face.offset = 1280,60
+p6.face.scale = 0.081,0.081
+
+p6.ko.anim = 12
+p6.ko.offset = 1280,60
+p6.ko.scale = 0.12,0.12
+
+p6.bg.spr = 11,5
+p6.bg.facing = -1
+p6.bg.offset = 1280,60
+p6.bg.scale = 0.12,0.12
+
+;Player 7
+p7.pos    = 0,0
+p7.face.spr = 9000,5
+p7.face.offset = 40,100
+p7.face.scale = 0.081,0.081
+
+p7.ko.anim = 11
+p7.ko.offset = 40,100
+p7.ko.scale = 0.12,0.12
+
+p7.bg.spr = 11,5
+p7.bg.offset = 40,100
+p7.bg.scale = 0.12,0.12
+
+;Player 8
+p8.pos    = 0,0
+p8.face.spr = 9000,5
+p8.face.facing = -1
+p8.face.offset = 1240,100
+p8.face.scale = 0.081,0.081
+
+p8.ko.anim = 12
+p8.ko.offset = 1240,100
+p8.ko.scale = 0.12,0.12
+
+p8.bg.spr = 11,5
+p8.bg.facing = -1
+p8.bg.offset = 1240,100
+p8.bg.scale = 0.12,0.12
+
+
+;--------------------------
+[Turns Face]
+;Player 1
+p1.pos = 0,0
+p1.face.spr = 9000,5
+p1.face.offset = 0,0
+p1.face.scale = 0.122,0.122
+
+p1.bg.spr = 11,5
+p1.bg.offset = 0,0
+p1.bg.scale = 0.18,0.18
+
+;Player 2
+p2.pos = 0,0
+p2.face.spr = 9000,5
+p2.face.facing = -1
+p2.face.offset = 1280,0
+p2.face.scale = 0.122,0.122
+
+p2.bg.spr = 11,5
+p2.bg.facing = -1
+p2.bg.offset = 1280,0
+p2.bg.scale = 0.18,0.18
+
+;-----------------------------------------------------------
+;Names
+;-----------------------------------------------------------
+[Name]
+p1.pos = 160,110
+p1.name.font = 6,0,1
+p1.name.scale = 0.2,0.2
+
+p2.pos = 1120,110
+p2.name.font = 6,0,-1
+p2.name.scale = 0.2,0.2
+
+[Simul Name]
+p1.pos = 140,45
+p1.name.font = 6,0,1
+p1.name.scale = 0.15,0.15
+
+p2.pos = 1140,45
+p2.name.font = 6,0,-1
+p2.name.scale = 0.15,0.15
+
+p3.pos = 180,130
+p3.name.font = 6,0,1
+p3.name.scale = 0.15,0.15
+
+p4.pos = 1100,130
+p4.name.font = 6,0,-1
+p4.name.scale = 0.15,0.15
+
+[Simul_3P Name]
+p1.pos = 140,45
+p1.name.font = 6,0,1
+p1.name.scale = 0.15,0.15
+
+p2.pos = 1140,45
+p2.name.font = 6,0,-1
+p2.name.scale = 0.15,0.15
+
+p3.pos = 180,130
+p3.name.font = 6,0,1
+p3.name.scale = 0.15,0.15
+
+p4.pos = 1100,130
+p4.name.font = 6,0,-1
+p4.name.scale = 0.15,0.15
+
+p5.pos = 180,150
+p5.name.font = 6,0,1
+p5.name.scale = 0.15,0.15
+
+p6.pos = 1100,150
+p6.name.font = 6,0,-1
+p6.name.scale = 0.15,0.15
+
+[Simul_4P Name]
+p1.pos = 140,45
+p1.name.font = 6,0,1
+p1.name.scale = 0.15,0.15
+
+p2.pos = 1140,45
+p2.name.font = 6,0,-1
+p2.name.scale = 0.15,0.15
+
+p3.pos = 180,150
+p3.name.font = 6,0,1
+p3.name.scale = 0.15,0.15
+
+p4.pos = 1100,150
+p4.name.font = 6,0,-1
+p4.name.scale = 0.15,0.15
+
+p5.pos = 180,170
+p5.name.font = 6,0,1
+p5.name.scale = 0.15,0.15
+
+p6.pos = 1100,170
+p6.name.font = 6,0,-1
+p6.name.scale = 0.15,0.15
+
+p7.pos = 140,25
+p7.name.font = 6,0,1
+p7.name.scale = 0.15,0.15
+
+p8.pos = 1140,25
+p8.name.font = 6,0,-1
+p8.name.scale = 0.15,0.15
+
+[Tag Name]
+p1.pos = 140,45
+p1.name.font = 6,0,1
+p1.name.scale = 0.2,0.2
+
+p2.pos = 1140,45
+p2.name.font = 6,0,-1
+p2.name.scale = 0.2,0.2
+
+p3.pos = 180,130
+p3.name.font = 6,0,1
+p3.name.scale = 0.15,0.15
+
+p4.pos = 1100,130
+p4.name.font = 6,0,-1
+p4.name.scale = 0.15,0.15
+
+[Tag_3P Name]
+p1.pos = 140,45
+p1.name.font = 6,0,1
+p1.name.scale = 0.2,0.2
+
+p2.pos = 1140,45
+p2.name.font = 6,0,-1
+p2.name.scale = 0.2,0.2
+
+p3.pos = 180,130
+p3.name.font = 6,0,1
+p3.name.scale = 0.15,0.15
+
+p4.pos = 1100,130
+p4.name.font = 6,0,-1
+p4.name.scale = 0.15,0.15
+`
+p5.pos = 180,150
+p5.name.font = 6,0,1
+p5.name.scale = 0.15,0.15
+
+p6.pos = 1100,150
+p6.name.font = 6,0,-1
+p6.name.scale = 0.15,0.15
+
+[Tag_4P Name]
+p1.pos = 140,45
+p1.name.font = 6,0,1
+p1.name.scale = 0.2,0.2
+
+p2.pos = 1140,45
+p2.name.font = 6,0,-1
+p2.name.scale = 0.2,0.2
+
+p3.pos = 180,130
+p3.name.font = 6,0,1
+p3.name.scale = 0.15,0.15
+
+p4.pos = 1100,130
+p4.name.font = 6,0,-1
+p4.name.scale = 0.15,0.15
+
+p5.pos = 180,150
+p5.name.font = 6,0,1
+p5.name.scale = 0.15,0.15
+
+p6.pos = 1100,150
+p6.name.font = 6,0,-1
+p6.name.scale = 0.15,0.15
+
+p7.pos = 180,25
+p7.name.font = 6,0,1
+p7.name.scale = 0.15,0.15
+
+p8.pos = 1100,25
+p8.name.font = 6,0,-1
+p8.name.scale = 0.15,0.15
+
+[Turns Name]
+p1.pos = 140,45
+p1.name.font = 6,0,1
+p1.name.scale = 0.2,0.2
+
+p1.teammate.pos = 140,130
+p1.teammate.name.font = 6,0,1
+p1.teammate.name.scale = 0.15,0.15
+p1.teammate.spacing = 0,20
+
+p2.pos = 1140,45
+p2.name.font = 6,0,-1
+p2.name.scale = 0.2,0.2
+
+p2.teammate.pos = 1140,130
+p2.teammate.name.font = 6,0,-1
+p2.teammate.name.scale = 0.15,0.15
+p2.teammate.spacing = 0,20
+;-----------------------------------------------------------
+;Time
+;-----------------------------------------------------------
+[Time]
+pos = 638, 10
+counter.font = 3,2,0
+counter.offset = 0,0
+counter.scale = 0.25,0.25
+counter500.font = 3,0,0
+counter500.offset = 0,0
+counter500.scale = 0.25,0.25
+counter250.font = 3,1,0
+counter250.offset = 0,0
+counter250.scale = 0.25,0.25
+framespercount = 5
+
+;-----------------------------------------------------------
+;Combo
+;-----------------------------------------------------------
+[Combo]
+team1.pos = 35,200
+team2.pos = 1295,200
+team1.start.x = -200
+team2.start.x = 1480
+team1.bg.spr   = 300,0
+team1.bg.scale   = 1,1
+team2.bg.spr   = 300,0
+team2.bg.scale   = 1,1
+team1.bg.facing = 1
+7team2.bg.facing = -1
+team1.counter.layerno = 2
+team2.counter.layerno = 2
+team1.counter.font = 1,0,1
+team2.counter.font = 1,0,-1
+team1.counter.text = "%iY"
+team2.counter.text = "%iY"
+team1.counter.shake = 1
+team2.counter.shake = 1
+team1.counter.scale = 0.25,0.25
+team2.counter.scale = 0.25,0.25
+team1.counter.offset = 0,0
+team2.counter.offset = 0,0
+team1.text.font = 1,0,1
+team2.text.font = 1,0,-1
+team1.text.scale = 0.25,0.25
+team2.text.scale = 0.25,0.25
+team1.text.text = "%dZ"
+team2.text.text = "%dZ"
+team1.text.offset = -90,40
+team2.text.offset = -90,40
+team1.text.layerno = 2
+team2.text.layerno = 2
+team1.displaytime = 60
+team2.displaytime = 60
+
+;-----------------------------------------------------------
+;Action (Ikemen)
+;-----------------------------------------------------------
+[Action]
+team1.pos = 2,300
+team1.max = 4
+team1.spacing = 0,50
+team1.start.x = -140
+team1.front.facing = 1
+team1.front.layerno = 2
+team1.front.offset = 0,0
+team1.front.scale =  0.1,0.15
+team1.displaytime = 120
+team1.showspeed = 3
+team1.hidespeed = 0
+
+team2.pos = 1278,300
+team1.max = 4
+team2.spacing = 0,50
+team2.start.x = 1340
+team2.front.layerno = 2
+team2.front.facing = 1
+team2.front.offset = 0,0
+team2.front.scale = 0.1,0.15
+team2.displaytime = 120
+team2.showspeed = 3
+team2.hidespeed = 0
+
+;-----------------------------------------------------------
+;Round
+[Round]
+match.maxdrawgames = -1
+start.waittime = 44
+pos = 0,0
+
+round.time = 0
+round.sndtime = 0
+
+round1.snd = 0,0
+round2.snd = 0,0
+round3.snd = 0,0
+round4.snd = 0,0
+round5.snd = 0,0
+round6.snd = 0,0
+round7.snd = 0,0
+round8.snd = 0,0
+round9.snd = 0,0
+round.final.snd = 0,0
+;round.single.snd = 0,0
+
+
+;round1.snd = 100,0
+;round2.snd = 100,1
+;round3.snd = 100,2
+;round4.snd = 100,3
+;round5.snd = 100,4
+;round6.snd = 100,3
+;round7.snd = 100,2
+;round8.snd = 100,1
+;round9.snd = 100,0
+;round.final.snd = 100,3
+;round.single.snd = 100,4
+
+round.default.offset = 640,0
+round.default.bg0.offset = 640,0
+round1.offset = 310,120
+round2.offset = 310,120
+round3.offset = 310,120
+round4.offset = 310,120
+round5.offset = 310,120
+round6.offset = 310,120
+round7.offset = 310,120
+round8.offset = 310,120
+round9.offset = 310,120
+round.final.offset = 310,120
+;round.single.offset = 310,120
+
+
+round.default.anim = 99
+round.default.bg0.anim = 199
+round1.anim = 200
+round2.anim = 201
+round3.anim = 202
+round4.anim = 203
+round5.anim = 204
+round6.anim = 205
+round7.anim = 206
+round8.anim = 207
+round9.anim = 208
+round.final.anim = 209
+;round.single.anim = 210
+
+round.default.layerno = 0
+round.default.bg0.layerno = 1
+round1.layerno = 2
+round2.layerno = 2
+round3.layerno = 2
+round4.layerno = 2
+round5.layerno = 2
+round6.layerno = 2
+round.final.layerno = 2
+;round.single.layerno = 2
+
+round.default.scale = 1,1
+round.default.bg0.scale = 1,1
+round1.scale = 1,1
+round2.scale = 1,1
+round3.scale = 1,1
+round4.scale = 1,1
+round5.scale = 1,1
+round6.scale = 1,1
+round7.scale = 1,1
+round8.scale = 1,1
+round9.scale = 1,1
+round.final.scale = 1,1
+round.final.bg0.scale = 1,1
+;round.single.scale = 1,1
+
+;round.single.displaytime = 102
+round.default.displaytime = 102
+
+;-----------------------
+;Fight 
+
+fight.time = 0
+fight.offset = 640,360
+fight.anim = 115
+fight.snd = 1,0
+fight.sndtime = 0
+fight.scale = 1.25,1.25
+fight.layerno = 2
+callfight.time = 120
+ctrl.time = 30
+
+;-----------------------
+;KO
+KO.time = 0
+KO.anim = 98
+KO.layerno = 1
+KO.snd = 2,0
+KO.sndtime = 0  
+KO.bg0.offset = 640,0
+KO.bg0.anim = 120
+KO.bg0.scale = 1,1
+KO.bg0.layerno = 2
+KO.bg1.anim    = 121
+KO.bg1.offset    = 0,360
+KO.bg1.scale    = 2,2
+KO.bg1.layerno    = 3
+
+;-----------------------
+;Double KO
+DKO.time    = 0
+DKO.bg0.offset = 640,0
+DKO.bg0.anim = 120
+DKO.bg0.layerno = 2
+DKO.bg1.anim    = 121
+DKO.bg1.offset    = 640,200
+DKO.bg1.scale    = 1,1
+DKO.bg1.layerno    = 3
+DKO.bg2.anim    = 122
+DKO.bg2.offset    = 400,60
+DKO.bg2.scale  = 0.7,0.7
+DKO.bg2.layerno  = 3
+DKO.anim = 98
+DKO.layerno = 0
+DKO.snd = 2,1
+DKO.scale = 1,1
+
+;-----------------------
+;Time Over
+TO.offset  = 640,0
+TO.anim    = 140
+TO.displaytime = 150
+TO.bg0.anim = 141
+TO.bg0.offset = 310,120
+TO.bg0.scale    = 1,1
+TO.bg0.layerno = 2
+TO.snd     = 2,2
+TO.scale = 1,1
+
+slow.time = 30
+slow.fadetime = 15
+slow.speed = 0.15
+
+over.waittime = 75
+over.hittime = 20
+over.wintime = 75
+over.time = 500
+
+;-----------------------
+;Win
+win.time = 0
+p1.win.time = 0
+p1.win.pos = 0,200
+p1.win.anim = 134
+p1.win.layerno = 1
+p1.win.scale = 1,1
+p1.win.bg0.anim = 133
+p1.win.bg0.offset = 310,120
+p1.win.bg0.scale  = 1,1
+p1.win.bg0.layerno = 2
+p1.win.bg1.anim = 131
+p1.win.bg1.offset = 370,100
+p1.win.bg1.scale = 0.5,0.5
+p1.win.bg1.layerno = 2
+p1.win.offset = 640,0
+p1.win.displaytime = 85
+p1.win.snd  = 20,1
+
+p2.win.time = 0
+p2.win.pos = 0,200
+p2.win.anim = 134
+p2.win.layerno = 1
+p2.win.scale = 1,1
+p2.win.bg0.anim = 133
+p2.win.bg0.offset = 310,120
+p2.win.bg0.scale    = 1,1
+p2.win.bg0.layerno = 2
+p2.win.bg1.anim = 132
+p2.win.bg1.offset = 660,100
+p2.win.bg1.scale = 0.5,0.5
+p2.win.bg1.layerno = 2
+p2.win.offset = 640,0
+p2.win.displaytime = 85
+p2.win.snd  = 20,1
+
+win2.time = 0
+p1.win2.time = 0
+p1.win2.pos = 0,200
+p1.win2.anim = 134
+p1.win2.layerno = 1
+p1.win2.scale = 1,1
+p1.win2.bg0.anim = 133
+p1.win2.bg0.offset = 310,120
+p1.win2.bg0.scale    = 1,1
+p1.win2.bg0.layerno = 2
+p1.win2.bg1.anim = 129
+p1.win2.bg1.offset = 370,100
+p1.win2.bg1.scale = 0.5,0.5
+p1.win2.bg1.layerno = 2
+p1.win2.offset = 640,0
+p1.win2.displaytime = 85 
+p1.win2.snd  = 20,1
+
+p2.win2.time = 0
+p2.win2.pos = 0,200
+p2.win2.anim = 134
+p2.win2.layerno = 1
+p2.win2.scale = 1,1
+p2.win2.bg0.anim = 133
+p2.win2.bg0.offset = 310,120
+p2.win2.bg0.scale    = 1,1
+p2.win2.bg0.layerno = 2
+p2.win2.bg1.anim = 130
+p2.win2.bg1.offset = 660,100
+p2.win2.bg1.scale = 0.5,0.5
+p2.win2.bg1.layerno = 2
+p2.win2.offset = 640,0
+p2.win2.displaytime = 85
+p2.win2.snd  = 20,1
+
+win3.time = 0
+p1.win3.time = 0
+p1.win3.pos = 0,200
+p1.win3.anim = 134
+p1.win3.layerno = 1
+p1.win3.scale = 1,1
+p1.win3.bg0.anim = 133
+p1.win3.bg0.offset = 310,120
+p1.win3.bg0.scale    = 1,1
+p1.win3.bg0.layerno = 2
+p1.win3.bg1.anim = 129
+p1.win3.bg1.offset = 370,100
+p1.win3.bg1.scale = 0.5,0.5
+p1.win3.bg1.layerno = 2
+p1.win3.offset = 640,0
+p1.win3.displaytime = 85
+p1.win3.snd  = 20,1
+
+p2.win3.time = 0
+p2.win3.pos = 0,200
+p2.win3.anim = 134
+p2.win3.layerno = 1
+p2.win3.scale = 1,1
+p2.win3.bg0.anim = 133
+p2.win3.bg0.offset = 310,120
+p2.win3.bg0.scale    = 1,1
+p2.win3.bg0.layerno = 2
+p2.win3.bg1.anim = 130
+p2.win3.bg1.offset = 660,100
+p2.win3.bg1.scale = 0.5,0.5
+p2.win3.bg1.layerno = 2
+p2.win3.offset = 640,0
+p2.win3.displaytime = 85
+p2.win3.snd  = 20,1
+
+win4.time = 0
+p1.win4.time = 0
+p1.win4.pos = 0,200
+p1.win4.anim = 134
+p1.win4.layerno = 1
+p1.win4.scale = 1,1
+p1.win4.bg0.anim = 133
+p1.win4.bg0.offset = 310,120
+p1.win4.bg0.scale    = 1,1
+p1.win4.bg0.layerno = 2
+p1.win4.bg1.anim = 129
+p1.win4.bg1.offset = 370,100
+p1.win4.bg1.scale = 0.5,0.5
+p1.win4.bg1.layerno = 2
+p1.win4.offset = 640,0
+p1.win4.displaytime = 85
+p1.win4.snd  = 20,1
+
+p2.win4.time = 0
+p2.win4.pos = 0,100
+p2.win4.anim = 134
+p2.win4.layerno = 1
+p2.win4.scale = 1,1
+p2.win4.bg0.anim = 133
+p2.win4.bg0.offset = 310,120
+p2.win4.bg0.scale    = 1,1
+p2.win4.bg0.layerno = 2
+p2.win4.bg1.anim = 130
+p2.win4.bg1.offset = 660,100
+p2.win4.bg1.scale = 0.5,0.5
+p2.win4.bg1.layerno = 2
+p2.win4.offset = 640,0
+p2.win4.displaytime = 85
+p2.win4.snd  = 20,1
+
+p1.perfect.pos = 0, 0
+p1.perfect.bg.offset = 470, 450
+p1.perfect.bg.anim = 124
+p1.perfect.bg.scale = 0.5,0.5
+p1.perfect.time = 20
+p1.perfect.displaytime = 92
+p1.perfect.bg.layerno = 2
+;p1.perfect.snd  = 20,0
+p2.perfect.pos = 0, 0
+p2.perfect.bg.offset = 470, 450
+p2.perfect.bg.anim = 124
+p2.perfect.bg.scale = 0.5,0.5
+p2.perfect.bg.layerno = 2
+p2.perfect.time = 20
+;p2.perfect.snd  = 20,0
+p2.perfect.displaytime = 92
+
+;-----------------------
+;Draw
+draw.offset = 640,0
+draw.anim    = 140
+draw.displaytime = 150
+draw.bg0.anim = 142
+draw.bg0.offset = 310,120
+draw.bg0.scale    = 1,1
+draw.bg0.layerno = 2
+draw.snd    = 0,0
+draw.scale = 1,1
+
+
+; Fade
+fadein.time = 1           ;Ikemen feature: round start fade time (default: 30)
+fadein.col = 0, 0, 0       ;Ikemen feature: round start fade color (default: 0,0,0)
+fadeout.time = 1         ;Ikemen feature: round end fade time (default: 30, extends over.time if fadeout.time is longer)
+fadeout.col = 0, 0, 0      ;Ikemen feature: round end fade color (default: 0,0,0)
+shutter.time = 1          ;Ikemen feature: skip intro fade time (default: 15, whole anim is twice as long)
+shutter.col = 0, 0, 0      ;Ikemen feature: skip intro fade color (default: 0,0,0)
+;-----------------------------------------------------------
+;Win
+;-----------------------------------------------------------
+[WinIcon]
+p1.pos = 540,170
+p2.pos = 740,170
+
+p1.bg0.spr = 268,0
+p2.bg0.spr = 268,0
+p1.bg0.scale = 0.2,0.2
+p2.bg0.scale = 0.2,0.2
+
+p1.iconoffset = -30,0
+p2.iconoffset = 30,0
+
+; Counter text font and offset for representing wins
+p1.counter.offset = 0,0
+p1.counter.font = 1,-1
+p1.counter.scale = 0.2,0.2
+p2.counter.offset = 0,0
+p2.counter.font = 1,1
+p2.counter.scale = 0.2,0.2
+useiconupto = 4
+
+p1.n.scale = 0.2,0.2
+p1.s.scale = 0.2,0.2
+p1.h.scale = 0.2,0.2
+p1.c.scale = 0.2,0.2
+p1.t.scale = 0.2,0.2
+p1.throw.scale = 0.2,0.2
+p1.suicide.scale = 0.2,0.2
+p1.teammate.scale = 0.2,0.2
+
+p1.n.anim = 150
+p1.s.anim = 151
+p1.h.anim = 152
+p1.c.anim = 153
+p1.t.anim = 154
+p1.throw.anim = 155
+p1.suicide.anim = 157
+p1.teammate.anim = 156
+
+p2.n.scale = 0.2,0.2
+p2.s.scale = 0.2,0.2
+p2.h.scale = 0.2,0.2
+p2.c.scale = 0.2,0.2
+p2.t.scale = 0.2,0.2
+p2.throw.scale = 0.2,0.2
+p2.suicide.scale = 0.2,0.2
+p2.teammate.scale = 0.2,0.2
+
+p2.n.anim = 150
+p2.s.anim = 151
+p2.h.anim = 152
+p2.c.anim = 153
+p2.t.anim = 154
+p2.throw.anim = 155
+p2.suicide.anim = 157
+p2.teammate.anim = 156
+
+[AILevel]
+p1.pos = 540,20
+p2.pos = 740,20
+
+p1.text.font = 2,0,-1
+p2.text.font = 2,0,1
+
+p1.text.text = "CPU-%s"
+p2.text.text = "CPU-%s"
+p1.text.scale = 0.2,0.2
+p2.text.scale = 0.2,0.2
+
+p2.enabled.arcade = 1
+p2.enabled.bossrush = 1
+p2.enabled.freebattle = 1
+p2.enabled.netplayteamcoop = 1
+p2.enabled.scorechallenge = 1
+p2.enabled.teamcoop = 1
+p2.enabled.training = 1
+p1.enabled.watch = 1
+p2.enabled.watch = 1
+p1.enabled.randomtest = 1
+p2.enabled.randomtest = 1
+
+[Score]
+p1.pos = 640,-20
+p2.pos = 640,-20
+
+p1.bg.spr = 270,0
+p2.bg.spr = 270,0
+
+p2.bg.facing  = -1
+
+p1.bg.layerno  = -1
+p2.bg.layerno  = -1
+
+p1.text.facing = 1
+p2.text.facing = 1
+
+p1.text.offset = -100,47
+p2.text.offset = 100,47
+
+p1.text.font = 4,0,-1
+p2.text.font = 4,0,1
+
+p1.text.scale = 0.06,0.06
+p2.text.scale = 0.06,0.06
+
+p1.text.text = "%s"
+p2.text.text = "%s"
+
+score.min = 0
+score.max = 9999999
+
+p1.enabled.arcade = 1
+p1.enabled.bossrush = 1
+p1.enabled.freebattle = 1
+p1.enabled.netplayteamcoop = 1
+p1.enabled.scorechallenge = 1
+p1.enabled.teamcoop = 1
+p1.enabled.training = 1
+p1.enabled.vs = 1
+p2.enabled.vs = 1
+p1.enabled.watch = 1
+p2.enabled.watch = 1
+p1.enabled.randomtest = 1
+p2.enabled.randomtest = 1
+format.integer.pad = 1
+
+[Match]
+pos = 640, 720
+text.font = 6,0,0
+text.text = STAGE #%s
+text.scale = 0.3,0.3
+text.layerno = 1
+
+enabled.arcade = 1
+enabled.bossrush = 1
+enabled.netplaysurvivalcoop = 1
+enabled.survival = 1
+enabled.survivalcoop = 1
+enabled.vs100kumite = 1
+
+[Timer]
+pos = 640,97
+text.font = 6,0,0
+text.scale = 0.1,0.1
+text.text = %m:%s.%x
+
+enabled.arcade = 1
+enabled.timeattack = 1
+enabled.timechallenge = 1
+
+[Ratio]
+p1.pos = 150,0
+p2.pos = 1130,0
+
+p1.level1.spr = 280,0
+p2.level1.spr = 280,0
+p1.level2.spr = 280,1
+p2.level2.spr = 280,1
+p1.level3.spr = 280,2
+p2.level3.spr = 280,2
+p1.level4.spr = 280,3
+p2.level4.spr = 280,3
+
+p1.level1.scale = 0.25,0.25
+p2.level1.scale = 0.25,0.25
+p1.level2.scale = 0.25,0.25
+p2.level2.scale = 0.25,0.25
+p1.level3.scale = 0.25,0.25
+p2.level3.scale = 0.25,0.25
+p1.level4.scale = 0.25,0.25
+p2.level4.scale = 0.25,0.25
+ 
+p2.level1.facing = 1
+p2.level2.facing = 1
+p2.level3.facing = 1
+p2.level4.facing = 1
+
+[Mode]
+demo.pos = 640,360
+demo.bg.layerno = 4
+demo.bg.offset = 0,-200
+demo.bg.anim = 500
+demo.bg.scale = 0.3,0.3
+demo.text.layerno = 4
+demo.text.font = 2,0,0
+demo.text.text = Demo Mode, Press Any Key to go back to the menu.
+demo.text.scale = 0.25,0.25
+
+; Warning bar
+[Begin Action 1]
+Interpolate Blend
+12,0, 0,0, 10, , AS100D256
+Interpolate Blend
+12,0, 0,0, 10, , AS30D256
+
+; Warning bar
+[Begin Action 2]
+Interpolate Blend
+12,1, 0,0, 10, , AS100D256
+Interpolate Blend
+12,1, 0,0, 10, , AS30D256
+
+; Warning bar
+[Begin Action 3]
+Interpolate Blend
+12,2, 0,0, 10, , AS100D256
+Interpolate Blend
+12,2, 0,0, 10, , AS30D256
+
+; Warning bar
+[Begin Action 4]
+Interpolate Blend
+12,3, 0,0, 10, , AS100D256
+Interpolate Blend
+12,3, 0,0, 10, , AS30D256
+
+; Warning bar
+[Begin Action 5]
+Interpolate Blend
+12,4, 0,0, 10, , AS100D256
+Interpolate Blend
+12,4, 0,0, 10, , AS30D256
+
+; Warning bar
+[Begin Action 6]
+Interpolate Blend
+12,5, 0,0, 10, , AS100D256
+Interpolate Blend
+12,5, 0,0, 10, , AS30D256
+
+; Warning bar
+[Begin Action 7]
+Interpolate Blend
+12,6, 0,0, 10, , AS100D256
+Interpolate Blend
+12,6, 0,0, 10, , AS30D256
+
+; Warning bar
+[Begin Action 8]
+Interpolate Blend
+12,7, 0,0, 10, , AS100D256
+Interpolate Blend
+12,7, 0,0, 10, , AS30D256
+
+; Warning bar
+[Begin Action 9]
+Interpolate Blend
+12,8, 0,0, 10, , AS100D256
+Interpolate Blend
+12,8, 0,0, 10, , AS30D256
+
+; Warning bar
+[Begin Action 10]
+Interpolate Blend
+12,9, 0,0, 10, , AS100D256
+Interpolate Blend
+12,9, 0,0, 10, , AS30D256
+
+; KO (portraits)
+[Begin Action 11]
+231,0, 360,348, 32, , , 10,10
+Interpolate Scale
+LoopStart
+231,1, 360,348, 2, , , 2,2
+231,2, 360,348, 2, , , 2,2
+231,3, 360,348, 2, , , 2,2
+231,4, 360,348, 2, , , 2,2
+231,5, 360,348, 2, , , 2,2
+231,6, 360,348, 2, , , 2,2
+231,7, 360,348, 2, , , 2,2
+231,8, 360,348, 2, , , 2,2
+231,9, 360,348, 2, , , 2,2
+231,10, 360,348, 2, , , 2,2
+231,11, 360,348, 2, , , 2,2
+231,12, 360,348, 2, , , 2,2
+231,13, 360,348, 2, , , 2,2
+231,14, 360,348, 2, , , 2,2
+231,15, 360,348, 2, , , 2,2
+231,14, 360,348, 2, , , 2,2
+231,13, 360,348, 2, , , 2,2
+231,12, 360,348, 2, , , 2,2
+231,11, 360,348, 2, , , 2,2
+231,10, 360,348, 2, , , 2,2
+231,9, 360,348, 2, , , 2,2
+231,8, 360,348, 2, , , 2,2
+231,7, 360,348, 2, , , 2,2
+231,6, 360,348, 2, , , 2,2
+231,5, 360,348, 2, , , 2,2
+231,4, 360,348, 2, , , 2,2
+231,3, 360,348, 2, , , 2,2
+231,2, 360,348, 2, , , 2,2
+231,1, 360,348, 2, , , 2,2
+231,0, 360,348, 2, , , 2,2
+
+; KO (portraits)
+[Begin Action 12]
+231,0, -360,348, 32, , , 10,10
+Interpolate Scale
+LoopStart
+231,1, -360,348, 2, , , 2,2
+231,2, -360,348, 2, , , 2,2
+231,3, -360,348, 2, , , 2,2
+231,4, -360,348, 2, , , 2,2
+231,5, -360,348, 2, , , 2,2
+231,6, -360,348, 2, , , 2,2
+231,7, -360,348, 2, , , 2,2
+231,8, -360,348, 2, , , 2,2
+231,9, -360,348, 2, , , 2,2
+231,10, -360,348, 2, , , 2,2
+231,11, -360,348, 2, , , 2,2
+231,12, -360,348, 2, , , 2,2
+231,13, -360,348, 2, , , 2,2
+231,14, -360,348, 2, , , 2,2
+231,15, -360,348, 2, , , 2,2
+231,14, -360,348, 2, , , 2,2
+231,13, -360,348, 2, , , 2,2
+231,12, -360,348, 2, , , 2,2
+231,11, -360,348, 2, , , 2,2
+231,10, -360,348, 2, , , 2,2
+231,9, -360,348, 2, , , 2,2
+231,8, -360,348, 2, , , 2,2
+231,7, -360,348, 2, , , 2,2
+231,6, -360,348, 2, , , 2,2
+231,5, -360,348, 2, , , 2,2
+231,4, -360,348, 2, , , 2,2
+231,3, -360,348, 2, , , 2,2
+231,2, -360,348, 2, , , 2,2
+231,1, -360,348, 2, , , 2,2
+231,0, -360,348, 2, , , 2,2
+
+
+[Begin Action 98]
+-1,0, 0,0, -1
+
+; Round bg
+[Begin Action 99]
+101,0, 0,0, 1
+101,1, 0,0, 1
+101,2, 0,0, 1
+101,3, 0,0, 1
+101,4, 0,0, 1
+101,5, 0,0, 1
+101,6, 0,0, 1
+101,7, 0,0, 1
+101,8, 0,0, 1
+101,9, 0,0, 1
+101,10, 0,0, 1
+101,11, 0,0, 1
+101,12, 0,0, 1
+101,13, 0,0, 1
+101,14, 0,0, 1
+101,15, 0,0, 1
+101,16, 0,0, 1
+101,17, 0,0, 1
+101,18, 0,0, 1
+101,19, 0,0, 1
+101,20, 0,0, 1
+101,21, 0,0, 1
+101,22, 0,0, 1
+101,23, 0,0, 1
+101,24, 0,0, 1
+101,25, 0,0, 1
+101,26, 0,0, 1
+101,27, 0,0, 1
+101,28, 0,0, 1
+101,29, 0,0, 1
+101,30, 0,0, 1
+101,31, 0,0, 1
+101,32, 0,0, 1
+101,33, 0,0, 1
+101,34, 0,0, 1
+101,35, 0,0, 1
+101,36, 0,0, 1
+101,37, 0,0, 1
+101,38, 0,0, -1
+
+
+; Round bg ALPHA
+[Begin Action 199]
+101,0, 0,0, 1, , AS125D256
+101,1, 0,0, 1, , AS125D256
+101,2, 0,0, 1, , AS125D256
+101,3, 0,0, 1, , AS125D256
+101,4, 0,0, 1, , AS125D256
+101,5, 0,0, 1, , AS125D256
+101,6, 0,0, 1, , AS125D256
+101,7, 0,0, 1, , AS125D256
+101,8, 0,0, 1, , AS125D256
+101,9, 0,0, 1, , AS125D256
+101,10, 0,0, 1, , AS125D256
+101,11, 0,0, 1, , AS125D256
+101,12, 0,0, 1, , AS125D256
+101,13, 0,0, 1, , AS125D256
+101,14, 0,0, 1, , AS125D256
+101,15, 0,0, 1, , AS125D256
+101,16, 0,0, 1, , AS125D256
+101,17, 0,0, 1, , AS125D256
+101,18, 0,0, 1, , AS125D256
+101,19, 0,0, 1, , AS125D256
+101,20, 0,0, 1, , AS125D256
+101,21, 0,0, 1, , AS125D256
+101,22, 0,0, 1, , AS125D256
+101,23, 0,0, 1, , AS125D256
+101,24, 0,0, 1, , AS125D256
+101,25, 0,0, 1, , AS125D256
+101,26, 0,0, 1, , AS125D256
+101,27, 0,0, 1, , AS125D256
+101,28, 0,0, 1, , AS125D256
+101,29, 0,0, 1, , AS125D256
+101,30, 0,0, 1, , AS125D256
+101,31, 0,0, 1, , AS125D256
+101,32, 0,0, 1, , AS125D256
+101,33, 0,0, 1, , AS125D256
+101,34, 0,0, 1, , AS125D256
+101,35, 0,0, 1, , AS125D256
+101,36, 0,0, 1, , AS125D256
+101,37, 0,0, 1, , AS125D256
+101,38, 0,0, -1, , AS125D256
+
+
+; ROUND 1
+[Begin Action 100]
+-1,0, 0,0, 38
+110,0, 320,240, 1
+110,1, 320,240, 1
+110,2, 320,240, 1
+110,3, 320,240, 1
+110,4, 320,240, 1
+110,5, 320,240, 1
+110,6, 320,240, 1
+110,7, 320,240, 1
+110,8, 320,240, 1
+110,9, 320,240, 1
+110,10, 320,240, 1
+110,11, 320,240, 1
+110,12, 320,240, 1
+110,13, 320,240, 1
+110,14, 320,240, 1
+110,15, 320,240, 1
+110,16, 320,240, 1
+110,17, 320,240, 1
+110,18, 320,240, 1
+110,19, 320,240, 1
+110,20, 320,240, 1
+110,21, 320,240, 1
+110,22, 320,240, 1
+110,23, 320,240, 1
+110,24, 320,240, 1
+110,25, 320,240, 1
+110,26, 320,240, 1
+110,27, 320,240, 1
+110,28, 320,240, 1
+110,29, 320,240, 1
+110,30, 320,240, 23
+110,30, 320,240, 2, , AS200D56
+110,30, 320,240, 2, , AS150D106
+110,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; ROUND 1 ALPHA
+[Begin Action 200]
+-1,0, 0,0, 38
+110,0, 320,240, 1, , AS200D150
+110,1, 320,240, 1, , AS200D150
+110,2, 320,240, 1, , AS200D150
+110,3, 320,240, 1, , AS200D150
+110,4, 320,240, 1, , AS200D150
+110,5, 320,240, 1, , AS200D150
+110,6, 320,240, 1, , AS200D150
+110,7, 320,240, 1, , AS200D150
+110,8, 320,240, 1, , AS200D150
+110,9, 320,240, 1, , AS200D150
+110,10, 320,240, 1, , AS200D150
+110,11, 320,240, 1, , AS200D150
+110,12, 320,240, 1, , AS200D150
+110,13, 320,240, 1, , AS200D150
+110,14, 320,240, 1, , AS200D150
+110,15, 320,240, 1, , AS200D150
+110,16, 320,240, 1, , AS200D150
+110,17, 320,240, 1, , AS200D150
+110,18, 320,240, 1, , AS200D150
+110,19, 320,240, 1, , AS200D150
+110,20, 320,240, 1, , AS200D150
+110,21, 320,240, 1, , AS200D150
+110,22, 320,240, 1, , AS200D150
+110,23, 320,240, 1, , AS200D150
+110,24, 320,240, 1, , AS200D150
+110,25, 320,240, 1, , AS200D150
+110,26, 320,240, 1, , AS200D150
+110,27, 320,240, 1, , AS200D150
+110,28, 320,240, 1, , AS200D150
+110,29, 320,240, 1, , AS200D150
+110,30, 320,240, 23, , AS200D150
+110,30, 320,240, 2, , AS125D256
+110,30, 320,240, 2, , AS100D256
+110,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+; ROUND 2
+[Begin Action 101]
+-1,0, 0,0, 38
+111,0, 320,240, 1
+111,1, 320,240, 1
+111,2, 320,240, 1
+111,3, 320,240, 1
+111,4, 320,240, 1
+111,5, 320,240, 1
+111,6, 320,240, 1
+111,7, 320,240, 1
+111,8, 320,240, 1
+111,9, 320,240, 1
+111,10, 320,240, 1
+111,11, 320,240, 1
+111,12, 320,240, 1
+111,13, 320,240, 1
+111,14, 320,240, 1
+111,15, 320,240, 1
+111,16, 320,240, 1
+111,17, 320,240, 1
+111,18, 320,240, 1
+111,19, 320,240, 1
+111,20, 320,240, 1
+111,21, 320,240, 1
+111,22, 320,240, 1
+111,23, 320,240, 1
+111,24, 320,240, 1
+111,25, 320,240, 1
+111,26, 320,240, 1
+111,27, 320,240, 1
+111,28, 320,240, 1
+111,29, 320,240, 1
+111,30, 320,240, 23
+111,30, 320,240, 2, , AS200D56
+111,30, 320,240, 2, , AS150D106
+111,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; ROUND 2 ALPHA
+[Begin Action 201]
+-1,0, 0,0, 38
+111,0, 320,240, 1, , AS200D150
+111,1, 320,240, 1, , AS200D150
+111,2, 320,240, 1, , AS200D150
+111,3, 320,240, 1, , AS200D150
+111,4, 320,240, 1, , AS200D150
+111,5, 320,240, 1, , AS200D150
+111,6, 320,240, 1, , AS200D150
+111,7, 320,240, 1, , AS200D150
+111,8, 320,240, 1, , AS200D150
+111,9, 320,240, 1, , AS200D150
+111,10, 320,240, 1, , AS200D150
+111,11, 320,240, 1, , AS200D150
+111,12, 320,240, 1, , AS200D150
+111,13, 320,240, 1, , AS200D150
+111,14, 320,240, 1, , AS200D150
+111,15, 320,240, 1, , AS200D150
+111,16, 320,240, 1, , AS200D150
+111,17, 320,240, 1, , AS200D150
+111,18, 320,240, 1, , AS200D150
+111,19, 320,240, 1, , AS200D150
+111,20, 320,240, 1, , AS200D150
+111,21, 320,240, 1, , AS200D150
+111,22, 320,240, 1, , AS200D150
+111,23, 320,240, 1, , AS200D150
+111,24, 320,240, 1, , AS200D150
+111,25, 320,240, 1, , AS200D150
+111,26, 320,240, 1, , AS200D150
+111,27, 320,240, 1, , AS200D150
+111,28, 320,240, 1, , AS200D150
+111,29, 320,240, 1, , AS200D150
+111,30, 320,240, 23, , AS200D150
+111,30, 320,240, 2, , AS125D256
+111,30, 320,240, 2, , AS100D256
+111,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+
+; ROUND 3
+[Begin Action 102]
+-1,0, 0,0, 38
+112,0, 320,240, 1
+112,1, 320,240, 1
+112,2, 320,240, 1
+112,3, 320,240, 1
+112,4, 320,240, 1
+112,5, 320,240, 1
+112,6, 320,240, 1
+112,7, 320,240, 1
+112,8, 320,240, 1
+112,9, 320,240, 1
+112,10, 320,240, 1
+112,11, 320,240, 1
+112,12, 320,240, 1
+112,13, 320,240, 1
+112,14, 320,240, 1
+112,15, 320,240, 1
+112,16, 320,240, 1
+112,17, 320,240, 1
+112,18, 320,240, 1
+112,19, 320,240, 1
+112,20, 320,240, 1
+112,21, 320,240, 1
+112,22, 320,240, 1
+112,23, 320,240, 1
+112,24, 320,240, 1
+112,25, 320,240, 1
+112,26, 320,240, 1
+112,27, 320,240, 1
+112,28, 320,240, 1
+112,29, 320,240, 1
+112,30, 320,240, 23
+112,30, 320,240, 2, , AS200D56
+112,30, 320,240, 2, , AS150D106
+112,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; ROUND 3 ALPHA
+[Begin Action 202]
+-1,0, 0,0, 38
+112,0, 320,240, 1, , AS200D150
+112,1, 320,240, 1, , AS200D150
+112,2, 320,240, 1, , AS200D150
+112,3, 320,240, 1, , AS200D150
+112,4, 320,240, 1, , AS200D150
+112,5, 320,240, 1, , AS200D150
+112,6, 320,240, 1, , AS200D150
+112,7, 320,240, 1, , AS200D150
+112,8, 320,240, 1, , AS200D150
+112,9, 320,240, 1, , AS200D150
+112,10, 320,240, 1, , AS200D150
+112,11, 320,240, 1, , AS200D150
+112,12, 320,240, 1, , AS200D150
+112,13, 320,240, 1, , AS200D150
+112,14, 320,240, 1, , AS200D150
+112,15, 320,240, 1, , AS200D150
+112,16, 320,240, 1, , AS200D150
+112,17, 320,240, 1, , AS200D150
+112,18, 320,240, 1, , AS200D150
+112,19, 320,240, 1, , AS200D150
+112,20, 320,240, 1, , AS200D150
+112,21, 320,240, 1, , AS200D150
+112,22, 320,240, 1, , AS200D150
+112,23, 320,240, 1, , AS200D150
+112,24, 320,240, 1, , AS200D150
+112,25, 320,240, 1, , AS200D150
+112,26, 320,240, 1, , AS200D150
+112,27, 320,240, 1, , AS200D150
+112,28, 320,240, 1, , AS200D150
+112,29, 320,240, 1, , AS200D150
+112,30, 320,240, 23, , AS200D150
+112,30, 320,240, 2, , AS125D256
+112,30, 320,240, 2, , AS100D256
+112,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+; ROUND 4
+[Begin Action 103]
+-1,0, 0,0, 38
+113,0, 320,240, 1
+113,1, 320,240, 1
+113,2, 320,240, 1
+113,3, 320,240, 1
+113,4, 320,240, 1
+113,5, 320,240, 1
+113,6, 320,240, 1
+113,7, 320,240, 1
+113,8, 320,240, 1
+113,9, 320,240, 1
+113,10, 320,240, 1
+113,11, 320,240, 1
+113,12, 320,240, 1
+113,13, 320,240, 1
+113,14, 320,240, 1
+113,15, 320,240, 1
+113,16, 320,240, 1
+113,17, 320,240, 1
+113,18, 320,240, 1
+113,19, 320,240, 1
+113,20, 320,240, 1
+113,21, 320,240, 1
+113,22, 320,240, 1
+113,23, 320,240, 1
+113,24, 320,240, 1
+113,25, 320,240, 1
+113,26, 320,240, 1
+113,27, 320,240, 1
+113,28, 320,240, 1
+113,29, 320,240, 1
+113,30, 320,240, 23
+113,30, 320,240, 2, , AS200D56
+113,30, 320,240, 2, , AS150D106
+113,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; ROUND 4 ALPHA
+[Begin Action 203]
+-1,0, 0,0, 38
+113,0, 320,240, 1, , AS200D150
+113,1, 320,240, 1, , AS200D150
+113,2, 320,240, 1, , AS200D150
+113,3, 320,240, 1, , AS200D150
+113,4, 320,240, 1, , AS200D150
+113,5, 320,240, 1, , AS200D150
+113,6, 320,240, 1, , AS200D150
+113,7, 320,240, 1, , AS200D150
+113,8, 320,240, 1, , AS200D150
+113,9, 320,240, 1, , AS200D150
+113,10, 320,240, 1, , AS200D150
+113,11, 320,240, 1, , AS200D150
+113,12, 320,240, 1, , AS200D150
+113,13, 320,240, 1, , AS200D150
+113,14, 320,240, 1, , AS200D150
+113,15, 320,240, 1, , AS200D150
+113,16, 320,240, 1, , AS200D150
+113,17, 320,240, 1, , AS200D150
+113,18, 320,240, 1, , AS200D150
+113,19, 320,240, 1, , AS200D150
+113,20, 320,240, 1, , AS200D150
+113,21, 320,240, 1, , AS200D150
+113,22, 320,240, 1, , AS200D150
+113,23, 320,240, 1, , AS200D150
+113,24, 320,240, 1, , AS200D150
+113,25, 320,240, 1, , AS200D150
+113,26, 320,240, 1, , AS200D150
+113,27, 320,240, 1, , AS200D150
+113,28, 320,240, 1, , AS200D150
+113,29, 320,240, 1, , AS200D150
+113,30, 320,240, 23, , AS200D150
+113,30, 320,240, 2, , AS125D256
+113,30, 320,240, 2, , AS100D256
+113,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+; ROUND 5
+[Begin Action 104]
+-1,0, 0,0, 38
+114,0, 320,240, 1
+114,1, 320,240, 1
+114,2, 320,240, 1
+114,3, 320,240, 1
+114,4, 320,240, 1
+114,5, 320,240, 1
+114,6, 320,240, 1
+114,7, 320,240, 1
+114,8, 320,240, 1
+114,9, 320,240, 1
+114,10, 320,240, 1
+114,11, 320,240, 1
+114,12, 320,240, 1
+114,13, 320,240, 1
+114,14, 320,240, 1
+114,15, 320,240, 1
+114,16, 320,240, 1
+114,17, 320,240, 1
+114,18, 320,240, 1
+114,19, 320,240, 1
+114,20, 320,240, 1
+114,21, 320,240, 1
+114,22, 320,240, 1
+114,23, 320,240, 1
+114,24, 320,240, 1
+114,25, 320,240, 1
+114,26, 320,240, 1
+114,27, 320,240, 1
+114,28, 320,240, 1
+114,29, 320,240, 1
+114,30, 320,240, 23
+114,30, 320,240, 2, , AS200D56
+114,30, 320,240, 2, , AS150D106
+114,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; ROUND 5 ALPHA
+[Begin Action 204]
+-1,0, 0,0, 38
+114,0, 320,240, 1, , AS200D150
+114,1, 320,240, 1, , AS200D150
+114,2, 320,240, 1, , AS200D150
+114,3, 320,240, 1, , AS200D150
+114,4, 320,240, 1, , AS200D150
+114,5, 320,240, 1, , AS200D150
+114,6, 320,240, 1, , AS200D150
+114,7, 320,240, 1, , AS200D150
+114,8, 320,240, 1, , AS200D150
+114,9, 320,240, 1, , AS200D150
+114,10, 320,240, 1, , AS200D150
+114,11, 320,240, 1, , AS200D150
+114,12, 320,240, 1, , AS200D150
+114,13, 320,240, 1, , AS200D150
+114,14, 320,240, 1, , AS200D150
+114,15, 320,240, 1, , AS200D150
+114,16, 320,240, 1, , AS200D150
+114,17, 320,240, 1, , AS200D150
+114,18, 320,240, 1, , AS200D150
+114,19, 320,240, 1, , AS200D150
+114,20, 320,240, 1, , AS200D150
+114,21, 320,240, 1, , AS200D150
+114,22, 320,240, 1, , AS200D150
+114,23, 320,240, 1, , AS200D150
+114,24, 320,240, 1, , AS200D150
+114,25, 320,240, 1, , AS200D150
+114,26, 320,240, 1, , AS200D150
+114,27, 320,240, 1, , AS200D150
+114,28, 320,240, 1, , AS200D150
+114,29, 320,240, 1, , AS200D150
+114,30, 320,240, 23, , AS200D150
+114,30, 320,240, 2, , AS125D256
+114,30, 320,240, 2, , AS100D256
+114,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+; ROUND 6
+[Begin Action 105]
+-1,0, 0,0, 38
+115,0, 320,240, 1
+115,1, 320,240, 1
+115,2, 320,240, 1
+115,3, 320,240, 1
+115,4, 320,240, 1
+115,5, 320,240, 1
+115,6, 320,240, 1
+115,7, 320,240, 1
+115,8, 320,240, 1
+115,9, 320,240, 1
+115,10, 320,240, 1
+115,11, 320,240, 1
+115,12, 320,240, 1
+115,13, 320,240, 1
+115,14, 320,240, 1
+115,15, 320,240, 1
+115,16, 320,240, 1
+115,17, 320,240, 1
+115,18, 320,240, 1
+115,19, 320,240, 1
+115,20, 320,240, 1
+115,21, 320,240, 1
+115,22, 320,240, 1
+115,23, 320,240, 1
+115,24, 320,240, 1
+115,25, 320,240, 1
+115,26, 320,240, 1
+115,27, 320,240, 1
+115,28, 320,240, 1
+115,29, 320,240, 1
+115,30, 320,240, 23
+115,30, 320,240, 2, , AS200D56
+115,30, 320,240, 2, , AS150D106
+115,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; ROUND 6 ALPHA
+[Begin Action 205]
+-1,0, 0,0, 38
+115,0, 320,240, 1, , AS200D150
+115,1, 320,240, 1, , AS200D150
+115,2, 320,240, 1, , AS200D150
+115,3, 320,240, 1, , AS200D150
+115,4, 320,240, 1, , AS200D150
+115,5, 320,240, 1, , AS200D150
+115,6, 320,240, 1, , AS200D150
+115,7, 320,240, 1, , AS200D150
+115,8, 320,240, 1, , AS200D150
+115,9, 320,240, 1, , AS200D150
+115,10, 320,240, 1, , AS200D150
+115,11, 320,240, 1, , AS200D150
+115,12, 320,240, 1, , AS200D150
+115,13, 320,240, 1, , AS200D150
+115,14, 320,240, 1, , AS200D150
+115,15, 320,240, 1, , AS200D150
+115,16, 320,240, 1, , AS200D150
+115,17, 320,240, 1, , AS200D150
+115,18, 320,240, 1, , AS200D150
+115,19, 320,240, 1, , AS200D150
+115,20, 320,240, 1, , AS200D150
+115,21, 320,240, 1, , AS200D150
+115,22, 320,240, 1, , AS200D150
+115,23, 320,240, 1, , AS200D150
+115,24, 320,240, 1, , AS200D150
+115,25, 320,240, 1, , AS200D150
+115,26, 320,240, 1, , AS200D150
+115,27, 320,240, 1, , AS200D150
+115,28, 320,240, 1, , AS200D150
+115,29, 320,240, 1, , AS200D150
+115,30, 320,240, 23, , AS200D150
+115,30, 320,240, 2, , AS125D256
+115,30, 320,240, 2, , AS100D256
+115,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+
+; ROUND 7
+[Begin Action 106]
+-1,0, 0,0, 38
+116,0, 320,240, 1
+116,1, 320,240, 1
+116,2, 320,240, 1
+116,3, 320,240, 1
+116,4, 320,240, 1
+116,5, 320,240, 1
+116,6, 320,240, 1
+116,7, 320,240, 1
+116,8, 320,240, 1
+116,9, 320,240, 1
+116,10, 320,240, 1
+116,11, 320,240, 1
+116,12, 320,240, 1
+116,13, 320,240, 1
+116,14, 320,240, 1
+116,15, 320,240, 1
+116,16, 320,240, 1
+116,17, 320,240, 1
+116,18, 320,240, 1
+116,19, 320,240, 1
+116,20, 320,240, 1
+116,21, 320,240, 1
+116,22, 320,240, 1
+116,23, 320,240, 1
+116,24, 320,240, 1
+116,25, 320,240, 1
+116,26, 320,240, 1
+116,27, 320,240, 1
+116,28, 320,240, 1
+116,29, 320,240, 1
+116,30, 320,240, 23
+116,30, 320,240, 2, , AS200D56
+116,30, 320,240, 2, , AS150D106
+116,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; ROUND 7 ALPHA
+[Begin Action 206]
+-1,0, 0,0, 38
+116,0, 320,240, 1, , AS200D150
+116,1, 320,240, 1, , AS200D150
+116,2, 320,240, 1, , AS200D150
+116,3, 320,240, 1, , AS200D150
+116,4, 320,240, 1, , AS200D150
+116,5, 320,240, 1, , AS200D150
+116,6, 320,240, 1, , AS200D150
+116,7, 320,240, 1, , AS200D150
+116,8, 320,240, 1, , AS200D150
+116,9, 320,240, 1, , AS200D150
+116,10, 320,240, 1, , AS200D150
+116,11, 320,240, 1, , AS200D150
+116,12, 320,240, 1, , AS200D150
+116,13, 320,240, 1, , AS200D150
+116,14, 320,240, 1, , AS200D150
+116,15, 320,240, 1, , AS200D150
+116,16, 320,240, 1, , AS200D150
+116,17, 320,240, 1, , AS200D150
+116,18, 320,240, 1, , AS200D150
+116,19, 320,240, 1, , AS200D150
+116,20, 320,240, 1, , AS200D150
+116,21, 320,240, 1, , AS200D150
+116,22, 320,240, 1, , AS200D150
+116,23, 320,240, 1, , AS200D150
+116,24, 320,240, 1, , AS200D150
+116,25, 320,240, 1, , AS200D150
+116,26, 320,240, 1, , AS200D150
+116,27, 320,240, 1, , AS200D150
+116,28, 320,240, 1, , AS200D150
+116,29, 320,240, 1, , AS200D150
+116,30, 320,240, 23, , AS200D150
+116,30, 320,240, 2, , AS125D256
+116,30, 320,240, 2, , AS100D256
+116,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+; ROUND 8
+[Begin Action 107]
+-1,0, 0,0, 38
+117,0, 320,240, 1
+117,1, 320,240, 1
+117,2, 320,240, 1
+117,3, 320,240, 1
+117,4, 320,240, 1
+117,5, 320,240, 1
+117,6, 320,240, 1
+117,7, 320,240, 1
+117,8, 320,240, 1
+117,9, 320,240, 1
+117,10, 320,240, 1
+117,11, 320,240, 1
+117,12, 320,240, 1
+117,13, 320,240, 1
+117,14, 320,240, 1
+117,15, 320,240, 1
+117,16, 320,240, 1
+117,17, 320,240, 1
+117,18, 320,240, 1
+117,19, 320,240, 1
+117,20, 320,240, 1
+117,21, 320,240, 1
+117,22, 320,240, 1
+117,23, 320,240, 1
+117,24, 320,240, 1
+117,25, 320,240, 1
+117,26, 320,240, 1
+117,27, 320,240, 1
+117,28, 320,240, 1
+117,29, 320,240, 1
+117,30, 320,240, 23
+117,30, 320,240, 2, , AS200D56
+117,30, 320,240, 2, , AS150D106
+117,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; ROUND 8 ALPHA
+[Begin Action 207]
+-1,0, 0,0, 38
+117,0, 320,240, 1, , AS200D150
+117,1, 320,240, 1, , AS200D150
+117,2, 320,240, 1, , AS200D150
+117,3, 320,240, 1, , AS200D150
+117,4, 320,240, 1, , AS200D150
+117,5, 320,240, 1, , AS200D150
+117,6, 320,240, 1, , AS200D150
+117,7, 320,240, 1, , AS200D150
+117,8, 320,240, 1, , AS200D150
+117,9, 320,240, 1, , AS200D150
+117,10, 320,240, 1, , AS200D150
+117,11, 320,240, 1, , AS200D150
+117,12, 320,240, 1, , AS200D150
+117,13, 320,240, 1, , AS200D150
+117,14, 320,240, 1, , AS200D150
+117,15, 320,240, 1, , AS200D150
+117,16, 320,240, 1, , AS200D150
+117,17, 320,240, 1, , AS200D150
+117,18, 320,240, 1, , AS200D150
+117,19, 320,240, 1, , AS200D150
+117,20, 320,240, 1, , AS200D150
+117,21, 320,240, 1, , AS200D150
+117,22, 320,240, 1, , AS200D150
+117,23, 320,240, 1, , AS200D150
+117,24, 320,240, 1, , AS200D150
+117,25, 320,240, 1, , AS200D150
+117,26, 320,240, 1, , AS200D150
+117,27, 320,240, 1, , AS200D150
+117,28, 320,240, 1, , AS200D150
+117,29, 320,240, 1, , AS200D150
+117,30, 320,240, 23, , AS200D150
+117,30, 320,240, 2, , AS125D256
+117,30, 320,240, 2, , AS100D256
+117,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+; ROUND 9
+[Begin Action 108]
+-1,0, 0,0, 38
+118,0, 320,240, 1
+118,1, 320,240, 1
+118,2, 320,240, 1
+118,3, 320,240, 1
+118,4, 320,240, 1
+118,5, 320,240, 1
+118,6, 320,240, 1
+118,7, 320,240, 1
+118,8, 320,240, 1
+118,9, 320,240, 1
+118,10, 320,240, 1
+118,11, 320,240, 1
+118,12, 320,240, 1
+118,13, 320,240, 1
+118,14, 320,240, 1
+118,15, 320,240, 1
+118,16, 320,240, 1
+118,17, 320,240, 1
+118,18, 320,240, 1
+118,19, 320,240, 1
+118,20, 320,240, 1
+118,21, 320,240, 1
+118,22, 320,240, 1
+118,23, 320,240, 1
+118,24, 320,240, 1
+118,25, 320,240, 1
+118,26, 320,240, 1
+118,27, 320,240, 1
+118,28, 320,240, 1
+118,29, 320,240, 1
+118,30, 320,240, 23
+118,30, 320,240, 2, , AS200D56
+118,30, 320,240, 2, , AS150D106
+118,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; ROUND 7 ALPHA
+[Begin Action 205]
+-1,0, 0,0, 38
+118,0, 320,240, 1, , AS200D150
+118,1, 320,240, 1, , AS200D150
+118,2, 320,240, 1, , AS200D150
+118,3, 320,240, 1, , AS200D150
+118,4, 320,240, 1, , AS200D150
+118,5, 320,240, 1, , AS200D150
+118,6, 320,240, 1, , AS200D150
+118,7, 320,240, 1, , AS200D150
+118,8, 320,240, 1, , AS200D150
+118,9, 320,240, 1, , AS200D150
+118,10, 320,240, 1, , AS200D150
+118,11, 320,240, 1, , AS200D150
+118,12, 320,240, 1, , AS200D150
+118,13, 320,240, 1, , AS200D150
+118,14, 320,240, 1, , AS200D150
+118,15, 320,240, 1, , AS200D150
+118,16, 320,240, 1, , AS200D150
+118,17, 320,240, 1, , AS200D150
+118,18, 320,240, 1, , AS200D150
+118,19, 320,240, 1, , AS200D150
+118,20, 320,240, 1, , AS200D150
+118,21, 320,240, 1, , AS200D150
+118,22, 320,240, 1, , AS200D150
+118,23, 320,240, 1, , AS200D150
+118,24, 320,240, 1, , AS200D150
+118,25, 320,240, 1, , AS200D150
+118,26, 320,240, 1, , AS200D150
+118,27, 320,240, 1, , AS200D150
+118,28, 320,240, 1, , AS200D150
+118,29, 320,240, 1, , AS200D150
+118,30, 320,240, 23, , AS200D150
+118,30, 320,240, 2, , AS125D256
+118,30, 320,240, 2, , AS100D256
+118,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+; READY
+[Begin Action 110]
+-1,0, 0,0, 38
+120,0, 320,240, 1
+120,1, 320,240, 1
+120,2, 320,240, 1
+120,3, 320,240, 1
+120,4, 320,240, 1
+120,5, 320,240, 1
+120,6, 320,240, 1
+120,7, 320,240, 1
+120,8, 320,240, 1
+120,9, 320,240, 1
+120,10, 320,240, 1
+120,11, 320,240, 1
+120,12, 320,240, 1
+120,13, 320,240, 1
+120,14, 320,240, 1
+120,15, 320,240, 1
+120,16, 320,240, 1
+120,17, 320,240, 1
+120,18, 320,240, 1
+120,19, 320,240, 1
+120,20, 320,240, 1
+120,21, 320,240, 1
+120,22, 320,240, 1
+120,23, 320,240, 1
+120,24, 320,240, 1
+120,25, 320,240, 1
+120,26, 320,240, 1
+120,27, 320,240, 1
+120,28, 320,240, 1
+120,29, 320,240, 1
+120,30, 320,240, 23
+120,30, 320,240, 2, , AS200D56
+120,30, 320,240, 2, , AS150D106
+120,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+; READY ALPHA
+[Begin Action 210]
+-1,0, 0,0, 38
+120,0, 320,240, 1, , AS200D150
+120,1, 320,240, 1, , AS200D150
+120,2, 320,240, 1, , AS200D150
+120,3, 320,240, 1, , AS200D150
+120,4, 320,240, 1, , AS200D150
+120,5, 320,240, 1, , AS200D150
+120,6, 320,240, 1, , AS200D150
+120,7, 320,240, 1, , AS200D150
+120,8, 320,240, 1, , AS200D150
+120,9, 320,240, 1, , AS200D150
+120,10, 320,240, 1, , AS200D150
+120,11, 320,240, 1, , AS200D150
+120,12, 320,240, 1, , AS200D150
+120,13, 320,240, 1, , AS200D150
+120,14, 320,240, 1, , AS200D150
+120,15, 320,240, 1, , AS200D150
+120,16, 320,240, 1, , AS200D150
+120,17, 320,240, 1, , AS200D150
+120,18, 320,240, 1, , AS200D150
+120,19, 320,240, 1, , AS200D150
+120,20, 320,240, 1, , AS200D150
+120,21, 320,240, 1, , AS200D150
+120,22, 320,240, 1, , AS200D150
+120,23, 320,240, 1, , AS200D150
+120,24, 320,240, 1, , AS200D150
+120,25, 320,240, 1, , AS200D150
+120,26, 320,240, 1, , AS200D150
+120,27, 320,240, 1, , AS200D150
+120,28, 320,240, 1, , AS200D150
+120,29, 320,240, 1, , AS200D150
+120,30, 320,240, 23, , AS200D150
+120,30, 320,240, 2, , AS125D256
+120,30, 320,240, 2, , AS100D256
+120,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+
+; FINAL
+[Begin Action 109]
+-1,0, 0,0, 38
+119,0, 320,240, 1
+119,1, 320,240, 1
+119,2, 320,240, 1
+119,3, 320,240, 1
+119,4, 320,240, 1
+119,5, 320,240, 1
+119,6, 320,240, 1
+119,7, 320,240, 1
+119,8, 320,240, 1
+119,9, 320,240, 1
+119,10, 320,240, 1
+119,11, 320,240, 1
+119,12, 320,240, 1
+119,13, 320,240, 1
+119,14, 320,240, 1
+119,15, 320,240, 1
+119,16, 320,240, 1
+119,17, 320,240, 1
+119,18, 320,240, 1
+119,19, 320,240, 1
+119,20, 320,240, 1
+119,21, 320,240, 1
+119,22, 320,240, 1
+119,23, 320,240, 1
+119,24, 320,240, 1
+119,25, 320,240, 1
+119,26, 320,240, 1
+119,27, 320,240, 1
+119,28, 320,240, 1
+119,29, 320,240, 1
+119,30, 320,240, 23
+119,30, 320,240, 2, , AS200D56
+119,30, 320,240, 2, , AS150D106
+119,30, 320,240, 2, , AS100D56
+-1,0, 0,0, -1
+
+
+; Final ALPHA
+[Begin Action 209]
+-1,0, 0,0, 38
+119,0, 320,240, 1, , AS200D150
+119,1, 320,240, 1, , AS200D150
+119,2, 320,240, 1, , AS200D150
+119,3, 320,240, 1, , AS200D150
+119,4, 320,240, 1, , AS200D150
+119,5, 320,240, 1, , AS200D150
+119,6, 320,240, 1, , AS200D150
+119,7, 320,240, 1, , AS200D150
+119,8, 320,240, 1, , AS200D150
+119,9, 320,240, 1, , AS200D150
+119,10, 320,240, 1, , AS200D150
+119,11, 320,240, 1, , AS200D150
+119,12, 320,240, 1, , AS200D150
+119,13, 320,240, 1, , AS200D150
+119,14, 320,240, 1, , AS200D150
+119,15, 320,240, 1, , AS200D150
+119,16, 320,240, 1, , AS200D150
+119,17, 320,240, 1, , AS200D150
+119,18, 320,240, 1, , AS200D150
+119,19, 320,240, 1, , AS200D150
+119,20, 320,240, 1, , AS200D150
+119,21, 320,240, 1, , AS200D150
+119,22, 320,240, 1, , AS200D150
+119,23, 320,240, 1, , AS200D150
+119,24, 320,240, 1, , AS200D150
+119,25, 320,240, 1, , AS200D150
+119,26, 320,240, 1, , AS200D150
+119,27, 320,240, 1, , AS200D150
+119,28, 320,240, 1, , AS200D150
+119,29, 320,240, 1, , AS200D150
+119,30, 320,240, 23, , AS200D150
+119,30, 320,240, 2, , AS125D256
+119,30, 320,240, 2, , AS100D256
+119,30, 320,240, 2, , AS75D256
+-1,0, 0,0, -1
+
+
+; Fight!
+[Begin Action 115]
+105, 0, 0,0, 10, , , 10,10
+Interpolate Scale
+105, 0, 0, 0, 10
+105, 1, 0, 0, 2
+105, 2, 0, 0, 2
+105, 3, 0, 0, 2
+105, 4, 0, 0, 2
+105, 5, 0, 0, 2
+105, 6, 0, 0, 2
+-1,0, 0,0, -1
+
+
+; KO/DKO bg
+[Begin Action 120]
+200,0, 0,0, 1
+200,1, 0,0, 1
+200,2, 0,0, 1
+200,3, 0,0, 1
+200,4, 0,0, 1
+200,5, 0,0, 1
+200,6, 0,0, 1
+200,7, 0,0, 1
+200,8, 0,0, 1
+200,9, 0,0, 1
+200,10, 0,0, 1
+200,11, 0,0, 1
+200,12, 0,0, 1
+200,13, 0,0, 1
+200,14, 0,0, 1
+200,15, 0,0, 1
+200,16, 0,0, 1
+200,17, 0,0, 1
+200,18, 0,0, 1
+200,19, 0,0, 60
+200,19, 0,0, 1, , AS200D56
+200,19, 0,0, 1, , AS150D116
+200,19, 0,0, 1, , AS100D156
+-1,0, 0,0, -1
+
+; KO Letters
+[Begin Action 121]
+-1,0, 0,0, 10
+231,0, 320,0, 32, , , 15,15
+Interpolate Scale
+231,1, 320,0, 2
+231,2, 320,0, 2
+231,3, 320,0, 2
+231,4, 320,0, 2
+231,5, 320,0, 2
+231,6, 320,0, 2
+231,7, 320,0, 2
+231,8, 320,0, 2
+231,9, 320,0, 2
+231,10, 320,0, 2
+231,11, 320,0, 2
+231,12, 320,0, 2
+231,13, 320,0, 2
+231,14, 320,0, 10
+231,15, 320,0, 12, , A1
+Interpolate Blend
+231,15, 320,0, 1, ,AS0D256
+-1,0, 0,0, -1
+
+; Double
+[Begin Action 122]
+-1,0, 0,0, 19
+233,0, 320,240, 1
+233,1, 320,240, 1
+233,2, 320,240, 1
+233,3, 320,240, 1
+233,4, 320,240, 1
+233,5, 320,240, 1
+233,6, 320,240, 1
+233,7, 320,240, 1
+233,8, 320,240, 1
+233,9, 320,240, 1
+233,10, 320,240, 1
+233,11, 320,240, 1
+233,12, 320,240, 1
+233,13, 320,240, 1
+233,14, 320,240, 1
+233,15, 320,240, 1
+233,16, 320,240, 1
+233,17, 320,240, 1
+233,18, 320,240, 1
+233,19, 320,240, 60
+233,19, 320,240, 1, , AS200D56
+233,19, 320,240, 1, , AS150D116
+233,19, 320,240, 1, , AS100D156
+-1,0, 0,0, -1
+
+; Perfect!
+[Begin Action 124]
+-1,0, 0,0, 19
+234,0, 320,240, 1
+234,1, 320,240, 1
+234,2, 320,240, 1
+234,3, 320,240, 1
+234,4, 320,240, 1
+234,5, 320,240, 1
+234,6, 320,240, 1
+234,7, 320,240, 1
+234,8, 320,240, 1
+234,9, 320,240, 1
+234,10, 320,240, 1
+234,11, 320,240, 1
+234,12, 320,240, 1
+234,13, 320,240, 1
+234,14, 320,240, 1
+234,15, 320,240, 1
+234,16, 320,240, 1
+234,17, 320,240, 1
+234,18, 320,240, 1
+234,21, 320,240, 60
+234,21, 320,240, 1, , AS200D56
+234,21, 320,240, 1, , AS150D116
+234,21, 320,240, 1, , AS100D156
+-1,0, 0,0, -1
+
+; P1
+[Begin Action 131]
+-1,0, 0,0, 1
+251,0, 320,240, 1
+251,1, 320,240, 1
+251,2, 320,240, 1
+251,3, 320,240, 1
+251,4, 320,240, 1
+251,5, 320,240, 1
+251,6, 320,240, 1
+251,7, 320,240, 1
+251,8, 320,240, 1
+251,9, 320,240, 1
+251,10, 320,240, 1
+251,11, 320,240, 1
+251,12, 320,240, 1
+251,13, 320,240, 1
+251,14, 320,240, 1
+251,15, 320,240, 1
+251,16, 320,240, 1
+251,17, 320,240, 1
+251,18, 320,240, 1
+251,19, 320,240, 1
+251,20, 320,240, 1
+251,21, 320,240, 1
+251,22, 320,240, 1
+251,23, 320,240, 1
+251,24, 320,240, 1
+251,25, 320,240, 1
+251,26, 320,240, 1
+251,27, 320,240, 1
+251,28, 320,240, 1
+251,29, 320,240, 1
+251,30, 320,240, 43
+251,30, 320,240, 3, , AS256D0
+251,30, 320,240, 3, , AS200D56
+251,30, 320,240, 3, , AS150D116
+251,30, 320,240, 3, , AS100D156
+-1,0, 0,0, -1
+
+; P2
+[Begin Action 132]
+-1,0, 0,0, 1
+252,0, 320,240, 1
+252,1, 320,240, 1
+252,2, 320,240, 1
+252,3, 320,240, 1
+252,4, 320,240, 1
+252,5, 320,240, 1
+252,6, 320,240, 1
+252,7, 320,240, 1
+252,8, 320,240, 1
+252,9, 320,240, 1
+252,10, 320,240, 1
+252,11, 320,240, 1
+252,12, 320,240, 1
+252,13, 320,240, 1
+252,14, 320,240, 1
+252,15, 320,240, 1
+252,16, 320,240, 1
+252,17, 320,240, 1
+252,18, 320,240, 1
+252,19, 320,240, 1
+252,20, 320,240, 1
+252,21, 320,240, 1
+252,22, 320,240, 1
+252,23, 320,240, 1
+252,24, 320,240, 1
+252,25, 320,240, 1
+252,26, 320,240, 1
+252,27, 320,240, 1
+252,28, 320,240, 1
+252,29, 320,240, 1
+252,30, 320,240, 43
+252,30, 320,240, 3, , AS256D0
+252,30, 320,240, 3, , AS200D56
+252,30, 320,240, 3, , AS150D116
+252,30, 320,240, 3, , AS100D156
+-1,0, 0,0, -1
+
+
+; T1
+[Begin Action 129]
+-1,0, 0,0, 1
+253,0, 320,240, 1
+253,1, 320,240, 1
+253,2, 320,240, 1
+253,3, 320,240, 1
+253,4, 320,240, 1
+253,5, 320,240, 1
+253,6, 320,240, 1
+253,7, 320,240, 1
+253,8, 320,240, 1
+253,9, 320,240, 1
+253,10, 320,240, 1
+253,11, 320,240, 1
+253,12, 320,240, 1
+253,13, 320,240, 1
+253,14, 320,240, 1
+253,15, 320,240, 1
+253,16, 320,240, 1
+253,17, 320,240, 1
+253,18, 320,240, 1
+253,19, 320,240, 1
+253,20, 320,240, 1
+253,21, 320,240, 1
+253,22, 320,240, 1
+253,23, 320,240, 1
+253,24, 320,240, 1
+253,25, 320,240, 1
+253,26, 320,240, 1
+253,27, 320,240, 1
+253,28, 320,240, 1
+253,29, 320,240, 1
+253,30, 320,240, 53
+253,30, 320,240, 3, , AS256D0
+253,30, 320,240, 3, , AS200D56
+253,30, 320,240, 3, , AS150D116
+253,30, 320,240, 3, , AS100D156
+-1,0, 0,0, -1
+
+; T2
+[Begin Action 130]
+-1,0, 0,0, 1
+254,0, 320,240, 1
+254,1, 320,240, 1
+254,2, 320,240, 1
+254,3, 320,240, 1
+254,4, 320,240, 1
+254,5, 320,240, 1
+254,6, 320,240, 1
+254,7, 320,240, 1
+254,8, 320,240, 1
+254,9, 320,240, 1
+254,10, 320,240, 1
+254,11, 320,240, 1
+254,12, 320,240, 1
+254,13, 320,240, 1
+254,14, 320,240, 1
+254,15, 320,240, 1
+254,16, 320,240, 1
+254,17, 320,240, 1
+254,18, 320,240, 1
+254,19, 320,240, 1
+254,20, 320,240, 1
+254,21, 320,240, 1
+254,22, 320,240, 1
+254,23, 320,240, 1
+254,24, 320,240, 1
+254,25, 320,240, 1
+254,26, 320,240, 1
+254,27, 320,240, 1
+254,28, 320,240, 1
+254,29, 320,240, 1
+254,30, 320,240, 53
+254,30, 320,240, 3, , AS256D0
+254,30, 320,240, 3, , AS200D56
+254,30, 320,240, 3, , AS150D116
+254,30, 320,240, 3, , AS100D156
+-1,0, 0,0, -1
+
+
+; Winner
+[Begin Action 133]
+-1,0, 0,0, 25
+250,0, 320,240, 1
+250,1, 320,240, 1
+250,2, 320,240, 1
+250,3, 320,240, 1
+250,4, 320,240, 1
+250,5, 320,240, 1
+250,6, 320,240, 1
+250,7, 320,240, 1
+250,8, 320,240, 1
+250,9, 320,240, 1
+250,10, 320,240, 1
+250,11, 320,240, 1
+250,12, 320,240, 1
+250,13, 320,240, 1
+250,14, 320,240, 1
+250,15, 320,240, 1
+250,16, 320,240, 1
+250,17, 320,240, 1
+250,18, 320,240, 1
+250,19, 320,240, 1
+250,20, 320,240, 1
+250,21, 320,240, 1
+250,22, 320,240, 1
+250,23, 320,240, 1
+250,24, 320,240, 1
+250,25, 320,240, 1
+250,26, 320,240, 1
+250,27, 320,240, 1
+250,28, 320,240, 1
+250,29, 320,240, 1
+250,30, 320,240, 10
+250,30, 320,240, 3, , AS256D0
+250,30, 320,240, 3, , AS200D56
+250,30, 320,240, 3, , AS150D116
+250,30, 320,240, 3, , AS100D156
+-1,0, 0,0, -1
+
+; WIN BG
+[Begin Action 134]
+201, 0, 0, 0, 1
+201, 1, 0, 0, 1
+201, 2, 0, 0, 1
+201, 3, 0, 0, 1
+201, 4, 0, 0, 1
+201, 5, 0, 0, 1
+201, 6, 0, 0, 1
+201, 7, 0, 0, 1
+201, 8, 0, 0, 1
+201, 9, 0, 0, 1
+201, 10, 0, 0, 1
+201, 11, 0, 0, 1
+201, 12, 0, 0, 1
+201, 13, 0, 0, 1
+201, 14, 0, 0, 1
+201, 15, 0, 0, 1
+201, 16, 0, 0, 1
+201, 17, 0, 0, 1
+201, 18, 0, 0, 1
+201, 19, 0, 0, 1
+201, 20, 0, 0, 1
+201, 21, 0, 0, 1
+201, 22, 0, 0, 1
+201, 23, 0, 0, 1
+201, 24, 0, 0, 1
+201,24, 0,0, 60
+201,24, 0,0, 3, , AS256D0
+201,24, 0,0, 3, , AS200D56
+201,24, 0,0, 3, , AS150D116
+201,24, 0,0, 3, , AS100D156
+-1,0, 0,0, -1
+
+
+; TO/DG bg
+[Begin Action 140]
+201, 0, 0, 0, 1
+201, 1, 0, 0, 1
+201, 2, 0, 0, 1
+201, 3, 0, 0, 1
+201, 4, 0, 0, 1
+201, 5, 0, 0, 1
+201, 6, 0, 0, 1
+201, 7, 0, 0, 1
+201, 8, 0, 0, 1
+201, 9, 0, 0, 1
+201, 10, 0, 0, 1
+201, 11, 0, 0, 1
+201, 12, 0, 0, 1
+201, 13, 0, 0, 1
+201, 14, 0, 0, 1
+201, 15, 0, 0, 1
+201, 16, 0, 0, 1
+201, 17, 0, 0, 1
+201, 18, 0, 0, 1
+201, 19, 0, 0, 1
+201, 20, 0, 0, 1
+201, 21, 0, 0, 1
+201, 22, 0, 0, 1
+201, 23, 0, 0, 1
+201, 24, 0, 0, 1
+201,24, 0,0, 80
+201,24, 0,0, 3, , AS256D0
+201,24, 0,0, 3, , AS200D56
+201,24, 0,0, 3, , AS150D116
+201,24, 0,0, 3, , AS100D156
+-1,0, 0,0, -1
+
+; Time Over
+[Begin Action 141]
+-1,0, 0,0, 26
+240,0, 320,240, 1
+240,1, 320,240, 1
+240,2, 320,240, 1
+240,3, 320,240, 1
+240,4, 320,240, 1
+240,5, 320,240, 1
+240,6, 320,240, 1
+240,7, 320,240, 1
+240,8, 320,240, 1
+240,9, 320,240, 1
+240,10, 320,240, 1
+240,11, 320,240, 1
+240,12, 320,240, 1
+240,13, 320,240, 1
+240,14, 320,240, 1
+240,15, 320,240, 1
+240,16, 320,240, 1
+240,17, 320,240, 1
+240,18, 320,240, 1
+240,19, 320,240, 1
+240,20, 320,240, 1
+240,21, 320,240, 1
+240,22, 320,240, 1
+240,23, 320,240, 1
+240,24, 320,240, 1
+240,25, 320,240, 1
+240,26, 320,240, 1
+240,27, 320,240, 1
+240,28, 320,240, 1
+240,29, 320,240, 1
+240,30, 320,240, 30
+240,30, 320,240, 3, , AS256D0
+240,30, 320,240, 3, , AS200D56
+240,30, 320,240, 3, , AS150D116
+240,30, 320,240, 3, , AS100D156
+-1,0, 0,0, -1
+
+; Draw Game
+[Begin Action 142]
+-1,0, 0,0, 26
+241,0, 320,240, 1
+241,1, 320,240, 1
+241,2, 320,240, 1
+241,3, 320,240, 1
+241,4, 320,240, 1
+241,5, 320,240, 1
+241,6, 320,240, 1
+241,7, 320,240, 1
+241,8, 320,240, 1
+241,9, 320,240, 1
+241,10, 320,240, 1
+241,11, 320,240, 1
+241,12, 320,240, 1
+241,13, 320,240, 1
+241,14, 320,240, 1
+241,15, 320,240, 1
+241,16, 320,240, 1
+241,17, 320,240, 1
+241,18, 320,240, 1
+241,19, 320,240, 1
+241,20, 320,240, 1
+241,21, 320,240, 1
+241,22, 320,240, 1
+241,23, 320,240, 1
+241,24, 320,240, 1
+241,25, 320,240, 1
+241,26, 320,240, 1
+241,27, 320,240, 1
+241,28, 320,240, 1
+241,29, 320,240, 1
+241,30, 320,240, 30
+241,30, 320,240, 3, , AS256D0
+241,30, 320,240, 3, , AS200D56
+241,30, 320,240, 3, , AS150D116
+241,30, 320,240, 3, , AS100D156
+-1,0, 0,0, -1
+
+
+; Normal
+[Begin Action 150]
+267,0, 0,0, 1
+267,1, 0,0, 1
+267,2, 0,0, 1
+267,3, 0,0, 1
+267,4, 0,0, 1
+267,5, 0,0, 1
+267,6, 0,0, 1
+267,7, 0,0, 1
+267,8, 0,0, 1
+267,9, 0,0, 1
+267,10, 0,0, 1
+
+; Special
+[Begin Action 151]
+262,0, 0,0, 1
+262,1, 0,0, 1
+262,2, 0,0, 1
+262,3, 0,0, 1
+262,4, 0,0, 1
+262,5, 0,0, 1
+262,6, 0,0, 1
+262,7, 0,0, 1
+262,8, 0,0, 1
+262,9, 0,0, 1
+262,10, 0,0, 1
+
+; Hyper
+[Begin Action 152]
+261,0, 0,0, 1
+261,1, 0,0, 1
+261,2, 0,0, 1
+261,3, 0,0, 1
+261,4, 0,0, 1
+261,5, 0,0, 1
+261,6, 0,0, 1
+261,7, 0,0, 1
+261,8, 0,0, 1
+261,9, 0,0, 1
+261,10, 0,0, 1
+
+; Cheese (Block Defeated)
+[Begin Action 153]
+260,0, 0,0, 2
+260,1, 0,0, 2
+260,2, 0,0, 2
+260,3, 0,0, 2
+260,4, 0,0, 2
+260,5, 0,0, 2
+260,6, 0,0, 2
+260,7, 0,0, 2
+260,8, 0,0, 2
+260,9, 0,0, 3
+260,10, 0,0, 3
+
+; Time Over
+[Begin Action 154]
+264,0, 0,0, 1
+264,1, 0,0, 1
+264,2, 0,0, 1
+264,3, 0,0, 1
+264,4, 0,0, 1
+264,5, 0,0, 1
+264,6, 0,0, 1
+264,7, 0,0, 1
+264,8, 0,0, 1
+264,9, 0,0, 1
+264,10, 0,0, 1
+
+; Throw
+[Begin Action 155]
+266,0, 0,0, 1
+266,1, 0,0, 1
+266,2, 0,0, 1
+266,3, 0,0, 1
+266,4, 0,0, 1
+266,5, 0,0, 1
+266,6, 0,0, 1
+266,7, 0,0, 1
+266,8, 0,0, 1
+266,9, 0,0, 1
+266,10, 0,0, 1
+
+; TeamMate
+[Begin Action 156]
+265,0, 0,0, 1
+265,1, 0,0, 1
+265,2, 0,0, 1
+265,3, 0,0, 1
+265,4, 0,0, 1
+265,5, 0,0, 1
+265,6, 0,0, 1
+265,7, 0,0, 1
+265,8, 0,0, 1
+265,9, 0,0, 1
+265,10, 0,0, 1
+
+; Suicide
+[Begin Action 157]
+263,0, 0,0, 1
+263,1, 0,0, 1
+263,2, 0,0, 1
+263,3, 0,0, 1
+263,4, 0,0, 1
+263,5, 0,0, 1
+263,6, 0,0, 1
+263,7, 0,0, 1
+263,8, 0,0, 1
+263,9, 0,0, 1
+263,10, 0,0, 1
+
+; FINAL ROUND echo
+[Begin Action 107]
+-1,0, 0,0, 47
+116,0, 320,240, 1, , AS256D254
+116,1, 320,240, 1, , AS256D254
+116,2, 320,240, 1, , AS256D254
+116,3, 320,240, 1, , AS256D254
+116,4, 320,240, 1, , AS256D254
+116,5, 320,240, 1, , AS256D254
+116,6, 320,240, 1, , AS256D254
+116,7, 320,240, 1, , AS256D254
+116,8, 320,240, 1, , AS256D254
+116,9, 320,240, 1, , AS256D254
+116,10, 320,240, 1, , AS256D254
+116,11, 320,240, 1, , AS256D254
+116,12, 320,240, 1, , AS256D254
+116,13, 320,240, 1, , AS256D254
+116,14, 320,240, 1, , AS256D254
+116,15, 320,240, 1, , AS256D254
+116,16, 320,240, 1, , AS256D254
+116,17, 320,240, 1, , AS256D254
+116,18, 320,240, 1, , AS256D254
+116,19, 320,240, 1, , AS256D254
+116,20, 320,240, 1, , AS256D254
+116,21, 320,240, 1, , AS256D254
+116,22, 320,240, 1, , AS256D254
+116,23, 320,240, 1, , AS256D254
+116,24, 320,240, 1, , AS256D254
+116,25, 320,240, 1, , AS256D254
+116,26, 320,240, 1, , AS256D254
+116,27, 320,240, 1, , AS256D254
+116,28, 320,240, 1, , AS256D254
+116,29, 320,240, 1, , AS256D254
+116,30, 320,240, 1, , AS256D254
+116,30, 320,240, 1, , AS200D128, 1.2,1.2
+116,30, 320,240, 1, , AS150D128, 1.4,1.4
+116,30, 320,240, 1, , AS100D128, 1.6,1.6
+116,30, 320,240, 1, , AS50D128, 1.8,1.8
+116,30, 320,240, 1, , AS0D0, 2,2
+-1,0, 0,0, -1
+
+; Action BG
+[Begin Action 400]
+300,0, 0,0, 81
+300,0, 0,0, 1, , , 1,0.975
+300,0, 0,0, 1, , , 1,0.95
+300,0, 0,0, 1, , , 1,0.925
+300,0, 0,0, 1, , , 1,0.9
+300,0, 0,0, 1, , , 1,0.875
+300,0, 0,0, 1, , , 1,0.85
+300,0, 0,0, 1, , , 1,0.825
+300,0, 0,0, 1, , , 1,0.8
+300,0, 0,0, 1, , , 1,0.775
+300,0, 0,0, 1, , , 1,0.75
+300,0, 0,0, 1, , , 1,0.725
+300,0, 0,0, 1, , , 1,0.7
+300,0, 0,0, 1, , , 1,0.675
+300,0, 0,0, 1, , , 1,0.65
+300,0, 0,0, 1, , , 1,0.625
+300,0, 0,0, 1, , , 1,0.6
+300,0, 0,0, 1, , , 1,0.575
+300,0, 0,0, 1, , , 1,0.55
+300,0, 0,0, 1, , , 1,0.525
+300,0, 0,0, 1, , , 1,0.5
+300,0, 0,0, 1, , , 1,0.475
+300,0, 0,0, 1, , , 1,0.45
+300,0, 0,0, 1, , , 1,0.425
+300,0, 0,0, 1, , , 1,0.4
+300,0, 0,0, 1, , , 1,0.375
+300,0, 0,0, 1, , , 1,0.35
+300,0, 0,0, 1, , , 1,0.325
+300,0, 0,0, 1, , , 1,0.3
+300,0, 0,0, 1, , , 1,0.275
+300,0, 0,0, 1, , , 1,0.25
+300,0, 0,0, 1, , , 1,0.225
+300,0, 0,0, 1, , , 1,0.2
+300,0, 0,0, 1, , , 1,0.175
+300,0, 0,0, 1, , , 1,0.15
+300,0, 0,0, 1, , , 1,0.125
+300,0, 0,0, 1, , , 1,0.1
+300,0, 0,0, 1, , , 1,0.075
+300,0, 0,0, 1, , , 1,0.05
+300,0, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Blocking Action 
+[Begin Action 401 ]
+300,1, 0,0, 81
+300,1, 0,0, 1, , , 1,0.975
+300,1, 0,0, 1, , , 1,0.95
+300,1, 0,0, 1, , , 1,0.925
+300,1, 0,0, 1, , , 1,0.9
+300,1, 0,0, 1, , , 1,0.875
+300,1, 0,0, 1, , , 1,0.85
+300,1, 0,0, 1, , , 1,0.825
+300,1, 0,0, 1, , , 1,0.8
+300,1, 0,0, 1, , , 1,0.775
+300,1, 0,0, 1, , , 1,0.75
+300,1, 0,0, 1, , , 1,0.725
+300,1, 0,0, 1, , , 1,0.7
+300,1, 0,0, 1, , , 1,0.675
+300,1, 0,0, 1, , , 1,0.65
+300,1, 0,0, 1, , , 1,0.625
+300,1, 0,0, 1, , , 1,0.6
+300,1, 0,0, 1, , , 1,0.575
+300,1, 0,0, 1, , , 1,0.55
+300,1, 0,0, 1, , , 1,0.525
+300,1, 0,0, 1, , , 1,0.5
+300,1, 0,0, 1, , , 1,0.475
+300,1, 0,0, 1, , , 1,0.45
+300,1, 0,0, 1, , , 1,0.425
+300,1, 0,0, 1, , , 1,0.4
+300,1, 0,0, 1, , , 1,0.375
+300,1, 0,0, 1, , , 1,0.35
+300,1, 0,0, 1, , , 1,0.325
+300,1, 0,0, 1, , , 1,0.3
+300,1, 0,0, 1, , , 1,0.275
+300,1, 0,0, 1, , , 1,0.25
+300,1, 0,0, 1, , , 1,0.225
+300,1, 0,0, 1, , , 1,0.2
+300,1, 0,0, 1, , , 1,0.175
+300,1, 0,0, 1, , , 1,0.15
+300,1, 0,0, 1, , , 1,0.125
+300,1, 0,0, 1, , , 1,0.1
+300,1, 0,0, 1, , , 1,0.075
+300,1, 0,0, 1, , , 1,0.05
+300,1, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Counter Action 
+[Begin Action 402]
+300,2, 0,0, 81
+300,2, 0,0, 1, , , 1,0.975
+300,2, 0,0, 1, , , 1,0.95
+300,2, 0,0, 1, , , 1,0.925
+300,2, 0,0, 1, , , 1,0.9
+300,2, 0,0, 1, , , 1,0.875
+300,2, 0,0, 1, , , 1,0.85
+300,2, 0,0, 1, , , 1,0.825
+300,2, 0,0, 1, , , 1,0.8
+300,2, 0,0, 1, , , 1,0.775
+300,2, 0,0, 1, , , 1,0.75
+300,2, 0,0, 1, , , 1,0.725
+300,2, 0,0, 1, , , 1,0.7
+300,2, 0,0, 1, , , 1,0.675
+300,2, 0,0, 1, , , 1,0.65
+300,2, 0,0, 1, , , 1,0.625
+300,2, 0,0, 1, , , 1,0.6
+300,2, 0,0, 1, , , 1,0.575
+300,2, 0,0, 1, , , 1,0.55
+300,2, 0,0, 1, , , 1,0.525
+300,2, 0,0, 1, , , 1,0.5
+300,2, 0,0, 1, , , 1,0.475
+300,2, 0,0, 1, , , 1,0.45
+300,2, 0,0, 1, , , 1,0.425
+300,2, 0,0, 1, , , 1,0.4
+300,2, 0,0, 1, , , 1,0.375
+300,2, 0,0, 1, , , 1,0.35
+300,2, 0,0, 1, , , 1,0.325
+300,2, 0,0, 1, , , 1,0.3
+300,2, 0,0, 1, , , 1,0.275
+300,2, 0,0, 1, , , 1,0.25
+300,2, 0,0, 1, , , 1,0.225
+300,2, 0,0, 1, , , 1,0.2
+300,2, 0,0, 1, , , 1,0.175
+300,2, 0,0, 1, , , 1,0.15
+300,2, 0,0, 1, , , 1,0.125
+300,2, 0,0, 1, , , 1,0.1
+300,2, 0,0, 1, , , 1,0.075
+300,2, 0,0, 1, , , 1,0.05
+300,2, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Guard Break Action
+[Begin Action 403]
+300,3, 0,0, 81
+300,3, 0,0, 1, , , 1,0.975
+300,3, 0,0, 1, , , 1,0.95
+300,3, 0,0, 1, , , 1,0.925
+300,3, 0,0, 1, , , 1,0.9
+300,3, 0,0, 1, , , 1,0.875
+300,3, 0,0, 1, , , 1,0.85
+300,3, 0,0, 1, , , 1,0.825
+300,3, 0,0, 1, , , 1,0.8
+300,3, 0,0, 1, , , 1,0.775
+300,3, 0,0, 1, , , 1,0.75
+300,3, 0,0, 1, , , 1,0.725
+300,3, 0,0, 1, , , 1,0.7
+300,3, 0,0, 1, , , 1,0.675
+300,3, 0,0, 1, , , 1,0.65
+300,3, 0,0, 1, , , 1,0.625
+300,3, 0,0, 1, , , 1,0.6
+300,3, 0,0, 1, , , 1,0.575
+300,3, 0,0, 1, , , 1,0.55
+300,3, 0,0, 1, , , 1,0.525
+300,3, 0,0, 1, , , 1,0.5
+300,3, 0,0, 1, , , 1,0.475
+300,3, 0,0, 1, , , 1,0.45
+300,3, 0,0, 1, , , 1,0.425
+300,3, 0,0, 1, , , 1,0.4
+300,3, 0,0, 1, , , 1,0.375
+300,3, 0,0, 1, , , 1,0.35
+300,3, 0,0, 1, , , 1,0.325
+300,3, 0,0, 1, , , 1,0.3
+300,3, 0,0, 1, , , 1,0.275
+300,3, 0,0, 1, , , 1,0.25
+300,3, 0,0, 1, , , 1,0.225
+300,3, 0,0, 1, , , 1,0.2
+300,3, 0,0, 1, , , 1,0.175
+300,3, 0,0, 1, , , 1,0.15
+300,3, 0,0, 1, , , 1,0.125
+300,3, 0,0, 1, , , 1,0.1
+300,3, 0,0, 1, , , 1,0.075
+300,3, 0,0, 1, , , 1,0.05
+300,3, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Danger Action
+[Begin Action 404]
+300,4, 0,0, 81
+300,4, 0,0, 1, , , 1,0.975
+300,4, 0,0, 1, , , 1,0.95
+300,4, 0,0, 1, , , 1,0.925
+300,4, 0,0, 1, , , 1,0.9
+300,4, 0,0, 1, , , 1,0.875
+300,4, 0,0, 1, , , 1,0.85
+300,4, 0,0, 1, , , 1,0.825
+300,4, 0,0, 1, , , 1,0.8
+300,4, 0,0, 1, , , 1,0.775
+300,4, 0,0, 1, , , 1,0.75
+300,4, 0,0, 1, , , 1,0.725
+300,4, 0,0, 1, , , 1,0.7
+300,4, 0,0, 1, , , 1,0.675
+300,4, 0,0, 1, , , 1,0.65
+300,4, 0,0, 1, , , 1,0.625
+300,4, 0,0, 1, , , 1,0.6
+300,4, 0,0, 1, , , 1,0.575
+300,4, 0,0, 1, , , 1,0.55
+300,4, 0,0, 1, , , 1,0.525
+300,4, 0,0, 1, , , 1,0.5
+300,4, 0,0, 1, , , 1,0.475
+300,4, 0,0, 1, , , 1,0.45
+300,4, 0,0, 1, , , 1,0.425
+300,4, 0,0, 1, , , 1,0.4
+300,4, 0,0, 1, , , 1,0.375
+300,4, 0,0, 1, , , 1,0.35
+300,4, 0,0, 1, , , 1,0.325
+300,4, 0,0, 1, , , 1,0.3
+300,4, 0,0, 1, , , 1,0.275
+300,4, 0,0, 1, , , 1,0.25
+300,4, 0,0, 1, , , 1,0.225
+300,4, 0,0, 1, , , 1,0.2
+300,4, 0,0, 1, , , 1,0.175
+300,4, 0,0, 1, , , 1,0.15
+300,4, 0,0, 1, , , 1,0.125
+300,4, 0,0, 1, , , 1,0.1
+300,4, 0,0, 1, , , 1,0.075
+300,4, 0,0, 1, , , 1,0.05
+300,4, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Partner Down Action
+[Begin Action 405]
+300,5, 0,0, 81
+300,5, 0,0, 1, , , 1,0.975
+300,5, 0,0, 1, , , 1,0.95
+300,5, 0,0, 1, , , 1,0.925
+300,5, 0,0, 1, , , 1,0.9
+300,5, 0,0, 1, , , 1,0.875
+300,5, 0,0, 1, , , 1,0.85
+300,5, 0,0, 1, , , 1,0.825
+300,5, 0,0, 1, , , 1,0.8
+300,5, 0,0, 1, , , 1,0.775
+300,5, 0,0, 1, , , 1,0.75
+300,5, 0,0, 1, , , 1,0.725
+300,5, 0,0, 1, , , 1,0.7
+300,5, 0,0, 1, , , 1,0.675
+300,5, 0,0, 1, , , 1,0.65
+300,5, 0,0, 1, , , 1,0.625
+300,5, 0,0, 1, , , 1,0.6
+300,5, 0,0, 1, , , 1,0.575
+300,5, 0,0, 1, , , 1,0.55
+300,5, 0,0, 1, , , 1,0.525
+300,5, 0,0, 1, , , 1,0.5
+300,5, 0,0, 1, , , 1,0.475
+300,5, 0,0, 1, , , 1,0.45
+300,5, 0,0, 1, , , 1,0.425
+300,5, 0,0, 1, , , 1,0.4
+300,5, 0,0, 1, , , 1,0.375
+300,5, 0,0, 1, , , 1,0.35
+300,5, 0,0, 1, , , 1,0.325
+300,5, 0,0, 1, , , 1,0.3
+300,5, 0,0, 1, , , 1,0.275
+300,5, 0,0, 1, , , 1,0.25
+300,5, 0,0, 1, , , 1,0.225
+300,5, 0,0, 1, , , 1,0.2
+300,5, 0,0, 1, , , 1,0.175
+300,5, 0,0, 1, , , 1,0.15
+300,5, 0,0, 1, , , 1,0.125
+300,5, 0,0, 1, , , 1,0.1
+300,5, 0,0, 1, , , 1,0.075
+300,5, 0,0, 1, , , 1,0.05
+300,5, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 15 Hit Combo Action
+[Begin Action 406]
+300,6, 0,0, 81
+300,6, 0,0, 1, , , 1,0.975
+300,6, 0,0, 1, , , 1,0.95
+300,6, 0,0, 1, , , 1,0.925
+300,6, 0,0, 1, , , 1,0.9
+300,6, 0,0, 1, , , 1,0.875
+300,6, 0,0, 1, , , 1,0.85
+300,6, 0,0, 1, , , 1,0.825
+300,6, 0,0, 1, , , 1,0.8
+300,6, 0,0, 1, , , 1,0.775
+300,6, 0,0, 1, , , 1,0.75
+300,6, 0,0, 1, , , 1,0.725
+300,6, 0,0, 1, , , 1,0.7
+300,6, 0,0, 1, , , 1,0.675
+300,6, 0,0, 1, , , 1,0.65
+300,6, 0,0, 1, , , 1,0.625
+300,6, 0,0, 1, , , 1,0.6
+300,6, 0,0, 1, , , 1,0.575
+300,6, 0,0, 1, , , 1,0.55
+300,6, 0,0, 1, , , 1,0.525
+300,6, 0,0, 1, , , 1,0.5
+300,6, 0,0, 1, , , 1,0.475
+300,6, 0,0, 1, , , 1,0.45
+300,6, 0,0, 1, , , 1,0.425
+300,6, 0,0, 1, , , 1,0.4
+300,6, 0,0, 1, , , 1,0.375
+300,6, 0,0, 1, , , 1,0.35
+300,6, 0,0, 1, , , 1,0.325
+300,6, 0,0, 1, , , 1,0.3
+300,6, 0,0, 1, , , 1,0.275
+300,6, 0,0, 1, , , 1,0.25
+300,6, 0,0, 1, , , 1,0.225
+300,6, 0,0, 1, , , 1,0.2
+300,6, 0,0, 1, , , 1,0.175
+300,6, 0,0, 1, , , 1,0.15
+300,6, 0,0, 1, , , 1,0.125
+300,6, 0,0, 1, , , 1,0.1
+300,6, 0,0, 1, , , 1,0.075
+300,6, 0,0, 1, , , 1,0.05
+300,6, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; First Attack Action
+[Begin Action 407]
+300,7, 0,0, 81
+300,7, 0,0, 1, , , 1,0.975
+300,7, 0,0, 1, , , 1,0.95
+300,7, 0,0, 1, , , 1,0.925
+300,7, 0,0, 1, , , 1,0.9
+300,7, 0,0, 1, , , 1,0.875
+300,7, 0,0, 1, , , 1,0.85
+300,7, 0,0, 1, , , 1,0.825
+300,7, 0,0, 1, , , 1,0.8
+300,7, 0,0, 1, , , 1,0.775
+300,7, 0,0, 1, , , 1,0.75
+300,7, 0,0, 1, , , 1,0.725
+300,7, 0,0, 1, , , 1,0.7
+300,7, 0,0, 1, , , 1,0.675
+300,7, 0,0, 1, , , 1,0.65
+300,7, 0,0, 1, , , 1,0.625
+300,7, 0,0, 1, , , 1,0.6
+300,7, 0,0, 1, , , 1,0.575
+300,7, 0,0, 1, , , 1,0.55
+300,7, 0,0, 1, , , 1,0.525
+300,7, 0,0, 1, , , 1,0.5
+300,7, 0,0, 1, , , 1,0.475
+300,7, 0,0, 1, , , 1,0.45
+300,7, 0,0, 1, , , 1,0.425
+300,7, 0,0, 1, , , 1,0.4
+300,7, 0,0, 1, , , 1,0.375
+300,7, 0,0, 1, , , 1,0.35
+300,7, 0,0, 1, , , 1,0.325
+300,7, 0,0, 1, , , 1,0.3
+300,7, 0,0, 1, , , 1,0.275
+300,7, 0,0, 1, , , 1,0.25
+300,7, 0,0, 1, , , 1,0.225
+300,7, 0,0, 1, , , 1,0.2
+300,7, 0,0, 1, , , 1,0.175
+300,7, 0,0, 1, , , 1,0.15
+300,7, 0,0, 1, , , 1,0.125
+300,7, 0,0, 1, , , 1,0.1
+300,7, 0,0, 1, , , 1,0.075
+300,7, 0,0, 1, , , 1,0.05
+300,7, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 25 Hit Combo Action
+[Begin Action 408]
+300,8, 0,0, 81
+300,8, 0,0, 1, , , 1,0.975
+300,8, 0,0, 1, , , 1,0.95
+300,8, 0,0, 1, , , 1,0.925
+300,8, 0,0, 1, , , 1,0.9
+300,8, 0,0, 1, , , 1,0.875
+300,8, 0,0, 1, , , 1,0.85
+300,8, 0,0, 1, , , 1,0.825
+300,8, 0,0, 1, , , 1,0.8
+300,8, 0,0, 1, , , 1,0.775
+300,8, 0,0, 1, , , 1,0.75
+300,8, 0,0, 1, , , 1,0.725
+300,8, 0,0, 1, , , 1,0.7
+300,8, 0,0, 1, , , 1,0.675
+300,8, 0,0, 1, , , 1,0.65
+300,8, 0,0, 1, , , 1,0.625
+300,8, 0,0, 1, , , 1,0.6
+300,8, 0,0, 1, , , 1,0.575
+300,8, 0,0, 1, , , 1,0.55
+300,8, 0,0, 1, , , 1,0.525
+300,8, 0,0, 1, , , 1,0.5
+300,8, 0,0, 1, , , 1,0.475
+300,8, 0,0, 1, , , 1,0.45
+300,8, 0,0, 1, , , 1,0.425
+300,8, 0,0, 1, , , 1,0.4
+300,8, 0,0, 1, , , 1,0.375
+300,8, 0,0, 1, , , 1,0.35
+300,8, 0,0, 1, , , 1,0.325
+300,8, 0,0, 1, , , 1,0.3
+300,8, 0,0, 1, , , 1,0.275
+300,8, 0,0, 1, , , 1,0.25
+300,8, 0,0, 1, , , 1,0.225
+300,8, 0,0, 1, , , 1,0.2
+300,8, 0,0, 1, , , 1,0.175
+300,8, 0,0, 1, , , 1,0.15
+300,8, 0,0, 1, , , 1,0.125
+300,8, 0,0, 1, , , 1,0.1
+300,8, 0,0, 1, , , 1,0.075
+300,8, 0,0, 1, , , 1,0.05
+300,8, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 3 Hit Combo Action
+[Begin Action 409]
+300,9, 0,0, 81
+300,9, 0,0, 1, , , 1,0.975
+300,9, 0,0, 1, , , 1,0.95
+300,9, 0,0, 1, , , 1,0.925
+300,9, 0,0, 1, , , 1,0.9
+300,9, 0,0, 1, , , 1,0.875
+300,9, 0,0, 1, , , 1,0.85
+300,9, 0,0, 1, , , 1,0.825
+300,9, 0,0, 1, , , 1,0.8
+300,9, 0,0, 1, , , 1,0.775
+300,9, 0,0, 1, , , 1,0.75
+300,9, 0,0, 1, , , 1,0.725
+300,9, 0,0, 1, , , 1,0.7
+300,9, 0,0, 1, , , 1,0.675
+300,9, 0,0, 1, , , 1,0.65
+300,9, 0,0, 1, , , 1,0.625
+300,9, 0,0, 1, , , 1,0.6
+300,9, 0,0, 1, , , 1,0.575
+300,9, 0,0, 1, , , 1,0.55
+300,9, 0,0, 1, , , 1,0.525
+300,9, 0,0, 1, , , 1,0.5
+300,9, 0,0, 1, , , 1,0.475
+300,9, 0,0, 1, , , 1,0.45
+300,9, 0,0, 1, , , 1,0.425
+300,9, 0,0, 1, , , 1,0.4
+300,9, 0,0, 1, , , 1,0.375
+300,9, 0,0, 1, , , 1,0.35
+300,9, 0,0, 1, , , 1,0.325
+300,9, 0,0, 1, , , 1,0.3
+300,9, 0,0, 1, , , 1,0.275
+300,9, 0,0, 1, , , 1,0.25
+300,9, 0,0, 1, , , 1,0.225
+300,9, 0,0, 1, , , 1,0.2
+300,9, 0,0, 1, , , 1,0.175
+300,9, 0,0, 1, , , 1,0.15
+300,9, 0,0, 1, , , 1,0.125
+300,9, 0,0, 1, , , 1,0.1
+300,9, 0,0, 1, , , 1,0.075
+300,9, 0,0, 1, , , 1,0.05
+300,9, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 5 Hit Combo Action
+[Begin Action 410]
+300,10, 0,0, 81
+300,10, 0,0, 1, , , 1,0.975
+300,10, 0,0, 1, , , 1,0.95
+300,10, 0,0, 1, , , 1,0.925
+300,10, 0,0, 1, , , 1,0.9
+300,10, 0,0, 1, , , 1,0.875
+300,10, 0,0, 1, , , 1,0.85
+300,10, 0,0, 1, , , 1,0.825
+300,10, 0,0, 1, , , 1,0.8
+300,10, 0,0, 1, , , 1,0.775
+300,10, 0,0, 1, , , 1,0.75
+300,10, 0,0, 1, , , 1,0.725
+300,10, 0,0, 1, , , 1,0.7
+300,10, 0,0, 1, , , 1,0.675
+300,10, 0,0, 1, , , 1,0.65
+300,10, 0,0, 1, , , 1,0.625
+300,10, 0,0, 1, , , 1,0.6
+300,10, 0,0, 1, , , 1,0.575
+300,10, 0,0, 1, , , 1,0.55
+300,10, 0,0, 1, , , 1,0.525
+300,10, 0,0, 1, , , 1,0.5
+300,10, 0,0, 1, , , 1,0.475
+300,10, 0,0, 1, , , 1,0.45
+300,10, 0,0, 1, , , 1,0.425
+300,10, 0,0, 1, , , 1,0.4
+300,10, 0,0, 1, , , 1,0.375
+300,10, 0,0, 1, , , 1,0.35
+300,10, 0,0, 1, , , 1,0.325
+300,10, 0,0, 1, , , 1,0.3
+300,10, 0,0, 1, , , 1,0.275
+300,10, 0,0, 1, , , 1,0.25
+300,10, 0,0, 1, , , 1,0.225
+300,10, 0,0, 1, , , 1,0.2
+300,10, 0,0, 1, , , 1,0.175
+300,10, 0,0, 1, , , 1,0.15
+300,10, 0,0, 1, , , 1,0.125
+300,10, 0,0, 1, , , 1,0.1
+300,10, 0,0, 1, , , 1,0.075
+300,10, 0,0, 1, , , 1,0.05
+300,10, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Hyper Win Action
+[Begin Action 411]
+300,11, 0,0, 81
+300,11, 0,0, 1, , , 1,0.975
+300,11, 0,0, 1, , , 1,0.95
+300,11, 0,0, 1, , , 1,0.925
+300,11, 0,0, 1, , , 1,0.9
+300,11, 0,0, 1, , , 1,0.875
+300,11, 0,0, 1, , , 1,0.85
+300,11, 0,0, 1, , , 1,0.825
+300,11, 0,0, 1, , , 1,0.8
+300,11, 0,0, 1, , , 1,0.775
+300,11, 0,0, 1, , , 1,0.75
+300,11, 0,0, 1, , , 1,0.725
+300,11, 0,0, 1, , , 1,0.7
+300,11, 0,0, 1, , , 1,0.675
+300,11, 0,0, 1, , , 1,0.65
+300,11, 0,0, 1, , , 1,0.625
+300,11, 0,0, 1, , , 1,0.6
+300,11, 0,0, 1, , , 1,0.575
+300,11, 0,0, 1, , , 1,0.55
+300,11, 0,0, 1, , , 1,0.525
+300,11, 0,0, 1, , , 1,0.5
+300,11, 0,0, 1, , , 1,0.475
+300,11, 0,0, 1, , , 1,0.45
+300,11, 0,0, 1, , , 1,0.425
+300,11, 0,0, 1, , , 1,0.4
+300,11, 0,0, 1, , , 1,0.375
+300,11, 0,0, 1, , , 1,0.35
+300,11, 0,0, 1, , , 1,0.325
+300,11, 0,0, 1, , , 1,0.3
+300,11, 0,0, 1, , , 1,0.275
+300,11, 0,0, 1, , , 1,0.25
+300,11, 0,0, 1, , , 1,0.225
+300,11, 0,0, 1, , , 1,0.2
+300,11, 0,0, 1, , , 1,0.175
+300,11, 0,0, 1, , , 1,0.15
+300,11, 0,0, 1, , , 1,0.125
+300,11, 0,0, 1, , , 1,0.1
+300,11, 0,0, 1, , , 1,0.075
+300,11, 0,0, 1, , , 1,0.05
+300,11, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 20 Hit Combo Action
+[Begin Action 412]
+300,12, 0,0, 81
+300,12, 0,0, 1, , , 1,0.975
+300,12, 0,0, 1, , , 1,0.95
+300,12, 0,0, 1, , , 1,0.925
+300,12, 0,0, 1, , , 1,0.9
+300,12, 0,0, 1, , , 1,0.875
+300,12, 0,0, 1, , , 1,0.85
+300,12, 0,0, 1, , , 1,0.825
+300,12, 0,0, 1, , , 1,0.8
+300,12, 0,0, 1, , , 1,0.775
+300,12, 0,0, 1, , , 1,0.75
+300,12, 0,0, 1, , , 1,0.725
+300,12, 0,0, 1, , , 1,0.7
+300,12, 0,0, 1, , , 1,0.675
+300,12, 0,0, 1, , , 1,0.65
+300,12, 0,0, 1, , , 1,0.625
+300,12, 0,0, 1, , , 1,0.6
+300,12, 0,0, 1, , , 1,0.575
+300,12, 0,0, 1, , , 1,0.55
+300,12, 0,0, 1, , , 1,0.525
+300,12, 0,0, 1, , , 1,0.5
+300,12, 0,0, 1, , , 1,0.475
+300,12, 0,0, 1, , , 1,0.45
+300,12, 0,0, 1, , , 1,0.425
+300,12, 0,0, 1, , , 1,0.4
+300,12, 0,0, 1, , , 1,0.375
+300,12, 0,0, 1, , , 1,0.35
+300,12, 0,0, 1, , , 1,0.325
+300,12, 0,0, 1, , , 1,0.3
+300,12, 0,0, 1, , , 1,0.275
+300,12, 0,0, 1, , , 1,0.25
+300,12, 0,0, 1, , , 1,0.225
+300,12, 0,0, 1, , , 1,0.2
+300,12, 0,0, 1, , , 1,0.175
+300,12, 0,0, 1, , , 1,0.15
+300,12, 0,0, 1, , , 1,0.125
+300,12, 0,0, 1, , , 1,0.1
+300,12, 0,0, 1, , , 1,0.075
+300,12, 0,0, 1, , , 1,0.05
+300,12, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Parrying Action
+[Begin Action 413]
+300,13, 0,0, 81
+300,13, 0,0, 1, , , 1,0.975
+300,13, 0,0, 1, , , 1,0.95
+300,13, 0,0, 1, , , 1,0.925
+300,13, 0,0, 1, , , 1,0.9
+300,13, 0,0, 1, , , 1,0.875
+300,13, 0,0, 1, , , 1,0.85
+300,13, 0,0, 1, , , 1,0.825
+300,13, 0,0, 1, , , 1,0.8
+300,13, 0,0, 1, , , 1,0.775
+300,13, 0,0, 1, , , 1,0.75
+300,13, 0,0, 1, , , 1,0.725
+300,13, 0,0, 1, , , 1,0.7
+300,13, 0,0, 1, , , 1,0.675
+300,13, 0,0, 1, , , 1,0.65
+300,13, 0,0, 1, , , 1,0.625
+300,13, 0,0, 1, , , 1,0.6
+300,13, 0,0, 1, , , 1,0.575
+300,13, 0,0, 1, , , 1,0.55
+300,13, 0,0, 1, , , 1,0.525
+300,13, 0,0, 1, , , 1,0.5
+300,13, 0,0, 1, , , 1,0.475
+300,13, 0,0, 1, , , 1,0.45
+300,13, 0,0, 1, , , 1,0.425
+300,13, 0,0, 1, , , 1,0.4
+300,13, 0,0, 1, , , 1,0.375
+300,13, 0,0, 1, , , 1,0.35
+300,13, 0,0, 1, , , 1,0.325
+300,13, 0,0, 1, , , 1,0.3
+300,13, 0,0, 1, , , 1,0.275
+300,13, 0,0, 1, , , 1,0.25
+300,13, 0,0, 1, , , 1,0.225
+300,13, 0,0, 1, , , 1,0.2
+300,13, 0,0, 1, , , 1,0.175
+300,13, 0,0, 1, , , 1,0.15
+300,13, 0,0, 1, , , 1,0.125
+300,13, 0,0, 1, , , 1,0.1
+300,13, 0,0, 1, , , 1,0.075
+300,13, 0,0, 1, , , 1,0.05
+300,13, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Perfect Action
+[Begin Action 414]
+300,14, 0,0, 81
+300,14, 0,0, 1, , , 1,0.975
+300,14, 0,0, 1, , , 1,0.95
+300,14, 0,0, 1, , , 1,0.925
+300,14, 0,0, 1, , , 1,0.9
+300,14, 0,0, 1, , , 1,0.875
+300,14, 0,0, 1, , , 1,0.85
+300,14, 0,0, 1, , , 1,0.825
+300,14, 0,0, 1, , , 1,0.8
+300,14, 0,0, 1, , , 1,0.775
+300,14, 0,0, 1, , , 1,0.75
+300,14, 0,0, 1, , , 1,0.725
+300,14, 0,0, 1, , , 1,0.7
+300,14, 0,0, 1, , , 1,0.675
+300,14, 0,0, 1, , , 1,0.65
+300,14, 0,0, 1, , , 1,0.625
+300,14, 0,0, 1, , , 1,0.6
+300,14, 0,0, 1, , , 1,0.575
+300,14, 0,0, 1, , , 1,0.55
+300,14, 0,0, 1, , , 1,0.525
+300,14, 0,0, 1, , , 1,0.5
+300,14, 0,0, 1, , , 1,0.475
+300,14, 0,0, 1, , , 1,0.45
+300,14, 0,0, 1, , , 1,0.425
+300,14, 0,0, 1, , , 1,0.4
+300,14, 0,0, 1, , , 1,0.375
+300,14, 0,0, 1, , , 1,0.35
+300,14, 0,0, 1, , , 1,0.325
+300,14, 0,0, 1, , , 1,0.3
+300,14, 0,0, 1, , , 1,0.275
+300,14, 0,0, 1, , , 1,0.25
+300,14, 0,0, 1, , , 1,0.225
+300,14, 0,0, 1, , , 1,0.2
+300,14, 0,0, 1, , , 1,0.175
+300,14, 0,0, 1, , , 1,0.15
+300,14, 0,0, 1, , , 1,0.125
+300,14, 0,0, 1, , , 1,0.1
+300,14, 0,0, 1, , , 1,0.075
+300,14, 0,0, 1, , , 1,0.05
+300,14, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Reversal Action
+[Begin Action 415]
+300,15, 0,0, 81
+300,15, 0,0, 1, , , 1,0.975
+300,15, 0,0, 1, , , 1,0.95
+300,15, 0,0, 1, , , 1,0.925
+300,15, 0,0, 1, , , 1,0.9
+300,15, 0,0, 1, , , 1,0.875
+300,15, 0,0, 1, , , 1,0.85
+300,15, 0,0, 1, , , 1,0.825
+300,15, 0,0, 1, , , 1,0.8
+300,15, 0,0, 1, , , 1,0.775
+300,15, 0,0, 1, , , 1,0.75
+300,15, 0,0, 1, , , 1,0.725
+300,15, 0,0, 1, , , 1,0.7
+300,15, 0,0, 1, , , 1,0.675
+300,15, 0,0, 1, , , 1,0.65
+300,15, 0,0, 1, , , 1,0.625
+300,15, 0,0, 1, , , 1,0.6
+300,15, 0,0, 1, , , 1,0.575
+300,15, 0,0, 1, , , 1,0.55
+300,15, 0,0, 1, , , 1,0.525
+300,15, 0,0, 1, , , 1,0.5
+300,15, 0,0, 1, , , 1,0.475
+300,15, 0,0, 1, , , 1,0.45
+300,15, 0,0, 1, , , 1,0.425
+300,15, 0,0, 1, , , 1,0.4
+300,15, 0,0, 1, , , 1,0.375
+300,15, 0,0, 1, , , 1,0.35
+300,15, 0,0, 1, , , 1,0.325
+300,15, 0,0, 1, , , 1,0.3
+300,15, 0,0, 1, , , 1,0.275
+300,15, 0,0, 1, , , 1,0.25
+300,15, 0,0, 1, , , 1,0.225
+300,15, 0,0, 1, , , 1,0.2
+300,15, 0,0, 1, , , 1,0.175
+300,15, 0,0, 1, , , 1,0.15
+300,15, 0,0, 1, , , 1,0.125
+300,15, 0,0, 1, , , 1,0.1
+300,15, 0,0, 1, , , 1,0.075
+300,15, 0,0, 1, , , 1,0.05
+300,15, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Special Win Action
+[Begin Action 416]
+300,16, 0,0, 81
+300,16, 0,0, 1, , , 1,0.975
+300,16, 0,0, 1, , , 1,0.95
+300,16, 0,0, 1, , , 1,0.925
+300,16, 0,0, 1, , , 1,0.9
+300,16, 0,0, 1, , , 1,0.875
+300,16, 0,0, 1, , , 1,0.85
+300,16, 0,0, 1, , , 1,0.825
+300,16, 0,0, 1, , , 1,0.8
+300,16, 0,0, 1, , , 1,0.775
+300,16, 0,0, 1, , , 1,0.75
+300,16, 0,0, 1, , , 1,0.725
+300,16, 0,0, 1, , , 1,0.7
+300,16, 0,0, 1, , , 1,0.675
+300,16, 0,0, 1, , , 1,0.65
+300,16, 0,0, 1, , , 1,0.625
+300,16, 0,0, 1, , , 1,0.6
+300,16, 0,0, 1, , , 1,0.575
+300,16, 0,0, 1, , , 1,0.55
+300,16, 0,0, 1, , , 1,0.525
+300,16, 0,0, 1, , , 1,0.5
+300,16, 0,0, 1, , , 1,0.475
+300,16, 0,0, 1, , , 1,0.45
+300,16, 0,0, 1, , , 1,0.425
+300,16, 0,0, 1, , , 1,0.4
+300,16, 0,0, 1, , , 1,0.375
+300,16, 0,0, 1, , , 1,0.35
+300,16, 0,0, 1, , , 1,0.325
+300,16, 0,0, 1, , , 1,0.3
+300,16, 0,0, 1, , , 1,0.275
+300,16, 0,0, 1, , , 1,0.25
+300,16, 0,0, 1, , , 1,0.225
+300,16, 0,0, 1, , , 1,0.2
+300,16, 0,0, 1, , , 1,0.175
+300,16, 0,0, 1, , , 1,0.15
+300,16, 0,0, 1, , , 1,0.125
+300,16, 0,0, 1, , , 1,0.1
+300,16, 0,0, 1, , , 1,0.075
+300,16, 0,0, 1, , , 1,0.05
+300,16, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 10 Hit Combo Action
+[Begin Action 417]
+300,17, 0,0, 81
+300,17, 0,0, 1, , , 1,0.975
+300,17, 0,0, 1, , , 1,0.95
+300,17, 0,0, 1, , , 1,0.925
+300,17, 0,0, 1, , , 1,0.9
+300,17, 0,0, 1, , , 1,0.875
+300,17, 0,0, 1, , , 1,0.85
+300,17, 0,0, 1, , , 1,0.825
+300,17, 0,0, 1, , , 1,0.8
+300,17, 0,0, 1, , , 1,0.775
+300,17, 0,0, 1, , , 1,0.75
+300,17, 0,0, 1, , , 1,0.725
+300,17, 0,0, 1, , , 1,0.7
+300,17, 0,0, 1, , , 1,0.675
+300,17, 0,0, 1, , , 1,0.65
+300,17, 0,0, 1, , , 1,0.625
+300,17, 0,0, 1, , , 1,0.6
+300,17, 0,0, 1, , , 1,0.575
+300,17, 0,0, 1, , , 1,0.55
+300,17, 0,0, 1, , , 1,0.525
+300,17, 0,0, 1, , , 1,0.5
+300,17, 0,0, 1, , , 1,0.475
+300,17, 0,0, 1, , , 1,0.45
+300,17, 0,0, 1, , , 1,0.425
+300,17, 0,0, 1, , , 1,0.4
+300,17, 0,0, 1, , , 1,0.375
+300,17, 0,0, 1, , , 1,0.35
+300,17, 0,0, 1, , , 1,0.325
+300,17, 0,0, 1, , , 1,0.3
+300,17, 0,0, 1, , , 1,0.275
+300,17, 0,0, 1, , , 1,0.25
+300,17, 0,0, 1, , , 1,0.225
+300,17, 0,0, 1, , , 1,0.2
+300,17, 0,0, 1, , , 1,0.175
+300,17, 0,0, 1, , , 1,0.15
+300,17, 0,0, 1, , , 1,0.125
+300,17, 0,0, 1, , , 1,0.1
+300,17, 0,0, 1, , , 1,0.075
+300,17, 0,0, 1, , , 1,0.05
+300,17, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Technical Action 
+[Begin Action 418]
+300,18, 0,0, 81
+300,18, 0,0, 1, , , 1,0.975
+300,18, 0,0, 1, , , 1,0.95
+300,18, 0,0, 1, , , 1,0.925
+300,18, 0,0, 1, , , 1,0.9
+300,18, 0,0, 1, , , 1,0.875
+300,18, 0,0, 1, , , 1,0.85
+300,18, 0,0, 1, , , 1,0.825
+300,18, 0,0, 1, , , 1,0.8
+300,18, 0,0, 1, , , 1,0.775
+300,18, 0,0, 1, , , 1,0.75
+300,18, 0,0, 1, , , 1,0.725
+300,18, 0,0, 1, , , 1,0.7
+300,18, 0,0, 1, , , 1,0.675
+300,18, 0,0, 1, , , 1,0.65
+300,18, 0,0, 1, , , 1,0.625
+300,18, 0,0, 1, , , 1,0.6
+300,18, 0,0, 1, , , 1,0.575
+300,18, 0,0, 1, , , 1,0.55
+300,18, 0,0, 1, , , 1,0.525
+300,18, 0,0, 1, , , 1,0.5
+300,18, 0,0, 1, , , 1,0.475
+300,18, 0,0, 1, , , 1,0.45
+300,18, 0,0, 1, , , 1,0.425
+300,18, 0,0, 1, , , 1,0.4
+300,18, 0,0, 1, , , 1,0.375
+300,18, 0,0, 1, , , 1,0.35
+300,18, 0,0, 1, , , 1,0.325
+300,18, 0,0, 1, , , 1,0.3
+300,18, 0,0, 1, , , 1,0.275
+300,18, 0,0, 1, , , 1,0.25
+300,18, 0,0, 1, , , 1,0.225
+300,18, 0,0, 1, , , 1,0.2
+300,18, 0,0, 1, , , 1,0.175
+300,18, 0,0, 1, , , 1,0.15
+300,18, 0,0, 1, , , 1,0.125
+300,18, 0,0, 1, , , 1,0.1
+300,18, 0,0, 1, , , 1,0.075
+300,18, 0,0, 1, , , 1,0.05
+300,18, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Dizzy Action
+[Begin Action 419]
+300,19, 0,0, 81
+300,19, 0,0, 1, , , 1,0.975
+300,19, 0,0, 1, , , 1,0.95
+300,19, 0,0, 1, , , 1,0.925
+300,19, 0,0, 1, , , 1,0.9
+300,19, 0,0, 1, , , 1,0.875
+300,19, 0,0, 1, , , 1,0.85
+300,19, 0,0, 1, , , 1,0.825
+300,19, 0,0, 1, , , 1,0.8
+300,19, 0,0, 1, , , 1,0.775
+300,19, 0,0, 1, , , 1,0.75
+300,19, 0,0, 1, , , 1,0.725
+300,19, 0,0, 1, , , 1,0.7
+300,19, 0,0, 1, , , 1,0.675
+300,19, 0,0, 1, , , 1,0.65
+300,19, 0,0, 1, , , 1,0.625
+300,19, 0,0, 1, , , 1,0.6
+300,19, 0,0, 1, , , 1,0.575
+300,19, 0,0, 1, , , 1,0.55
+300,19, 0,0, 1, , , 1,0.525
+300,19, 0,0, 1, , , 1,0.5
+300,19, 0,0, 1, , , 1,0.475
+300,19, 0,0, 1, , , 1,0.45
+300,19, 0,0, 1, , , 1,0.425
+300,19, 0,0, 1, , , 1,0.4
+300,19, 0,0, 1, , , 1,0.375
+300,19, 0,0, 1, , , 1,0.35
+300,19, 0,0, 1, , , 1,0.325
+300,19, 0,0, 1, , , 1,0.3
+300,19, 0,0, 1, , , 1,0.275
+300,19, 0,0, 1, , , 1,0.25
+300,19, 0,0, 1, , , 1,0.225
+300,19, 0,0, 1, , , 1,0.2
+300,19, 0,0, 1, , , 1,0.175
+300,19, 0,0, 1, , , 1,0.15
+300,19, 0,0, 1, , , 1,0.125
+300,19, 0,0, 1, , , 1,0.1
+300,19, 0,0, 1, , , 1,0.075
+300,19, 0,0, 1, , , 1,0.05
+300,19, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Partner Assist Action
+[Begin Action 420]
+300,20, 0,0, 81
+300,20, 0,0, 1, , , 1,0.975
+300,20, 0,0, 1, , , 1,0.95
+300,20, 0,0, 1, , , 1,0.925
+300,20, 0,0, 1, , , 1,0.9
+300,20, 0,0, 1, , , 1,0.875
+300,20, 0,0, 1, , , 1,0.85
+300,20, 0,0, 1, , , 1,0.825
+300,20, 0,0, 1, , , 1,0.8
+300,20, 0,0, 1, , , 1,0.775
+300,20, 0,0, 1, , , 1,0.75
+300,20, 0,0, 1, , , 1,0.725
+300,20, 0,0, 1, , , 1,0.7
+300,20, 0,0, 1, , , 1,0.675
+300,20, 0,0, 1, , , 1,0.65
+300,20, 0,0, 1, , , 1,0.625
+300,20, 0,0, 1, , , 1,0.6
+300,20, 0,0, 1, , , 1,0.575
+300,20, 0,0, 1, , , 1,0.55
+300,20, 0,0, 1, , , 1,0.525
+300,20, 0,0, 1, , , 1,0.5
+300,20, 0,0, 1, , , 1,0.475
+300,20, 0,0, 1, , , 1,0.45
+300,20, 0,0, 1, , , 1,0.425
+300,20, 0,0, 1, , , 1,0.4
+300,20, 0,0, 1, , , 1,0.375
+300,20, 0,0, 1, , , 1,0.35
+300,20, 0,0, 1, , , 1,0.325
+300,20, 0,0, 1, , , 1,0.3
+300,20, 0,0, 1, , , 1,0.275
+300,20, 0,0, 1, , , 1,0.25
+300,20, 0,0, 1, , , 1,0.225
+300,20, 0,0, 1, , , 1,0.2
+300,20, 0,0, 1, , , 1,0.175
+300,20, 0,0, 1, , , 1,0.15
+300,20, 0,0, 1, , , 1,0.125
+300,20, 0,0, 1, , , 1,0.1
+300,20, 0,0, 1, , , 1,0.075
+300,20, 0,0, 1, , , 1,0.05
+300,20, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Partner Assist OK Action
+[Begin Action 421]
+300,21, 0,0, 81
+300,21, 0,0, 1, , , 1,0.975
+300,21, 0,0, 1, , , 1,0.95
+300,21, 0,0, 1, , , 1,0.925
+300,21, 0,0, 1, , , 1,0.9
+300,21, 0,0, 1, , , 1,0.875
+300,21, 0,0, 1, , , 1,0.85
+300,21, 0,0, 1, , , 1,0.825
+300,21, 0,0, 1, , , 1,0.8
+300,21, 0,0, 1, , , 1,0.775
+300,21, 0,0, 1, , , 1,0.75
+300,21, 0,0, 1, , , 1,0.725
+300,21, 0,0, 1, , , 1,0.7
+300,21, 0,0, 1, , , 1,0.675
+300,21, 0,0, 1, , , 1,0.65
+300,21, 0,0, 1, , , 1,0.625
+300,21, 0,0, 1, , , 1,0.6
+300,21, 0,0, 1, , , 1,0.575
+300,21, 0,0, 1, , , 1,0.55
+300,21, 0,0, 1, , , 1,0.525
+300,21, 0,0, 1, , , 1,0.5
+300,21, 0,0, 1, , , 1,0.475
+300,21, 0,0, 1, , , 1,0.45
+300,21, 0,0, 1, , , 1,0.425
+300,21, 0,0, 1, , , 1,0.4
+300,21, 0,0, 1, , , 1,0.375
+300,21, 0,0, 1, , , 1,0.35
+300,21, 0,0, 1, , , 1,0.325
+300,21, 0,0, 1, , , 1,0.3
+300,21, 0,0, 1, , , 1,0.275
+300,21, 0,0, 1, , , 1,0.25
+300,21, 0,0, 1, , , 1,0.225
+300,21, 0,0, 1, , , 1,0.2
+300,21, 0,0, 1, , , 1,0.175
+300,21, 0,0, 1, , , 1,0.15
+300,21, 0,0, 1, , , 1,0.125
+300,21, 0,0, 1, , , 1,0.1
+300,21, 0,0, 1, , , 1,0.075
+300,21, 0,0, 1, , , 1,0.05
+300,21, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Partner Change Action
+[Begin Action 422]
+300,22, 0,0, 81
+300,22, 0,0, 1, , , 1,0.975
+300,22, 0,0, 1, , , 1,0.95
+300,22, 0,0, 1, , , 1,0.925
+300,22, 0,0, 1, , , 1,0.9
+300,22, 0,0, 1, , , 1,0.875
+300,22, 0,0, 1, , , 1,0.85
+300,22, 0,0, 1, , , 1,0.825
+300,22, 0,0, 1, , , 1,0.8
+300,22, 0,0, 1, , , 1,0.775
+300,22, 0,0, 1, , , 1,0.75
+300,22, 0,0, 1, , , 1,0.725
+300,22, 0,0, 1, , , 1,0.7
+300,22, 0,0, 1, , , 1,0.675
+300,22, 0,0, 1, , , 1,0.65
+300,22, 0,0, 1, , , 1,0.625
+300,22, 0,0, 1, , , 1,0.6
+300,22, 0,0, 1, , , 1,0.575
+300,22, 0,0, 1, , , 1,0.55
+300,22, 0,0, 1, , , 1,0.525
+300,22, 0,0, 1, , , 1,0.5
+300,22, 0,0, 1, , , 1,0.475
+300,22, 0,0, 1, , , 1,0.45
+300,22, 0,0, 1, , , 1,0.425
+300,22, 0,0, 1, , , 1,0.4
+300,22, 0,0, 1, , , 1,0.375
+300,22, 0,0, 1, , , 1,0.35
+300,22, 0,0, 1, , , 1,0.325
+300,22, 0,0, 1, , , 1,0.3
+300,22, 0,0, 1, , , 1,0.275
+300,22, 0,0, 1, , , 1,0.25
+300,22, 0,0, 1, , , 1,0.225
+300,22, 0,0, 1, , , 1,0.2
+300,22, 0,0, 1, , , 1,0.175
+300,22, 0,0, 1, , , 1,0.15
+300,22, 0,0, 1, , , 1,0.125
+300,22, 0,0, 1, , , 1,0.1
+300,22, 0,0, 1, , , 1,0.075
+300,22, 0,0, 1, , , 1,0.05
+300,22, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Blocking Action
+[Begin Action 423]
+300,23, 0,0, 81
+300,23, 0,0, 1, , , 1,0.975
+300,23, 0,0, 1, , , 1,0.95
+300,23, 0,0, 1, , , 1,0.925
+300,23, 0,0, 1, , , 1,0.9
+300,23, 0,0, 1, , , 1,0.875
+300,23, 0,0, 1, , , 1,0.85
+300,23, 0,0, 1, , , 1,0.825
+300,23, 0,0, 1, , , 1,0.8
+300,23, 0,0, 1, , , 1,0.775
+300,23, 0,0, 1, , , 1,0.75
+300,23, 0,0, 1, , , 1,0.725
+300,23, 0,0, 1, , , 1,0.7
+300,23, 0,0, 1, , , 1,0.675
+300,23, 0,0, 1, , , 1,0.65
+300,23, 0,0, 1, , , 1,0.625
+300,23, 0,0, 1, , , 1,0.6
+300,23, 0,0, 1, , , 1,0.575
+300,23, 0,0, 1, , , 1,0.55
+300,23, 0,0, 1, , , 1,0.525
+300,23, 0,0, 1, , , 1,0.5
+300,23, 0,0, 1, , , 1,0.475
+300,23, 0,0, 1, , , 1,0.45
+300,23, 0,0, 1, , , 1,0.425
+300,23, 0,0, 1, , , 1,0.4
+300,23, 0,0, 1, , , 1,0.375
+300,23, 0,0, 1, , , 1,0.35
+300,23, 0,0, 1, , , 1,0.325
+300,23, 0,0, 1, , , 1,0.3
+300,23, 0,0, 1, , , 1,0.275
+300,23, 0,0, 1, , , 1,0.25
+300,23, 0,0, 1, , , 1,0.225
+300,23, 0,0, 1, , , 1,0.2
+300,23, 0,0, 1, , , 1,0.175
+300,23, 0,0, 1, , , 1,0.15
+300,23, 0,0, 1, , , 1,0.125
+300,23, 0,0, 1, , , 1,0.1
+300,23, 0,0, 1, , , 1,0.075
+300,23, 0,0, 1, , , 1,0.05
+300,23, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Counter Action
+[Begin Action 424]
+300,24, 0,0, 81
+300,24, 0,0, 1, , , 1,0.975
+300,24, 0,0, 1, , , 1,0.95
+300,24, 0,0, 1, , , 1,0.925
+300,24, 0,0, 1, , , 1,0.9
+300,24, 0,0, 1, , , 1,0.875
+300,24, 0,0, 1, , , 1,0.85
+300,24, 0,0, 1, , , 1,0.825
+300,24, 0,0, 1, , , 1,0.8
+300,24, 0,0, 1, , , 1,0.775
+300,24, 0,0, 1, , , 1,0.75
+300,24, 0,0, 1, , , 1,0.725
+300,24, 0,0, 1, , , 1,0.7
+300,24, 0,0, 1, , , 1,0.675
+300,24, 0,0, 1, , , 1,0.65
+300,24, 0,0, 1, , , 1,0.625
+300,24, 0,0, 1, , , 1,0.6
+300,24, 0,0, 1, , , 1,0.575
+300,24, 0,0, 1, , , 1,0.55
+300,24, 0,0, 1, , , 1,0.525
+300,24, 0,0, 1, , , 1,0.5
+300,24, 0,0, 1, , , 1,0.475
+300,24, 0,0, 1, , , 1,0.45
+300,24, 0,0, 1, , , 1,0.425
+300,24, 0,0, 1, , , 1,0.4
+300,24, 0,0, 1, , , 1,0.375
+300,24, 0,0, 1, , , 1,0.35
+300,24, 0,0, 1, , , 1,0.325
+300,24, 0,0, 1, , , 1,0.3
+300,24, 0,0, 1, , , 1,0.275
+300,24, 0,0, 1, , , 1,0.25
+300,24, 0,0, 1, , , 1,0.225
+300,24, 0,0, 1, , , 1,0.2
+300,24, 0,0, 1, , , 1,0.175
+300,24, 0,0, 1, , , 1,0.15
+300,24, 0,0, 1, , , 1,0.125
+300,24, 0,0, 1, , , 1,0.1
+300,24, 0,0, 1, , , 1,0.075
+300,24, 0,0, 1, , , 1,0.05
+300,24, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Guard Break Action
+[Begin Action 425]
+300,25, 0,0, 81
+300,25, 0,0, 1, , , 1,0.975
+300,25, 0,0, 1, , , 1,0.95
+300,25, 0,0, 1, , , 1,0.925
+300,25, 0,0, 1, , , 1,0.9
+300,25, 0,0, 1, , , 1,0.875
+300,25, 0,0, 1, , , 1,0.85
+300,25, 0,0, 1, , , 1,0.825
+300,25, 0,0, 1, , , 1,0.8
+300,25, 0,0, 1, , , 1,0.775
+300,25, 0,0, 1, , , 1,0.75
+300,25, 0,0, 1, , , 1,0.725
+300,25, 0,0, 1, , , 1,0.7
+300,25, 0,0, 1, , , 1,0.675
+300,25, 0,0, 1, , , 1,0.65
+300,25, 0,0, 1, , , 1,0.625
+300,25, 0,0, 1, , , 1,0.6
+300,25, 0,0, 1, , , 1,0.575
+300,25, 0,0, 1, , , 1,0.55
+300,25, 0,0, 1, , , 1,0.525
+300,25, 0,0, 1, , , 1,0.5
+300,25, 0,0, 1, , , 1,0.475
+300,25, 0,0, 1, , , 1,0.45
+300,25, 0,0, 1, , , 1,0.425
+300,25, 0,0, 1, , , 1,0.4
+300,25, 0,0, 1, , , 1,0.375
+300,25, 0,0, 1, , , 1,0.35
+300,25, 0,0, 1, , , 1,0.325
+300,25, 0,0, 1, , , 1,0.3
+300,25, 0,0, 1, , , 1,0.275
+300,25, 0,0, 1, , , 1,0.25
+300,25, 0,0, 1, , , 1,0.225
+300,25, 0,0, 1, , , 1,0.2
+300,25, 0,0, 1, , , 1,0.175
+300,25, 0,0, 1, , , 1,0.15
+300,25, 0,0, 1, , , 1,0.125
+300,25, 0,0, 1, , , 1,0.1
+300,25, 0,0, 1, , , 1,0.075
+300,25, 0,0, 1, , , 1,0.05
+300,25, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Danger Action
+[Begin Action 426]
+300,26, 0,0, 81
+300,26, 0,0, 1, , , 1,0.975
+300,26, 0,0, 1, , , 1,0.95
+300,26, 0,0, 1, , , 1,0.925
+300,26, 0,0, 1, , , 1,0.9
+300,26, 0,0, 1, , , 1,0.875
+300,26, 0,0, 1, , , 1,0.85
+300,26, 0,0, 1, , , 1,0.825
+300,26, 0,0, 1, , , 1,0.8
+300,26, 0,0, 1, , , 1,0.775
+300,26, 0,0, 1, , , 1,0.75
+300,26, 0,0, 1, , , 1,0.725
+300,26, 0,0, 1, , , 1,0.7
+300,26, 0,0, 1, , , 1,0.675
+300,26, 0,0, 1, , , 1,0.65
+300,26, 0,0, 1, , , 1,0.625
+300,26, 0,0, 1, , , 1,0.6
+300,26, 0,0, 1, , , 1,0.575
+300,26, 0,0, 1, , , 1,0.55
+300,26, 0,0, 1, , , 1,0.525
+300,26, 0,0, 1, , , 1,0.5
+300,26, 0,0, 1, , , 1,0.475
+300,26, 0,0, 1, , , 1,0.45
+300,26, 0,0, 1, , , 1,0.425
+300,26, 0,0, 1, , , 1,0.4
+300,26, 0,0, 1, , , 1,0.375
+300,26, 0,0, 1, , , 1,0.35
+300,26, 0,0, 1, , , 1,0.325
+300,26, 0,0, 1, , , 1,0.3
+300,26, 0,0, 1, , , 1,0.275
+300,26, 0,0, 1, , , 1,0.25
+300,26, 0,0, 1, , , 1,0.225
+300,26, 0,0, 1, , , 1,0.2
+300,26, 0,0, 1, , , 1,0.175
+300,26, 0,0, 1, , , 1,0.15
+300,26, 0,0, 1, , , 1,0.125
+300,26, 0,0, 1, , , 1,0.1
+300,26, 0,0, 1, , , 1,0.075
+300,26, 0,0, 1, , , 1,0.05
+300,26, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Partner Down Action
+[Begin Action 427]
+300,27, 0,0, 81
+300,27, 0,0, 1, , , 1,0.975
+300,27, 0,0, 1, , , 1,0.95
+300,27, 0,0, 1, , , 1,0.925
+300,27, 0,0, 1, , , 1,0.9
+300,27, 0,0, 1, , , 1,0.875
+300,27, 0,0, 1, , , 1,0.85
+300,27, 0,0, 1, , , 1,0.825
+300,27, 0,0, 1, , , 1,0.8
+300,27, 0,0, 1, , , 1,0.775
+300,27, 0,0, 1, , , 1,0.75
+300,27, 0,0, 1, , , 1,0.725
+300,27, 0,0, 1, , , 1,0.7
+300,27, 0,0, 1, , , 1,0.675
+300,27, 0,0, 1, , , 1,0.65
+300,27, 0,0, 1, , , 1,0.625
+300,27, 0,0, 1, , , 1,0.6
+300,27, 0,0, 1, , , 1,0.575
+300,27, 0,0, 1, , , 1,0.55
+300,27, 0,0, 1, , , 1,0.525
+300,27, 0,0, 1, , , 1,0.5
+300,27, 0,0, 1, , , 1,0.475
+300,27, 0,0, 1, , , 1,0.45
+300,27, 0,0, 1, , , 1,0.425
+300,27, 0,0, 1, , , 1,0.4
+300,27, 0,0, 1, , , 1,0.375
+300,27, 0,0, 1, , , 1,0.35
+300,27, 0,0, 1, , , 1,0.325
+300,27, 0,0, 1, , , 1,0.3
+300,27, 0,0, 1, , , 1,0.275
+300,27, 0,0, 1, , , 1,0.25
+300,27, 0,0, 1, , , 1,0.225
+300,27, 0,0, 1, , , 1,0.2
+300,27, 0,0, 1, , , 1,0.175
+300,27, 0,0, 1, , , 1,0.15
+300,27, 0,0, 1, , , 1,0.125
+300,27, 0,0, 1, , , 1,0.1
+300,27, 0,0, 1, , , 1,0.075
+300,27, 0,0, 1, , , 1,0.05
+300,27, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 15 Hit Combo Action
+[Begin Action 428]
+300,28, 0,0, 81
+300,28, 0,0, 1, , , 1,0.975
+300,28, 0,0, 1, , , 1,0.95
+300,28, 0,0, 1, , , 1,0.925
+300,28, 0,0, 1, , , 1,0.9
+300,28, 0,0, 1, , , 1,0.875
+300,28, 0,0, 1, , , 1,0.85
+300,28, 0,0, 1, , , 1,0.825
+300,28, 0,0, 1, , , 1,0.8
+300,28, 0,0, 1, , , 1,0.775
+300,28, 0,0, 1, , , 1,0.75
+300,28, 0,0, 1, , , 1,0.725
+300,28, 0,0, 1, , , 1,0.7
+300,28, 0,0, 1, , , 1,0.675
+300,28, 0,0, 1, , , 1,0.65
+300,28, 0,0, 1, , , 1,0.625
+300,28, 0,0, 1, , , 1,0.6
+300,28, 0,0, 1, , , 1,0.575
+300,28, 0,0, 1, , , 1,0.55
+300,28, 0,0, 1, , , 1,0.525
+300,28, 0,0, 1, , , 1,0.5
+300,28, 0,0, 1, , , 1,0.475
+300,28, 0,0, 1, , , 1,0.45
+300,28, 0,0, 1, , , 1,0.425
+300,28, 0,0, 1, , , 1,0.4
+300,28, 0,0, 1, , , 1,0.375
+300,28, 0,0, 1, , , 1,0.35
+300,28, 0,0, 1, , , 1,0.325
+300,28, 0,0, 1, , , 1,0.3
+300,28, 0,0, 1, , , 1,0.275
+300,28, 0,0, 1, , , 1,0.25
+300,28, 0,0, 1, , , 1,0.225
+300,28, 0,0, 1, , , 1,0.2
+300,28, 0,0, 1, , , 1,0.175
+300,28, 0,0, 1, , , 1,0.15
+300,28, 0,0, 1, , , 1,0.125
+300,28, 0,0, 1, , , 1,0.1
+300,28, 0,0, 1, , , 1,0.075
+300,28, 0,0, 1, , , 1,0.05
+300,28, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; First Attack Action
+[Begin Action 429]
+300,29, 0,0, 81
+300,29, 0,0, 1, , , 1,0.975
+300,29, 0,0, 1, , , 1,0.95
+300,29, 0,0, 1, , , 1,0.925
+300,29, 0,0, 1, , , 1,0.9
+300,29, 0,0, 1, , , 1,0.875
+300,29, 0,0, 1, , , 1,0.85
+300,29, 0,0, 1, , , 1,0.825
+300,29, 0,0, 1, , , 1,0.8
+300,29, 0,0, 1, , , 1,0.775
+300,29, 0,0, 1, , , 1,0.75
+300,29, 0,0, 1, , , 1,0.725
+300,29, 0,0, 1, , , 1,0.7
+300,29, 0,0, 1, , , 1,0.675
+300,29, 0,0, 1, , , 1,0.65
+300,29, 0,0, 1, , , 1,0.625
+300,29, 0,0, 1, , , 1,0.6
+300,29, 0,0, 1, , , 1,0.575
+300,29, 0,0, 1, , , 1,0.55
+300,29, 0,0, 1, , , 1,0.525
+300,29, 0,0, 1, , , 1,0.5
+300,29, 0,0, 1, , , 1,0.475
+300,29, 0,0, 1, , , 1,0.45
+300,29, 0,0, 1, , , 1,0.425
+300,29, 0,0, 1, , , 1,0.4
+300,29, 0,0, 1, , , 1,0.375
+300,29, 0,0, 1, , , 1,0.35
+300,29, 0,0, 1, , , 1,0.325
+300,29, 0,0, 1, , , 1,0.3
+300,29, 0,0, 1, , , 1,0.275
+300,29, 0,0, 1, , , 1,0.25
+300,29, 0,0, 1, , , 1,0.225
+300,29, 0,0, 1, , , 1,0.2
+300,29, 0,0, 1, , , 1,0.175
+300,29, 0,0, 1, , , 1,0.15
+300,29, 0,0, 1, , , 1,0.125
+300,29, 0,0, 1, , , 1,0.1
+300,29, 0,0, 1, , , 1,0.075
+300,29, 0,0, 1, , , 1,0.05
+300,29, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 25 Hit Combo Action
+[Begin Action 430]
+300,30, 0,0, 81
+300,30, 0,0, 1, , , 1,0.975
+300,30, 0,0, 1, , , 1,0.95
+300,30, 0,0, 1, , , 1,0.925
+300,30, 0,0, 1, , , 1,0.9
+300,30, 0,0, 1, , , 1,0.875
+300,30, 0,0, 1, , , 1,0.85
+300,30, 0,0, 1, , , 1,0.825
+300,30, 0,0, 1, , , 1,0.8
+300,30, 0,0, 1, , , 1,0.775
+300,30, 0,0, 1, , , 1,0.75
+300,30, 0,0, 1, , , 1,0.725
+300,30, 0,0, 1, , , 1,0.7
+300,30, 0,0, 1, , , 1,0.675
+300,30, 0,0, 1, , , 1,0.65
+300,30, 0,0, 1, , , 1,0.625
+300,30, 0,0, 1, , , 1,0.6
+300,30, 0,0, 1, , , 1,0.575
+300,30, 0,0, 1, , , 1,0.55
+300,30, 0,0, 1, , , 1,0.525
+300,30, 0,0, 1, , , 1,0.5
+300,30, 0,0, 1, , , 1,0.475
+300,30, 0,0, 1, , , 1,0.45
+300,30, 0,0, 1, , , 1,0.425
+300,30, 0,0, 1, , , 1,0.4
+300,30, 0,0, 1, , , 1,0.375
+300,30, 0,0, 1, , , 1,0.35
+300,30, 0,0, 1, , , 1,0.325
+300,30, 0,0, 1, , , 1,0.3
+300,30, 0,0, 1, , , 1,0.275
+300,30, 0,0, 1, , , 1,0.25
+300,30, 0,0, 1, , , 1,0.225
+300,30, 0,0, 1, , , 1,0.2
+300,30, 0,0, 1, , , 1,0.175
+300,30, 0,0, 1, , , 1,0.15
+300,30, 0,0, 1, , , 1,0.125
+300,30, 0,0, 1, , , 1,0.1
+300,30, 0,0, 1, , , 1,0.075
+300,30, 0,0, 1, , , 1,0.05
+300,30, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 3 Hit Combo Action
+[Begin Action 431]
+300,31, 0,0, 81
+300,31, 0,0, 1, , , 1,0.975
+300,31, 0,0, 1, , , 1,0.95
+300,31, 0,0, 1, , , 1,0.925
+300,31, 0,0, 1, , , 1,0.9
+300,31, 0,0, 1, , , 1,0.875
+300,31, 0,0, 1, , , 1,0.85
+300,31, 0,0, 1, , , 1,0.825
+300,31, 0,0, 1, , , 1,0.8
+300,31, 0,0, 1, , , 1,0.775
+300,31, 0,0, 1, , , 1,0.75
+300,31, 0,0, 1, , , 1,0.725
+300,31, 0,0, 1, , , 1,0.7
+300,31, 0,0, 1, , , 1,0.675
+300,31, 0,0, 1, , , 1,0.65
+300,31, 0,0, 1, , , 1,0.625
+300,31, 0,0, 1, , , 1,0.6
+300,31, 0,0, 1, , , 1,0.575
+300,31, 0,0, 1, , , 1,0.55
+300,31, 0,0, 1, , , 1,0.525
+300,31, 0,0, 1, , , 1,0.5
+300,31, 0,0, 1, , , 1,0.475
+300,31, 0,0, 1, , , 1,0.45
+300,31, 0,0, 1, , , 1,0.425
+300,31, 0,0, 1, , , 1,0.4
+300,31, 0,0, 1, , , 1,0.375
+300,31, 0,0, 1, , , 1,0.35
+300,31, 0,0, 1, , , 1,0.325
+300,31, 0,0, 1, , , 1,0.3
+300,31, 0,0, 1, , , 1,0.275
+300,31, 0,0, 1, , , 1,0.25
+300,31, 0,0, 1, , , 1,0.225
+300,31, 0,0, 1, , , 1,0.2
+300,31, 0,0, 1, , , 1,0.175
+300,31, 0,0, 1, , , 1,0.15
+300,31, 0,0, 1, , , 1,0.125
+300,31, 0,0, 1, , , 1,0.1
+300,31, 0,0, 1, , , 1,0.075
+300,31, 0,0, 1, , , 1,0.05
+300,31, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 5 Hit Combo Action
+[Begin Action 432]
+300,32, 0,0, 81
+300,32, 0,0, 1, , , 1,0.975
+300,32, 0,0, 1, , , 1,0.95
+300,32, 0,0, 1, , , 1,0.925
+300,32, 0,0, 1, , , 1,0.9
+300,32, 0,0, 1, , , 1,0.875
+300,32, 0,0, 1, , , 1,0.85
+300,32, 0,0, 1, , , 1,0.825
+300,32, 0,0, 1, , , 1,0.8
+300,32, 0,0, 1, , , 1,0.775
+300,32, 0,0, 1, , , 1,0.75
+300,32, 0,0, 1, , , 1,0.725
+300,32, 0,0, 1, , , 1,0.7
+300,32, 0,0, 1, , , 1,0.675
+300,32, 0,0, 1, , , 1,0.65
+300,32, 0,0, 1, , , 1,0.625
+300,32, 0,0, 1, , , 1,0.6
+300,32, 0,0, 1, , , 1,0.575
+300,32, 0,0, 1, , , 1,0.55
+300,32, 0,0, 1, , , 1,0.525
+300,32, 0,0, 1, , , 1,0.5
+300,32, 0,0, 1, , , 1,0.475
+300,32, 0,0, 1, , , 1,0.45
+300,32, 0,0, 1, , , 1,0.425
+300,32, 0,0, 1, , , 1,0.4
+300,32, 0,0, 1, , , 1,0.375
+300,32, 0,0, 1, , , 1,0.35
+300,32, 0,0, 1, , , 1,0.325
+300,32, 0,0, 1, , , 1,0.3
+300,32, 0,0, 1, , , 1,0.275
+300,32, 0,0, 1, , , 1,0.25
+300,32, 0,0, 1, , , 1,0.225
+300,32, 0,0, 1, , , 1,0.2
+300,32, 0,0, 1, , , 1,0.175
+300,32, 0,0, 1, , , 1,0.15
+300,32, 0,0, 1, , , 1,0.125
+300,32, 0,0, 1, , , 1,0.1
+300,32, 0,0, 1, , , 1,0.075
+300,32, 0,0, 1, , , 1,0.05
+300,32, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Hyper Win Action
+[Begin Action 433]
+300,33, 0,0, 81
+300,33, 0,0, 1, , , 1,0.975
+300,33, 0,0, 1, , , 1,0.95
+300,33, 0,0, 1, , , 1,0.925
+300,33, 0,0, 1, , , 1,0.9
+300,33, 0,0, 1, , , 1,0.875
+300,33, 0,0, 1, , , 1,0.85
+300,33, 0,0, 1, , , 1,0.825
+300,33, 0,0, 1, , , 1,0.8
+300,33, 0,0, 1, , , 1,0.775
+300,33, 0,0, 1, , , 1,0.75
+300,33, 0,0, 1, , , 1,0.725
+300,33, 0,0, 1, , , 1,0.7
+300,33, 0,0, 1, , , 1,0.675
+300,33, 0,0, 1, , , 1,0.65
+300,33, 0,0, 1, , , 1,0.625
+300,33, 0,0, 1, , , 1,0.6
+300,33, 0,0, 1, , , 1,0.575
+300,33, 0,0, 1, , , 1,0.55
+300,33, 0,0, 1, , , 1,0.525
+300,33, 0,0, 1, , , 1,0.5
+300,33, 0,0, 1, , , 1,0.475
+300,33, 0,0, 1, , , 1,0.45
+300,33, 0,0, 1, , , 1,0.425
+300,33, 0,0, 1, , , 1,0.4
+300,33, 0,0, 1, , , 1,0.375
+300,33, 0,0, 1, , , 1,0.35
+300,33, 0,0, 1, , , 1,0.325
+300,33, 0,0, 1, , , 1,0.3
+300,33, 0,0, 1, , , 1,0.275
+300,33, 0,0, 1, , , 1,0.25
+300,33, 0,0, 1, , , 1,0.225
+300,33, 0,0, 1, , , 1,0.2
+300,33, 0,0, 1, , , 1,0.175
+300,33, 0,0, 1, , , 1,0.15
+300,33, 0,0, 1, , , 1,0.125
+300,33, 0,0, 1, , , 1,0.1
+300,33, 0,0, 1, , , 1,0.075
+300,33, 0,0, 1, , , 1,0.05
+300,33, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 20 Hit Combo Action
+[Begin Action 434]
+300,34, 0,0, 81
+300,34, 0,0, 1, , , 1,0.975
+300,34, 0,0, 1, , , 1,0.95
+300,34, 0,0, 1, , , 1,0.925
+300,34, 0,0, 1, , , 1,0.9
+300,34, 0,0, 1, , , 1,0.875
+300,34, 0,0, 1, , , 1,0.85
+300,34, 0,0, 1, , , 1,0.825
+300,34, 0,0, 1, , , 1,0.8
+300,34, 0,0, 1, , , 1,0.775
+300,34, 0,0, 1, , , 1,0.75
+300,34, 0,0, 1, , , 1,0.725
+300,34, 0,0, 1, , , 1,0.7
+300,34, 0,0, 1, , , 1,0.675
+300,34, 0,0, 1, , , 1,0.65
+300,34, 0,0, 1, , , 1,0.625
+300,34, 0,0, 1, , , 1,0.6
+300,34, 0,0, 1, , , 1,0.575
+300,34, 0,0, 1, , , 1,0.55
+300,34, 0,0, 1, , , 1,0.525
+300,34, 0,0, 1, , , 1,0.5
+300,34, 0,0, 1, , , 1,0.475
+300,34, 0,0, 1, , , 1,0.45
+300,34, 0,0, 1, , , 1,0.425
+300,34, 0,0, 1, , , 1,0.4
+300,34, 0,0, 1, , , 1,0.375
+300,34, 0,0, 1, , , 1,0.35
+300,34, 0,0, 1, , , 1,0.325
+300,34, 0,0, 1, , , 1,0.3
+300,34, 0,0, 1, , , 1,0.275
+300,34, 0,0, 1, , , 1,0.25
+300,34, 0,0, 1, , , 1,0.225
+300,34, 0,0, 1, , , 1,0.2
+300,34, 0,0, 1, , , 1,0.175
+300,34, 0,0, 1, , , 1,0.15
+300,34, 0,0, 1, , , 1,0.125
+300,34, 0,0, 1, , , 1,0.1
+300,34, 0,0, 1, , , 1,0.075
+300,34, 0,0, 1, , , 1,0.05
+300,34, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Parrying Action
+[Begin Action 435]
+300,35, 0,0, 81
+300,35, 0,0, 1, , , 1,0.975
+300,35, 0,0, 1, , , 1,0.95
+300,35, 0,0, 1, , , 1,0.925
+300,35, 0,0, 1, , , 1,0.9
+300,35, 0,0, 1, , , 1,0.875
+300,35, 0,0, 1, , , 1,0.85
+300,35, 0,0, 1, , , 1,0.825
+300,35, 0,0, 1, , , 1,0.8
+300,35, 0,0, 1, , , 1,0.775
+300,35, 0,0, 1, , , 1,0.75
+300,35, 0,0, 1, , , 1,0.725
+300,35, 0,0, 1, , , 1,0.7
+300,35, 0,0, 1, , , 1,0.675
+300,35, 0,0, 1, , , 1,0.65
+300,35, 0,0, 1, , , 1,0.625
+300,35, 0,0, 1, , , 1,0.6
+300,35, 0,0, 1, , , 1,0.575
+300,35, 0,0, 1, , , 1,0.55
+300,35, 0,0, 1, , , 1,0.525
+300,35, 0,0, 1, , , 1,0.5
+300,35, 0,0, 1, , , 1,0.475
+300,35, 0,0, 1, , , 1,0.45
+300,35, 0,0, 1, , , 1,0.425
+300,35, 0,0, 1, , , 1,0.4
+300,35, 0,0, 1, , , 1,0.375
+300,35, 0,0, 1, , , 1,0.35
+300,35, 0,0, 1, , , 1,0.325
+300,35, 0,0, 1, , , 1,0.3
+300,35, 0,0, 1, , , 1,0.275
+300,35, 0,0, 1, , , 1,0.25
+300,35, 0,0, 1, , , 1,0.225
+300,35, 0,0, 1, , , 1,0.2
+300,35, 0,0, 1, , , 1,0.175
+300,35, 0,0, 1, , , 1,0.15
+300,35, 0,0, 1, , , 1,0.125
+300,35, 0,0, 1, , , 1,0.1
+300,35, 0,0, 1, , , 1,0.075
+300,35, 0,0, 1, , , 1,0.05
+300,35, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Perfect Action
+[Begin Action 436]
+300,36, 0,0, 81
+300,36, 0,0, 1, , , 1,0.975
+300,36, 0,0, 1, , , 1,0.95
+300,36, 0,0, 1, , , 1,0.925
+300,36, 0,0, 1, , , 1,0.9
+300,36, 0,0, 1, , , 1,0.875
+300,36, 0,0, 1, , , 1,0.85
+300,36, 0,0, 1, , , 1,0.825
+300,36, 0,0, 1, , , 1,0.8
+300,36, 0,0, 1, , , 1,0.775
+300,36, 0,0, 1, , , 1,0.75
+300,36, 0,0, 1, , , 1,0.725
+300,36, 0,0, 1, , , 1,0.7
+300,36, 0,0, 1, , , 1,0.675
+300,36, 0,0, 1, , , 1,0.65
+300,36, 0,0, 1, , , 1,0.625
+300,36, 0,0, 1, , , 1,0.6
+300,36, 0,0, 1, , , 1,0.575
+300,36, 0,0, 1, , , 1,0.55
+300,36, 0,0, 1, , , 1,0.525
+300,36, 0,0, 1, , , 1,0.5
+300,36, 0,0, 1, , , 1,0.475
+300,36, 0,0, 1, , , 1,0.45
+300,36, 0,0, 1, , , 1,0.425
+300,36, 0,0, 1, , , 1,0.4
+300,36, 0,0, 1, , , 1,0.375
+300,36, 0,0, 1, , , 1,0.35
+300,36, 0,0, 1, , , 1,0.325
+300,36, 0,0, 1, , , 1,0.3
+300,36, 0,0, 1, , , 1,0.275
+300,36, 0,0, 1, , , 1,0.25
+300,36, 0,0, 1, , , 1,0.225
+300,36, 0,0, 1, , , 1,0.2
+300,36, 0,0, 1, , , 1,0.175
+300,36, 0,0, 1, , , 1,0.15
+300,36, 0,0, 1, , , 1,0.125
+300,36, 0,0, 1, , , 1,0.1
+300,36, 0,0, 1, , , 1,0.075
+300,36, 0,0, 1, , , 1,0.05
+300,36, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Reversal Action
+[Begin Action 437]
+300,37, 0,0, 81
+300,37, 0,0, 1, , , 1,0.975
+300,37, 0,0, 1, , , 1,0.95
+300,37, 0,0, 1, , , 1,0.925
+300,37, 0,0, 1, , , 1,0.9
+300,37, 0,0, 1, , , 1,0.875
+300,37, 0,0, 1, , , 1,0.85
+300,37, 0,0, 1, , , 1,0.825
+300,37, 0,0, 1, , , 1,0.8
+300,37, 0,0, 1, , , 1,0.775
+300,37, 0,0, 1, , , 1,0.75
+300,37, 0,0, 1, , , 1,0.725
+300,37, 0,0, 1, , , 1,0.7
+300,37, 0,0, 1, , , 1,0.675
+300,37, 0,0, 1, , , 1,0.65
+300,37, 0,0, 1, , , 1,0.625
+300,37, 0,0, 1, , , 1,0.6
+300,37, 0,0, 1, , , 1,0.575
+300,37, 0,0, 1, , , 1,0.55
+300,37, 0,0, 1, , , 1,0.525
+300,37, 0,0, 1, , , 1,0.5
+300,37, 0,0, 1, , , 1,0.475
+300,37, 0,0, 1, , , 1,0.45
+300,37, 0,0, 1, , , 1,0.425
+300,37, 0,0, 1, , , 1,0.4
+300,37, 0,0, 1, , , 1,0.375
+300,37, 0,0, 1, , , 1,0.35
+300,37, 0,0, 1, , , 1,0.325
+300,37, 0,0, 1, , , 1,0.3
+300,37, 0,0, 1, , , 1,0.275
+300,37, 0,0, 1, , , 1,0.25
+300,37, 0,0, 1, , , 1,0.225
+300,37, 0,0, 1, , , 1,0.2
+300,37, 0,0, 1, , , 1,0.175
+300,37, 0,0, 1, , , 1,0.15
+300,37, 0,0, 1, , , 1,0.125
+300,37, 0,0, 1, , , 1,0.1
+300,37, 0,0, 1, , , 1,0.075
+300,37, 0,0, 1, , , 1,0.05
+300,37, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Special Win Action
+[Begin Action 438]
+300,38, 0,0, 81
+300,38, 0,0, 1, , , 1,0.975
+300,38, 0,0, 1, , , 1,0.95
+300,38, 0,0, 1, , , 1,0.925
+300,38, 0,0, 1, , , 1,0.9
+300,38, 0,0, 1, , , 1,0.875
+300,38, 0,0, 1, , , 1,0.85
+300,38, 0,0, 1, , , 1,0.825
+300,38, 0,0, 1, , , 1,0.8
+300,38, 0,0, 1, , , 1,0.775
+300,38, 0,0, 1, , , 1,0.75
+300,38, 0,0, 1, , , 1,0.725
+300,38, 0,0, 1, , , 1,0.7
+300,38, 0,0, 1, , , 1,0.675
+300,38, 0,0, 1, , , 1,0.65
+300,38, 0,0, 1, , , 1,0.625
+300,38, 0,0, 1, , , 1,0.6
+300,38, 0,0, 1, , , 1,0.575
+300,38, 0,0, 1, , , 1,0.55
+300,38, 0,0, 1, , , 1,0.525
+300,38, 0,0, 1, , , 1,0.5
+300,38, 0,0, 1, , , 1,0.475
+300,38, 0,0, 1, , , 1,0.45
+300,38, 0,0, 1, , , 1,0.425
+300,38, 0,0, 1, , , 1,0.4
+300,38, 0,0, 1, , , 1,0.375
+300,38, 0,0, 1, , , 1,0.35
+300,38, 0,0, 1, , , 1,0.325
+300,38, 0,0, 1, , , 1,0.3
+300,38, 0,0, 1, , , 1,0.275
+300,38, 0,0, 1, , , 1,0.25
+300,38, 0,0, 1, , , 1,0.225
+300,38, 0,0, 1, , , 1,0.2
+300,38, 0,0, 1, , , 1,0.175
+300,38, 0,0, 1, , , 1,0.15
+300,38, 0,0, 1, , , 1,0.125
+300,38, 0,0, 1, , , 1,0.1
+300,38, 0,0, 1, , , 1,0.075
+300,38, 0,0, 1, , , 1,0.05
+300,38, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; 10 Hit Combo Action
+[Begin Action 439]
+300,39, 0,0, 81
+300,39, 0,0, 1, , , 1,0.975
+300,39, 0,0, 1, , , 1,0.95
+300,39, 0,0, 1, , , 1,0.925
+300,39, 0,0, 1, , , 1,0.9
+300,39, 0,0, 1, , , 1,0.875
+300,39, 0,0, 1, , , 1,0.85
+300,39, 0,0, 1, , , 1,0.825
+300,39, 0,0, 1, , , 1,0.8
+300,39, 0,0, 1, , , 1,0.775
+300,39, 0,0, 1, , , 1,0.75
+300,39, 0,0, 1, , , 1,0.725
+300,39, 0,0, 1, , , 1,0.7
+300,39, 0,0, 1, , , 1,0.675
+300,39, 0,0, 1, , , 1,0.65
+300,39, 0,0, 1, , , 1,0.625
+300,39, 0,0, 1, , , 1,0.6
+300,39, 0,0, 1, , , 1,0.575
+300,39, 0,0, 1, , , 1,0.55
+300,39, 0,0, 1, , , 1,0.525
+300,39, 0,0, 1, , , 1,0.5
+300,39, 0,0, 1, , , 1,0.475
+300,39, 0,0, 1, , , 1,0.45
+300,39, 0,0, 1, , , 1,0.425
+300,39, 0,0, 1, , , 1,0.4
+300,39, 0,0, 1, , , 1,0.375
+300,39, 0,0, 1, , , 1,0.35
+300,39, 0,0, 1, , , 1,0.325
+300,39, 0,0, 1, , , 1,0.3
+300,39, 0,0, 1, , , 1,0.275
+300,39, 0,0, 1, , , 1,0.25
+300,39, 0,0, 1, , , 1,0.225
+300,39, 0,0, 1, , , 1,0.2
+300,39, 0,0, 1, , , 1,0.175
+300,39, 0,0, 1, , , 1,0.15
+300,39, 0,0, 1, , , 1,0.125
+300,39, 0,0, 1, , , 1,0.1
+300,39, 0,0, 1, , , 1,0.075
+300,39, 0,0, 1, , , 1,0.05
+300,39, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Technical Action 
+[Begin Action 440]
+300,40, 0,0, 81
+300,40, 0,0, 1, , , 1,0.975
+300,40, 0,0, 1, , , 1,0.95
+300,40, 0,0, 1, , , 1,0.925
+300,40, 0,0, 1, , , 1,0.9
+300,40, 0,0, 1, , , 1,0.875
+300,40, 0,0, 1, , , 1,0.85
+300,40, 0,0, 1, , , 1,0.825
+300,40, 0,0, 1, , , 1,0.8
+300,40, 0,0, 1, , , 1,0.775
+300,40, 0,0, 1, , , 1,0.75
+300,40, 0,0, 1, , , 1,0.725
+300,40, 0,0, 1, , , 1,0.7
+300,40, 0,0, 1, , , 1,0.675
+300,40, 0,0, 1, , , 1,0.65
+300,40, 0,0, 1, , , 1,0.625
+300,40, 0,0, 1, , , 1,0.6
+300,40, 0,0, 1, , , 1,0.575
+300,40, 0,0, 1, , , 1,0.55
+300,40, 0,0, 1, , , 1,0.525
+300,40, 0,0, 1, , , 1,0.5
+300,40, 0,0, 1, , , 1,0.475
+300,40, 0,0, 1, , , 1,0.45
+300,40, 0,0, 1, , , 1,0.425
+300,40, 0,0, 1, , , 1,0.4
+300,40, 0,0, 1, , , 1,0.375
+300,40, 0,0, 1, , , 1,0.35
+300,40, 0,0, 1, , , 1,0.325
+300,40, 0,0, 1, , , 1,0.3
+300,40, 0,0, 1, , , 1,0.275
+300,40, 0,0, 1, , , 1,0.25
+300,40, 0,0, 1, , , 1,0.225
+300,40, 0,0, 1, , , 1,0.2
+300,40, 0,0, 1, , , 1,0.175
+300,40, 0,0, 1, , , 1,0.15
+300,40, 0,0, 1, , , 1,0.125
+300,40, 0,0, 1, , , 1,0.1
+300,40, 0,0, 1, , , 1,0.075
+300,40, 0,0, 1, , , 1,0.05
+300,40, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Dizzy Action
+[Begin Action 441]
+300,41, 0,0, 81
+300,41, 0,0, 1, , , 1,0.975
+300,41, 0,0, 1, , , 1,0.95
+300,41, 0,0, 1, , , 1,0.925
+300,41, 0,0, 1, , , 1,0.9
+300,41, 0,0, 1, , , 1,0.875
+300,41, 0,0, 1, , , 1,0.85
+300,41, 0,0, 1, , , 1,0.825
+300,41, 0,0, 1, , , 1,0.8
+300,41, 0,0, 1, , , 1,0.775
+300,41, 0,0, 1, , , 1,0.75
+300,41, 0,0, 1, , , 1,0.725
+300,41, 0,0, 1, , , 1,0.7
+300,41, 0,0, 1, , , 1,0.675
+300,41, 0,0, 1, , , 1,0.65
+300,41, 0,0, 1, , , 1,0.625
+300,41, 0,0, 1, , , 1,0.6
+300,41, 0,0, 1, , , 1,0.575
+300,41, 0,0, 1, , , 1,0.55
+300,41, 0,0, 1, , , 1,0.525
+300,41, 0,0, 1, , , 1,0.5
+300,41, 0,0, 1, , , 1,0.475
+300,41, 0,0, 1, , , 1,0.45
+300,41, 0,0, 1, , , 1,0.425
+300,41, 0,0, 1, , , 1,0.4
+300,41, 0,0, 1, , , 1,0.375
+300,41, 0,0, 1, , , 1,0.35
+300,41, 0,0, 1, , , 1,0.325
+300,41, 0,0, 1, , , 1,0.3
+300,41, 0,0, 1, , , 1,0.275
+300,41, 0,0, 1, , , 1,0.25
+300,41, 0,0, 1, , , 1,0.225
+300,41, 0,0, 1, , , 1,0.2
+300,41, 0,0, 1, , , 1,0.175
+300,41, 0,0, 1, , , 1,0.15
+300,41, 0,0, 1, , , 1,0.125
+300,41, 0,0, 1, , , 1,0.1
+300,41, 0,0, 1, , , 1,0.075
+300,41, 0,0, 1, , , 1,0.05
+300,41, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Partner Assist Action
+[Begin Action 442]
+300,42, 0,0, 81
+300,42, 0,0, 1, , , 1,0.975
+300,42, 0,0, 1, , , 1,0.95
+300,42, 0,0, 1, , , 1,0.925
+300,42, 0,0, 1, , , 1,0.9
+300,42, 0,0, 1, , , 1,0.875
+300,42, 0,0, 1, , , 1,0.85
+300,42, 0,0, 1, , , 1,0.825
+300,42, 0,0, 1, , , 1,0.8
+300,42, 0,0, 1, , , 1,0.775
+300,42, 0,0, 1, , , 1,0.75
+300,42, 0,0, 1, , , 1,0.725
+300,42, 0,0, 1, , , 1,0.7
+300,42, 0,0, 1, , , 1,0.675
+300,42, 0,0, 1, , , 1,0.65
+300,42, 0,0, 1, , , 1,0.625
+300,42, 0,0, 1, , , 1,0.6
+300,42, 0,0, 1, , , 1,0.575
+300,42, 0,0, 1, , , 1,0.55
+300,42, 0,0, 1, , , 1,0.525
+300,42, 0,0, 1, , , 1,0.5
+300,42, 0,0, 1, , , 1,0.475
+300,42, 0,0, 1, , , 1,0.45
+300,42, 0,0, 1, , , 1,0.425
+300,42, 0,0, 1, , , 1,0.4
+300,42, 0,0, 1, , , 1,0.375
+300,42, 0,0, 1, , , 1,0.35
+300,42, 0,0, 1, , , 1,0.325
+300,42, 0,0, 1, , , 1,0.3
+300,42, 0,0, 1, , , 1,0.275
+300,42, 0,0, 1, , , 1,0.25
+300,42, 0,0, 1, , , 1,0.225
+300,42, 0,0, 1, , , 1,0.2
+300,42, 0,0, 1, , , 1,0.175
+300,42, 0,0, 1, , , 1,0.15
+300,42, 0,0, 1, , , 1,0.125
+300,42, 0,0, 1, , , 1,0.1
+300,42, 0,0, 1, , , 1,0.075
+300,42, 0,0, 1, , , 1,0.05
+300,42, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Partner Assist OK Action
+[Begin Action 443]
+300,43, 0,0, 81
+300,43, 0,0, 1, , , 1,0.975
+300,43, 0,0, 1, , , 1,0.95
+300,43, 0,0, 1, , , 1,0.925
+300,43, 0,0, 1, , , 1,0.9
+300,43, 0,0, 1, , , 1,0.875
+300,43, 0,0, 1, , , 1,0.85
+300,43, 0,0, 1, , , 1,0.825
+300,43, 0,0, 1, , , 1,0.8
+300,43, 0,0, 1, , , 1,0.775
+300,43, 0,0, 1, , , 1,0.75
+300,43, 0,0, 1, , , 1,0.725
+300,43, 0,0, 1, , , 1,0.7
+300,43, 0,0, 1, , , 1,0.675
+300,43, 0,0, 1, , , 1,0.65
+300,43, 0,0, 1, , , 1,0.625
+300,43, 0,0, 1, , , 1,0.6
+300,43, 0,0, 1, , , 1,0.575
+300,43, 0,0, 1, , , 1,0.55
+300,43, 0,0, 1, , , 1,0.525
+300,43, 0,0, 1, , , 1,0.5
+300,43, 0,0, 1, , , 1,0.475
+300,43, 0,0, 1, , , 1,0.45
+300,43, 0,0, 1, , , 1,0.425
+300,43, 0,0, 1, , , 1,0.4
+300,43, 0,0, 1, , , 1,0.375
+300,43, 0,0, 1, , , 1,0.35
+300,43, 0,0, 1, , , 1,0.325
+300,43, 0,0, 1, , , 1,0.3
+300,43, 0,0, 1, , , 1,0.275
+300,43, 0,0, 1, , , 1,0.25
+300,43, 0,0, 1, , , 1,0.225
+300,43, 0,0, 1, , , 1,0.2
+300,43, 0,0, 1, , , 1,0.175
+300,43, 0,0, 1, , , 1,0.15
+300,43, 0,0, 1, , , 1,0.125
+300,43, 0,0, 1, , , 1,0.1
+300,43, 0,0, 1, , , 1,0.075
+300,43, 0,0, 1, , , 1,0.05
+300,43, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Partner Change Action
+[Begin Action 444]
+300,44, 0,0, 81
+300,44, 0,0, 1, , , 1,0.975
+300,44, 0,0, 1, , , 1,0.95
+300,44, 0,0, 1, , , 1,0.925
+300,44, 0,0, 1, , , 1,0.9
+300,44, 0,0, 1, , , 1,0.875
+300,44, 0,0, 1, , , 1,0.85
+300,44, 0,0, 1, , , 1,0.825
+300,44, 0,0, 1, , , 1,0.8
+300,44, 0,0, 1, , , 1,0.775
+300,44, 0,0, 1, , , 1,0.75
+300,44, 0,0, 1, , , 1,0.725
+300,44, 0,0, 1, , , 1,0.7
+300,44, 0,0, 1, , , 1,0.675
+300,44, 0,0, 1, , , 1,0.65
+300,44, 0,0, 1, , , 1,0.625
+300,44, 0,0, 1, , , 1,0.6
+300,44, 0,0, 1, , , 1,0.575
+300,44, 0,0, 1, , , 1,0.55
+300,44, 0,0, 1, , , 1,0.525
+300,44, 0,0, 1, , , 1,0.5
+300,44, 0,0, 1, , , 1,0.475
+300,44, 0,0, 1, , , 1,0.45
+300,44, 0,0, 1, , , 1,0.425
+300,44, 0,0, 1, , , 1,0.4
+300,44, 0,0, 1, , , 1,0.375
+300,44, 0,0, 1, , , 1,0.35
+300,44, 0,0, 1, , , 1,0.325
+300,44, 0,0, 1, , , 1,0.3
+300,44, 0,0, 1, , , 1,0.275
+300,44, 0,0, 1, , , 1,0.25
+300,44, 0,0, 1, , , 1,0.225
+300,44, 0,0, 1, , , 1,0.2
+300,44, 0,0, 1, , , 1,0.175
+300,44, 0,0, 1, , , 1,0.15
+300,44, 0,0, 1, , , 1,0.125
+300,44, 0,0, 1, , , 1,0.1
+300,44, 0,0, 1, , , 1,0.075
+300,44, 0,0, 1, , , 1,0.05
+300,44, 0,0, 1, , , 1,0.025
+-1,-1, 0,0, -1
+
+; Demo Mode
+[Begin Action 500]
+500,0, 0,0, 20
+500,0, 0,5, 15
+500,0, 0,10, 10
+500,0, 0,15, 5
+500,0, 0,20, 3
+500,0, 0,25, 2
+500,0, 0,20, 3
+500,0, 0,15, 5
+500,0, 0,10, 10
+500,0, 0,5, 15
+
