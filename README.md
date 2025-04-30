@@ -41,8 +41,7 @@ POTS (for Capcom VS SNK 2 commentator system, Attack data and active tag modules
 
 Kamekaze (for Round Transition Module)
 
-## Author's note
-
+## Instructions
 ### Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required:
 
 To Add EXTRAS:
