@@ -1,0 +1,12 @@
+﻿; Capcom VS SNK 2 commentator system by Phantom.of.the.Server
+; For Ikemen GO 0.99 and above
+; This file enables loading the sounds that the module will use
+
+[Info]
+prefix = PSCCVS
+fx.scale = 1
+
+[Files]
+;sff =
+;air =
+snd = commentator_cvs2.snd

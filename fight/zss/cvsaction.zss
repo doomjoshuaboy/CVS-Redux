@@ -1,0 +1,176 @@
+#===============================================================================
+# Global states (not halted by Pause/SuperPause, no helper limitations)
+#===============================================================================
+[StateDef -4]
+
+if !const(Default.Enable.Action) || isHelper || teamSide = 0 {
+	# Do nothing, global code disabled locally or executed by helper or stage
+} else ignoreHitPause if roundState >= 2 {
+	# First Attack
+	let ret = call  IkSys_FirstAttack();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgFirstAttackR); time:120; top: 1}	
+		} else if teamSide = 1 {
+		lifebarAction{anim: const(CVSMsgFirstAttack); time:120; top: 1}
+		}
+	}
+	# Counter Hit
+	let ret = call  IkSys_CounterHit();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgCounterHitR); time:120; top: 1}	
+		} else if teamSide = 1 {
+		lifebarAction{anim: const(CVSMsgCounterHit); time:120; top: 1}
+		}
+	}
+	# Technical
+	let ret = call  IkSys_Technical();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgTechnicalR); time:120; top: 1}	
+		} else if teamSide = 1 {
+		lifebarAction{anim: const(CVSMsgTechnical); time:120; top: 1}
+		} 
+	}
+	# Reversal
+	let ret = call  IkSys_Reversal();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgReversalR); time:120; top: 1}
+		} else if teamSide = 1 {
+		lifebarAction{anim: const(CVSMsgReversal); time:120; top: 1}
+		}
+	}
+	# Parry
+	let ret = call  IkSys_Parry();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgParryR); time:120; top: 1; redirectId: enemy,id}
+		} else if teamSide = 1 {
+		lifebarAction{anim: const(CVSMsgParry); time:120; top: 1; redirectId: enemy,id}
+		}
+	}
+	# Just Defend
+	let ret = call  IkSys_JustDefend();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgJustDefendR); time:120; top: 1}
+		} else if teamSide = 1 {
+		lifebarAction{anim: const(CVSMsgJustDefend); time:120; top: 1}
+		}
+	}
+	# Danger
+	let ret = call  IkSys_Danger();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgDangerR); timeMul: 2; time:120; top: 1}
+		} else if teamSide = 1 {
+		lifebarAction{anim: const(CVSMsgDanger); timeMul: 2; time:120; top: 1}
+		}
+	}
+	# Dizzy
+	let ret = call  IkSys_Dizzy();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgDizzyR); timeMul: 2; time:120; top: 1}
+		} else if teamSide = 1 {  
+		lifebarAction{anim: const(CVSMsgDizzy); timeMul: 2; time:120; top: 1}
+		}
+	}
+	# Guard Break
+	let ret = call  IkSys_GuardBreak();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgGuardBreakR); timeMul: 2; time:120; top: 1}
+		} else if teamSide = 1 { 
+		lifebarAction{anim: const(CVSMsgGuardBreak); timeMul: 2; time:120; top: 1}
+		}
+	}
+	# Partner Down
+	let ret = call  IkSys_PartnerDown();
+	if $ret {
+		if teamSide = 2 {
+		lifebarAction{anim: const(CVSMsgPartnerDownR); timeMul: 2; time:120; top: 1}
+		} else if teamSide = 1 {  
+		lifebarAction{anim: const(CVSMsgPartnerDown); timeMul: 2; time:120; top: 1}
+		}
+	}
+	# code executed only by P1 and P2
+	if playerNo = teamSide {
+		# Combo Count
+		let ret = call  IkSys_ComboCount();
+		if $ret {
+			# gdlk combo (mugen)
+			if $ret >= 25 {
+				if teamSide = 2 {
+				lifebarAction{anim: const(CVSMsgCombo25R); time:120; top: 1}
+				} else if teamSide = 1 { 
+				lifebarAction{anim: const(CVSMsgCombo25); time:120; top: 1}
+				}
+			# amazing combo (marvelous)
+			} else if $ret >= 20 {
+				if teamSide = 2 {
+				lifebarAction{anim: const(CVSMsgCombo20R); time:120; top: 1}
+				} else if teamSide = 1 { 
+				lifebarAction{anim: const(CVSMsgCombo20); time:120; top: 1}
+				}
+			# great combo (fantastic)
+			} else if $ret >= 15 {
+				if teamSide = 2 {
+				lifebarAction{anim: const(CVSMsgCombo15R); time:120; top: 1}
+				} else if teamSide = 1 { 
+				lifebarAction{anim: const(CVSMsgCombo15); time:120; top: 1}
+				}	
+			# sweet combo (beautiful)
+			} else if $ret >= 10 {
+				if teamSide = 2 {
+				lifebarAction{anim: const(CVSMsgCombo10R); time:120; top: 1}
+				} else if teamSide = 1 { 
+				lifebarAction{anim: const(CVSMsgCombo10); time:120; top: 1}
+				}	
+			# good combo (great)
+			} else if $ret >= 5 {
+				if teamSide = 2 {
+				lifebarAction{anim: const(CVSMsgCombo5R); time:120; top: 1}
+				} else if teamSide = 1 { 
+				lifebarAction{anim: const(CVSMsgCombo5); time:120; top: 1}
+				}	
+			# nice combo (good)
+			} else if $ret >= 3 {
+				if teamSide = 2 {
+				lifebarAction{anim: const(CVSMsgCombo3R); time:120; top: 1}
+				} else if teamSide = 1 { 
+				lifebarAction{anim: const(CVSMsgCombo3); time:120; top: 1}
+				}
+			}
+		}
+		# Win Perfect
+		let ret = call  IkSys_WinPerfect();
+		if $ret {
+				if teamSide = 2 {
+				lifebarAction{anim: const(CVSMsgWinPerfectR); timeMul: 3; time:120; top: 1}
+				} else if teamSide = 1 {  
+				lifebarAction{anim: const(CVSMsgWinPerfect); timeMul: 3; time:120; top: 1}
+				}
+		}
+		# Win Hyper
+		let ret = call  IkSys_WinHyper();
+		if $ret {
+				if teamSide = 2 {
+				lifebarAction{anim: const(CVSMsgWinHyperR); timeMul: 3; time:120; top: 1}
+				} else if teamSide = 1 {  
+				lifebarAction{anim: const(CVSMsgWinHyper); timeMul: 3; time:120; top: 1}
+				}
+		}
+		# Win Special
+		let ret = call  IkSys_WinSpecial();
+		if $ret {
+				if teamSide = 2 {
+				lifebarAction{anim: const(CVSMsgWinSpecialR); timeMul: 3; time:120; top: 1}
+				} else if teamSide = 1 {  
+				lifebarAction{anim: const(CVSMsgWinSpecial); timeMul: 3; time:120; top: 1}
+				}
+		}
+	}
+}

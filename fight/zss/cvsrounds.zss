@@ -1,0 +1,40 @@
+#IKEMEN GO Randomized Round Announcer Module By DoomJoshuaBoy 
+#Email - djb@doomjoshuaboy.com
+#BlueSky - doomjoshuaboy.com
+#FOR IKEMEN GO Nightly OR LATER ONLY 
+#1.1:
+#Added An Random Fight Voice system after round announcers
+
+
+#This code allows you to randomised voices per round.
+#The prefix is "rr" however you can change from it how you want it to be in rroundfx.def
+#You can change how many sounds you want to add to the Random voice by changing the number after random%,
+#but you have to check rroundfx.snd for adding new sounds.
+
+[Function PlayRandomRoundVoice()]
+if map(_cvs_rrounds_toggle) = 1 && !GameMode = "training" {
+playsnd { value: cvs 1500,floor(random%5); channel:-1; pan:0;  abspan:0 }
+}
+
+#[Function PlayRandomFightVoice()]
+#if map(_cvs_rrounds_toggle) = 1 && !GameMode = "training" {
+#playsnd { value: cvs 1501,floor(random%2); channel:0; pan:0;  abspan:0 }
+#}
+
+#Do not touch anything after this line
+[statedef -2]
+
+if roundstate = 0 {
+mapSet{map: "ik_rround"; value: 0}
+#mapSet{map: "ik_rfight"; value: 0}
+}
+
+if introState = 3 && playerno = 1 && roundno>0 && map(ik_rround) = 0 {
+    call PlayRandomRoundVoice();
+    mapSet{map: "ik_rround"; value: 1}
+}
+
+#if introState = 4 && playerno = 1 && roundno>0 && map(ik_rfight) = 0 {
+#    call PlayRandomFightVoice();
+#    mapSet{map: "ik_rfight"; value: 1}
+#}

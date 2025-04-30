@@ -1,0 +1,262 @@
+# Capcom VS SNK 2 commentator system by Phantom.of.the.Server
+# For Ikemen GO November 2024 build and above
+
+# See the readme for installation instructions
+
+
+#===============================================================================
+# Configuration
+#===============================================================================
+
+[Function fPotSCommentatorConfig()]
+mapset{map: "_pots_cvs2cs_cfg_volume"; value: 75} # Commentary volume
+mapset{map: "_pots_cvs2cs_cfg_cooldown"; value: 5.0} # Number of seconds between the start of each comment
+
+
+#===============================================================================
+# Helper State
+#===============================================================================
+
+[StateDef 1615201914; # If this state number causes a conflict with any chracter let me know
+	type: A;
+	ctrl: 0;
+	anim: -2;
+]
+
+if !time {
+	call fPotSCommentatorConfig();
+}
+
+# Initialize variables
+if roundstate < 2 {
+	mapset{map: "_pots_cvs2cs_bigdamage_flag"; value: 0}
+	mapset{map: "_pots_cvs2cs_calm_flag"; value: 0}
+	mapset{map: "_pots_cvs2cs_combination_flag"; value: 0}
+	mapset{map: "_pots_cvs2cs_combination_max"; value: 0}
+	mapset{map: "_pots_cvs2cs_combo_new"; value: 0}
+	mapset{map: "_pots_cvs2cs_combo_old"; value: 0}
+	mapset{map: "_pots_cvs2cs_cooldown"; value: 0}
+	mapset{map: "_pots_cvs2cs_damage_new"; value: 0}
+	mapset{map: "_pots_cvs2cs_damage_old"; value: 0}
+	mapset{map: "_pots_cvs2cs_firstattack_flag"; value: 0}
+	mapset{map: "_pots_cvs2cs_firstattack_timer"; value: 0}
+}
+
+# First attack commentary
+# Making a cooldown check before each loop prevents running them needlessly
+# CvS2 doesn't seem to use a cooldown, relying only on the other conditions
+if roundstate = 2 && map(_pots_cvs2cs_cooldown) <= 0 {
+	if !map(_pots_cvs2cs_firstattack_flag) {
+		# Sneaky surprise attack
+		# First attacks are only sneaky if they happen early
+		if map(_pots_cvs2cs_firstattack_timer) < 360 {
+			mapadd{map: "_pots_cvs2cs_firstattack_timer"; value: 1}
+			for i = 1; 8; 1 {
+				if playerIDexist(player($i), ID) {
+					if player($i), alive && player($i), standby = 0 {
+						if player($i), movetype = H
+						&& player($i), gethitvar(guarded) = 0
+						&& player($i), movehit = 0 { # Not on a trade
+							# CvS2 only comments the first attack if it's a special or super
+							# In this version it's commented if it's actually sneaky
+							if map(_pots_cvs2cs_firstattack_timer) < 120
+							|| player($i), prevmovetype = A # Counter
+							|| player($i), prevstateno = [120, 155] # Wrong block
+							|| player($i), gethitvar(attr) = SCA, AT {
+								if map(_pots_cvs2cs_cooldown) <= 0 {
+									playsnd{value: PSCCVS 1, 1; channel: 1; volumescale: map(_pots_cvs2cs_cfg_volume); lowpriority: 1}
+									mapset{map: "_pots_cvs2cs_cooldown"; value: map(_pots_cvs2cs_cfg_cooldown) * TicksPerSecond}
+								}
+							}
+							mapset{map: "_pots_cvs2cs_firstattack_flag"; value: 1}
+							mapset{map: "_pots_cvs2cs_calm_flag"; value: 1}
+							break;
+						}
+					}
+				}
+			}
+			# If characters engage each other it's no longer considered a quiet start
+			# CvS2 doesn't do this but it makes sense
+			for i = 1; 8; 1 {
+				if playerIDexist(player($i), ID) {
+					if player($i), alive && player($i), standby = 0 {
+						if player($i), movetype = H
+						|| player($i), movereversed
+						|| (player($i), movetype = A && player($i), p2bodydist x < const240p(60)) {
+							mapset{map: "_pots_cvs2cs_calm_flag"; value: 1}
+						}
+					}
+				}
+			}
+		} else {
+			# Calm before the storm
+			if !map(_pots_cvs2cs_calm_flag) {
+				for i = 1; 8; 1 {
+					if playerIDexist(player($i), ID) {
+						if player($i), alive && player($i), standby = 0 {
+							if map(_pots_cvs2cs_cooldown) <= 0 {
+								playsnd{value: PSCCVS 1, 0; channel: 1; volumescale: map(_pots_cvs2cs_cfg_volume); lowpriority: 1}
+								mapset{map: "_pots_cvs2cs_cooldown"; value: map(_pots_cvs2cs_cfg_cooldown) * TicksPerSecond}
+								mapset{map: "_pots_cvs2cs_firstattack_flag"; value: 1}
+								mapset{map: "_pots_cvs2cs_calm_flag"; value: 1}
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Save previous frame's combo and damage
+mapset{map: "_pots_cvs2cs_combo_old"; value: map(_pots_cvs2cs_combo_new)}
+mapset{map: "_pots_cvs2cs_damage_old"; value: map(_pots_cvs2cs_damage_new)}
+
+# Check if combo or damage has gone up
+let maxcombo = 0;
+let maxdamage = 0;
+for i = 1; 8; 1 { # Ikemen supports up to 8 players
+	if playerIDexist(player($i), ID) {
+		if player($i), alive && player($i), standby = 0 {
+			if player($i), combocount > $maxcombo {
+				let maxcombo = player($i), combocount;
+			}
+			if player($i), receiveddamage > $maxdamage {
+				let maxdamage = player($i), receiveddamage;
+			}
+		}
+	}
+}
+mapset{map: "_pots_cvs2cs_combo_new"; value: $maxcombo}
+mapset{map: "_pots_cvs2cs_damage_new"; value: $maxdamage}
+
+# Combo and damage commentary
+# This is only checked when something changes
+if map(_pots_cvs2cs_combo_new) > map(_pots_cvs2cs_combo_old) || map(_pots_cvs2cs_damage_new) > map(_pots_cvs2cs_damage_old) {
+
+	# A beautiful example in the art of a combination attack
+	# In CvS2 the commentator only seems to say this when the combo is at least 5 hits and the longest combo of that player so far
+	# In CvS2 this comment has precedence over the damage one
+	if roundstate = 2 && map(_pots_cvs2cs_cooldown) <= 0 {
+		if !map(_pots_cvs2cs_combination_flag) {
+			if map(_pots_cvs2cs_combo_new) >= 5
+			&& map(_pots_cvs2cs_combo_new) > map(_pots_cvs2cs_combination_max) {
+				playsnd{value: PSCCVS 1, 3; channel: 1; volumescale: map(_pots_cvs2cs_cfg_volume); lowpriority: 1}
+				mapset{map: "_pots_cvs2cs_cooldown"; value: map(_pots_cvs2cs_cfg_cooldown) * TicksPerSecond}
+				mapset{map: "_pots_cvs2cs_combination_flag"; value: 1}
+			}
+		}
+	}
+
+	# Check highest combo so far
+	# This should happen even during cooldown
+	if roundstate = 2 {
+		for i = 1; 8; 1 {
+			if playerIDexist(player($i), ID) {
+				if player($i), alive && player($i), standby = 0 {
+					if player($i), combocount > map(_pots_cvs2cs_combination_max) {
+						mapset{map: "_pots_cvs2cs_combination_max"; value: player($i), combocount}
+					}
+				}
+			}
+		}
+	}
+
+	# That's what we like to call big damage
+	# In CvS2 the commentator makes this comment when the damage is above 25%
+	if roundstate = 2 && map(_pots_cvs2cs_cooldown) <= 0 {
+		if !map(_pots_cvs2cs_bigdamage_flag) {
+			for i = 1; 8; 1 {
+				if playerIDexist(player($i), ID) {
+					if player($i), alive && player($i), standby = 0 {
+						if player($i), receiveddamage >= 0.25 * player($i), lifemax {
+							if map(_pots_cvs2cs_cooldown) <= 0 {
+								playsnd{value: PSCCVS 1, 2; channel: 1; volumescale: map(_pots_cvs2cs_cfg_volume); lowpriority: 1}
+								mapset{map: "_pots_cvs2cs_cooldown"; value: map(_pots_cvs2cs_cfg_cooldown) * TicksPerSecond}
+								mapset{map: "_pots_cvs2cs_bigdamage_flag"; value: 1}
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+# Reset some flags only after the combo ends
+if map(_pots_cvs2cs_bigdamage_flag) || map(_pots_cvs2cs_combination_flag) {
+	let end = 1;
+	for i = 1; 8; 1 {
+		if playerIDexist(player($i), ID) {
+			if player($i), alive && player($i), standby = 0 {
+				if player($i), combocount > 1
+				|| player($i), movetype = H
+				|| player($i), dizzy || player($i), anim = 5300 {
+					let end = 0;
+					break;
+				}
+			}
+		}
+	}
+	if $end {
+		mapset{map: "_pots_cvs2cs_bigdamage_flag"; value: 0}
+		mapset{map: "_pots_cvs2cs_combination_flag"; value: 0}
+	}
+}
+
+# Manage timers
+if map(_pots_cvs2cs_cooldown) > 0 {
+	mapadd{map: "_pots_cvs2cs_cooldown"; value: -1}
+}
+
+# Combo threshold comes down slowly
+# CvS2 doesn't do this
+if !(gametime % 300) && !map(_pots_cvs2cs_combination_flag) {
+	mapset{map: "_pots_cvs2cs_combination_max"; value: floor(0.9 * map(_pots_cvs2cs_combination_max))}
+}
+
+# Pan sound to center of screen
+sndpan{channel: 1; abspan: 0}
+
+# Safeguards
+posset{x: 0; y: const240p(240)}
+assertspecial{flag: invisible; flag2: noshadow}
+if numhelper(1615201914) > 1 {
+	if helper(1615201914), ID != ID {
+		destroyself{recursive: 1}
+	}
+}
+
+# Debug text
+displaytoclipboard{
+	text: "Cooldown = %d, Current Combo = %d, Max Combo = %d";
+	params: ceil(map(_pots_cvs2cs_cooldown)), ceil(map(_pots_cvs2cs_combo_new)), ceil(map(_pots_cvs2cs_combination_max));
+}
+appendtoclipboard {
+	text: "\nBy PotS - https://network.mugenguild.com/pots/";
+}
+
+
+#===============================================================================
+# Negative states
+#===============================================================================
+
+[StateDef -4]
+
+# Create commentator helper from player 1
+# A helper is used to avoid using any sound channels from the players
+ignorehitpause if playerno = 1 && !ishelper {
+	if !numhelper(1615201914) {
+		helper{
+			stateno: 1615201914;
+			ID: 1615201914;
+			name: "Capcom VS SNK 2 Commentator";
+			pausemovetime: 5184000;
+			supermovetime: 5184000;
+			preserve: 1;
+		}
+	}
+}

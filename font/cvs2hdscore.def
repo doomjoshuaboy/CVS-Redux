@@ -1,0 +1,15 @@
+; Capcom Versus SNK 2 HD Score font
+; Bank 0 - White
+
+[FNT v2]
+fntversion = 2,00
+name = "CVS2_HD_Score"
+author = "DoomJoshuaBoy"
+
+[Def]
+Type = bitmap
+BankType = sprite
+Size = 0,0
+Spacing = -100,0
+Offset = 0,0
+File = cvs2hdscore.sff

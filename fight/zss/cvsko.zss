@@ -1,0 +1,94 @@
+# KO effects by DoomJoshuaBoy 
+
+[Function CVS_KOEffect_Normal()]
+   if !map(cvs_ko_flag) = 1 || map(_cvs_winkoeffect_toggle) = 1 {
+        if (!winHyper) {
+        playsnd { value: cvs 1400,0; channel:-1; volumescale:150; pan:0;  abspan:0 }
+        if time=10 {
+        playsnd { value: cvs 1400,0; channel:-1; volumescale:150; pan:0;  abspan:0 }
+        }
+        if time=20 {
+        playsnd { value: cvs 1400,0; channel:-1; volumescale:150; pan:0;  abspan:0 }
+        }
+        Pause { time:54; movetime:54}
+    }
+    mapset{map:"cvs_ko_flag"; value: 1}
+}
+
+[Function CVS_KOEffect_Hyper()]
+assertspecial { flag: nobardisplay; }
+if !map(cvs_hyperko_flag) = 1 || map(cvs_winkoeffect_toggle) = 1  {           
+            playsnd { value: cvs 1400,1; channel:1; volumescale:150; pan:0;  abspan:0 }
+            EnvColor { value: 0,0,0; time:100; under:1; }
+            explod { anim: cvs 1430; id:1430; space:screen; postype:left; pos:const240p(160), const240p(80); ownpal:1; bindtime:-1; sprpriority:-3; scale:const240p(1),const240p(1); removetime:-2; supermovetime:-1; pausemovetime:-1; }
+            Pause { time:100; movetime:100}
+            mapset{map:"cvs_hyperko_flag"; value: 1}
+}
+
+[Function CVS_KOEffect_Hyper2()]
+assertspecial { flag: skipkodisplay; flag2: nobardisplay;}
+if !map(cvs_hyperko_flag) = 1 || map(cvs_winkoeffect_toggle) = 1  {
+playsnd { value: cvs 1410,1; channel:1; volumescale:150; pan:0;  abspan:0 }
+playsnd { value: cvs 1400,2; channel:2; volumescale:150; pan:0;  abspan:0 }
+EnvColor { value: 0,0,0; time:162;  under:1; }
+explod { anim: cvs 1420; id:1420; space:screen; postype:left; pos:0,0; ownpal:1; bindtime:-1; sprpriority:-3; scale:const720p(1.35),const720p(1.35); removetime:-2; supermovetime:-1; pausemovetime:-1; }
+Pause { time:100; movetime:100}
+mapset{map:"cvs_hyperko_flag"; value: 1}   
+}
+
+[StateDef 1615201912;
+    type: s;
+    physics: n;
+    anim: -2;
+    movetype: I;
+]
+var(0):=0;
+
+[StateDef +1]
+         if !ishelper {
+	            if !numhelper(1615201912) {
+		            helper{
+			        stateno: 1615201912;
+			        ID: 1615201912;
+			        name: "Capcom VS SNK Redux KO";
+			        pausemovetime: 5184000;
+			        supermovetime: 5184000;
+			        preserve: 1;
+		            }
+	            }
+            }
+
+if ishelper(1615201912) 
+{
+if roundno>1 && roundstate = 0 {
+        mapset{map: "cvs_hyperko_flag"; value: 0}
+        mapset{map: "cvs_ko_flag"; value: 0}
+        mapSet{map: "_cvs_winhypereffect_toggle"; value: 0}
+}
+
+if roundstate = 3 {
+if (winHyper || stateno = [3000,3999]) {
+mapSet{map: "_cvs_winhypereffect_toggle"; value: 2}
+}
+
+switch map(_cvs_winhypereffect_toggle) {
+    case 1:
+    if TimeRemaining > 1 {
+    call CVS_KOEffect_Hyper();
+    }
+    case 2:
+    if TimeRemaining > 1 {
+    call CVS_KOEffect_Hyper2();
+    }
+    case 0:
+    if (winKO || winSpecial || stateno = [800,999]) && TimeRemaining > 1 {
+    call CVS_KOEffect_Normal();
+    }
+}
+}
+if roundstate > 3 {
+assertspecial { flag: skipKoDisplay;}
+}
+
+}
+
