@@ -47,7 +47,7 @@ Kamekaze (for Round Transition Module)
 2. Extract Nightly to any folder you want then extract the ScreenPack inside `ikemen_go/data`.
 3. Load IKEMEN_GO first then close it OR Exit, it will give you extras in your "save" Folder.
 4. Open up the folder you should see a "config.ini" File.
-5. Load it up with your favorite Text editor (Recommendation: Visual Studio Code or Notepad++)
+5. Load it up with your favorite Text editor (Recommendation: Visual Studio Code or Notepad++) amd replace the first lines.
 ``` [Common]
 ; Common animations using character's local sprites
 Air     = data/common.air
