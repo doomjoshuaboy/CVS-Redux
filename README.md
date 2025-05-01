@@ -43,7 +43,7 @@ Kamekaze (for Round Transition Module)
 
 ## Instructions
 ### Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required.
-1. Download the [Nightly][https://github.com/ikemen-engine/Ikemen-GO/releases/tag/nightly] And [My Screenpack][https://github.com/doomjoshuaboy/CVS-Redux/releases]
+1. Download the [Nightly](https://github.com/ikemen-engine/Ikemen-GO/releases/tag/nightly) And [My Screenpack](https://github.com/doomjoshuaboy/CVS-Redux/releases_)
 2. Extract Nightly to any folder you want then extract the ScreenPack inside `ikemen_go/data`.
 3. Load IKEMEN_GO first then close it OR Exit, it will give you extras in your "save" Folder.
 4. Open up the folder you should see a "config.ini" File.
