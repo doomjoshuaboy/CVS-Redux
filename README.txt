@@ -33,8 +33,7 @@ Kamekaze (for Round Transition Module)
  
 
 
-Required:
-
+Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required:
 To Add EXTRAS:  
 Load IKEMEN_GO first then close it OR Exit, it will give you extras in your "save" Folder,
 Open up the folder you should see a "config.ini" File load it up with your favorite Text editor (Recommendation: Visual Studio Code or Notepad++)

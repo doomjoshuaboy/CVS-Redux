@@ -60,13 +60,13 @@ var(0):=0;
 
 if ishelper(1615201912) 
 {
-if roundno>1 && roundstate = 0 {
+if roundno>1 && introstate = 1 {
         mapset{map: "cvs_hyperko_flag"; value: 0}
         mapset{map: "cvs_ko_flag"; value: 0}
         mapSet{map: "_cvs_winhypereffect_toggle"; value: 0}
 }
 
-if roundstate = 3 {
+if Outrostate = 1 {
 if (winHyper || stateno = [3000,3999]) {
 mapSet{map: "_cvs_winhypereffect_toggle"; value: 2}
 }
@@ -86,7 +86,7 @@ switch map(_cvs_winhypereffect_toggle) {
     }
 }
 }
-if roundstate > 3 {
+if outrostate > 0 && winHyper {
 assertspecial { flag: skipKoDisplay;}
 }
 

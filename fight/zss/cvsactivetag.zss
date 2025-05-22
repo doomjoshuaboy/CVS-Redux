@@ -1,5 +1,5 @@
 # Active Tag by Phantom.of.the.Server
-# For Ikemen GO November 2024 build and above
+# For Ikemen GO January 2025 build and above
 
 # See the readme for installation instructions
 
@@ -11,24 +11,32 @@
 [Function fPotSTagConfig()]
 
 # Rules
-mapset{map: "_potstag_cfg_tagin_crossup"; value: 1}					# Allow partners to tag in from opposite side of enemy
+mapset{map: "_potstag_cfg_gauge_cost"; value: 100.0}				# Gauge percentage spent when breaking tag rules (Counter Tag etc)
 mapset{map: "_potstag_cfg_gauge_multiplier"; value: 1.0}			# Multiplier for Tag gauge gain. Determines how fast it fills up
-# Check Ikemen GO's common.const file for red life options
+mapset{map: "_potstag_cfg_tagin_pause"; value: 0}					# Pause game while switching characters. Adds delay when tagging out from neutral
+mapset{map: "_potstag_cfg_tagin_crossup"; value: 1}					# Allow partners to tag in from opposite side of enemy
+mapset{map: "_potstag_cfg_tagin_loseredlife"; value: 0}				# Lose recoverable health when tagging in
+mapset{map: "_potstag_cfg_tagout_delay"; value: 20}					# Time characters stay on screen before tagging out
+mapset{map: "_potstag_cfg_throws_loseredlife"; value: 0}			# Team leader will lose all recoverable health when hit by a throw
+mapset{map: "_potstag_cfg_partner_redlifedamage"; value: 1}			# Partners will lose recoverable health when hit while tagging out
+mapset{map: "_potstag_cfg_scaling"; value: 1.5}						# Damage scaling. Multiply enemy defense this much when active tagging
+# Check Ikemen GO's common.const file for more red life options
 
 
 # Aesthetics
-mapset{map: "_potstag_cfg_bounce_ko"; value: 0}						# KO'd characters will bounce away until exiting the screen
-mapset{map: "_potstag_cfg_remove_ko"; value: 1}						# Remove KO'd characters from the screen
+mapset{map: "_potstag_cfg_ko_bounce"; value: 0}						# KO'd characters will bounce away until exiting the screen
+mapset{map: "_potstag_cfg_ko_remove"; value: 1}						# Remove KO'd characters when they're outside the screen
+mapset{map: "_potstag_cfg_ko_hidelifebar"; value: 1}				# Hide lifebars of KO'd partners
 mapset{map: "_potstag_cfg_lifebar_sounds"; value: 0}				# Enable lifebar announcer sounds when they are available. Placeholder
 mapset{map: "_potstag_cfg_intro_tagout_on_intro_end"; value: 0}		# Partners leave the screen as soon as they finish their own intros
 mapset{map: "_potstag_cfg_intro_tagout_on_round_call"; value: 1}	# Partners leave the screen as soon as the round number is announced
 																	# Disabling both intro options makes partners wait for the fight to start
 
 # Tag gauge text
-mapset{map: "_potstag_cfg_text_font"; value: -1}					# Font number to use from the lifebars. Default -1 (debug font)
+mapset{map: "_potstag_cfg_text_font"; value: 2}					# Font number to use from the lifebars. Default -1 (debug font)
 mapset{map: "_potstag_cfg_text_layer"; value: 0}					# Layer number for text. 0 behind chars. 1 in front
-mapset{map: "_potstag_cfg_text_scale"; value: 0.5}					# Font scale
-mapset{map: "_potstag_cfg_text_posx"; value: 10}					# X offset
+mapset{map: "_potstag_cfg_text_scale"; value: 0.05}					# Font scale
+mapset{map: "_potstag_cfg_text_posx"; value: 0}					# X offset
 mapset{map: "_potstag_cfg_text_posy"; value: 5}					# Y offset
 mapset{map: "_potstag_cfg_text_flash"; value: 1}					# Flash text when at 100%
 mapset{map: "_potstag_cfg_text_darken"; value: 1}					# Darken text when not at 100%
@@ -135,15 +143,15 @@ explod{
 	anim: GO $anim;
 	posType: p1;
 	pos: 0, floor((const(size.head.pos.y) - const(size.ground.front) / 2 - const(size.ground.back) / 2));
-	sprPriority: 5;
-	ownPal: 1;
 	facing: facing;
 	scale: 0.5, 0.5;
+	sprPriority: 5;
 	bindTime: -1;
 	superMoveTime: -1;
 	pauseMoveTime: -1;
 	removeOnGetHit: 0;
 	ignoreHitPause: 1;
+	ownPal: 1;
 }
 
 
@@ -160,12 +168,14 @@ explod{
 	ctrl: 0;
 ]
 
-mapset{map: "_iksys_tagSwitchCooldown"; value: const(TagSwitchCooldown)} # For compatibility. Not actually used
+mapset{map: "_iksys_tagSwitchCooldown"; value: const(TagSwitchCooldown)} # For compatibility. Not actually used by this system
 
 if time = 0 {
+
 	if facing != map(_potstag_facing) {
 		turn{}
 	}
+
 	if prevstateno = const(StateTagWaitingOutside) { # Fixes eventual super armor bugs
 		# Set starting pos
 		posAdd{x: -backEdgeDist - const240p(80)}
@@ -175,7 +185,10 @@ if time = 0 {
 		} else {
 			posset{y: 0}
 		}
+		# Damage scaling
+		superpause{time: 0; anim: -1; darken: 0; p2defmul: map(_potstag_cfg_scaling)}
 	}
+
 	if playerno != teamleader {
 		# Store ID of the previous team leader
 		mapset{map: "_iksys_tagLastId"; value: player(teamleader), ID}
@@ -186,11 +199,17 @@ if time = 0 {
 		tagIn{leader: playerNo}
 		call fTagSwitchExplod();
 		palfx{time:10; add: 128, 128, 128; sinadd: -128, -128, -128, 4} # For visibility
-		superpause{time: 0; anim: -1; darken: 0; p2defmul: 1.5} # Damage scaling
 	}
-} else {
-	# Not currently used
-	mapadd{map: "_iksys_tagSwitchDist"; value: -vel x}
+
+	# Lose recoverable life
+	if map(_potstag_cfg_tagin_loseredlife) {
+		redlifeset{value: life}
+	}
+
+}
+
+if time > 0 {
+	mapadd{map: "_iksys_tagSwitchDist"; value: -vel x} # Not currently used
 }
 
 # Set movement
@@ -237,10 +256,20 @@ if backEdgeDist >= 0 {
 		ctrlset{value: 0}
 	} else {
 		ctrlset{value: 1}
-	} 
-	if time >= 120 || p2BodyDist X < const240p(24) || frontedgedist < const240p(24) {
+	}
+	if time >= 120
+	|| frontedgedist < const240p(24)
+	|| p2BodyDist X < const240p(24) + ifelse(facing = p2, facing, const(size.ground.front) + p2, const(size.ground.back), 0) {
 		velSet{x: 0; y: 0}
 		selfState{value: 0; ctrl: 1}
+	}
+}
+
+# Pause while tagging
+if map(_potstag_cfg_tagin_pause) {
+	pause{
+		time: 2;
+		movetime: 2;
 	}
 }
 
@@ -290,19 +319,21 @@ if map(_potstag_leavingdelay) = 1 {
 			changeanim{value: 5}
 		}
 	}
-	if time < 24 {
+	if time < map(_potstag_cfg_tagout_delay) {
 		persistent(0) if anim != map(_potstag_standinganim) || (anim = 5 && !animtime) {
 			changeanim{value: map(_potstag_standinganim)}
 		}
 	}
-	if time = 24 {
+	if time = map(_potstag_cfg_tagout_delay) {
 		if p2dist x >= 0 || frontedgedist = 0 {
 			turn{}
 			changeanim{value: 5}
 		}
 	}
-	if time >= 24 && anim != map(_potstag_leavinganim) {
-		if (anim = 5 && !animtime) || time >= 30 {
+	if time >= map(_potstag_cfg_tagout_delay)
+	&& anim != map(_potstag_leavinganim) {
+		if (anim = 5 && !animtime)
+		|| time >= (map(_potstag_cfg_tagout_delay) + 6) { # Safeguard
 			changeanim{value: map(_potstag_leavinganim)}
 		}
 	}
@@ -310,12 +341,12 @@ if map(_potstag_leavingdelay) = 1 {
 
 if anim = map(_potstag_leavinganim)
 || map(_potstag_leavingdelay) = 0
-|| (map(_potstag_leavingdelay) = 1 && time >= 24)
-|| time >= 30 {
+|| (map(_potstag_leavingdelay) = 1 && time >= map(_potstag_cfg_tagout_delay))
+|| time >= (map(_potstag_cfg_tagout_delay) + 6) {
 	tagOut{}
 	playerPush{value: 0}
 	notHitBy{value: SCA; time: 2}
-	if anim = map(_potstag_leavinganim) || time >= 30 {
+	if anim = map(_potstag_leavinganim) || time >= (map(_potstag_cfg_tagout_delay) + 6) {
 		velSet{x: 0.60 * const240p(const(TagInVelX)); y: 0}
 	}
 	screenBound{value: 0; moveCamera: 0, 0; stageBound: 0}
@@ -331,7 +362,9 @@ if backEdgeDist < 0 || frontEdgeDist < 0 {
 	stateTypeSet{statetype: A} # Compatibility fix for legacy tag codes
 }
 
-if backEdgeDist < const240p(-80) || frontEdgeDist < const240p(-80) || time >= 180 {
+if backEdgeDist < const240p(-80)
+|| frontEdgeDist < const240p(-80)
+|| time >= (map(_potstag_cfg_tagout_delay) + 180) {
 	selfState{value: const(StateTagWaitingOutside)}
 }
 
@@ -402,7 +435,7 @@ if map(_potstag_cooldown) > 0 {
 	type: A;
 	moveType: I;
 	physics: N;
-	anim: const(AnimTagJumpingIn);
+	anim: map(_potstag_jumpinganim);
 	sprPriority: 1;
 	ctrl: 0;
 ]
@@ -412,6 +445,7 @@ mapset{map: "_iksys_tagSwitchCooldown"; value: const(TagSwitchCooldown)} # For c
 # The character cannot be hit until it has landed
 notHitBy{value: SCA; time: 2}
 
+# Jumping in for the win pose does not push the enemy
 if roundState != 2 {
 	playerPush{value: 0}
 }
@@ -455,7 +489,19 @@ if time = 0 {
 		velSet{x: const240p(6.0 - 0.5 * (playerno - teamside)); y: const240p(-10.0)}
 	}
 
-} else {
+	# Lose recoverable life
+	if map(_potstag_cfg_tagin_loseredlife) {
+		redlifeset{value: life}
+	}
+
+	# Switch BGM when new character jumps in
+	#if roundState = 2 {
+	#	playBGM{bgm: "theme.mp3"; loop: 1}
+	#}
+
+}
+
+if time > 0 {
 	if map(_potstag_flying) {
 		velset{x: const240p(3.0); y: 0} # Avoid friction
 		if time > 40 { # Same duration as below
@@ -485,11 +531,6 @@ persistent(0) if vel y > const240p(-2) && anim = [41, 43] && selfAnimExist(anim 
 	changeAnim{value: anim + 3}
 }
 
-# Jumping in for the win pose does not push the enemy
-if roundState = 3 {
-	playerPush{value: 0}
-}
-
 
 #===============================================================================
 # StateTagLanding
@@ -510,8 +551,8 @@ if time = 0 {
 }
 
 if animTime >= 0 || time >= 10 {
-	# This used to always give ctrl. But giving ctrl twice in succession can allow characters to move around in RoundState 4
-	selfState{value: 0; ctrl: (roundState = 2)}
+	# This used to also set ctrl to 1. But giving ctrl twice in succession can allow characters to move around in RoundState 4
+	selfState{value: 0}
 }
 
 # Reduce overlapping with partners
@@ -589,23 +630,33 @@ if (anim = 47 && animtime = 0) || time >= 120 {
 ignorehitpause if teamMode = Tag && const(Default.Enable.Tag) && !isHelper && teamSide != 0 {
 
 	if roundState = 0 {
-		# Initialize variables. Some were added, others were removed
+		# Reset native variables
 		mapset{map: "_iksys_tagActive"; value: 1}
 		mapset{map: "_iksys_tagLastId"; value: 0}
 		mapset{map: "_iksys_tagSwitchCooldown"; value: 0}
+
+		# Reset new variables
 		mapset{map: "_potstag_cooldown"; value: 0}
 		mapset{map: "_potstag_deathtimer"; value: 0}
-		mapset{map: "_potstag_enteringanim"; value: ifelse(selfanimexist(const(AnimTagEnteringScreen)), const(AnimTagEnteringScreen), ifelse(selfanimexist(100), 100, 20))}
-		mapset{map: "_potstag_facing"; value: ifelse(teamside = 2, -1, 1)}
 		mapset{map: "_potstag_firstctrl"; value: 0}
 		mapset{map: "_potstag_leader_ko_exit"; value: 0}
-		mapset{map: "_potstag_leavinganim"; value: ifelse(selfanimexist(const(AnimTagLeavingScreen)), const(AnimTagLeavingScreen), ifelse(selfanimexist(100), 100, 20))}
 		mapset{map: "_potstag_leavingdelay"; value: 0}
 		mapset{map: "_potstag_taggauge"; value: 0}
 		mapset{map: "_potstag_wintimer"; value: 0}
 
+		# Determine tagging animations to be used
+		# Some characters may be missing some of them even though they are required
+		mapset{map: "_potstag_enteringanim"; value: ifelse(selfanimexist(const(AnimTagEnteringScreen)), const(AnimTagEnteringScreen), ifelse(selfanimexist(100), 100, 20))}
+		mapset{map: "_potstag_leavinganim"; value: ifelse(selfanimexist(const(AnimTagLeavingScreen)), const(AnimTagLeavingScreen), ifelse(selfanimexist(100), 100, 20))}
+		mapset{map: "_potstag_jumpinganim"; value: ifelse(selfanimexist(const(AnimTagJumpingIn)), const(AnimTagJumpingIn), ifelse(selfanimexist(42), 42, 41))}
+
+		# Reset facing variable
+		mapset{map: "_potstag_facing"; value: ifelse(teamside = 2, -1, 1)}
+
 		# Check Configuration
 		call fPotSTagConfig();
+		mapSet{map: "_potstag_cfg_gauge_cost"; value: clamp(map(_potstag_cfg_gauge_cost), 0, 100)}
+		mapSet{map: "_potstag_cfg_tagout_delay"; value: clamp(map(_potstag_cfg_tagout_delay), 0, 300)}
 
 		# Add up maximum life of team to determine maximum gauge points
 		if playerno = teamside {
@@ -626,13 +677,15 @@ ignorehitpause if teamMode = Tag && const(Default.Enable.Tag) && !isHelper && te
 		}
 
 		# Instantly recover red life in turns mode
+		# It makes sense but might be too strong?
 		#if redlife > life {
 		#	lifeset{value: redlife}
 		#}
 
 	}
 
-	# Players 1 and 2 handle the Tag Gauge
+	# Tag Gauge
+	# Handled by players 1 and 2 only
 	if playerno = teamside {
 
 		# Tag Gauge limits
@@ -648,12 +701,15 @@ ignorehitpause if teamMode = Tag && const(Default.Enable.Tag) && !isHelper && te
 
 		# Display Tag Gauge
 		# Uses debug font for compatibility purposes
-		if roundstate = [1, 2] && map(_potstag_hidegauge) = 0 && (player(teamleader), map(_potstag_lastchar) = 0) {
+		if roundstate = [1, 2]
+		&& map(_potstag_hidegauge) = 0
+		&& (player(teamleader), map(_potstag_lastchar) = 0) {
 
-			let tagpercent = floor(100 * (player(teamside), map(_potstag_taggauge)) / (player(teamside), map(_potstag_taggaugemax)));
+			let tagpercent = floor(100 * player(teamside), map(_potstag_taggauge) / player(teamside), map(_potstag_taggaugemax));
+			let enoughgauge = $tagpercent >= player(teamside), map(_potstag_cfg_gauge_cost);
 
 			# Set font color effects according to config
-			if $tagpercent < 100 && map(_potstag_cfg_text_darken) {
+			if !$enoughgauge && map(_potstag_cfg_text_darken) {
 				let tagfontcolor_r = 160;
 				let tagfontcolor_g = 160;
 				let tagfontcolor_b = 160;
@@ -661,38 +717,38 @@ ignorehitpause if teamMode = Tag && const(Default.Enable.Tag) && !isHelper && te
 				let tagfontcolor_r = 256;
 				let tagfontcolor_g = 256;
 				let tagfontcolor_b = 256;
-				# Rainbow effect when full
-				if $tagpercent >= 100 && map(_potstag_cfg_text_flash) {
-					if (gametime % 16) = [0, 1] {
-						let tagfontcolor_r = 256;
-						let tagfontcolor_g = 128;
-						let tagfontcolor_b = 128;
-					}
-					if (gametime % 16) = [2, 3] {
-						let tagfontcolor_r = 192;
-						let tagfontcolor_g = 192;
-						let tagfontcolor_b = 128;
-					}
-					if (gametime % 16) = [4, 5] {
-						let tagfontcolor_r = 128;
-						let tagfontcolor_g = 256;
-						let tagfontcolor_b = 128;
-					}
-					if (gametime % 16) = [6, 7] {
-						let tagfontcolor_r = 128;
-						let tagfontcolor_g = 192;
-						let tagfontcolor_b = 192;
-					}
-					if (gametime % 16) = [8, 9] {
-						let tagfontcolor_r = 128;
-						let tagfontcolor_g = 128;
-						let tagfontcolor_b = 256;
-					}
-					if (gametime % 16) = [10, 11] {
-						let tagfontcolor_r = 192;
-						let tagfontcolor_g = 128;
-						let tagfontcolor_b = 192;
-					}
+			}
+			# Rainbow effect when full
+			if $enoughgauge && map(_potstag_cfg_text_flash) {
+				if (gametime % 16) = [0, 1] {
+					let tagfontcolor_r = 256;
+					let tagfontcolor_g = 128;
+					let tagfontcolor_b = 128;
+				}
+				if (gametime % 16) = [2, 3] {
+					let tagfontcolor_r = 192;
+					let tagfontcolor_g = 192;
+					let tagfontcolor_b = 128;
+				}
+				if (gametime % 16) = [4, 5] {
+					let tagfontcolor_r = 128;
+					let tagfontcolor_g = 256;
+					let tagfontcolor_b = 128;
+				}
+				if (gametime % 16) = [6, 7] {
+					let tagfontcolor_r = 128;
+					let tagfontcolor_g = 192;
+					let tagfontcolor_b = 192;
+				}
+				if (gametime % 16) = [8, 9] {
+					let tagfontcolor_r = 128;
+					let tagfontcolor_g = 128;
+					let tagfontcolor_b = 256;
+				}
+				if (gametime % 16) = [10, 11] {
+					let tagfontcolor_r = 192;
+					let tagfontcolor_g = 128;
+					let tagfontcolor_b = 192;
 				}
 			}
 
@@ -762,6 +818,7 @@ ignorehitpause if teamMode = Tag && const(Default.Enable.Tag) && !isHelper && te
 	}
 
 	# Run tag code
+	# For leaders and partners
 	if map(_iksys_tagActive) = 1 {
 
 		# Reset tag input, but only if the characters are not paused or in hitpause
@@ -775,7 +832,8 @@ ignorehitpause if teamMode = Tag && const(Default.Enable.Tag) && !isHelper && te
 		}
 
 		# Buffer tag input in case input.pauseonhitpause is 0
-		if playerNo = teamLeader && AIlevel = 0 {
+		if playerNo = teamLeader && AIlevel = 0
+		&& cond(map(_potstag_cfg_tagin_pause), pausetime = 0 && p2, pausetime = 0, 1) { # Don't interrupt other pauses
 			if command = "TagShiftFwd" {
 				mapset{map: "_potstag_cmdnext"; value: 5}
 			}
@@ -788,7 +846,8 @@ ignorehitpause if teamMode = Tag && const(Default.Enable.Tag) && !isHelper && te
 		if playerNo = teamLeader && AIlevel > 0 {
 
 			# AI tagging. Harder AI thinks faster
-			if random < (100 * (AIlevel ** 2 / 64.0)) {
+			if random < (100 * (AIlevel ** 2 / 64.0))
+			&& cond(map(_potstag_cfg_tagin_pause), pausetime = 0 && p2, pausetime = 0, 1) { # Don't interrupt other pauses
 
 				# Check available partners
 				let partnerID = 0;
@@ -871,18 +930,6 @@ ignorehitpause if teamMode = Tag && const(Default.Enable.Tag) && !isHelper && te
 			}
 		}
 
-		# Tag Gauge filling
-		# Only for the active character
-		if roundstate = 2 && playerno = teamLeader {
-			if life >= lifemax {
-				mapset{map: "_potstag_prevlife"; value: lifemax}
-			}
-			if life < map(_potstag_prevlife) {
-				mapadd{map: "_potstag_taggauge"; value: (map(_potstag_prevlife) - life) * map(_potstag_cfg_gauge_multiplier); redirectID: player(teamside), ID}
-			}
-			mapset{map: "_potstag_prevlife"; value: life}
-		}
-
 		# Check if player is the last remaining character
 		# Last character has no need to display Tag text
 		if alive {
@@ -930,6 +977,11 @@ if teamMode = Tag && isHelper {
 
 ignorehitpause if !ishelper && !pausetime {
 
+	# Disable tag code for win poses
+	if roundState = 4 {
+		mapset{map: "_iksys_tagActive"; value: 0}
+	}
+
 	# Run tag code
 	if map(_iksys_tagActive) = 1 {
 
@@ -938,11 +990,8 @@ ignorehitpause if !ishelper && !pausetime {
 			mapset{map: "_potstag_firstctrl"; value: 1}
 		}
 
-		if roundState = 4 {
-			mapset{map: "_iksys_tagActive"; value: 0}
-
 		# ALIVE players
-		} else if alive {
+		if alive {
 
 			# ACTIVE player
 			if playerNo = teamLeader {
@@ -955,15 +1004,48 @@ ignorehitpause if !ishelper && !pausetime {
 				mapset{map: "_potstag_willcounter"; value: 0}
 				mapset{map: "_potstag_willswitch"; value: 0}
 
+				# Remove red life when thrown (optional)
+				# Must be placed before "prevlife" is updated
+				if map(_potstag_cfg_throws_loseredlife)
+				&& moveType = H
+				&& redLife > life
+				&& life < map(_potstag_prevlife)
+				&& getHitVar(attr) = SCA, AT {
+					redLifeSet{value: life}
+				}
+
+				# Tag Gauge filling
+				if roundstate = 2 {
+					if life >= lifemax {
+						mapset{map: "_potstag_prevlife"; value: lifemax}
+					}
+					if life < map(_potstag_prevlife) {
+						mapadd{map: "_potstag_taggauge"; value: (map(_potstag_prevlife) - life) * map(_potstag_cfg_gauge_multiplier); redirectID: player(teamside), ID}
+					}
+				}
+				mapset{map: "_potstag_prevlife"; value: life}
+
+				# Red Life conversion to power
+				# If on last remaining character
+				if map(_potstag_lastchar) && redLife > life {
+					powerAdd{value: float(redLife - life) / lifeMax * min(3000, powerMax)}
+					redLifeSet{value: life}
+				}
+
 				# Tag switch cooldown. Not used but kept for compatibility
 				# A character that wishes to disable tagging out can use this as a timer
 				if map(_iksys_tagSwitchCooldown) > 0 {
 					mapadd{map: "_iksys_tagSwitchCooldown"; value: -1}
-				} else {
+				}
+
+				if map(_iksys_tagSwitchCooldown) <= 0 {
 
 					# Check if the player can tag and how
 					# This part of the code only runs when a tag input happens
 					if map(_potstag_cmdnext) || map(_potstag_cmdprev) {
+
+						# Check gauge status
+						let enoughgauge = (player(teamside), map(_potstag_taggauge)) >= (player(teamside), map(_potstag_taggaugemax) * player(teamside), map(_potstag_cfg_gauge_cost) / 100.0);
 
 						# Check if player is being hit by a super move
 						# For counter tagging
@@ -975,8 +1057,8 @@ ignorehitpause if !ishelper && !pausetime {
 						# Logical order is crucial here
 						# Check if the player is allowed to counter tag
 						if roundstate = 2
+						&& $enoughgauge
 						&& !map(_potstag_lastchar)
-						&& (player(teamside), map(_potstag_taggauge)) >= (player(teamside), map(_potstag_taggaugemax))
 						&& ((movetype = H && $attr_hyper = 0) || stateno = 5120 || dizzy || dizzypoints <= 0) {
 							mapset{map: "_potstag_willcounter"; value: 1}
 						}
@@ -984,6 +1066,7 @@ ignorehitpause if !ishelper && !pausetime {
 						# Check if the player is allowed to active switch
 						if roundstate = 2
 						&& movetype != H
+						&& stateno != 5120
 						&& !(dizzy || dizzypoints <= 0)
 						&& map(_potstag_firstctrl)
 						&& !map(_potstag_lastchar)
@@ -1001,8 +1084,8 @@ ignorehitpause if !ishelper && !pausetime {
 
 						# Check if the player is allowed to active switch while partners are busy
 						if roundstate = 2
-						&& (map(_potstag_willswitch) || map(_potstag_willcounter))
-						&& (player(teamside), map(_potstag_taggauge)) >= (player(teamside), map(_potstag_taggaugemax)) {
+						&& $enoughgauge
+						&& (map(_potstag_willswitch) || map(_potstag_willcounter)) {
 							mapset{map: "_potstag_canbusyswitch"; value: 1}
 						}
 
@@ -1039,7 +1122,6 @@ ignorehitpause if !ishelper && !pausetime {
 						if map(_potstag_playerallowed)
 						&& (playerID($partnerID), stateno = const(StateTagWaitingOutside)) { # Redundancy check
 							if map(_potstag_willbusyswitch) {
-								palfx{time: 12; add: -128, 128, -128; sinadd: 128, -128, 128, 4}
 								if teamSide = 2 {
 									lifebarAction{anim: ifelse(ctrl = 0, const(CVSMsgActiveSwitchR), const(CVSMsgPartnerChangeR)); time: 120; top: 1}	
 								} else if teamSide = 1 {
@@ -1047,15 +1129,27 @@ ignorehitpause if !ishelper && !pausetime {
 								}
 								mapset{map: "_potstag_taggauge"; value: 0; redirectID: player(teamside), ID}
 								mapset{map: "_potstag_leavingdelay"; value: 1}
+								if map(_potstag_cfg_tagin_pause) { # Flash screen
+									bgpalfx{
+										time: 30;
+										add: 64, 64, 64;
+										sinadd: -64, -64, -64, 120;
+										mul: 0, 256, 0;
+										sinmul: 256, 0, 256, 120;
+										color: 0;
+										sincolor: 256, 120;
+									}
+								} else { # Flash character
+									palfx{time: 12; add: -128, 128, -128; sinadd: 128, -128, 128, 4}
+								}
 								# Lifebar sound
 								#if roundstate = 2 && map(_potstag_cfg_lifebar_sounds) {
-								#	if fightscreenvar(info.name) = "MUGEN1 Lifebar Remix"
+								#	if fightscreenvar(info.name) = "MUGEN1 Lifebar Double Remix"
 								#	&& fightscreenvar(info.author) = "Phantom.of.the.Server" {
 								#		lifebarAction{snd: 5600, 1}
 								#	}
 								#}
 							} else if map(_potstag_willcounter) {
-								palfx{time: 24; add: 128, -128, -128; sinadd: -128, 128, 128, 4}
 								if teamSide = 2 {
 									lifebarAction{anim: const(CVSMsgCounterSwitchR); time: 120; top: 1}	
 								} else if teamSide = 1 {
@@ -1063,25 +1157,47 @@ ignorehitpause if !ishelper && !pausetime {
 								}
 								mapset{map: "_potstag_taggauge"; value: 0; redirectID: player(teamside), ID}
 								mapset{map: "_potstag_leavingdelay"; value: 0}
-								redlifeset{value: life}
+								if map(_potstag_cfg_tagin_pause) {
+									bgpalfx{
+										time: 30;
+										add: 64, 64, 64;
+										sinadd: -64, -64, -64, 120;
+										mul: 256, 0, 0;
+										sinmul: 0, 256, 256, 120;
+										color: 0;
+										sincolor: 256, 120;
+									}
+								} else {
+									palfx{time: 24; add: 128, -128, -128; sinadd: -128, 128, 128, 4}
+								}
 								# Lifebar sound
 								#if roundstate = 2 && map(_potstag_cfg_lifebar_sounds) {
-								#	if fightscreenvar(info.name) = "MUGEN1 Lifebar Remix"
+								#	if fightscreenvar(info.name) = "MUGEN1 Lifebar Double Remix"
 								#	&& fightscreenvar(info.author) = "Phantom.of.the.Server" {
 								#		lifebarAction{snd: 5600, 3}
 								#	}
 								#}
 							} else if ctrl = 0 {
-								palfx{time: 12; add: 128, 128, 128; sinadd: -128, -128, -128, 4}
 								if teamSide = 2 {
 									lifebarAction{anim: const(CVSMsgActiveSwitchR); time: 120; top: 1}	
 								} else if teamSide = 1 {
 									lifebarAction{anim: const(CVSMsgActiveSwitch); time: 120; top: 1}
 								}
 								mapset{map: "_potstag_leavingdelay"; value: 1}
+								if map(_potstag_cfg_tagin_pause) {
+									bgpalfx{
+										time: 30;
+										add: 64, 64, 64;
+										sinadd: -64, -64, -64, 120;
+										color: -256;
+										sincolor: 512, 120;
+									}
+								} else {
+									palfx{time: 12; add: 128, 128, 128; sinadd: -128, -128, -128, 4}
+								}
 								# Lifebar sound
 								#if roundstate = 2 && map(_potstag_cfg_lifebar_sounds) {
-								#	if fightscreenvar(info.name) = "MUGEN1 Lifebar Remix"
+								#	if fightscreenvar(info.name) = "MUGEN1 Lifebar Double Remix"
 								#	&& fightscreenvar(info.author) = "Phantom.of.the.Server" {
 								#		lifebarAction{snd: 5600, 1}
 								#	}
@@ -1092,10 +1208,19 @@ ignorehitpause if !ishelper && !pausetime {
 								} else if teamSide = 1 {
 									lifebarAction{anim: const(CVSMsgPartnerChange); time: 120; top: 1}
 								}
-								mapset{map: "_potstag_leavingdelay"; value: 0}
+								mapset{map: "_potstag_leavingdelay"; value: map(_potstag_cfg_tagin_pause)} # Add delay if using pauses
+								if map(_potstag_cfg_tagin_pause) {
+									bgpalfx{
+										time: 30;
+										add: 64, 64, 64;
+										sinadd: -64, -64, -64, 120;
+										color: -256;
+										sincolor: 512, 120;
+									}
+								}
 								# Lifebar sound
 								#if roundstate = 2 && map(_potstag_cfg_lifebar_sounds) {
-								#	if fightscreenvar(info.name) = "MUGEN1 Lifebar Remix"
+								#	if fightscreenvar(info.name) = "MUGEN1 Lifebar Double Remix"
 								#	&& fightscreenvar(info.author) = "Phantom.of.the.Server" {
 								#		lifebarAction{snd: 5600, 1}
 								#	}
@@ -1105,19 +1230,44 @@ ignorehitpause if !ishelper && !pausetime {
 							mapset{map: "_potstag_cooldown"; value: 60}
 							mapset{map: "_potstag_invulnerable"; value: map(_potstag_willcounter); redirectId: $partnerId}
 							tagIn{stateno: playerID($partnerID), const(StateTagEnteringScreen); redirectId: $partnerId}
+							# Pause effects
+							if map(_potstag_cfg_tagin_pause) {
+								playsnd{
+									value: F 20, 0; # Default super sound
+									volumescale: 33;
+									freqmul: 1.20;
+								}
+								explod{
+									postype: p1;
+									pos: const(size.head.pos.x) / 2.0, const(size.head.pos.y) / 2.0;
+									sprpriority: 10;
+									anim: F 100; # Default super effect
+									trans: addalpha;
+									alpha: 256, 256;
+									scale: 0.6667, 0.6667;
+									angle: 45 * (random % 8);
+									bindtime: 30;
+									removetime: 30;
+									pausemovetime: -1;
+									supermovetime: -1;
+									interpolation.time: 30;
+									interpolation.alpha: 0, 256;
+									ownpal: 1
+								}
+							}
 						}
 					}
 				}
 
-				# Red Life conversion to power
-				# If on last remaining character
-				if map(_potstag_lastchar) && redLife > life {
-					powerAdd{value: float(redLife - life) / lifeMax * min(3000, powerMax)}
-					redLifeSet{value: life}
-				}
+			}
 
 			# PARTNERS
-			} else {
+			if playerNo != teamLeader {
+
+				# Disable red life damage
+				if !map(_potstag_cfg_partner_redlifedamage) {
+					assertspecial{flag: noredlifedamage}
+				}
 
 				# Exit if on screen, at round start or during the round
 				if (roundState = 2
@@ -1282,10 +1432,13 @@ ignorehitpause if !ishelper && !pausetime {
 			}
 
 			# Reset leaving delay if the character was caught in a combo
-			if movetype = H {mapset{map: "_potstag_leavingdelay"; value: 0}}
+			if movetype = H {
+				mapset{map: "_potstag_leavingdelay"; value: 0}
+			}
+		}
 
 		# DEAD players
-		} else {
+		if !alive {
 
 			# Death timer
 			mapadd{map: "_potstag_deathtimer"; value: 1}
@@ -1312,7 +1465,7 @@ ignorehitpause if !ishelper && !pausetime {
 			# Make point character bounce away outside the screen
 			if roundstate = 2
 			&& playerNo = teamLeader
-			&& map(_potstag_cfg_bounce_ko) {
+			&& map(_potstag_cfg_ko_bounce) {
 				if stateNo = 5110
 				&& prevStateNo = 5101
 				&& (backEdgedist > const240p(-80) && frontEdgedist > const240p(-80)) {
@@ -1368,12 +1521,19 @@ ignorehitpause if !ishelper && !pausetime {
 		}
 	}
 
-	# Garbage collector
-	if teamMode = Tag && map(_potstag_cfg_remove_ko) {
-		if stateno = 5150 && roundstate = 2 {
+	# Miscellaneous options
+	if teamMode = Tag {
+		# Garbage collector
+		if map(_potstag_cfg_ko_remove)
+		&& stateno = 5150 && roundstate = 2 {
 			if backedgedist = [const240p(-240), const240p(-80)] || frontedgedist = [const240p(-240), const240p(-80)] {
 				posadd{x: const240p(ifelse(pos x < 0, -320, 320)) * facing}
 			}
+		}
+		# Hide KO lifebars
+		if map(_potstag_cfg_ko_hidelifebar)
+		&& playerNo != teamLeader && !alive {
+			assertSpecial{flag: nolifebardisplay}
 		}
 	}
 
@@ -1425,7 +1585,7 @@ ignorehitpause if teamMode = Tag && !ishelper {
 ignorehitpause if teamMode = Tag {
 
 	# Save standing animation for alternate modes
-	if stateno = 0 && anim != 5 {
+	if !isHelper && stateno = 0 && anim != 5 {
 		mapset{map: "_potstag_standinganim"; value: anim}
 	}
 
@@ -1437,7 +1597,9 @@ ignorehitpause if teamMode = Tag {
 
 	# Fix erratic camera during intros
 	if roundstate = [0, 1]
-	&& playerno != teamleader {
+	&& playerno != teamleader
+	&& numenemy != (numpartner + 1)
+	&& cond(isHelper, root, map(_potstag_cfg_intro_tagout_on_intro_end) = 0, map(_potstag_cfg_intro_tagout_on_intro_end) = 0) { # Because intro timings vary
 		screenbound{value: 0; movecamera: 0, 0; stagebound: 0}
 	}
 

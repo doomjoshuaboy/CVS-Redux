@@ -1,5 +1,21 @@
 # CVS-REDUX
 
+May-2025:
+Updated Attack Data and Active Tag to the newest.
+Added Vertical Bars for both squares and Diamonds versions for Tag.
+Realigined the names and things that are blocking it.
+
+Feb-2025:
+Updated Randomized Round Announcer Module
+Italicized rounds words
+Fixed the aligns to the names
+Added Attack data for training.   
+
+16/11/2024:
+Mis-worded on the readme.
+Active tag Updated for latest Nightly.
+
+
 3.00:
 Renamed this screenpack to Capcom VS SNK REDUX Instead of CVS:HD.
 New Intro and Title

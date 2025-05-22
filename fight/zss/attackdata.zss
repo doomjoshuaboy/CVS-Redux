@@ -11,21 +11,22 @@
 [Function fPotSAttackDataConfig()]
 
 # Text
-mapset{map: "_pots_attackdata_cfg_starthidden"; value: 0}				# Hide text by default
+mapset{map: "_pots_attackdata_cfg_starthidden"; value: 1}				# Hide text by default
 mapset{map: "_pots_attackdata_cfg_font"; value: 2}						# Lifebar font number. Default -1 (debug font)
-mapset{map: "_pots_attackdata_cfg_layer"; value: 1}						# Layer number for text. 0 behind chars. 1 in front
-mapset{map: "_pots_attackdata_cfg_text_x"; value: 200}					# X offset. Default 125
+mapset{map: "_pots_attackdata_cfg_layer"; value: 0}						# Layer number for text. 0 behind chars. 1 in front
+mapset{map: "_pots_attackdata_cfg_text_x"; value: 90}					# X offset. Default 125
 mapset{map: "_pots_attackdata_cfg_text_y"; value: 50}					# Y offset. Default 35
-mapset{map: "_pots_attackdata_cfg_text_scale"; value: 0.075}				# Font scale. Default 0.50
-mapset{map: "_pots_attackdata_cfg_text_linespacing"; value: 7}			# Text line spacing. Default 7
-mapset{map: "_pots_attackdata_cfg_text_columnspacing"; value: 150}		# Text column spacing. Default 70
+mapset{map: "_pots_attackdata_cfg_text_scale"; value: 0.08}				# Font scale. Default 0.50
+mapset{map: "_pots_attackdata_cfg_text_linespacing"; value: 8}			# Text line spacing. Default 7
+mapset{map: "_pots_attackdata_cfg_text_columnspacing"; value: 130}		# Text column spacing. Default 70
 mapset{map: "_pots_attackdata_cfg_advantage_color"; value: 1}			# Color coded frame advantage value
 
 # Guard level indication
 mapset{map: "_pots_attackdata_cfg_guardlevel"; value: 1}				# Display which way attacks should be guarded
 mapset{map: "_pots_attackdata_cfg_guardlevel_combo"; value: 1}			# Disable to display it only for the first hit in a combo
-mapset{map: "_pots_attackdata_cfg_guardlevel_font"; value: 2}			# Lifebar font number. Default -1 (debug font)
-mapset{map: "_pots_attackdata_cfg_guardlevel_scale"; value: 0.05}		# Font scale. Default 0.50
+mapset{map: "_pots_attackdata_cfg_guardlevel_font"; value: 1}				# Lifebar font number. Default -1 (debug font)
+mapset{map: "_pots_attackdata_cfg_guardlevel_scale"; value: 0.50}		# Font scale. Default 0.50
+mapset{map: "_pots_attackdata_cfg_guardlevel_linespacing"; value: 8}	# Space between guard level and crossup indicator
 
 
 #===============================================================================
@@ -170,15 +171,39 @@ if numenemy {
 		if map(_pots_attackdata_cfg_guardlevel) {
 			if root, movetype = H
 			&& root, gethitvar(frame)
+			&& root, pausetime = 0 # Otherwise slow motion makes guard level indicator misbehave
 			&& cond(map(_pots_attackdata_cfg_guardlevel_combo) = 0, root, prevmovetype != H, 1) {
 
-				let textvelx = 0;
-				let textvely = -1;
+				# Set dummy text velocity
+				let text_velx_dummy = 0;
+				let text_vely_dummy = -1;
+				if map(_pots_attackdata_levelunder) {
+					let text_vely_dummy = 1;
+				}
 
+				# Set player text velocity
+				let text_velx_player = 0;
+				let text_vely_player = -1;
+				if map(_pots_attackdata_levelunder) {
+					let text_vely_player = 1;
+				}
+
+				# Check for unblockable attacks (despite having guard flags)
 				let unguardable = 0;
 				if map(_pots_attackdata_unguardable)
 				|| cond(playerIDexist(root, gethitvar(ID)), playerID(root, gethitvar(ID)), isasserted(unguardable), 0) { # Not perfect
 					let unguardable = 1;
+				}
+
+				# Update text position if it's a normal hit
+				let hitter = root, gethitvar(ID);
+				if playerIDexist($hitter)
+				&& root, gethitvar(attr) != SCA, AT
+				&& playerID($hitter), moveHitVar(frame)
+				&& abs(playerID($hitter), hitDefVar(sparkx) + playerID($hitter), hitDefVar(sparky)) > 2 { # Custom spark check. Some authors set these to 0, others to -1
+				# && cond(playerID($hitter), hitDefAttr = SCA, AA, AP, playerID($hitter), hitDefVar(sparkx) != 0 || playerID($hitter), hitDefVar(sparky) != 0, 1) {
+					let correction = (320.0 / root, localcoord x) * camerazoom; # Because text localcoord is 320x240
+					mapSet{map: "_pots_attackdata_levelposy"; value: (playerID($hitter), screenpos y + playerID($hitter), hitDefVar(sparky)) * $correction}
 				}
 
 				# Unblockable
@@ -193,7 +218,7 @@ if numenemy {
 							align: 0;
 							localcoord: 320, 240;
 							pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
-							velocity: $textvelx, $textvely;
+							velocity: $text_velx_dummy, $text_vely_dummy;
 							friction: 0.95, 0.95;
 							scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
 							color: 256, 0, 0;
@@ -207,7 +232,7 @@ if numenemy {
 							align: 0;
 							localcoord: 320, 240;
 							pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
-							velocity: $textvelx, $textvely;
+							velocity: $text_velx_dummy, $text_vely_dummy;
 							friction: 0.95, 0.95;
 							scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
 							color: 256, 0, 0;
@@ -223,7 +248,7 @@ if numenemy {
 						align: 0;
 						localcoord: 320, 240;
 						pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
-						velocity: $textvelx, $textvely;
+						velocity: $text_velx_dummy, $text_vely_dummy;
 						friction: 0.95, 0.95;
 						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
 						color: 256, 256, 0;
@@ -239,7 +264,7 @@ if numenemy {
 							align: 0;
 							localcoord: 320, 240;
 							pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
-							velocity: $textvelx, $textvely;
+							velocity: $text_velx_dummy, $text_vely_dummy;
 							friction: 0.95, 0.95;
 							scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
 							color: 0, 256, 0;
@@ -253,7 +278,7 @@ if numenemy {
 							align: 0;
 							localcoord: 320, 240;
 							pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
-							velocity: $textvelx, $textvely;
+							velocity: $text_velx_dummy, $text_vely_dummy;
 							friction: 0.95, 0.95;
 							scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
 							color: 256, 256, 0;
@@ -269,7 +294,7 @@ if numenemy {
 						align: 0;
 						localcoord: 320, 240;
 						pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
-						velocity: $textvelx, $textvely;
+						velocity: $text_velx_dummy, $text_vely_dummy;
 						friction: 0.95, 0.95;
 						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
 						color: 256, 256, 0;
@@ -283,7 +308,7 @@ if numenemy {
 						align: 0;
 						localcoord: 320, 240;
 						pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
-						velocity: $textvelx, $textvely;
+						velocity: $text_velx_dummy, $text_vely_dummy;
 						friction: 0.95, 0.95;
 						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
 						color: 256, 256, 0;
@@ -297,7 +322,7 @@ if numenemy {
 						align: 0;
 						localcoord: 320, 240;
 						pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy);
-						velocity: $textvelx, $textvely;
+						velocity: $text_velx_dummy, $text_vely_dummy;
 						friction: 0.95, 0.95;
 						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
 						color: 0, 256, 0;
@@ -305,9 +330,10 @@ if numenemy {
 				}
 
 				# Crossup
-				if root, prevmovetype != H
-				&& player($player), p2, ID = root, ID
-				&& player($player), vel x >= 0 && player($player), p2dist x < 0 {
+				if map(_pots_attackdata_crossup)
+				&& root, prevmovetype != H # First hit only
+				&& $unguardable = 0 # Attack must be blockable
+				&& root, gethitvar(guardflag) = LHA {
 					text{
 						font: F map(_pots_attackdata_cfg_guardlevel_font);
 						text: "CROSSUP";
@@ -315,8 +341,8 @@ if numenemy {
 						layerno: 1;
 						align: 0;
 						localcoord: 320, 240;
-						pos: (player($player), screenpos x) * camerazoom, (player($player), screenpos y + player($player), const(size.head.pos.y) - 8) * camerazoom;
-						velocity: $textvelx, $textvely;
+						pos: map(_pots_attackdata_levelposx), map(_pots_attackdata_levelposy) - map(_pots_attackdata_cfg_guardlevel_linespacing);
+						velocity: $text_velx_player, $text_vely_player;
 						friction: 0.95, 0.95;
 						scale: map(_pots_attackdata_cfg_guardlevel_scale), map(_pots_attackdata_cfg_guardlevel_scale);
 						color: 0, 256, 0;
@@ -515,17 +541,13 @@ if numenemy {
 
 # Update lagging variables for guard level checks
 if map(_pots_attackdata_cfg_guardlevel) {
-	# Update indicator position
+	# Update default indicator positions
 	# We deliberately lag it because of moves that snap the players, such as throws
-	if root, statetype = L {
-		let textposymul = 0.333;
-	} else if root, statetype = C {
-		let textposymul = 0.667;
-	} else {
-		let textposymul = 1.0;
-	}
-	mapSet{map: "_pots_attackdata_levelposx"; value: root, screenpos x * camerazoom}
-	mapSet{map: "_pots_attackdata_levelposy"; value: (root, screenpos y + root, const(size.head.pos.y) * $textposymul - 8) * camerazoom}
+	#let root_screenpos_x = root, screenpos x * (320.0 / root, localcoord x)
+	#let root_screenpos_y = root, screenpos y * (320.0 / root, localcoord x)
+	let correction = (320.0 / root, localcoord x) * camerazoom;
+	mapSet{map: "_pots_attackdata_levelposx"; value: root, screenpos x * $correction}
+	mapSet{map: "_pots_attackdata_levelposy"; value: (root, screenpos y + root, const(size.head.pos.y) / 2.0) * $correction}
 
 	# Check unguardable AssertSpecial flags in previous frame
 	if root, statetype = S && root, isasserted(nostandguard)
@@ -533,11 +555,18 @@ if map(_pots_attackdata_cfg_guardlevel) {
 	|| root, statetype = A && root, isasserted(noairguard) {
 		let noscaguard = 1;
 	}
-	if $noscaguard && root, stateno != [120, 155] && root, ctrl
-	|| cond(playerIDexist(root, gethitvar(ID)), playerID(root, gethitvar(ID)), isasserted(unguardable), 0) { # Not perfect
+	if $noscaguard && root, stateno != [120, 155] && root, ctrl {
 		mapSet{map: "_pots_attackdata_unguardable"; value: 1}
 	} else {
 		mapSet{map: "_pots_attackdata_unguardable"; value: 0}
+	}
+
+	# Check crossups in previous frame
+	if player($player), p2, ID = root, ID
+	&& player($player), vel x >= 0 && player($player), p2dist x < 0 {
+		mapSet{map: "_pots_attackdata_crossup"; value: 1}
+	} else {
+		mapSet{map: "_pots_attackdata_crossup"; value: 0}
 	}
 }
 
@@ -555,7 +584,7 @@ displaytoclipboard{
 	text: "Player = %d, Advantage Timer = %d, Startup Timer = %d";
 	params: $player, ceil(map(_pots_attackdata_advantage_timer)), ceil(map(_pots_attackdata_startup_timer));
 }
-appendtoclipboard {
+appendtoclipboard{
 	text: "\nBy PotS - https://network.mugenguild.com/pots/";
 }
 
@@ -568,7 +597,7 @@ appendtoclipboard {
 
 # Create attack data helper from player 2
 # An outside helper is used to ensure players are checked in a consistent order
-if !ishelper && gameMode = "training" && playerNo = 2 {
+if gameMode = "training" && playerNo = 2 && !ishelper {
 	if !numhelper(1615201920) {
 		helper{
 			stateno: 1615201920;

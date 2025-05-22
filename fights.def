@@ -986,30 +986,30 @@ mid.steps = 1
 [Tag Lifebar]
 ;Player 1
 p1.pos       = 640,-20
-p1.bg0.spr   = 11,1
+p1.bg0.spr   = 11,0
 p1.bg0.scale   = 1,1
 
-p1.front.spr = 12,1
+p1.front.spr = 12,0
 p1.front.scale   =  1,1
 p1.front.facing   = 1
-p1.front66.spr = 12,1
+p1.front66.spr = 12,0
 p1.front66.scale   =  1,1
 p1.front66.facing   = 1
-p1.front33.spr = 12,1
+p1.front33.spr = 12,0
 p1.front33.scale   =  1,1
 p1.front33.facing   = 1
-p1.mid.spr   = 12,1
+p1.mid.spr   = 12,0
 p1.mid.scale   = 1,1
 p1.mid.facing   = 1
-p1.shift.spr = 12,1
+p1.shift.spr = 12,0
 p1.shift.facing = 1
 p1.shift.scale   = 1,1
 p1.warn.range = 33,1
-p1.warn.anim = 2
+p1.warn.anim = 1
 p1.warn.facing = 1
 p1.warn.scale = 1,1
 p1.warn.layerno = -1
-p1.red.spr = 12,1
+p1.red.spr = 12,0
 p1.red.scale   = 1,1
 p1.red.facing   = 1
 
@@ -1031,7 +1031,7 @@ p1.mid.palfx.sinadd =  -64,-256,-256,40
 p1.shift.palfx.add   = -256,-256,-256
 p1.shift.palfx.mul   = 0,0,0
 
-p1.range.x   = -95,-485
+p1.range.x   = -82,-485
 
 p1.shift = 1
 p1.mult = 5
@@ -1039,31 +1039,31 @@ p1.steps = 1
 
 ;Player 2
 p2.pos       = 638,-20
-p2.bg0.spr   = 11,1
+p2.bg0.spr   = 11,0
 p2.bg0.facing   = -1
 p2.bg0.scale   = 1,1
 
-p2.front.spr = 12,1
+p2.front.spr = 12,0
 p2.front.scale   =  1,1
 p2.front.facing   = -1
-p2.front66.spr = 12,1
+p2.front66.spr = 12,0
 p2.front66.scale   =  1,1
 p2.front66.facing   = -1
-p2.front33.spr = 12,1
+p2.front33.spr = 12,0
 p2.front33.scale   =  1,1
 p2.front33.facing   = -1
-p2.mid.spr   = 12,1
+p2.mid.spr   = 12,0
 p2.mid.scale   = 1,1
 p2.mid.facing   = -1
-p2.shift.spr = 12,1
+p2.shift.spr = 12,0
 p2.shift.facing = -1
 p2.shift.scale   = 1,1
 p2.warn.range = 33,1
-p2.warn.anim = 2
+p2.warn.anim = 1
 p2.warn.facing = -1
 p2.warn.scale = 1,1
 p2.warn.layerno = -1
-p2.red.spr = 12,1
+p2.red.spr = 12,0
 p2.red.scale   = 1,1
 p2.red.facing   = -1
 
@@ -1086,37 +1086,40 @@ p2.shift.palfx.add   = -256,-256,-256
 p2.shift.palfx.mul   = 0,0,0
 
 
-p2.range.x   = 95,485
+p2.range.x   = 82,485
 
 p2.shift = 1
 p2.mult = 5
-p2.steps = 1
+p2.steps = 1=
 
 ;Player 3
-p3.pos       = 640,-20
+p3.pos       = 70,78
 
-p3.front.spr = 12,2
-p3.front.scale   =  1,1
+p3.bg0.spr   = 12,12
+p3.bg0.facing   = 1
+p3.bg0.scale   = 0.25,0.15	
+p3.front.spr = 12,13
+p3.front.scale   =  0.25,0.15
 p3.front.facing   = 1
-p3.front66.spr = 12,2
-p3.front66.scale   =  1,1
+p3.front66.spr = 12,13
+p3.front66.scale   =   0.25,0.15
 p3.front66.facing   = 1
-p3.front33.spr = 12,2
-p3.front33.scale   =  1,1
+p3.front33.spr = 12,13
+p3.front33.scale   =   0.25,0.15
 p3.front33.facing   = 1
-p3.mid.spr   = 12,2
-p3.mid.scale   = 1,1
+p3.mid.spr   = 12,13
+p3.mid.scale   = 0.25,0,15
 p3.mid.facing   = 1
-p3.shift.spr = 12,2
+p3.shift.spr = 12,13
 p3.shift.facing = 1
-p3.shift.scale   = 1,1
+p3.shift.scale   = 0.25,0.15
 p3.warn.range = 33,1
-p3.warn.anim = 3
+p3.warn.anim = 13
 p3.warn.facing = 1
-p3.warn.scale = 1,1
+p3.warn.scale = 0.25,0.15
 p3.warn.layerno = -1
-p3.red.spr = 12,2
-p3.red.scale   = 1,1
+p3.red.spr = 12,13
+p3.red.scale   = 0.25,0.15
 p3.red.facing   = 1
 
 p3.red.palfx.add   = 0,0,-256
@@ -1138,37 +1141,39 @@ p3.shift.palfx.add   = -256,-256,-256
 p3.shift.palfx.mul   = 0,0,0
 
 
-p3.range.x   = -82,-473
+p3.range.y   = 85,0
 
 p3.shift = 1
 p3.mult = 5
 p3.steps = 1
 
 ;Player 4
-p4.pos       = 638,-20
-
-p4.front.spr = 12,2
-p4.front.scale   =  1,1
+p4.pos       = 1210,78
+p4.bg0.spr   = 12,12
+p4.bg0.facing   = -1
+p4.bg0.scale   = 0.25,0.15
+p4.front.spr = 12,13
+p4.front.scale   =  0.25,0.15
 p4.front.facing   = -1
-p4.front66.spr = 12,2
-p4.front66.scale   =  1,1
+p4.front66.spr = 12,13
+p4.front66.scale   = 0.25,0.15
 p4.front66.facing   = -1
-p4.front33.spr = 12,2
-p4.front33.scale   =  1,1
+p4.front33.spr = 12,13
+p4.front33.scale   =  0.25,0.15
 p4.front33.facing   = -1
-p4.mid.spr   = 12,2
-p4.mid.scale   = 1,1
+p4.mid.spr   = 12,13
+p4.mid.scale   = 0.25,0.15
 p4.mid.facing   = -1
-p4.shift.spr = 12,2
+p4.shift.spr = 12,13
 p4.shift.facing = -1
-p4.shift.scale   = 1,1
+p4.shift.scale   = 0.25,0.15
 p4.warn.range = 33,1
-p4.warn.anim = 3
+p4.warn.anim = 13
 p4.warn.facing = -1
-p4.warn.scale = 1,1
+p4.warn.scale = 0.25,0.15
 p4.warn.layerno = -1
-p4.red.spr = 12,2
-p4.red.scale   = 1,1
+p4.red.spr = 12,13
+p4.red.scale   = 0.25,0.15
 p4.red.facing   = -1
 
 p4.red.palfx.add   = 0,0,-256
@@ -1189,8 +1194,7 @@ p4.mid.palfx.sinadd =  -64,-256,-256,40
 p4.shift.palfx.add   = -256,-256,-256
 p4.shift.palfx.mul   = 0,0,0
 
-
-p4.range.x   = 82,473
+p4.range.y   = 85,0
 
 p4.shift = 1
 p4.mult = 5
@@ -1205,31 +1209,31 @@ mid.steps = 1
 [Tag_3P Lifebar]
 ;Player 1
 p1.pos       = 640,-20
-p1.bg0.spr   = 11,2
+p1.bg0.spr   = 11,0 
 p1.bg0.scale   = 1,1
 
 
-p1.front.spr = 12,3
+p1.front.spr = 12,0
 p1.front.scale   =  1,1
-p1.front.facing   = 1
-p1.front66.spr = 12,3
+p1.front.7facing   = 1
+p1.front66.spr = 12,0
 p1.front66.scale   =  1,1
 p1.front66.facing   = 1
-p1.front33.spr = 12,3
+p1.front33.spr = 12,0
 p1.front33.scale   =  1,1
 p1.front33.facing   = 1
-p1.mid.spr   = 12,3
+p1.mid.spr   = 12,0
 p1.mid.scale   = 1,1
 p1.mid.facing   = 1
-p1.shift.spr = 12,3
+p1.shift.spr = 12,0
 p1.shift.facing = 1
 p1.shift.scale   = 1,1
 p1.warn.range = 33,1
-p1.warn.anim = 4
+p1.warn.anim = 1
 p1.warn.facing = 1
 p1.warn.scale = 1,1
 p1.warn.layerno = -1
-p1.red.spr = 12,3
+p1.red.spr = 12,0
 p1.red.scale   = 1,1
 p1.red.facing   = 1
 
@@ -1252,7 +1256,7 @@ p1.shift.palfx.add   = -256,-256,-256
 p1.shift.palfx.mul   = 0,0,0
 
 
-p1.range.x   = -98,-485
+p1.range.x   = -82,-485
 
 p1.shift = 1
 p1.mult = 5
@@ -1260,36 +1264,31 @@ p1.steps = 1
 
 ;Player 2
 p2.pos       = 638,-20
-p2.bg0.spr   = 11,2
+p2.bg0.spr   = 11,0
 p2.bg0.facing   = -1
 p2.bg0.scale   = 1,1
 
-p2.front.spr = 12,3
+p2.front.spr = 12,0
 p2.front.scale   =  1,1
 p2.front.facing   = -1
-p2.front66.spr = 12,3
+p2.front66.spr = 12,0
 p2.front66.scale   =  1,1
 p2.front66.facing   = -1
-p2.front33.spr = 12,3
+p2.front33.spr = 12,0
 p2.front33.scale   =  1,1
 p2.front33.facing   = -1
-p2.mid.spr   = 12,3
+p2.mid.spr   = 12,0
 p2.mid.scale   = 1,1
 p2.mid.facing   = -1
-p2.shift.spr = 12,3
+p2.shift.spr = 12,0
 p2.shift.facing = -1
 p2.shift.scale   = 1,1
 p2.warn.range = 33,1
-p2.warn.anim = 2
+p2.warn.anim = 1
 p2.warn.facing = -1
 p2.warn.scale = 1,1
 p2.warn.layerno = -1
-p2.warn.range = 33,1
-p2.warn.anim = 4
-p2.warn.facing = -1
-p2.warn.scale = 1,1
-p2.warn.layerno = -1
-p2.red.spr = 12,3
+p2.red.spr = 12,0
 p2.red.scale   = 1,1
 p2.red.facing   = -1
 
@@ -1312,37 +1311,40 @@ p2.shift.palfx.add   = -256,-256,-256
 p2.shift.palfx.mul   = 0,0,0
 
 
-p2.range.x   = 98,485
+p2.range.x   = 82,485
 
 p2.shift = 1
 p2.mult = 5
 p2.steps = 1
 
 ;Player 3
-p3.pos       = 640,-20
+p3.pos       = 60,8
 
-p3.front.spr = 12,4
-p3.front.scale   =  1,1
+p3.bg0.spr   = 12,12
+p3.bg0.facing   = 1
+p3.bg0.scale   = 0.25,0.15	
+p3.front.spr = 12,13
+p3.front.scale   =  0.25,0.15
 p3.front.facing   = 1
-p3.front66.spr = 12,4
-p3.front66.scale   =  1,1
+p3.front66.spr = 12,13
+p3.front66.scale   = 0.25,0.15
 p3.front66.facing   = 1
-p3.front33.spr = 12,4
-p3.front33.scale   =  1,1
+p3.front33.spr = 12,13
+p3.front33.scale   =   0.25,0.15
 p3.front33.facing   = 1
-p3.mid.spr   = 12,4
-p3.mid.scale   = 1,1
+p3.mid.spr   = 12,13
+p3.mid.scale   = 0.25,0,15
 p3.mid.facing   = 1
-p3.shift.spr = 12,4
+p3.shift.spr = 12,13
 p3.shift.facing = 1
-p3.shift.scale   = 1,1
+p3.shift.scale   = 0.25,0.15
 p3.warn.range = 33,1
-p3.warn.anim = 5
+p3.warn.anim = 13
 p3.warn.facing = 1
-p3.warn.scale = 1,1
+p3.warn.scale = 0.25,0.15
 p3.warn.layerno = -1
-p3.red.spr = 12,4
-p3.red.scale   = 1,1
+p3.red.spr = 12,13
+p3.red.scale   = 0.25,0.15
 p3.red.facing   = 1
 
 p3.red.palfx.add   = 0,0,-256
@@ -1363,37 +1365,40 @@ p3.mid.palfx.sinadd =  -64,-256,-256,40
 p3.shift.palfx.add   = -256,-256,-256
 p3.shift.palfx.mul   = 0,0,0
 
-p3.range.x   = -90,-476
+
+p3.range.y   = 85,0
 
 p3.shift = 1
 p3.mult = 5
 p3.steps = 1
 
 ;Player 4
-p4.pos       = 638,-20
-
-p4.front.spr = 12,4
-p4.front.scale   =  1,1
+p4.pos       = 1220,8
+p4.bg0.spr   = 12,12
+p4.bg0.facing   = -1
+p4.bg0.scale   = 0.25,0.15
+p4.front.spr = 12,13
+p4.front.scale   =  0.25,0.15
 p4.front.facing   = -1
-p4.front66.spr = 12,4
-p4.front66.scale   =  1,1
+p4.front66.spr = 12,13
+p4.front66.scale   = 0.25,0.15
 p4.front66.facing   = -1
-p4.front33.spr = 12,4
-p4.front33.scale   =  1,1
+p4.front33.spr = 12,13
+p4.front33.scale   =  0.25,0.15
 p4.front33.facing   = -1
-p4.mid.spr   = 12,4
-p4.mid.scale   = 1,1
+p4.mid.spr   = 12,13
+p4.mid.scale   = 0.25,0.15
 p4.mid.facing   = -1
-p4.shift.spr = 12,4
+p4.shift.spr = 12,13
 p4.shift.facing = -1
-p4.shift.scale   = 1,1
+p4.shift.scale   = 0.25,0.15
 p4.warn.range = 33,1
-p4.warn.anim = 5
+p4.warn.anim = 13
 p4.warn.facing = -1
-p4.warn.scale = 1,1
+p4.warn.scale = 0.25,0.15
 p4.warn.layerno = -1
-p4.red.spr = 12,4
-p4.red.scale   = 1,1
+p4.red.spr = 12,13
+p4.red.scale   = 0.25,0.15
 p4.red.facing   = -1
 
 p4.red.palfx.add   = 0,0,-256
@@ -1414,37 +1419,39 @@ p4.mid.palfx.sinadd =  -64,-256,-256,40
 p4.shift.palfx.add   = -256,-256,-256
 p4.shift.palfx.mul   = 0,0,0
 
-p4.range.x   = 90,476
+p4.range.y   = 85,0
 
 p4.shift = 1
 p4.mult = 5
 p4.steps = 1
 
 ;Player 5
-p5.pos       = 640,-20
+p5.pos       = 60 ,68
 
-p5.front.spr = 12,5
-p5.front.scale   =  1,1
+p5.bg0.spr   = 12,12
+p5.bg0.facing   = 1
+p5.bg0.scale   = 0.25,0.15
+p5.front.spr = 12,13
+p5.front.scale   =  0.25,0.15
 p5.front.facing   = 1
-p5.front66.spr = 12,5
-p5.front66.scale   =  1,1
+p5.front66.spr = 12,13
+p5.front66.scale   =   0.25,0.15
 p5.front66.facing   = 1
-p5.front33.spr = 12,5
-p5.front33.scale   =  1,1
+p5.front33.spr = 12,13
+p5.front33.scale   =   0.25,0.15
 p5.front33.facing   = 1
-p5.mid.spr   = 12,5
-p5.mid.scale   = 1,1
+p5.mid.spr   = 12,13
+p5.mid.scale   = 0.25,0,25
 p5.mid.facing   = 1
-p5.shift.spr = 12,5
+p5.shift.spr = 12,13
 p5.shift.facing = 1
-p5.shift.scale   = 1,1
+p5.shift.scale   = 0.25,0.15
 p5.warn.range = 33,1
-p5.warn.anim = 6
+p5.warn.anim = 13
 p5.warn.facing = 1
-p5.warn.scale = 1,1
-p5.warn.layerno = -1
-p5.red.spr = 12,5
-p5.red.scale   = 1,1
+p5.warn.scale = 0.25,0.15
+p5.red.spr = 12,13
+p5.red.scale   = 0.25,0.15
 p5.red.facing   = 1
 
 p5.red.palfx.add   = 0,0,-256
@@ -1466,37 +1473,39 @@ p5.shift.palfx.add   = -256,-256,-256
 p5.shift.palfx.mul   = 0,0,0
 
 
-p5.range.x   = -81,-467
+p5.range.y   = 85,0
 
 p5.shift = 1
 p5.mult = 5
 p5.steps = 1
 
 ;Player 6
-p6.pos       = 638,-20
-
-p6.front.spr = 12,5
-p6.front.scale   =  1,1
+p6.pos       = 1220,68
+p6.bg0.spr   = 12,12
+p6.bg0.facing   = -1
+p6.bg0.scale   = 0.25,0.15
+p6.front.spr = 12,13
+p6.front.scale   =  0.25,0.15
 p6.front.facing   = -1
-p6.front66.spr = 12,5
-p6.front66.scale   =  1,1
+p6.front66.spr = 12,13
+p6.front66.scale   = 0.25,0.15
 p6.front66.facing   = -1
-p6.front33.spr = 12,5
-p6.front33.scale   =  1,1
+p6.front33.spr = 12,13
+p6.front33.scale   =  0.25,0.15
 p6.front33.facing   = -1
-p6.mid.spr   = 12,5
-p6.mid.scale   = 1,1
+p6.mid.spr   = 12,13
+p6.mid.scale   = 0.25,0.15
 p6.mid.facing   = -1
-p6.shift.spr = 12,5
+p6.shift.spr = 12,13
 p6.shift.facing = -1
-p6.shift.scale   = 1,1
+p6.shift.scale   = 0.25,0.15
 p6.warn.range = 33,1
-p6.warn.anim = 6
+p6.warn.anim = 13
 p6.warn.facing = -1
-p6.warn.scale = 1,1
+p6.warn.scale = 0.25,0.15
 p6.warn.layerno = -1
-p6.red.spr = 12,5
-p6.red.scale   = 1,1
+p6.red.spr = 12,13
+p6.red.scale   = 0.25,0.15
 p6.red.facing   = -1
 
 p6.red.palfx.add   = 0,0,-256
@@ -1517,7 +1526,7 @@ p6.mid.palfx.sinadd =  -64,-256,-256,40
 p6.shift.palfx.add   = -256,-256,-256
 p6.shift.palfx.mul   = 0,0,0
 
-p6.range.x   = 81,467
+p6.range.y   = 85,0
 
 p6.shift = 1
 p6.mult = 5
@@ -1532,30 +1541,31 @@ mid.steps = 1
 [Tag_4P Lifebar]
 ;Player 1
 p1.pos       = 640,-20
-p1.bg0.spr   = 11,3
+p1.bg0.spr   = 11,0 
 p1.bg0.scale   = 1,1
 
-p1.front.spr = 12,6
+
+p1.front.spr = 12,0
 p1.front.scale   =  1,1
 p1.front.facing   = 1
-p1.front66.spr = 12,6
+p1.front66.spr = 12,0
 p1.front66.scale   =  1,1
 p1.front66.facing   = 1
-p1.front33.spr = 12,6
+p1.front33.spr = 12,0
 p1.front33.scale   =  1,1
 p1.front33.facing   = 1
-p1.mid.spr   = 12,6
+p1.mid.spr   = 12,0
 p1.mid.scale   = 1,1
 p1.mid.facing   = 1
-p1.shift.spr = 12,6
+p1.shift.spr = 12,0
 p1.shift.facing = 1
 p1.shift.scale   = 1,1
 p1.warn.range = 33,1
-p1.warn.anim = 7
+p1.warn.anim = 1
 p1.warn.facing = 1
 p1.warn.scale = 1,1
 p1.warn.layerno = -1
-p1.red.spr = 12,6
+p1.red.spr = 12,0
 p1.red.scale   = 1,1
 p1.red.facing   = 1
 
@@ -1578,7 +1588,7 @@ p1.shift.palfx.add   = -256,-256,-256
 p1.shift.palfx.mul   = 0,0,0
 
 
-p1.range.x   = -100,-485
+p1.range.x   = -82,-485
 
 p1.shift = 1
 p1.mult = 5
@@ -1586,31 +1596,31 @@ p1.steps = 1
 
 ;Player 2
 p2.pos       = 638,-20
-p2.bg0.spr   = 11,3
+p2.bg0.spr   = 11,0
 p2.bg0.facing   = -1
 p2.bg0.scale   = 1,1
 
-p2.front.spr = 12,6
+p2.front.spr = 12,0
 p2.front.scale   =  1,1
 p2.front.facing   = -1
-p2.front66.spr = 12,6
+p2.front66.spr = 12,0
 p2.front66.scale   =  1,1
 p2.front66.facing   = -1
-p2.front33.spr = 12,6
+p2.front33.spr = 12,0
 p2.front33.scale   =  1,1
 p2.front33.facing   = -1
-p2.mid.spr   = 12,6
+p2.mid.spr   = 12,0
 p2.mid.scale   = 1,1
 p2.mid.facing   = -1
-p2.shift.spr = 12,6
+p2.shift.spr = 12,0
 p2.shift.facing = -1
 p2.shift.scale   = 1,1
 p2.warn.range = 33,1
-p2.warn.anim = 7
+p2.warn.anim = 1
 p2.warn.facing = -1
 p2.warn.scale = 1,1
 p2.warn.layerno = -1
-p2.red.spr = 12,6
+p2.red.spr = 12,0
 p2.red.scale   = 1,1
 p2.red.facing   = -1
 
@@ -1632,38 +1642,41 @@ p2.mid.palfx.sinadd =  -64,-256,-256,40
 p2.shift.palfx.add   = -256,-256,-256
 p2.shift.palfx.mul   = 0,0,0
 
-p2.range.x   = 100,485
+
+p2.range.x   = 82,485
 
 p2.shift = 1
 p2.mult = 5
 p2.steps = 1
 
 ;Player 3
-p3.pos       = 640,-20
+p3.pos       = 60,68
 
-p3.front.spr = 12,7
-p3.front.scale   =  1,1
+p3.bg0.spr   = 12,12
+p3.bg0.facing   = 1
+p3.bg0.scale   = 0.25,0.15
+p3.front.spr = 12,13
+p3.front.scale   =  0.25,0.15
 p3.front.facing   = 1
-p3.front66.spr = 12,7
-p3.front66.scale   =  1,1
+p3.front66.spr = 12,13
+p3.front66.scale   =   0.25,0.15
 p3.front66.facing   = 1
-p3.front33.spr = 12,7
-p3.front33.scale   =  1,1
+p3.front33.spr = 12,13
+p3.front33.scale   =   0.25,0.15
 p3.front33.facing   = 1
-p3.mid.spr   = 12,7
-p3.mid.scale   = 1,1
+p3.mid.spr   = 12,13
+p3.mid.scale   = 0.25,0,25
 p3.mid.facing   = 1
-p3.shift.spr = 12,7
+p3.shift.spr = 12,13
 p3.shift.facing = 1
-p3.shift.scale   = 1,1
+p3.shift.scale   = 0.25,0.15
 p3.warn.range = 33,1
-p3.warn.anim = 8
-p3.warn.facing = 1
-p3.warn.scale = 1,1
-p3.warn.layerno = -1
-p3.red.spr = 12,7
-p3.red.scale   = 1,1
-p3.red.facing   = 1
+p3.warn.anim = 13
+p3.warn.facing = -1
+p3.warn.scale = 0.25,0.15
+p3.red.spr = 12,13
+p3.red.scale   = 0.25,0.15
+p3.red.fac7ing   = 1
 
 p3.red.palfx.add   = 0,0,-256
 p3.red.palfx.mul   = 256,128,0
@@ -1684,37 +1697,39 @@ p3.shift.palfx.add   = -256,-256,-256
 p3.shift.palfx.mul   = 0,0,0
 
 
-p3.range.x   = -94,-477
+p3.range.y   = 85,0
 
 p3.shift = 1
 p3.mult = 5
 p3.steps = 1
 
 ;Player 4
-p4.pos       = 638,-20
-
-p4.front.spr = 12,7
-p4.front.scale   =  1,1
+p4.pos       = 1220,68
+p4.bg0.spr   = 12,12
+p4.bg0.facing   = -1
+p4.bg0.scale   = 0.25,0.15
+p4.front.spr = 12,13
+p4.front.scale   =  0.25,0.15
 p4.front.facing   = -1
-p4.front66.spr = 12,7
-p4.front66.scale   =  1,1
+p4.front66.spr = 12,13
+p4.front66.scale   = 0.25,0.15
 p4.front66.facing   = -1
-p4.front33.spr = 12,7
-p4.front33.scale   =  1,1
+p4.front33.spr = 12,13
+p4.front33.scale   =  0.25,0.15
 p4.front33.facing   = -1
-p4.mid.spr   = 12,7
-p4.mid.scale   = 1,1
+p4.mid.spr   = 12,13
+p4.mid.scale   = 0.25,0.15
 p4.mid.facing   = -1
-p4.shift.spr = 12,7
+p4.shift.spr = 12,13
 p4.shift.facing = -1
-p4.shift.scale   = 1,1
+p4.shift.scale   = 0.25,0.15
 p4.warn.range = 33,1
-p4.warn.anim = 8
+p4.warn.anim = 13
 p4.warn.facing = -1
-p4.warn.scale = 1,1
+p4.warn.scale = 0.25,0.15
 p4.warn.layerno = -1
-p4.red.spr = 12,7
-p4.red.scale   = 1,1
+p4.red.spr = 12,13
+p4.red.scale   = 0.25,0.15
 p4.red.facing   = -1
 
 p4.red.palfx.add   = 0,0,-256
@@ -1735,37 +1750,39 @@ p4.mid.palfx.sinadd =  -64,-256,-256,40
 p4.shift.palfx.add   = -256,-256,-256
 p4.shift.palfx.mul   = 0,0,0
 
-p4.range.x   = 94,477
+p4.range.y   = 85,0
 
 p4.shift = 1
 p4.mult = 5
 p4.steps = 1
 
 ;Player 5
-p5.pos       = 640,-20
+p5.pos       = 120 ,8
 
-p5.front.spr = 12,8
-p5.front.scale   =  1,1
+p5.bg0.spr   = 12,12
+p5.bg0.facing   = 1
+p5.bg0.scale   = 0.25,0.15
+p5.front.spr = 12,13
+p5.front.scale   =  0.25,0.15
 p5.front.facing   = 1
-p5.front66.spr = 12,8
-p5.front66.scale   =  1,1
+p5.front66.spr = 12,13
+p5.front66.scale   =   0.25,0.15
 p5.front66.facing   = 1
-p5.front33.spr = 12,8
-p5.front33.scale   =  1,1
+p5.front33.spr = 12,13
+p5.front33.scale   =   0.25,0.15
 p5.front33.facing   = 1
-p5.mid.spr   = 12,8
-p5.mid.scale   = 1,1
+p5.mid.spr   = 12,13
+p5.mid.scale   = 0.25,0,25
 p5.mid.facing   = 1
-p5.shift.spr = 12,8
+p5.shift.spr = 12,13
 p5.shift.facing = 1
-p5.shift.scale   = 1,1
+p5.shift.scale   = 0.25,0.15
 p5.warn.range = 33,1
-p5.warn.anim = 9
-p5.warn.facing = 1
-p5.warn.scale = 1,1
-p5.warn.layerno = -1
-p5.red.spr = 12,8
-p5.red.scale   = 1,1
+p5.warn.anim = 13
+p5.warn.facing = -1
+p5.warn.scale = 0.25,0.15
+p5.red.spr = 12,13
+p5.red.scale   = 0.25,0.15
 p5.red.facing   = 1
 
 p5.red.palfx.add   = 0,0,-256
@@ -1787,37 +1804,39 @@ p5.shift.palfx.add   = -256,-256,-256
 p5.shift.palfx.mul   = 0,0,0
 
 
-p5.range.x   = -87,-472
+p5.range.y   = 85,0
 
 p5.shift = 1
 p5.mult = 5
 p5.steps = 1
 
 ;Player 6
-p6.pos       = 638,-20
-
-p6.front.spr = 12,8
-p6.front.scale   =  1,1
+p6.pos       = 1160,8
+p6.bg0.spr   = 12,12
+p6.bg0.facing   = -1
+p6.bg0.scale   = 0.25,0.15
+p6.front.spr = 12,13
+p6.front.scale   =  0.25,0.15
 p6.front.facing   = -1
-p6.front66.spr = 12,8
-p6.front66.scale   =  1,1
+p6.front66.spr = 12,13
+p6.front66.scale   = 0.25,0.15
 p6.front66.facing   = -1
-p6.front33.spr = 12,8
-p6.front33.scale   =  1,1
+p6.front33.spr = 12,13
+p6.front33.scale   =  0.25,0.15
 p6.front33.facing   = -1
-p6.mid.spr   = 12,8
-p6.mid.scale   = 1,1
+p6.mid.spr   = 12,13
+p6.mid.scale   = 0.25,0.15
 p6.mid.facing   = -1
-p6.shift.spr = 12,8
+p6.shift.spr = 12,13
 p6.shift.facing = -1
-p6.shift.scale   = 1,1
+p6.shift.scale   = 0.25,0.15
 p6.warn.range = 33,1
-p6.warn.anim = 9
+p6.warn.anim = 13
 p6.warn.facing = -1
-p6.warn.scale = 1,1
+p6.warn.scale = 0.25,0.15
 p6.warn.layerno = -1
-p6.red.spr = 12,8
-p6.red.scale   = 1,1
+p6.red.spr = 12,13
+p6.red.scale   = 0.25,0.15
 p6.red.facing   = -1
 
 p6.red.palfx.add   = 0,0,-256
@@ -1838,37 +1857,40 @@ p6.mid.palfx.sinadd =  -64,-256,-256,40
 p6.shift.palfx.add   = -256,-256,-256
 p6.shift.palfx.mul   = 0,0,0
 
-p6.range.x   = 87,472
+p6.range.y   = 85,0
 
 p6.shift = 1
 p6.mult = 5
 p6.steps = 1
 
 ;Player 7
-p7.pos       = 640,-20
+p7.pos       = 120,68
 
-p7.front.spr = 12,9
-p7.front.scale   =  1,1
+p7.bg0.spr   = 12,12
+p7.bg0.facing   = 1
+p7.bg0.scale   = 0.25,0.15
+p7.front.spr = 12,13
+p7.front.scale   = 0.25,0.15
 p7.front.facing   = 1
-p7.front66.spr = 12,9
-p7.front66.scale   =  1,1
+p7.front66.spr = 12,13
+p7.front66.scale   = 0.25,0.15
 p7.front66.facing   = 1
-p7.front33.spr = 12,9
-p7.front33.scale   =  1,1
+p7.front33.spr = 12,13
+p7.front33.scale   =  0.25,0.15
 p7.front33.facing   = 1
-p7.mid.spr   = 12,9
-p7.mid.scale   = 1,1
+p7.mid.spr   = 12,13
+p7.mid.scale   = 0.25,0.15
 p7.mid.facing   = 1
-p7.shift.spr = 12,9
+p7.shift.spr = 12,13
 p7.shift.facing = 1
-p7.shift.scale   = 1,1
+p7.shift.scale   = 0.25,0.15
 p7.warn.range = 33,1
-p7.warn.anim = 10
+p7.warn.anim = 13
 p7.warn.facing = 1
-p7.warn.scale = 1,1
+p7.warn.scale = 0.25,0.15
 p7.warn.layerno = -1
-p7.red.spr = 12,9
-p7.red.scale   = 1,1
+p7.red.spr = 12,13
+p7.red.scale   = 0.25,0.15
 p7.red.facing   = 1
 
 p7.red.palfx.add   = 0,0,-256
@@ -1889,38 +1911,40 @@ p7.mid.palfx.sinadd =  -64,-256,-256,40
 p7.shift.palfx.add   = -256,-256,-256
 p7.shift.palfx.mul   = 0,0,0
 
-
-p7.range.x   = -82,-466
+p7.range.y   = 85,0
 
 p7.shift = 1
 p7.mult = 5
 p7.steps = 1
 
 ;Player 8
-p8.pos       = 638,-20
+p8.pos       = 1160,68
 
-p8.front.spr = 12,9
-p8.front.scale   =  1,1
+p8.bg0.spr   = 12,12
+p8.bg0.facing   = -1
+p8.bg0.scale   = 0.25,0.15
+p8.front.spr = 12,13
+p8.front.scale   = 0.25,0.15
 p8.front.facing   = -1
-p8.front66.spr = 12,9
-p8.front66.scale   =  1,1
+p8.front66.spr = 12,13
+p8.front66.scale   = 0.25,0.15
 p8.front66.facing   = -1
-p8.front33.spr = 12,9
-p8.front33.scale   =  1,1
+p8.front33.spr = 12,13
+p8.front33.scale   =  0.25,0.15
 p8.front33.facing   = -1
-p8.mid.spr   = 12,9
-p8.mid.scale   = 1,1
+p8.mid.spr   = 12,13
+p8.mid.scale   = 0.25,0.15
 p8.mid.facing   = -1
-p8.shift.spr = 12,9
+p8.shift.spr = 12,13
 p8.shift.facing = -1
-p8.shift.scale   = 1,1
+p8.shift.scale   = 0.25,0.15
 p8.warn.range = 33,1
-p8.warn.anim = 10
+p8.warn.anim = 13
 p8.warn.facing = -1
-p8.warn.scale = 1,1
+p8.warn.scale = 0.25,0.15
 p8.warn.layerno = -1
-p8.red.spr = 12,9
-p8.red.scale   = 1,1
+p8.red.spr = 12,13
+p8.red.scale   = 0.25,0.15
 p8.red.facing   = -1
 
 p8.red.palfx.add   = 0,0,-256
@@ -1941,7 +1965,7 @@ p8.mid.palfx.sinadd =  -64,-256,-256,40
 p8.shift.palfx.add   = -256,-256,-256
 p8.shift.palfx.mul   = 0,0,0
 
-p8.range.x   = 82,466
+p8.range.y   = 85,0
 
 p8.shift = 1
 p8.mult = 5
@@ -3515,14 +3539,17 @@ p1.pos = 15,15
 p1.face.spr = 9000,0
 p1.face.offset = 5,5
 p1.face.scale = 0.5,0.5
+p1.face.layerno = -1
 
 p1.ko.anim = 11
 p1.ko.offset = 0,0
 p1.ko.scale = 0.12,0.12
+p1.ko.layerno = -1
 
 p1.bg.spr = 11,4
 p1.bg.offset = 0,0
 p1.bg.scale = 0.12,0.12
+p1.bg.layerno = -1
 
 ;Player 2
 p2.pos = -15, 15
@@ -3530,29 +3557,35 @@ p2.face.spr = 9000,0
 p2.face.facing = -1
 p2.face.offset = 1275,5
 p2.face.scale = 0.5,0.5
+P2.face.layerno = -1
 
 p2.ko.anim = 12
 p2.ko.offset = 1280,0
 p2.ko.scale = 0.12,0.12
+p2.ko.layerno = -1
 
 p2.bg.spr = 11,4
 p2.bg.facing = -1
 p2.bg.offset = 1280,0
 p2.bg.scale = 0.12,0.12
+p2.bg.layerno = -1
 
 ;Player 3
 p3.pos = 15,15
 p3.face.spr = 9000,0
 p3.face.offset = 5,65
 p3.face.scale = 0.5,0.5
+p3.face.layerno = -1	
 
 p3.ko.anim = 11
 p3.ko.offset = 0,60
 p3.ko.scale = 0.12,0.12
+p3.ko.layerno = -1
 
 p3.bg.spr = 11,4
 p3.bg.offset = 0,60
 p3.bg.scale = 0.12,0.12
+p3.bg.layerno = -1
 
 ;Player 4
 p4.pos = -15,15
@@ -3560,15 +3593,18 @@ p4.face.spr = 9000,0
 p4.face.facing = -1
 p4.face.offset = 1275,65
 p4.face.scale = 0.5,0.5
+p4.face.layerno = -1
 
 p4.ko.anim = 12
 p4.ko.offset = 1280,60
 p4.ko.scale = 0.12,0.12
+p4.ko.layerno = -1
 
 p4.bg.spr = 11,4
 p4.bg.facing = -1
 p4.bg.offset = 1280,60
 p4.bg.scale = 0.12,0.12
+p4.bg.layerno = -1
 
 
 ;--------------------------
@@ -3578,14 +3614,17 @@ p1.pos = 5,5
 p1.face.spr = 9000,0
 p1.face.offset = 65,35
 p1.face.scale = 0.5,0.5
+p1.face.layerno = -1
 
 p1.ko.anim = 11
 p1.ko.offset = 60,30
 p1.ko.scale = 0.12,0.12
+p1.ko.layerno = -1
 
 p1.bg.spr = 11,4
 p1.bg.offset = 60,30
 p1.bg.scale = 0.12,0.12
+p1.bg.layerno = -1
 
 ;Player 2
 p2.pos = -5,5
@@ -3593,29 +3632,35 @@ p2.face.spr = 9000,0
 p2.face.facing = -1
 p2.face.offset = 1215,35
 p2.face.scale = 0.5,0.5
+p2.face.layerno = -1
 
 p2.ko.anim = 12
 p2.ko.offset = 1220,30
 p2.ko.scale = 0.12,0.12
+p2.ko.layerno = -1
 
 p2.bg.spr = 11,4
 p2.bg.facing = -1
 p2.bg.offset = 1220,30
 p2.bg.scale = 0.12,0.12
+p2.bg.layerno = -1
 
 ;Player 3
 p3.pos = 5,5
 p3.face.spr = 9000,0
 p3.face.offset = 5,5
 p3.face.scale = 0.5,0.5
+p3.face.layerno = -1
 
 p3.ko.anim = 11
 p3.ko.offset = 0,0
 p3.ko.scale = 0.12,0.12
+p3.ko.layerno = -1
 
 p3.bg.spr = 11,4
 p3.bg.offset = 0,0
 p3.bg.scale = 0.12,0.12
+p3.bg.layerno = -1
 
 ;Player 4
 p4.pos = -5,5
@@ -3623,29 +3668,34 @@ p4.face.spr = 9000,0
 p4.face.facing = -1
 p4.face.offset = 1275,5
 p4.face.scale = 0.5,0.5
+p4.face.layerno = -1
 
 p4.ko.anim = 12
 p4.ko.offset = 1280,0
 p4.ko.scale = 0.12,0.12
+p4.ko.layerno = -1
 
 p4.bg.spr = 11,4
 p4.bg.facing = -1
 p4.bg.offset = 1280,0
 p4.bg.scale = 0.12,0.12
-
+p4.bg.layerno = -1
 ;Player 5
 p5.pos    = 5,5
 p5.face.spr = 9000,0
 p5.face.offset = 5,65
 p5.face.scale = 0.5,0.5
+p5.face.layerno = -1
 
 p5.ko.anim = 11
 p5.ko.offset = 0,60
 p5.ko.scale = 0.12,0.12
+p5.ko.layerno = -1
 
 p5.bg.spr = 11,4
 p5.bg.offset = 0,60
 p5.bg.scale = 0.12,0.12
+p5.bg.layerno = -1
 
 ;Player 6
 p6.pos    = -5,5
@@ -3653,16 +3703,18 @@ p6.face.spr = 9000,0
 p6.face.facing = -1
 p6.face.offset = 1275,65
 p6.face.scale = 0.5,0.5
+p6.face.layerno = -1
 
 p6.ko.anim = 12
 p6.ko.offset = 1280,60
 p6.ko.scale = 0.12,0.12
+p6.ko.layerno = -1
 
 p6.bg.spr = 11,4
 p6.bg.facing = -1
 p6.bg.offset = 1280,60
 p6.bg.scale = 0.12,0.12
-
+p6.bg.layerno = -1
 
 ;--------------------------
 [Tag_4P Face]
@@ -3671,14 +3723,17 @@ p1.pos = 5,5
 p1.face.spr = 9000,0
 p1.face.offset = 5,5
 p1.face.scale = 0.5,0.5
+p1.face.layerno = -1
 
 p1.ko.anim = 11
 p1.ko.offset = 0,0
 p1.ko.scale = 0.12,0.12
+p1.ko.layerno = -1
 
 p1.bg.spr = 11,4
 p1.bg.offset = 0,0
 p1.bg.scale = 0.12,0.12
+p1.bg.layerno = -1
 
 ;Player 2
 p2.pos = -5,5
@@ -3686,29 +3741,35 @@ p2.face.spr = 9000,0
 p2.face.facing = -1
 p2.face.offset = 1275,5
 p2.face.scale = 0.5,0.5
+p2.face.layerno = -1
 
 p2.ko.anim = 11
 p2.ko.offset = 1280,0
 p2.ko.scale = 0.12,0.12
+p2.ko.layerno = -1
 
 p2.bg.spr = 11,4
 p2.bg.facing = -1
 p2.bg.offset = 1280,0
 p2.bg.scale = 0.12,0.12
+p2.bg.layerno = -1
 
 ;Player 3
 p3.pos = 5,5
 p3.face.spr = 9000,0
 p3.face.offset = 5,65
 p3.face.scale = 0.5,0.5
+p3.face.layerno = -1
 
 p3.ko.anim = 11
 p3.ko.offset = 0,60
 p3.ko.scale = 0.12,0.12
+p3.ko.layerno = -1
 
 p3.bg.spr = 11,4
 p3.bg.offset = 0,60
 p3.bg.scale = 0.12,0.12
+p3.bg.layerno = -1
 
 ;Player 4
 p4.pos = -5,5
@@ -3716,29 +3777,35 @@ p4.face.spr = 9000,0
 p4.face.facing = -1
 p4.face.offset = 1275,65
 p4.face.scale = 0.5,0.5
+p4.face.layerno = -1
 
 p4.ko.anim = 12
 p4.ko.offset = 1280,60
 p4.ko.scale = 0.12,0.12
+p4.ko.layerno = -1
 
 p4.bg.spr = 11,4
 p4.bg.facing = -1
 p4.bg.offset = 1280,60
 p4.bg.scale = 0.12,0.12
+p4.bg.layerno = -1
 
 ;Player 5
 p5.pos    = 5,5
 p5.face.spr = 9000,0
 p5.face.offset = 65,5
 p5.face.scale = 0.5,0.5
+p5.face.layerno = -1
 
 p5.ko.anim = 11
 p5.ko.offset = 60,0
 p5.ko.scale = 0.12,0.12
+p5.ko.layerno = -1
 
 p5.bg.spr = 11,4
 p5.bg.offset = 60,0
 p5.bg.scale = 0.12,0.12
+p5.bg.layerno = -1
 
 ;Player 6
 p6.pos    = -5,5
@@ -3746,29 +3813,35 @@ p6.face.spr = 9000,0
 p6.face.facing = -1
 p6.face.offset = 1215,5
 p6.face.scale = 0.5,0.5
+p6.face.layerno = -1
 
 p6.ko.anim = 12
 p6.ko.offset = 1220,0
 p6.ko.scale = 0.12,0.12
+p6.ko.layerno = -1
 
 p6.bg.spr = 11,4
 p6.bg.facing = -1
 p6.bg.offset = 1220,0
 p6.bg.scale = 0.12,0.12
+p6.bg.layerno = -1
 
 ;Player 7
 p7.pos    = 5,5
 p7.face.spr = 9000,0
 p7.face.offset = 65,65
 p7.face.scale = 0.5,0.5
+p7.face.layerno = -1
 
 p7.ko.anim = 11
 p7.ko.offset = 60,60
 p7.ko.scale = 0.12,0.12
+p7.ko.layerno = -1
 
 p7.bg.spr = 11,4
 p7.bg.offset = 60,60
 p7.bg.scale = 0.12,0.12
+p7.bg.layerno = -1
 
 ;Player 8
 p8.pos    = -5,5
@@ -3776,43 +3849,43 @@ p8.face.spr = 9000,0
 p8.face.facing = -1
 p8.face.offset = 1215,65
 p8.face.scale = 0.5,0.5
+p8.face.layerno = -1
 
 p8.ko.anim = 12
 p8.ko.offset = 1220,60
 p8.ko.scale = 0.12,0.12
+p8.ko.layerno = -1
 
 p8.bg.spr = 11,4
 p8.bg.facing = -1
 p8.bg.offset = 1220,60
 p8.bg.scale = 0.12,0.12
+p8.bg.layerno = -1
 
 ;--------------------------
 [Turns Face]
 ;Player 1
-p1.pos = 0,0
-p1.face.spr = 9000,5
-p1.face.offset = 0,0
-p1.face.scale = 0.122,0.122
+p1.pos = 15,15
+p1.face.spr = 9000,0
+p1.face.offset = 5,5
+p1.face.scale = 0.8,0.8
 
-p1.bg.spr = 11,5
+p1.bg.spr = 11,4
 p1.bg.offset = 0,0
 p1.bg.scale = 0.18,0.18
 
 ;Player 2
-p2.pos = 0,0
-p2.face.spr = 9000,5
+p2.pos = -15,15
+p2.face.spr = 9000,0
 p2.face.facing = -1
-p2.face.offset = 1280,0
-p2.face.scale = 0.122,0.122
+p2.face.offset = 1275,5
+p2.face.scale = 0.8,0.8
 
-p2.bg.spr = 11,5
+p2.bg.spr = 11,4
 p2.bg.facing = -1
 p2.bg.offset = 1280,0
 p2.bg.scale = 0.18,0.18
 
-;-----------------------------------------------------------
-;Names
-;-----------------------------------------------------------
 ;-----------------------------------------------------------
 ;Names
 ;-----------------------------------------------------------
@@ -3909,11 +3982,11 @@ p2.pos = 1140,45
 p2.name.font = 6,0,-1
 p2.name.scale = 0.2,0.2
 
-p3.pos = 180,130
+p3.pos = 180,110
 p3.name.font = 6,0,1
 p3.name.scale = 0.15,0.15
 
-p4.pos = 1100,130
+p4.pos = 1100,110
 p4.name.font = 6,0,-1
 p4.name.scale = 0.15,0.15
 
@@ -3926,19 +3999,19 @@ p2.pos = 1140,45
 p2.name.font = 6,0,-1
 p2.name.scale = 0.2,0.2
 
-p3.pos = 180,130
+p3.pos = 180,110
 p3.name.font = 6,0,1
 p3.name.scale = 0.15,0.15
 
-p4.pos = 1100,130
+p4.pos = 1100,110
 p4.name.font = 6,0,-1
 p4.name.scale = 0.15,0.15
-`
-p5.pos = 180,150
+
+p5.pos = 180,130
 p5.name.font = 6,0,1
 p5.name.scale = 0.15,0.15
 
-p6.pos = 1100,150
+p6.pos = 1100,130
 p6.name.font = 6,0,-1
 p6.name.scale = 0.15,0.15
 
@@ -3951,27 +4024,27 @@ p2.pos = 1140,45
 p2.name.font = 6,0,-1
 p2.name.scale = 0.2,0.2
 
-p3.pos = 180,130
+p3.pos = 180,110
 p3.name.font = 6,0,1
 p3.name.scale = 0.15,0.15
 
-p4.pos = 1100,130
+p4.pos = 1100,110
 p4.name.font = 6,0,-1
 p4.name.scale = 0.15,0.15
 
-p5.pos = 180,150
+p5.pos = 180,130
 p5.name.font = 6,0,1
 p5.name.scale = 0.15,0.15
 
-p6.pos = 1100,150
+p6.pos = 1100,130
 p6.name.font = 6,0,-1
 p6.name.scale = 0.15,0.15
 
-p7.pos = 180,25
+p7.pos = 180,150
 p7.name.font = 6,0,1
 p7.name.scale = 0.15,0.15
 
-p8.pos = 1100,25
+p8.pos = 1100,150
 p8.name.font = 6,0,-1
 p8.name.scale = 0.15,0.15
 
@@ -3980,7 +4053,7 @@ p1.pos = 140,45
 p1.name.font = 6,0,1
 p1.name.scale = 0.2,0.2
 
-p1.teammate.pos = 140,130
+p1.teammate.pos = 140,110
 p1.teammate.name.font = 6,0,1
 p1.teammate.name.scale = 0.15,0.15
 p1.teammate.spacing = 0,20
@@ -3989,10 +4062,11 @@ p2.pos = 1140,45
 p2.name.font = 6,0,-1
 p2.name.scale = 0.2,0.2
 
-p2.teammate.pos = 1140,130
+p2.teammate.pos = 1140,110
 p2.teammate.name.font = 6,0,-1
 p2.teammate.name.scale = 0.15,0.15
 p2.teammate.spacing = 0,20
+
 ;-----------------------------------------------------------
 ;Time
 ;-----------------------------------------------------------
@@ -4569,8 +4643,8 @@ enabled.timeattack = 1
 enabled.timechallenge = 1
 
 [Ratio]
-p1.pos = 150,0
-p2.pos = 1130,0
+p1.pos = 350,0
+p2.pos = 930,0
 
 p1.level1.spr = 280,0
 p2.level1.spr = 280,0
@@ -4747,6 +4821,14 @@ LoopStart
 231,2, -360,348, 2, , , 2,2
 231,1, -360,348, 2, , , 2,2
 231,0, -360,348, 2, , , 2,2
+
+
+; Warning bar
+[Begin Action 13]
+Interpolate Blend
+12,13, 0,0, 10, , AS100D256
+Interpolate Blend
+12,13, 0,0, 10, , AS30D256
 
 
 [Begin Action 98]

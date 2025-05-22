@@ -41,18 +41,13 @@ POTS (for Capcom VS SNK 2 commentator system, Attack data and active tag modules
 
 Kamekaze (for Round Transition Module)
 
-## Author's note
-
-### Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required:
-
-To Add EXTRAS:
-
-* Load IKEMEN_GO first then close it OR Exit, it will give you extras in your "save" Folder.
-
-* Open up the folder you should see a "config.ini" File. 
-
-* Load it up with your favorite Text editor (Recommendation: Visual Studio Code or Notepad++)
-
+## Instructions
+### Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required.
+1. Download the [Nightly](https://github.com/ikemen-engine/Ikemen-GO/releases/tag/nightly) And [The Screenpack](https://github.com/doomjoshuaboy/CVS-Redux/releases)
+2. Extract Nightly to any folder you want then extract the ScreenPack inside `ikemen_go/data`.
+3. Load IKEMEN_GO first then close it OR Exit, it will give you extras in your "save" Folder.
+4. Open up the folder you should see a "config.ini" File.
+5. Load it up with your favorite Text editor (Recommendation: Visual Studio Code or Notepad++) and replace the first lines.
 ``` [Common]
 ; Common animations using character's local sprites
 Air     = data/common.air
@@ -70,12 +65,11 @@ Modules = data/cvsr/lua/fadesnd.lua
 ; Pure Lua code executed on each frame during match
 Lua     = loop()
 ; Common states (CNS or ZSS)
-States0 = data/cvsr/fight/ZSS/cvsko.zss, data/cvsr/fight/ZSS/cvsrounds.zss, data/cvsr/fight/ZSS/roundtransition.zss, data/cvsr/fight/ZSS/intro-outro.zss, data/cvsr/fight/ZSS/intro-outro-config.zss, data/cvsr/fight/ZSS/cvsconfig.zss, data/cvsr/fight/ZSS/commentator_cvs2.zss, data/cvsr/fight/zss/attackdata.zss
+States0 = data/cvsr/fight/ZSS/cvsko.zss, data/cvsr/fight/ZSS/cvsrounds.zss, data/cvsr/fight/ZSS/roundtransition.zss, data/cvsr/fight/ZSS/cvsconfig.zss, data/cvsr/fight/ZSS/commentator_cvs2.zss, data/cvsr/fight/zss/attackdata.zss
 ```
+7. Go down and change "GameWidth" and "GameHeight" to however you want, 
 
-* Then go down and change "GameWidth" and "GameHeight" to however you want, 
-
-* Then change "Motif" to either
+8. Change "Motif" to either
 
 There's 2 seprated motifs
 
@@ -90,3 +84,5 @@ Diamonds:
 ; Motif to use. Motifs are themes that define the look and feel of Ikemen GO.
 Motif               = data/cvsr/system.def
 ```
+
+9. Lastly load up ikemengo and it should be good to go.
