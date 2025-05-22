@@ -41,6 +41,7 @@ POTS (for Capcom VS SNK 2 commentator system, Attack data and active tag modules
 
 Kamekaze (for Round Transition Module)
 
+
 ## Instructions
 ### Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required.
 1. Download the [Nightly](https://github.com/ikemen-engine/Ikemen-GO/releases/tag/nightly) And [The Screenpack](https://github.com/doomjoshuaboy/CVS-Redux/releases)
@@ -67,6 +68,7 @@ Lua     = loop()
 ; Common states (CNS or ZSS)
 States0 = data/cvsr/fight/ZSS/cvsko.zss, data/cvsr/fight/ZSS/cvsrounds.zss, data/cvsr/fight/ZSS/roundtransition.zss, data/cvsr/fight/ZSS/cvsconfig.zss, data/cvsr/fight/ZSS/commentator_cvs2.zss, data/cvsr/fight/zss/attackdata.zss
 ```
+
 7. Go down and change "GameWidth" and "GameHeight" to however you want, 
 
 8. Change "Motif" to either
