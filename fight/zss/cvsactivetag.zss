@@ -36,7 +36,7 @@ mapset{map: "_potstag_cfg_intro_tagout_on_round_call"; value: 1}	# Partners leav
 mapset{map: "_potstag_cfg_text_font"; value: 2}					# Font number to use from the lifebars. Default -1 (debug font)
 mapset{map: "_potstag_cfg_text_layer"; value: 0}					# Layer number for text. 0 behind chars. 1 in front
 mapset{map: "_potstag_cfg_text_scale"; value: 0.05}					# Font scale
-mapset{map: "_potstag_cfg_text_posx"; value: 0}					# X offset
+mapset{map: "_potstag_cfg_text_posx"; value: 35}					# X offset
 mapset{map: "_potstag_cfg_text_posy"; value: 5}					# Y offset
 mapset{map: "_potstag_cfg_text_flash"; value: 1}					# Flash text when at 100%
 mapset{map: "_potstag_cfg_text_darken"; value: 1}					# Darken text when not at 100%
@@ -140,7 +140,7 @@ if AIlevel = 0 {
 	}
 }
 explod{
-	anim: GO $anim;
+	anim: CVS $anim;
 	posType: p1;
 	pos: 0, floor((const(size.head.pos.y) - const(size.ground.front) / 2 - const(size.ground.back) / 2));
 	facing: facing;

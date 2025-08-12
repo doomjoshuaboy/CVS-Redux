@@ -28,6 +28,6 @@ if !map(ignore_cvs) && roundstate < 2 {
 # _cvs_hd_toggle controls what resolution of the system is using: 
 #  2 for Widescreen (systems without 480p)
 #  1 for Normal (systems with 480p)
-	mapSet{map: "_cvs_hd_toggle"; value: 2}
+	mapSet{map: "_cvs_hd_toggle"; value: 1}
 
 }

@@ -1,5 +1,10 @@
 # CVS-REDUX
 
+August-2025:
+Added Standard Definition version of the screenpack and now in default.
+Updated Round Transition to the latest version.
+over.time is now defaults to ikemen perspective due to the updated Round Transition.
+
 May-2025:
 Updated Attack Data and Active Tag to the newest.
 Added Vertical Bars for both squares and Diamonds versions for Tag.

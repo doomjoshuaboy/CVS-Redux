@@ -1,15 +1,12 @@
 Capcom VS SNK REDUX IKEMEN Screenpack
 
-This is an nightly only Screenpack. So if you put it in older IKEMEN and MUGEN or WinMUGEN, IT WILL NOT WORK!!!
-
 Welcome to This Customised Screenpack all by DoomJoshuaBoy.  
 
 This is inspired by CAPCOM VS SNK 2 game, all rights reserved.
 
-Also please considering having at least 3-4 gb of ram as this screenpack is heavy resources
+**Also please considering having at least 3-4 gb of ram as this screenpack is heavy resources**
 
 Supporters:
-
 2Dee4ever
 ArachnoLord
 Hollow
@@ -21,24 +18,25 @@ Akito (Huge Helper)
 ShinZankuro
 
 Original authors:
-
 Raisu
 PabloSSB
 ProtomanX
 -Shin_Hado-
 
 Thanks to:
-POTS (for Capcom VS SNK 2 commentator system, Attack data and active tag modules)
-Kamekaze (for Round Transition Module)
- 
+POTS (for Capcom VS SNK 2 Commentator System, Attack Data and Active Tag modules)
+Kamekaze (for Round Transition module)
 
+Instructions:
 
-Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required:
-To Add EXTRAS:  
-Load IKEMEN_GO first then close it OR Exit, it will give you extras in your "save" Folder,
-Open up the folder you should see a "config.ini" File load it up with your favorite Text editor (Recommendation: Visual Studio Code or Notepad++)
+Since this Screenpack includes some ZSS or Lua that needs replacement, this section is required.
+1. Download the [Nightly](https://github.com/ikemen-engine/Ikemen-GO/releases/tag/nightly) And [The Screenpack](https://github.com/doomjoshuaboy/CVS-Redux/releases)
+2. Extract Nightly to any folder you want then extract the ScreenPack inside `ikemen_go/data`.
+3. Load IKEMEN_GO first then close it OR Exit, it will give you extras in your "save" Folder.
+4. Open up the folder you should see a "config.ini" File.
+5. Load it up with your favorite Text editor (Recommendation: Visual Studio Code or Notepad++) and replace the first lines.
 
-`[Common]
+[Common]
 ; Common animations using character's local sprites
 Air     = data/common.air
 ; Common commands
@@ -54,21 +52,45 @@ Fx      = data/cvsr/cvsfx.def, data/cvsr/fight/commentator_cvs2.def, data\CVSR\f
 Modules = data/cvsr/lua/fadesnd.lua
 ; Pure Lua code executed on each frame during match
 Lua     = loop()
+
+Theres 2 different types of extra common states, please make sure you use the same screen resolution as the aspect ratio!!!	
+SD:
+
 ; Common states (CNS or ZSS)
-States0 = data/cvsr/fight/ZSS/cvsko.zss, data/cvsr/fight/ZSS/cvsrounds.zss, data/cvsr/fight/ZSS/roundtransition.zss, data/cvsr/fight/ZSS/intro-outro.zss, data/cvsr/fight/ZSS/intro-outro-config.zss, data/cvsr/fight/ZSS/cvsconfig.zss, data/cvsr/fight/ZSS/commentator_cvs2.zss, data/cvsr/fight/zss/attackdata.zss
-`
+States0 = data/cvsr/fight/ZSS/cvsko.zss, data/cvsr/fight/ZSS/cvsrounds.zss, data/cvsr/fight/ZSS/roundtransition.zss, data/cvsr/fight/ZSS/cvsconfig.zss, data/cvsr/fight/ZSS/commentator_cvs2.zss, data/cvsr/fight/zss/attackdata.zss
 
-Then go down and change "GameWidth" and "GameHeight" to however you want, then
-change "Motif" to either
-There's 2 seprated motifs
 
-HD
+HD:
+; Common states (CNS or ZSS)
+States0 = data/cvsr/fight/ZSS/cvskohd.zss, data/cvsr/fight/ZSS/cvsrounds.zss, data/cvsr/fight/ZSS/roundtransitionhd.zss, data/cvsr/fight/ZSS/cvsconfig.zss, data/cvsr/fight/ZSS/commentator_cvs2.zss, data/cvsr/fight/zss/attackdata.zss
+
+7. Go down and change "GameWidth" and "GameHeight" to however you want.
+
+8. Change "Motif" to either,
+
+There's 4 seperated motifs
+
+HD:
 Squared:
 [Config]
 ; Motif to use. Motifs are themes that define the look and feel of Ikemen GO.
-Motif               = data/cvsr/systems.def
+Motif               = data/cvsr/systemhd.def
 
 Diamonds:
 [Config]
 ; Motif to use. Motifs are themes that define the look and feel of Ikemen GO.
+Motif               = data/cvsr/systemdhd.def
+
+SD:
+Squared:
+[Config]
+; Motif to use. Motifs are themes that define the look and feel of Ikemen GO.
 Motif               = data/cvsr/system.def
+
+Diamonds:
+[Config]
+; Motif to use. Motifs are themes that define the look and feel of Ikemen GO.
+Motif               = data/cvsr/systemd.def
+
+
+9. Lastly load up ikemengo and it should be good to go.
