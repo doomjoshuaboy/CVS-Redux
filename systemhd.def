@@ -7,10 +7,10 @@ localcoord = 1280,720
 [Files]
 spr = system.sff
 snd = system.snd
-logo.storyboard = "others/loading.def"
-intro.storyboard = "others/intro.def"
-select = selects2.def
-fight = fights.def
+logo.storyboard = "others/loadinghd.def"
+intro.storyboard = "others/introhd.def"
+select = selects.def
+fight = fight.def
 font1 = "font/cvs2hdname.def"
 font2 = "font/cvs2hdtimer.def"
 font3 = "font/cvs2hdnamei.def"
@@ -992,7 +992,7 @@ p1.member4.icon.facing = 1
 p1.member4.icon.scale = 0.5,0.5
 p1.member4.anim = 0
 p1.member4.done.anim = 181
-p1.member4.offset = 452, 462
+p1.member4.offset = 340, 460
 p1.member4.scale = 0.5, 0.5
 p2.member4.key = "y"
 p2.member4.icon.spr = 30,3
@@ -1002,7 +1002,7 @@ p2.member4.icon.facing = 1
 p2.member4.icon.scale = 0.5,0.5
 p2.member4.anim = 0
 p2.member4.done.anim = 181
-p2.member4.offset = 838, 462
+p2.member4.offset = 940, 460
 p2.member4.scale = 0.5, 0.5
 
 p1.member2.key = "b"
@@ -1013,7 +1013,7 @@ p1.member2.icon.facing = 1
 p1.member2.icon.scale = 0.5,0.5
 p1.member2.anim = 0
 p1.member2.done.anim = 181
-p1.member2.offset = 332, 512
+p1.member2.offset = 220, 520
 p1.member2.scale = 0.5, 0.5
 p2.member2.key = "b"
 p2.member2.icon.spr = 30,1
@@ -1023,7 +1023,7 @@ p2.member2.icon.facing = 1
 p2.member2.icon.scale = 0.5,0.5
 p2.member2.anim = 0
 p2.member2.done.anim = 181
-p2.member2.offset = 958, 512
+p2.member2.offset = 1060, 520
 p2.member2.scale = 0.5, 0.5
 
 p1.member1.key = "a"
@@ -1034,7 +1034,7 @@ p1.member1.icon.facing = 1
 p1.member1.icon.scale = 0.5,0.5
 p1.member1.anim = 0
 p1.member1.done.anim = 181
-p1.member1.offset = 202, 462
+p1.member1.offset = 80, 460
 p1.member1.scale = 0.5, 0.5
 p2.member1.key = "a"
 p2.member1.icon.spr = 30,0
@@ -1044,7 +1044,7 @@ p2.member1.icon.facing = 1
 p2.member1.icon.scale = 0.5,0.5
 p2.member1.anim = 0
 p2.member1.done.anim = 181
-p2.member1.offset = 1078, 462
+p2.member1.offset = 1200, 460
 p2.member1.scale = 0.5, 0.5
 
 p1.member3.key = "x"
@@ -1055,7 +1055,7 @@ p1.member3.icon.facing = 1
 p1.member3.icon.scale = 0.5,0.5
 p1.member3.anim = 0
 p1.member3.done.anim = 181
-p1.member3.offset = 332, 422
+p1.member3.offset = 220, 420
 p1.member3.scale = 0.5, 0.5
 p2.member3.key = "x"
 p2.member3.icon.spr = 30,2
@@ -1065,7 +1065,7 @@ p2.member3.icon.facing = 1
 p2.member3.icon.scale = 0.5,0.5
 p2.member3.anim = 0
 p2.member3.done.anim = 181
-p2.member3.offset = 958, 422
+p2.member3.offset = 1060, 420
 p2.member3.scale = 0.5, 0.5
 
 p1.name.pos  =  350, 620
@@ -1129,7 +1129,13 @@ start = 0,0
 type  = anim
 layerno = 0
 actionno = 30
-start = 0,0
+start = 0,100
+
+[VersusBG 1] 
+type  = anim
+layerno = 0
+actionno = 71
+start = 0,100
 
 [VersusBG 1] 
 type  = anim
@@ -1179,7 +1185,13 @@ id = 2
 type  = anim
 layerno = 1
 actionno = 7
-start = 0, 0
+start = 0, 100
+
+[VersusBG 2]  
+type  = anim
+layerno = 1
+actionno = 72
+start = 0, 100
 
 
 ;-------------------------------------------------------------------
@@ -2325,37 +2337,33 @@ Interpolate Blend
 
 ; V.S. Motion
 [Begin Action 7]
--1,0, 0,0, 80
-20,0, 0,0, 2
-20,1, 0,0, 2
-20,2, 0,0, 2
-20,3, 0,0, 2
-20,4, 0,0, 2
-20,5, 0,0, 2
-20,6, 0,0, 2
-20,7, 0,50, 2
-20,8, 0,100, 2
-20,9, 0,100, 2
-20,10, 0,100, 2
-20,11, 0,100, 2
-20,12, 0,100, 2
-20,13, 0,100, 2
-20,14, 0,100, 2
-20,15, 0,100, 2
-20,16, 0,100, 2
-20,17, 0,100, 2
-20,18, 0,100, 2
-20,19, 0,100, 2
-20,20, 0,100, 2
-20,21, 0,100, 2
-20,22, 0,100, 2
-20,23, 0,100, 2
-20,24, 0,100, 2
-20,25, 0,100, 2
-20,26, 0,100, 2
-20,27, 0,100, 2
-20,28, 0,100, 2
-0,0, 0,0, -1
+-1,0, 0,0, 60
+20,0, 0,360, 30, , , 10,10, 360
+Interpolate Scale
+Interpolate Angle
+20,0, 0,360, 20, , , 0.75,0.75
+Interpolate Offset
+Interpolate Scale
+20,0, -800,360, 30, , , 0.75,0
+Interpolate Scale
+Interpolate Offset
+20,0, -400,360, 10, , , 0.75,0.25
+-1,0, 0,0, -1
+
+; V.S. Motion
+[Begin Action 72]
+-1,0, 0,0, 60
+20,0, 0,360, 30, , , 10,10, 360
+Interpolate Scale
+Interpolate Angle
+20,0, 0,360, 20, , , 0.75,0.75
+Interpolate Offset
+Interpolate Scale
+20,0, 800,360, 30, , , 0.75,0
+Interpolate Scale
+Interpolate Offset
+20,0, 800,360, 10, , , 0.75,0.25
+-1,0, 0,0, -1
 
 ; V.S. Letters
 [Begin Action 8]
@@ -2390,7 +2398,10 @@ Interpolate Blend
 5,1, 0,0, 30, , AS256D125, 2,2
 
 [Begin Action 30]
-20,29, 0,100, -1
+20,0, -400,360, -1, , , 0.75,0.25
+
+[Begin Action 71]
+20,0, 400,360, -1, , , 0.75,0.25
 
 ; Order number
 [Begin Action 31]

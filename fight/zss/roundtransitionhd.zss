@@ -1,13 +1,9 @@
 #IKEMEN GO Universal Round Transition System 1.1 By Kamekaze 
-#6/23/2024
 # mail - ilive@kamekaze.world
 # Twitter - @OldEra_Kamekaze
 #bsky - kamekaze.world
 #fgc network - Kamekaze@fgc.network
 #FOR IKEMEN GO .99 OR LATER ONLY
-
-#1.2:
-#Uses fightscreenvar
 
 #1.1:
 #Roundnotover not being respected fixed.
@@ -23,7 +19,6 @@
 
 [function roundendfx(time)]
 if (win||drawgame&&teamside=1) && $time=0 {
-
 		playsnd{
 		value: cvt 2001,0;
 		channel:-1;
@@ -33,10 +28,9 @@ if (win||drawgame&&teamside=1) && $time=0 {
 		}
 
 		explod{
-		anim: cvt 2015;
+		anim: cvt 2010;
 		postype: left;
 		pos: 0,0;
-		scale: 0.5,0.5;
 		removetime: -1;
 		ontop:1;
 		pauseMoveTime: 48;
@@ -45,24 +39,19 @@ if (win||drawgame&&teamside=1) && $time=0 {
 
 ##Used during the next round
 [function roundstartfx(time)]
-
 if teamside=1
 {
-
 if $time=0{
 		explod{
-		anim: cvt 2005;
+		anim: cvt 2000;
 		postype: back;
 		pos: 0,0;
-		scale: 0.5,0.5;
 		removetime: 44;
 		ontop:1;
 		pauseMoveTime: 44
 		}
-
 }
 }
-
 ignorehitpause{
 assertspecial{flag:roundnotskip;redirectid:root,id}
 }

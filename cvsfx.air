@@ -2138,6 +2138,7 @@ Interpolate Angle
 Interpolate Scale
 Interpolate Angle
 1430,0, 0,0, 1, , A1, 2,2, 360
+
 ; Scroll Open (HD)
 [Begin Action 2000]
 2000,0, 0,0, 2

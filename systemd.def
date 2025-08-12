@@ -9,8 +9,8 @@ spr = system.sff
 snd = system.snd
 logo.storyboard = "others/loading.def"
 intro.storyboard = "others/intro.def"
-select = selects.def
-fight = fight.def
+select = selectd.def
+fight = fightd.def
 font1 = "font/cvs2hdname.def"
 font2 = "font/cvs2hdtimer.def"
 font3 = "font/cvs2hdnamei.def"
@@ -531,20 +531,333 @@ fadein.snd = 0,0
 fadeout.snd = 20,0
 
 rows = 12
-columns = 25
+columns = 17
 wrapping = 1              ;1 to let cursor wrap around
 pos = 10,260	              ;Position to draw to
 showemptyboxes = 0        ;*2000.07.31 NEW*
 moveoveremptyboxes = 0    ;*2000.07.31 NEW*
 
-cell.size = 25,25
+;This part is for facing, if you dont want it comment them out.
+cell.1.1.offset = 0,0
+cell.2.1.offset = 0,0
+cell.3.1.offset = 0,0
+cell.4.1.offset = 0,0
+cell.5.1.offset = 0,0
+cell.6.1.offset = 0,0
+cell.7.1.offset = 0,0
+cell.8.1.offset = 0,0
+cell.9.1.offset = 0,0
+cell.10.1.offset = 0,0
+cell.11.1.offset = 0,0
+cell.12.1.offset = 0,0
+cell.13.1.offset = 0,0
+cell.14.1.offset = 0,0
+cell.15.1.offset = 0,0
+cell.16.1.offset = 0,0
+cell.17.1.offset = 0,0
+cell.18.1.offset = 0,0
+cell.19.1.offset = 0,0
+cell.20.1.offset = 0,0
+cell.21.1.offset = 0,0
+cell.22.1.offset = 0,0
+cell.23.1.offset = 0,0
+cell.24.1.offset = 0,0
+cell.25.1.offset = 0,0
+
+cell.1.2.offset = 18,-18
+cell.2.2.offset = 18,-18
+cell.3.2.offset = 18,-18
+cell.4.2.offset = 18,-18
+cell.5.2.offset = 18,-18
+cell.6.2.offset = 18,-18
+cell.7.2.offset = 18,-18
+cell.8.2.offset = 18,-18
+cell.9.2.offset = 18,-18
+cell.10.2.offset = 18,-18
+cell.11.2.offset = 18,-18
+cell.12.2.offset = 18,-18
+cell.13.2.offset = 18,-18
+cell.14.2.offset = 18,-18
+cell.15.2.offset = 18,-18
+cell.16.2.offset = 18,-18
+cell.17.2.offset = 18,-18
+cell.18.2.offset = 18,-18
+cell.19.2.offset = 18,-18
+cell.20.2.offset = 18,-18
+cell.21.2.offset = 18,-18
+cell.22.2.offset = 18,-18
+cell.23.2.offset = 18,-18
+cell.24.2.offset = 18,-18
+cell.25.2.offset = 18,-18
+
+cell.1.3.offset = 0,-36
+cell.2.3.offset = 0,-36
+cell.3.3.offset = 0,-36
+cell.4.3.offset = 0,-36
+cell.5.3.offset = 0,-36
+cell.6.3.offset = 0,-36
+cell.7.3.offset = 0,-36
+cell.8.3.offset = 0,-36
+cell.9.3.offset = 0,-36
+cell.10.3.offset = 0,-36
+cell.11.3.offset = 0,-36
+cell.12.3.offset = 0,-36
+cell.13.3.offset = 0,-36
+cell.14.3.offset = 0,-36
+cell.15.3.offset = 0,-36
+cell.16.3.offset = 0,-36
+cell.17.3.offset = 0,-36
+cell.18.3.offset = 0,-36
+cell.19.3.offset = 0,-36
+cell.20.3.offset = 0,-36
+cell.21.3.offset = 0,-36
+cell.22.3.offset = 0,-36
+cell.23.3.offset = 0,-36
+cell.24.3.offset = 0,-36
+cell.25.3.offset = 0,-36
+
+cell.1.4.offset = 18,-54
+cell.2.4.offset = 18,-54
+cell.3.4.offset = 18,-54
+cell.4.4.offset = 18,-54
+cell.5.4.offset = 18,-54
+cell.6.4.offset = 18,-54
+cell.7.4.offset = 18,-54
+cell.8.4.offset = 18,-54
+cell.9.4.offset = 18,-54
+cell.10.4.offset = 18,-54
+cell.11.4.offset = 18,-54
+cell.12.4.offset = 18,-54 
+cell.13.4.offset = 18,-54 
+cell.14.4.offset = 18,-54
+cell.15.4.offset = 18,-54
+cell.16.4.offset = 18,-54
+cell.17.4.offset = 18,-54
+cell.18.4.offset = 18,-54
+cell.19.4.offset = 18,-54
+cell.20.4.offset = 18,-54
+cell.21.4.offset = 18,-54
+cell.22.4.offset = 18,-54
+cell.23.4.offset = 18,-54
+cell.24.4.offset = 18,-54
+cell.25.4.offset = 18,-54
+
+cell.1.5.offset = 0,-72
+cell.2.5.offset = 0,-72
+cell.3.5.offset = 0,-72
+cell.4.5.offset = 0,-72
+cell.5.5.offset = 0,-72
+cell.6.5.offset = 0,-72
+cell.7.5.offset = 0,-72
+cell.8.5.offset = 0,-72
+cell.9.5.offset = 0,-72
+cell.10.5.offset = 0,-72
+cell.11.5.offset = 0,-72
+cell.12.5.offset = 0,-72
+cell.13.5.offset = 0,-72
+cell.14.5.offset = 0,-72
+cell.15.5.offset = 0,-72
+cell.16.5.offset = 0,-72
+cell.17.5.offset = 0,-72
+cell.18.5.offset = 0,-72
+cell.19.5.offset = 0,-72
+cell.20.5.offset = 0,-72
+cell.21.5.offset = 0,-72
+cell.22.5.offset = 0,-72
+cell.23.5.offset = 0,-72
+cell.24.5.offset = 0,-72
+cell.25.5.offset = 0,-72
+
+cell.1.6.offset = 18,-90
+cell.2.6.offset = 18,-90
+cell.3.6.offset = 18,-90
+cell.4.6.offset = 18,-90
+cell.5.6.offset = 18,-90
+cell.6.6.offset = 18,-90
+cell.7.6.offset = 18,-90
+cell.8.6.offset = 18,-90
+cell.9.6.offset = 18,-90
+cell.10.6.offset = 18,-90
+cell.11.6.offset = 18,-90
+cell.12.6.offset = 18,-90
+cell.13.6.offset = 18,-90
+cell.14.6.offset = 18,-90
+cell.15.6.offset = 18,-90
+cell.16.6.offset = 18,-90
+cell.17.6.offset = 18,-90
+cell.18.6.offset = 18,-90
+cell.19.6.offset = 18,-90
+cell.20.6.offset = 18,-90
+cell.21.6.offset = 18,-90
+cell.22.6.offset = 18,-90
+cell.23.6.offset = 18,-90
+cell.24.6.offset = 18,-90
+cell.25.6.offset = 18,-90
+
+cell.1.7.offset = 0,-108
+cell.2.7.offset = 0,-108
+cell.3.7.offset = 0,-108
+cell.4.7.offset = 0,-108
+cell.5.7.offset = 0,-108
+cell.6.7.offset = 0,-108
+cell.7.7.offset = 0,-108
+cell.8.7.offset = 0,-108
+cell.9.7.offset = 0,-108
+cell.10.7.offset = 0,-108
+cell.11.7.offset = 0,-108
+cell.12.7.offset = 0,-108
+cell.13.7.offset = 0,-108
+cell.14.7.offset = 0,-108
+cell.15.7.offset = 0,-108
+cell.16.7.offset = 0,-108
+cell.17.7.offset = 0,-108
+cell.18.7.offset = 0,-108
+cell.19.7.offset = 0,-108
+cell.20.7.offset = 0,-108
+cell.21.7.offset = 0,-108
+cell.22.7.offset = 0,-108
+cell.23.7.offset = 0,-108
+cell.24.7.offset = 0,-108
+cell.25.7.offset = 0,-108
+
+cell.1.8.offset = 18,-126
+cell.2.8.offset = 18,-126
+cell.3.8.offset = 18,-126
+cell.4.8.offset = 18,-126
+cell.5.8.offset = 18,-126
+cell.6.8.offset = 18,-126
+cell.7.8.offset = 18,-126
+cell.8.8.offset = 18,-126
+cell.9.8.offset = 18,-126
+cell.10.8.offset = 18,-126
+cell.11.8.offset = 18,-126
+cell.12.8.offset = 18,-126
+cell.13.8.offset = 18,-126
+cell.14.8.offset = 18,-126
+cell.15.8.offset = 18,-126
+cell.16.8.offset = 18,-126
+cell.17.8.offset = 18,-126
+cell.18.8.offset = 18,-126
+cell.19.8.offset = 18,-126
+cell.20.8.offset = 18,-126
+cell.21.8.offset = 18,-126
+cell.22.8.offset = 18,-126
+cell.23.8.offset = 18,-126
+cell.24.8.offset = 18,-126
+cell.25.8.offset = 18,-126
+
+cell.1.9.offset = 0,-144
+cell.2.9.offset = 0,-144
+cell.3.9.offset = 0,-144
+cell.4.9.offset = 0,-144
+cell.5.9.offset = 0,-144
+cell.6.9.offset = 0,-144
+cell.7.9.offset = 0,-144
+cell.8.9.offset = 0,-144
+cell.9.9.offset = 0,-144
+cell.10.9.offset = 0,-144
+cell.11.9.offset = 0,-144
+cell.12.9.offset = 0,-144
+cell.13.9.offset = 0,-144
+cell.14.9.offset = 0,-144
+cell.15.9.offset = 0,-144
+cell.16.9.offset = 0,-144
+cell.17.9.offset = 0,-144
+cell.18.9.offset = 0,-144
+cell.19.9.offset = 0,-144
+cell.20.9.offset = 0,-144
+cell.21.9.offset = 0,-144
+cell.22.9.offset = 0,-144
+cell.23.9.offset = 0,-144
+cell.24.9.offset = 0,-144
+cell.25.9.offset = 0,-144
+
+cell.1.10.offset = 18,-162
+cell.2.10.offset = 18,-162
+cell.3.10.offset = 18,-162
+cell.4.10.offset = 18,-162
+cell.5.10.offset = 18,-162
+cell.6.10.offset = 18,-162
+cell.7.10.offset = 18,-162
+cell.8.10.offset = 18,-162
+cell.9.10.offset = 18,-162
+cell.10.10.offset = 18,-162
+cell.11.10.offset = 18,-162
+cell.12.10.offset = 18,-162
+cell.13.10.offset = 18,-162
+cell.14.10.offset = 18,-162
+cell.15.10.offset = 18,-162
+cell.16.10.offset = 18,-162
+cell.17.10.offset = 18,-162
+cell.18.10.offset = 18,-162
+cell.19.10.offset = 18,-162
+cell.20.10.offset = 18,-162
+cell.21.10.offset = 18,-162
+cell.22.10.offset = 18,-162
+cell.23.10.offset = 18,-162
+cell.24.10.offset = 18,-162
+cell.25.10.offset = 18,-162
+
+cell.1.11.offset = 0,-180
+cell.2.11.offset = 0,-180
+cell.3.11.offset = 0,-180
+cell.4.11.offset = 0,-180
+cell.5.11.offset = 0,-180
+cell.6.11.offset = 0,-180
+cell.7.11.offset = 0,-180
+cell.8.11.offset = 0,-180
+cell.9.11.offset = 0,-180
+cell.10.11.offset = 0,-180
+cell.11.11.offset = 0,-180
+cell.12.11.offset = 0,-180
+cell.13.11.offset = 0,-180
+cell.14.11.offset = 0,-180
+cell.15.11.offset = 0,-180
+cell.16.11.offset = 0,-180
+cell.17.11.offset = 0,-180
+cell.18.11.offset = 0,-180
+cell.19.11.offset = 0,-180
+cell.20.11.offset = 0,-180
+cell.21.11.offset = 0,-180
+cell.22.11.offset = 0,-180
+cell.23.11.offset = 0,-180
+cell.24.11.offset = 0,-180
+cell.25.11.offset = 0,-180
+
+cell.1.12.offset = 18,-198
+cell.2.12.offset = 18,-198
+cell.3.12.offset = 18,-198
+cell.4.12.offset = 18,-198
+cell.5.12.offset = 18,-198
+cell.6.12.offset = 18,-198
+cell.7.12.offset = 18,-198
+cell.8.12.offset = 18,-198
+cell.9.12.offset = 18,-198
+cell.10.12.offset = 18,-198
+cell.11.12.offset = 18,-198
+cell.12.12.offset = 18,-198
+cell.13.12.offset = 18,-198
+cell.14.12.offset = 18,-198
+cell.15.12.offset = 18,-198
+cell.16.12.offset = 18,-198
+cell.17.12.offset = 18,-198
+cell.18.12.offset = 18,-198
+cell.19.12.offset = 18,-198
+cell.20.12.offset = 18,-198
+cell.21.12.offset = 18,-198
+cell.22.12.offset = 18,-198
+cell.23.12.offset = 18,-198
+cell.24.12.offset = 18,-198
+cell.25.12.offset = 18,-198
+
+cell.size = 35,35
 cell.spacing = 0,0
 cell.bg.scale = 0.0525,0.0525
-cell.bg.spr = 11,2
+cell.bg.spr = 11,14
 cell.random.spr = 11,7
-cell.random.offset = 0,0
+cell.random.offset = 3,3
 cell.random.switchtime = 4 
-cell.random.scale = 0.035,0.035
+cell.random.scale = 0.045,0.045
 
 ;-------- P1 Cursor ---------
 p1.cursor.startcell = 0, 0
@@ -552,7 +865,7 @@ p1.cursor.active.offset = 0, 0
 p1.cursor.active.anim = 11
 p1.cursor.active.facing = 1
 p1.cursor.active.scale =  0.0525,0.0525
-p1.cursor.done.spr = 11,5
+p1.cursor.done.spr = 11,15
 p1.cursor.done.offset = 0, 0
 p1.cursor.done.facing = 1
 p1.cursor.done.scale = 0.0525,0.0525
@@ -567,7 +880,7 @@ p2.cursor.active.offset = 0, 0
 p2.cursor.active.anim = 12
 p2.cursor.active.facing = 1
 p2.cursor.active.scale = 0.0525,0.0525
-p2.cursor.done.spr = 11,6
+p2.cursor.done.spr = 11,16
 p2.cursor.done.offset = 0, 0 
 p2.cursor.done.facing = 1
 p2.cursor.done.scale = 0.0525,0.0525
@@ -585,9 +898,9 @@ stage.move.snd = 100,0
 stage.done.snd = 100,1
 
 ;--------- Portrait Scale and Offset -------
-portrait.spr = 9000,0
-portrait.offset = 1,1
-portrait.scale = 0.475,0.475
+portrait.spr = 9000,5
+portrait.offset = 0,0
+portrait.scale = 0.07,0.072
 
 ;-------- Game Mode Title ---------  
 
@@ -623,6 +936,7 @@ p2.face2.spr = 9000, 1
 p2.face2.offset = 630,48
 p2.face2.facing = -1
 p2.face2.scale = 0.525,0.45
+
 
 ;---------- Name -----------
 p1.name.num = 4
@@ -1323,14 +1637,14 @@ p1.name.font = 3, 0, 1
 p1.name.scale = 0.25, 0.25
 
 winquote.text = "Winner!"
-winquote.offset = 60, 360
+winquote.offset = 25, 370
 winquote.font = 1, 0, 1
-winquote.scale = 0.2, 0.2
+winquote.scale = 0.175, 0.175
 winquote.textwrap = "w"
 winquote.spacing = 0, 0
 winquote.delay = 5
 winquote.displaytime = 120
-winquote.window = 0, 302 ,530,425
+winquote.window = 0, 302 ,625,425
 sounds.enabled = 0
 cpu.enabled = 1
 vs.enabled = 1
@@ -1340,15 +1654,15 @@ p1.num = 1
 p1.padding = 1
 p1.facing = 1
 p1.spr = 9000, 5
-p1.offset = 29, 0
-p1.scale = 0.2375, 0.2375
+p1.offset = 50, 0
+p1.scale = 0.475, 0.475
 
 p2.facing = -1
 p2.num = 1
 p2.padding = 1
 p2.spr = 9000, 5
-p2.offset = 612, 0
-p2.scale = 0.2375, 0.2375
+p2.offset = 590, 0
+p2.scale = 0.475, 0.475
 
 overlay.col = 0, 0, 0
 overlay.alpha = 50, 100
@@ -1359,31 +1673,31 @@ overlay.alpha = 50, 100
 type  = anim
 layerno = 0
 actionno = 810
-start = -43, 0
+start =  -23, 0
 
 [VictoryBG 0]
 type  = anim
 layerno = 0
 actionno = 811
-start = 43, 0
+start = 23, 0
 
 [VictoryBG 0]
 type  = anim
 layerno = 1
 actionno = 812
-start = 43, 0
+start = 23, 0
 
 [VictoryBG 0]
 type  = anim
 layerno = 1
 actionno = 813
-start = 168, 125
+start = 164, 128
 
 [VictoryBG 0]
 type  = anim
 layerno = 0
 actionno = 800
-start = 0, 0
+start = 0, 100
 
 
 [Win Screen]
@@ -1547,7 +1861,7 @@ start = 0,0
 type  = anim
 layerno = 0
 actionno = 3
-start = 0,-50
+start = 0,-100
 
 [Menu Info]
 fadein.time = 0
@@ -1779,7 +2093,7 @@ title.text = "OPTIONS"
 menu.pos = 0, 30
 menu.uselocalcoord = 1
 
-menu.item.offset = 0,7 10
+menu.item.offset = 0, 10
 menu.item.font = 1, 0, 1
 menu.item.scale =  0.15, 0.15
 
@@ -2372,13 +2686,13 @@ Interpolate Scale
 
 ; p1 select
 [Begin Action 11]
-11,3, 0,0, 10
-11,5, 0,0, 5
+11,15, 0,0, 10
+11,17, 0,0, 5
 
 ; p2 select
 [Begin Action 12]
-11,4, 0,0, 10
-11,6, 0,0, 5
+11,16, 0,0, 10
+11,18, 0,0, 5
 
 [Begin Action 20]
 4,1, 0,0, -1, , , 0.5,0.75
@@ -2704,22 +3018,21 @@ interpolate offset
 
 ;Diamond Red BG
 [Begin Action 810]
-801,0, 0,0, -1, H, ,0.7,0.7
-
+801,0, 0,0, -1, H, ,0.35,0.35
 ;Diamond Blue BG
 [Begin Action 811]
-801,1, 0,0, -1, , ,0.7,0.7
+801,1, 0,0, -1, , ,0.35,0.35
 
 ;Diamond Black BG
 [Begin Action 812]
-801,2, 0,0, -1, , SS128D255, 0.7,0.7
+801,2, 0,0, -1, , SS128D255, 0.35,0.35
 
 [Begin Action 813]
 -1,0, 0,0, 60
-802,0, 0,0, 10, , , 20,20, 90
+802,0, 0,0, 10, , , 10,10, 90
 Interpolate Scale
 Interpolate Angle
-802,0, 0,0, -1, , , 1.5,1.5
+802,0, 0,0, -1, , , 0.75,0.75
 
 ; Countdown (Continue)
 [Begin Action 900]
@@ -3421,6 +3734,7 @@ Interpolate Blend
 Interpolate Scale
 910,91, 320,240, 1, , , 21,0
 -1,0, 320,240, -1, , , 21,0
+
 
 ; Continue Sign
 [Begin Action 901]

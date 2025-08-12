@@ -29,7 +29,7 @@ if time = 0 {
 if time < 13 {
 	if time = 0 {
 		# Guard break sound
-		playSnd{value: GO 5400, 0}
+		playSnd{value: CVS 200, 0}
 		# Blue screen
 		if palFxVar(bg.time) = 0 {
 			bgPalFx{
