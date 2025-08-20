@@ -1,5 +1,15 @@
 # CVS-REDUX
 
+August-2025-1:
+cvsko bug has been fixed 
+
+High definition:
+Fixed a bug were a versus screen motion didn't set the right position.
+
+Squared:
+Fixed characters portraits using squares instead of diamonds during victory screen.
+Set the amount of character rows to 8 instead of 12.
+
 August-2025:
 Added Standard Definition version of the screenpack back and now as default.
 Updated Round Transition to the latest version.

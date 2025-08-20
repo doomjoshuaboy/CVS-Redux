@@ -530,7 +530,7 @@ fadeout.anim = 1
 fadein.snd = 0,0
 fadeout.snd = 20,0
 
-rows = 12
+rows = 8
 columns = 25
 wrapping = 1              ;1 to let cursor wrap around
 pos = 10,260	              ;Position to draw to
@@ -1323,14 +1323,14 @@ p1.name.font = 3, 0, 1
 p1.name.scale = 0.25, 0.25
 
 winquote.text = "Winner!"
-winquote.offset = 60, 360
+winquote.offset = 25, 370
 winquote.font = 1, 0, 1
-winquote.scale = 0.2, 0.2
+winquote.scale = 0.175, 0.175
 winquote.textwrap = "w"
 winquote.spacing = 0, 0
 winquote.delay = 5
 winquote.displaytime = 120
-winquote.window = 0, 302 ,530,425
+winquote.window = 0, 302 ,625,425
 sounds.enabled = 0
 cpu.enabled = 1
 vs.enabled = 1
@@ -1339,16 +1339,16 @@ winner.teamko.enabled = 1
 p1.num = 1
 p1.padding = 1
 p1.facing = 1
-p1.spr = 9000, 5
-p1.offset = 29, 0
-p1.scale = 0.2375, 0.2375
+p1.spr = 9000, 1
+p1.offset = 68, 22
+p1.scale = 0.95, 1
 
 p2.facing = -1
 p2.num = 1
 p2.padding = 1
-p2.spr = 9000, 5
-p2.offset = 612, 0
-p2.scale = 0.2375, 0.2375
+p2.spr = 9000, 1
+p2.offset = 572, 22
+p2.scale = 0.95, 1
 
 overlay.col = 0, 0, 0
 overlay.alpha = 50, 100
@@ -1359,32 +1359,31 @@ overlay.alpha = 50, 100
 type  = anim
 layerno = 0
 actionno = 810
-start = -43, 0
+start =  -23, 0
 
 [VictoryBG 0]
 type  = anim
 layerno = 0
 actionno = 811
-start = 43, 0
+start = 23, 0
 
 [VictoryBG 0]
 type  = anim
 layerno = 1
 actionno = 812
-start = 43, 0
+start = 23, 0
 
 [VictoryBG 0]
 type  = anim
-layerno = 1
+layerno = 2
 actionno = 813
-start = 168, 125
+start = 150, 150
 
 [VictoryBG 0]
 type  = anim
 layerno = 0
 actionno = 800
-start = 0, 0
-
+start = 0, 100
 
 [Win Screen]
 fadein.time = 0
@@ -1972,7 +1971,7 @@ timer.framespercount = 10
 timer.displaytime = 0
 window.width = 150
 window.margins.y = 10, 1
-window.visibleitems = 5
+window.visibleitems = 10
 overlay.window = 0, 0, 640, 480
 overlay.col = 0, 0, 0
 overlay.alpha = 0, 128
@@ -2704,22 +2703,23 @@ interpolate offset
 
 ;Diamond Red BG
 [Begin Action 810]
-801,0, 0,0, -1, H, ,0.7,0.7
+801,3, 10,10, -1, H, ,0.5,0.6
 
 ;Diamond Blue BG
 [Begin Action 811]
-801,1, 0,0, -1, , ,0.7,0.7
+801,4, -10,10, -1, , ,0.5,0.6
 
 ;Diamond Black BG
 [Begin Action 812]
-801,2, 0,0, -1, , SS128D255, 0.7,0.7
+801,5, -10,10, -1, , AS128D255, 0.5,0.6
 
 [Begin Action 813]
 -1,0, 0,0, 60
-802,0, 0,0, 10, , , 20,20, 90
+802,0, 0,0, 10, , , 10,10, 90
 Interpolate Scale
 Interpolate Angle
-802,0, 0,0, -1, , , 1.5,1.5
+802,0, 0,0, -1, , , 0.75,0.75
+
 
 ; Countdown (Continue)
 [Begin Action 900]

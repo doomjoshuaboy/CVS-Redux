@@ -1,11 +1,4 @@
 # KO effects by DoomJoshuaBoy 
-
-
-
-
-
-
-
 [Function CVS_KOEffect_Normal()]
    if !map(cvs_ko_flag) = 1 || map(_cvs_winkoeffect_toggle) = 1 {
         if (!winHyper) {
@@ -38,7 +31,6 @@ playsnd { value: cvs 1410,1; channel:1; volumescale:150; pan:0;  abspan:0 }
 playsnd { value: cvs 1400,2; channel:2; volumescale:150; pan:0;  abspan:0 }
 EnvColor { value: 0,0,0; time:162;  under:1; }
 explod { anim: cvs 1420; id:1420; space:screen; postype:left; pos:0,0; ownpal:1; bindtime:-1; sprpriority:-3; scale:const720p(1.35),const720p(1.35); removetime:-2; supermovetime:-1; pausemovetime:-1; }
-}
 Pause { time:100; movetime:100}
 mapset{map:"cvs_hyperko_flag"; value: 1}   
 }

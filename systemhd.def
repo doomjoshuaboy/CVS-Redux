@@ -10,7 +10,7 @@ snd = system.snd
 logo.storyboard = "others/loadinghd.def"
 intro.storyboard = "others/introhd.def"
 select = selects.def
-fight = fight.def
+fight = fighthd.def
 font1 = "font/cvs2hdname.def"
 font2 = "font/cvs2hdtimer.def"
 font3 = "font/cvs2hdnamei.def"
@@ -1339,16 +1339,16 @@ winner.teamko.enabled = 1
 p1.num = 1
 p1.padding = 1
 p1.facing = 1
-p1.spr = 9000, 5
-p1.offset = 58, 0
-p1.scale = 0.475, 0.475
+p1.spr = 9000, 1
+p1.offset = 150, 23
+p1.scale = 0.66, 0.67
 
 p2.facing = -1
 p2.num = 1
 p2.padding = 1
-p2.spr = 9000, 5
-p2.offset = 1223, 0
-p2.scale = 0.475, 0.475
+p2.spr = 9000, 1
+p2.offset = 1130, 23
+p2.scale = 0.66, 0.67
 
 overlay.col = 0, 0, 0
 overlay.alpha = 50, 100
@@ -1359,19 +1359,19 @@ overlay.alpha = 50, 100
 type  = anim
 layerno = 0
 actionno = 810
-start = -85, 0
+start = -155, 10
 
 [VictoryBG 0]
 type  = anim
 layerno = 0
 actionno = 811
-start = 85, 0
+start = 155, 10
 
 [VictoryBG 0]
 type  = anim
 layerno = 1
 actionno = 812
-start = 85, 0
+start = 155, 10
 
 [VictoryBG 0]
 type  = anim
@@ -2362,7 +2362,7 @@ Interpolate Scale
 20,0, 800,360, 30, , , 0.75,0
 Interpolate Scale
 Interpolate Offset
-20,0, 800,360, 10, , , 0.75,0.25
+20,0, 400,360, 10, , , 0.75,0.25
 -1,0, 0,0, -1
 
 ; V.S. Letters
@@ -2709,15 +2709,15 @@ interpolate offset
 
 ;Diamond Red BG
 [Begin Action 810]
-801,0, 0,0, -1, H, ,0.7,0.7
+801,3, 0,0, -1, H, ,0.7,0.8
 
 ;Diamond Blue BG
 [Begin Action 811]
-801,1, 0,0, -1, , ,0.7,0.7
+801,4, 0,0, -1, , ,0.7,0.8
 
 ;Diamond Black BG
 [Begin Action 812]
-801,2, 0,0, -1, , SS128D255, 0.7,0.7
+801,5, 0,0, -1, , AS128D255, 0.7,0.8
 
 [Begin Action 813]
 -1,0, 0,0, 60
