@@ -1,0 +1,40 @@
+name: Bug
+description: Create a bug report to help us improve
+body:
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots / Video
+      description: add screenshots and/or videos to help explain your problem.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: IKEMEN Engine Version (or source code date)
+      placeholder: v#.##.# or "yyyy.mm.dd"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      description: What OS are you using?
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - Other (mention in description)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description-bug
+    attributes:
+      label: Describe the Bug
+      placeholder: description
+    validations:
+      required: true
+
